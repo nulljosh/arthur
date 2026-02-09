@@ -1,0 +1,67 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #1a1a1a; stroke: #4a4a4a; stroke-width: 2; }
+      .done { fill: #2d5016; stroke: #4a7c2d; }
+      .current { fill: #3a3a00; stroke: #6b6b00; }
+      .future { fill: #1a1a1a; stroke: #4a4a4a; }
+      .text { fill: #e0e0e0; font-family: monospace; font-size: 14px; }
+      .title { fill: #fff; font-size: 20px; font-weight: bold; }
+      .arrow { stroke: #6b6b6b; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  
+  <text x="400" y="30" class="title" text-anchor="middle">microLM Architecture</text>
+  
+  <!-- Phase 1: Tokenization -->
+  <rect x="50" y="80" width="150" height="80" class="current" rx="5"/>
+  <text x="125" y="110" class="text" text-anchor="middle" font-weight="bold">Tokenization</text>
+  <text x="125" y="130" class="text" text-anchor="middle" font-size="11">Char/Word/BPE</text>
+  <text x="125" y="145" class="text" text-anchor="middle" font-size="11">[NEXT]</text>
+  
+  <!-- Phase 2: Attention -->
+  <rect x="250" y="80" width="150" height="80" class="future" rx="5"/>
+  <text x="325" y="110" class="text" text-anchor="middle" font-weight="bold">Attention</text>
+  <text x="325" y="130" class="text" text-anchor="middle" font-size="11">Self-attention</text>
+  <path d="M 200 120 L 250 120" class="arrow"/>
+  
+  <!-- Phase 3: Transformer -->
+  <rect x="450" y="80" width="150" height="80" class="future" rx="5"/>
+  <text x="525" y="110" class="text" text-anchor="middle" font-weight="bold">Transformer</text>
+  <text x="525" y="130" class="text" text-anchor="middle" font-size="11">Full block</text>
+  <path d="M 400 120 L 450 120" class="arrow"/>
+  
+  <!-- Phase 4: Training -->
+  <rect x="150" y="200" width="150" height="80" class="future" rx="5"/>
+  <text x="225" y="230" class="text" text-anchor="middle" font-weight="bold">Training</text>
+  <text x="225" y="250" class="text" text-anchor="middle" font-size="11">Backprop + Loss</text>
+  <path d="M 325 160 L 225 200" class="arrow"/>
+  
+  <!-- Phase 5: Generation -->
+  <rect x="350" y="200" width="150" height="80" class="future" rx="5"/>
+  <text x="425" y="230" class="text" text-anchor="middle" font-weight="bold">Generation</text>
+  <text x="425" y="250" class="text" text-anchor="middle" font-size="11">Sampling</text>
+  <path d="M 525 160 L 425 200" class="arrow"/>
+  
+  <!-- Complexity Levels -->
+  <rect x="50" y="320" width="700" height="150" class="box" rx="5"/>
+  <text x="400" y="345" class="text" text-anchor="middle" font-weight="bold">10 Complexity Levels</text>
+  
+  <text x="70" y="375" class="text">L0: Char tokenizer</text>
+  <text x="70" y="395" class="text">L1: Word tokenizer</text>
+  <text x="70" y="415" class="text">L2: BPE tokenizer</text>
+  <text x="70" y="435" class="text">L3: Single attention</text>
+  <text x="70" y="455" class="text">L4: Multi-head</text>
+  
+  <text x="300" y="375" class="text">L5: Transformer block</text>
+  <text x="300" y="395" class="text">L6: Training loop</text>
+  <text x="300" y="415" class="text">L7: Backprop working</text>
+  <text x="300" y="435" class="text">L8: Gradient descent</text>
+  <text x="300" y="455" class="text">L9: Greedy decode</text>
+  
+  <text x="530" y="375" class="text" font-weight="bold">L10: Sampling</text>
+  <text x="530" y="395" class="text" font-size="11">Top-k/nucleus</text>
+  <text x="530" y="410" class="text" font-size="11">Generate text</text>
+  <text x="530" y="425" class="text" font-size="11">Train on WikiText</text>
+  <text x="530" y="440" class="text" font-size="11">Multi-layer model</text>
+</svg>
