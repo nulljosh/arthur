@@ -1,22 +1,22 @@
 # microLM Development Roadmap
 
-## Phase 1: Tokenization [NEXT]
+## Phase 1: Tokenization [DONE]
 - Character tokenizer (simplest)
 - Word tokenizer (word boundaries)
 - BPE tokenizer (subwords)
-- **Status**: Not started
+- **Status**: Levels 0-1 working
 
-## Phase 2: Attention Mechanism
+## Phase 2: Attention Mechanism [DONE]
 - Self-attention (single head)
 - Multi-head attention
 - Positional encoding
-- **Status**: Not started
+- **Status**: Implemented
 
-## Phase 3: Transformer Block
+## Phase 3: Transformer Block [DONE]
 - Feed-forward network
 - Layer normalization
 - Residual connections
-- **Status**: Not started
+- **Status**: Full model architecture complete
 
 ## Phase 4: Training
 - Loss function (cross-entropy)
