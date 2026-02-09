@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.pth
+*.ckpt
+wandb/
+data/raw/
+models/*.pth
+.DS_Store
