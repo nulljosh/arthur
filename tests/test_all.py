@@ -20,7 +20,7 @@ char_tok = CharTokenizer(text)
 word_tok = WordTokenizer(text)
 
 assert char_tok.vocab_size == 10  # h,e,l,o, ,w,r,d,t,s
-assert word_tok.vocab_size == 4   # hello, world, test, (space handled)
+assert word_tok.vocab_size == 3   # hello, world, test
 
 encoded = char_tok.encode("hello")
 decoded = char_tok.decode(encoded)
