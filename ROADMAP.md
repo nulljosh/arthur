@@ -18,17 +18,17 @@
 - Residual connections
 - **Status**: Full model architecture complete
 
-## Phase 4: Training
+## Phase 4: Training [DONE]
 - Loss function (cross-entropy)
 - Backpropagation
 - Optimizer (Adam)
-- **Status**: Not started
+- **Status**: Implemented
 
-## Phase 5: Generation
+## Phase 5: Generation [DONE]
 - Autoregressive sampling
 - Temperature scaling
-- Top-k/nucleus sampling
-- **Status**: Not started
+- Top-k/nucleus sampling (TODO)
+- **Status**: Basic generation working
 
 ## Phase 6: Scale
 - Multi-layer model
