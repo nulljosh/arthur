@@ -28,7 +28,7 @@ That's it. The script will:
 ## Example Session
 
 ```
-💬 nuLLM Chat
+ nuLLM Chat
 You: hi
 nuLLM: hello there
 You: whats up

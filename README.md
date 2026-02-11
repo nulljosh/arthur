@@ -5,13 +5,13 @@ A minimal LLM built from scratch in Python. On-system Claude alternative - no AP
 ![Architecture](map.svg)
 
 ## Status
-**Phase 1-5 Complete** ✅ - All core components implemented and tested
-- Tokenization: Char, word, BPE ✓
-- Attention: Multi-head, scaled dot-product ✓
-- Transformer: Full stack with residuals ✓
-- Training: Loss function, optimizer, training loop ✓
-- Generation: Autoregressive sampling with temperature ✓
-- Chat: Conversational AI interface ✓
+**Phase 1-5 Complete**  - All core components implemented and tested
+- Tokenization: Char, word, BPE 
+- Attention: Multi-head, scaled dot-product 
+- Transformer: Full stack with residuals 
+- Training: Loss function, optimizer, training loop 
+- Generation: Autoregressive sampling with temperature 
+- Chat: Conversational AI interface 
 
 ## Goals
 - Tokenize text (BPE/WordPiece)

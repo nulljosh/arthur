@@ -8,37 +8,37 @@
 
 ## What's Implemented
 
-### ✅ Phase 1: Tokenization
+###  Phase 1: Tokenization
 - Character tokenizer
 - Word tokenizer  
 - BPE (Byte Pair Encoding)
 - Full vocabulary building
 
-### ✅ Phase 2: Attention
+###  Phase 2: Attention
 - Single-head self-attention
 - Multi-head attention (configurable heads)
 - Scaled dot-product attention
 - Positional encoding
 
-### ✅ Phase 3: Transformer
+###  Phase 3: Transformer
 - Full transformer blocks
 - Feed-forward networks
 - Layer normalization
 - Residual connections
 
-### ✅ Phase 4: Training
+###  Phase 4: Training
 - Cross-entropy loss
 - Adam optimizer
 - Full training loop
 - Batch processing
 
-### ✅ Phase 5: Generation
+###  Phase 5: Generation
 - Autoregressive sampling
 - Temperature scaling
 - Token generation loop
 - Context window management
 
-### ✅ Phase 6: Chat Interface
+###  Phase 6: Chat Interface
 - Conversational wrapper
 - Auto-train fallback
 - Model persistence (pickle)
@@ -94,24 +94,24 @@ python3 src/chat.py
 ## Success Criteria
 
 ### Code Quality
-- ✅ All source files present and complete
-- ✅ No syntax errors
-- ✅ Proper error handling
-- ✅ Clean architecture (modules separate)
+-  All source files present and complete
+-  No syntax errors
+-  Proper error handling
+-  Clean architecture (modules separate)
 
 ### Documentation
-- ✅ README explains project
-- ✅ QUICKSTART provides setup
-- ✅ ROADMAP shows completion status
-- ✅ ARCHITECTURE explains design
-- ✅ Code has docstrings
+-  README explains project
+-  QUICKSTART provides setup
+-  ROADMAP shows completion status
+-  ARCHITECTURE explains design
+-  Code has docstrings
 
 ### Functionality
-- ✅ Import without dependency errors
-- ✅ All phases functional
-- ✅ Training converges
-- ✅ Generation produces text
-- ✅ Chat interface works
+-  Import without dependency errors
+-  All phases functional
+-  Training converges
+-  Generation produces text
+-  Chat interface works
 
 ### Testing
 - ⏳ Example scripts run successfully
