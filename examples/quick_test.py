@@ -53,8 +53,8 @@ print("\n4. Single Training Step")
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 criterion = torch.nn.CrossEntropyLoss()
 
-# Simple target: predict next char
-y = torch.tensor(tokenizer.encode("ello w")[:8]).unsqueeze(0)
+# Simple target: predict next char (shifted by 1)
+y = torch.tensor(tokenizer.encode("ello ")[:5]).unsqueeze(0)
 
 logits = model(x)
 loss = criterion(logits.view(-1, logits.size(-1)), y.view(-1))
