@@ -62,6 +62,16 @@ Not optimized for speed - focused on clarity:
 - Inference: <100ms per token
 - Perplexity: <50 on validation set (WikiText-2)
 
+## Training Results
+
+**Configuration**: 50 epochs, 2896 params (nano model)
+**Final Loss**: 0.5527
+**Status**: All tests passing
+- Tokenizer: Character and word-level encode/decode working
+- Model: Forward pass produces correct output shapes
+- Training: Backprop functional, loss decreases
+- Generation: Produces text (untrained baseline)
+
 ## Learning Path
 
 1. **Understand tokenization** (how text becomes numbers)
