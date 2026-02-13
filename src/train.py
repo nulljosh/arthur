@@ -7,21 +7,57 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from transformer import NuLLM
-from tokenizer import CharTokenizer
+from tokenizer import CharTokenizer, WordTokenizer, BPETokenizer
+import argparse
 import sys
+
+
+# Model configurations
+CONFIGS = {
+    'nano': {
+        'vocab': 26,
+        'embed_dim': 32,
+        'num_heads': 2,
+        'num_layers': 2,
+        'ff_dim': 64,
+        'max_len': 64,
+        'seq_len': 32,
+        'batch_size': 4
+    },
+    'micro': {
+        'vocab': 50257,
+        'embed_dim': 128,
+        'num_heads': 4,
+        'num_layers': 4,
+        'ff_dim': 512,
+        'max_len': 256,
+        'seq_len': 128,
+        'batch_size': 8
+    },
+    'mini': {
+        'vocab': 50257,
+        'embed_dim': 256,
+        'num_heads': 8,
+        'num_layers': 6,
+        'ff_dim': 1024,
+        'max_len': 512,
+        'seq_len': 256,
+        'batch_size': 4
+    }
+}
 
 
 class TextDataset(Dataset):
     """Simple text dataset for char-level modeling"""
-    
+
     def __init__(self, text, tokenizer, seq_len):
         self.tokenizer = tokenizer
         self.seq_len = seq_len
         self.tokens = tokenizer.encode(text)
-    
+
     def __len__(self):
         return len(self.tokens) - self.seq_len
-    
+
     def __getitem__(self, idx):
         chunk = self.tokens[idx:idx + self.seq_len + 1]
         x = torch.tensor(chunk[:-1], dtype=torch.long)
@@ -87,56 +123,118 @@ def generate(model, tokenizer, prompt, max_len=100, device='cpu', temperature=1.
     return tokenizer.decode(generated)
 
 
-if __name__ == "__main__":
+def main(corpus='tiny', tokenizer_type='char', model_size='nano', epochs=50, lr=1e-3):
+    """Main training function
+
+    Args:
+        corpus: 'tiny' or 'wikitext-2'
+        tokenizer_type: 'char', 'word', or 'bpe'
+        model_size: 'nano', 'micro', or 'mini'
+        epochs: Number of training epochs
+        lr: Learning rate
+    """
     # Sample text (tiny Shakespeare-like)
-    text = """
+    tiny_text = """
     To be or not to be, that is the question.
     Whether tis nobler in the mind to suffer
     The slings and arrows of outrageous fortune,
     Or to take arms against a sea of troubles.
     """.strip()
-    
-    print("Training nuLLM on tiny corpus...")
-    print(f"Text length: {len(text)} chars")
-    
-    # Setup
+
+    print(f"Training nuLLM {model_size.upper()} on {corpus}...")
+
+    # Setup device
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    tokenizer = CharTokenizer(text)
-    
+    print(f"Device: {device}")
+
+    # Get model config
+    config = CONFIGS[model_size]
+
+    # Setup corpus and tokenizer
+    if corpus == 'wikitext-2':
+        if tokenizer_type != 'bpe':
+            raise ValueError("WikiText-2 requires BPE tokenizer")
+
+        from data_loader import WikiText2Dataset
+        tokenizer = BPETokenizer()
+        print(f"Loading WikiText-2 dataset...")
+        dataset = WikiText2Dataset(tokenizer, config['seq_len'], split='train')
+        print(f"Dataset size: {len(dataset)} examples")
+    else:
+        # Tiny corpus
+        if tokenizer_type == 'char':
+            tokenizer = CharTokenizer(tiny_text)
+        elif tokenizer_type == 'word':
+            tokenizer = WordTokenizer(tiny_text)
+        else:
+            raise ValueError("Tiny corpus requires char or word tokenizer")
+
+        print(f"Text length: {len(tiny_text)} chars")
+        dataset = TextDataset(tiny_text, tokenizer, config['seq_len'])
+
     print(f"Vocab size: {tokenizer.vocab_size}")
-    
-    # Model config (nano size)
+
+    # Create model
     model = NuLLM(
         vocab_size=tokenizer.vocab_size,
-        embed_dim=32,
-        num_heads=2,
-        num_layers=2,
-        ff_dim=64,
-        max_len=64,
+        embed_dim=config['embed_dim'],
+        num_heads=config['num_heads'],
+        num_layers=config['num_layers'],
+        ff_dim=config['ff_dim'],
+        max_len=config['max_len'],
         dropout=0.1
     ).to(device)
-    
+
     num_params = sum(p.numel() for p in model.parameters())
     print(f"Model params: {num_params:,} ({num_params/1e6:.2f}M)")
-    
-    # Dataset
-    dataset = TextDataset(text, tokenizer, seq_len=32)
-    dataloader = DataLoader(dataset, batch_size=4, shuffle=True)
-    
+
+    # DataLoader
+    dataloader = DataLoader(dataset, batch_size=config['batch_size'], shuffle=True)
+
     # Optimizer
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
-    
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+
     # Train
     print("\nTraining...")
-    train(model, dataloader, optimizer, device, epochs=50)
-    
+    train(model, dataloader, optimizer, device, epochs=epochs)
+
     # Generate
     print("\n" + "="*60)
     print("Generating text...")
     print("="*60)
-    
-    prompts = ["To be", "Whether", "The "]
+
+    if corpus == 'tiny':
+        prompts = ["To be", "Whether", "The "]
+    else:
+        prompts = ["The ", "In ", "A "]
+
     for prompt in prompts:
         print(f"\nPrompt: '{prompt}'")
         output = generate(model, tokenizer, prompt, max_len=50, device=device, temperature=0.8)
         print(f"Output: {output}")
+
+    return model, tokenizer
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Train nuLLM')
+    parser.add_argument('--corpus', default='tiny', choices=['tiny', 'wikitext-2'],
+                        help='Training corpus')
+    parser.add_argument('--tokenizer', default='char', choices=['char', 'word', 'bpe'],
+                        help='Tokenizer type')
+    parser.add_argument('--model-size', default='nano', choices=['nano', 'micro', 'mini'],
+                        help='Model size')
+    parser.add_argument('--epochs', type=int, default=50,
+                        help='Number of training epochs')
+    parser.add_argument('--lr', type=float, default=1e-3,
+                        help='Learning rate')
+
+    args = parser.parse_args()
+
+    main(
+        corpus=args.corpus,
+        tokenizer_type=args.tokenizer,
+        model_size=args.model_size,
+        epochs=args.epochs,
+        lr=args.lr
+    )

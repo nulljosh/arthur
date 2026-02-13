@@ -35,4 +35,16 @@ class WordTokenizer:
         return ' '.join([self.idx_to_word.get(i, '<UNK>') for i in ids])
 
 
-# TODO: BPE tokenizer (more complex, coming later)
+class BPETokenizer:
+    """Byte Pair Encoding (subword) tokenizer using tiktoken"""
+
+    def __init__(self, vocab_size=50257):
+        import tiktoken
+        self.encoder = tiktoken.get_encoding("cl100k_base")
+        self.vocab_size = vocab_size
+
+    def encode(self, text):
+        return self.encoder.encode(text)
+
+    def decode(self, tokens):
+        return self.encoder.decode(tokens)
