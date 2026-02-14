@@ -23,6 +23,27 @@ def load_wikitext_2(split='train', max_seq=None):
     return text[:max_seq] if max_seq else text
 
 
+def load_conversational_corpus() -> str:
+    """Load conversational Q&A corpus"""
+    from pathlib import Path
+    corpus_path = Path(__file__).parent.parent / 'data' / 'conversational.txt'
+    with open(corpus_path) as f:
+        return f.read()
+
+def load_jot_corpus() -> str:
+    """Load jot code examples"""
+    from pathlib import Path
+    corpus_path = Path(__file__).parent.parent / 'data' / 'jot_code.txt'
+    with open(corpus_path) as f:
+        return f.read()
+
+def load_combined_corpus() -> str:
+    """Load combined conversational + jot corpus"""
+    from pathlib import Path
+    corpus_path = Path(__file__).parent.parent / 'data' / 'combined_corpus.txt'
+    with open(corpus_path) as f:
+        return f.read()
+
 class WikiText2Dataset(Dataset):
     """WikiText-2 dataset for language modeling"""
 
