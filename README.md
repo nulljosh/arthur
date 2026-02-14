@@ -116,7 +116,7 @@ python3 web_ui.py
 - ✅ Full training pipeline
 - ✅ 100-epoch training complete
 - ✅ Loss convergence verified (3.0 → 0.13)
-- 🔄 500-epoch training in progress (overnight)
+- 500-epoch training in progress (overnight)
 
 **Next:**
 - Better datasets (WikiText-2)
@@ -126,4 +126,4 @@ python3 web_ui.py
 
 ---
 
-**Built in one night as part of the 3-language sprint** 🚀
+**Built in one night as part of the 3-language sprint**
