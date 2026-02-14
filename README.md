@@ -37,6 +37,8 @@ python3 src/generate.py --prompt "Whether" --length 50
 
 ## Architecture
 
+![Architecture](architecture.svg)
+
 **Nano transformer:**
 - 4 layers
 - 4 attention heads
