@@ -6,8 +6,12 @@ Train nuLLM on conversational + jot dataset
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
+import os
 import sys
-sys.path.insert(0, 'src')
+
+# Add src to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
 from transformer import NuLLM
 from tokenizer import CharTokenizer
 
