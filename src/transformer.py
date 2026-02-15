@@ -50,8 +50,8 @@ class TransformerBlock(nn.Module):
         return x
 
 
-class MicroLM(nn.Module):
-    """Full microLM model"""
+class Nous(nn.Module):
+    """Full nous model"""
     
     def __init__(self, vocab_size, embed_dim, num_heads, num_layers, ff_dim, max_len, dropout=0.1):
         super().__init__()

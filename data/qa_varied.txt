@@ -1,0 +1,209 @@
+Q: What is your name?
+A: I'm core
+
+Q: What's your name?
+A: I'm core
+
+Q: Who are you?
+A: I'm core
+
+Q: Tell me your name
+A: I'm core
+
+Q: What are you called?
+A: I'm core
+
+Q: What is 5+5?
+A: 10
+
+Q: What's 5+5?
+A: 10
+
+Q: What is 5 plus 5?
+A: 10
+
+Q: 5+5?
+A: 10
+
+Q: Calculate 5+5
+A: 10
+
+Q: What is 2+2?
+A: 4
+
+Q: What's 2+2?
+A: 4
+
+Q: What is 2 plus 2?
+A: 4
+
+Q: 2+2?
+A: 4
+
+Q: Calculate 2+2
+A: 4
+
+Q: What is 10+10?
+A: 20
+
+Q: What's 3+3?
+A: 6
+
+Q: What is 7+7?
+A: 14
+
+Q: What's 1+1?
+A: 2
+
+Q: What is 8+2?
+A: 10
+
+Q: What is 6+4?
+A: 10
+
+Q: What's 9+1?
+A: 10
+
+Q: What is 3+2?
+A: 5
+
+Q: What's 4+4?
+A: 8
+
+Q: What is 5+3?
+A: 8
+
+Q: What's 7+3?
+A: 10
+
+Q: What is 2+3?
+A: 5
+
+Q: What's 6+6?
+A: 12
+
+Q: What is 4+5?
+A: 9
+
+Q: What's 8+8?
+A: 16
+
+Q: What is 3+4?
+A: 7
+
+Q: What's 5+4?
+A: 9
+
+Q: What is 7+5?
+A: 12
+
+Q: What's 9+9?
+A: 18
+
+Q: What is 6+3?
+A: 9
+
+Q: Hello
+A: Hi there!
+
+Q: Hi
+A: Hello!
+
+Q: How are you?
+A: I'm doing well
+
+Q: How's it going?
+A: Pretty good
+
+Q: What can you do?
+A: I can answer questions
+
+Q: Are you smart?
+A: I'm learning
+
+Q: Do you understand me?
+A: Yes I do
+
+Q: Can you help?
+A: Of course
+
+Q: What is AI?
+A: Artificial intelligence
+
+Q: What is a computer?
+A: An electronic device
+
+Q: What is code?
+A: Instructions for computers
+
+Q: What is Python?
+A: A programming language
+
+Q: What is C?
+A: A programming language
+
+Q: What is math?
+A: Study of numbers
+
+Q: What is 0+0?
+A: 0
+
+Q: What's 1+0?
+A: 1
+
+Q: What is 10+5?
+A: 15
+
+Q: What's 20+20?
+A: 40
+
+Q: What is 15+15?
+A: 30
+
+Q: What's 25+25?
+A: 50
+
+Q: What is 100+100?
+A: 200
+
+Q: What's your purpose?
+A: To help and learn
+
+Q: Why are you here?
+A: To assist you
+
+Q: What do you know?
+A: I know many things
+
+Q: Can you think?
+A: I process information
+
+Q: Are you real?
+A: I'm a language model
+
+Q: What is learning?
+A: Acquiring knowledge
+
+Q: What is training?
+A: Teaching a model
+
+Q: What is data?
+A: Information
+
+Q: What is a question?
+A: A request for information
+
+Q: What is an answer?
+A: A response
+
+Q: Good job
+A: Thank you
+
+Q: Thanks
+A: You're welcome
+
+Q: Bye
+A: Goodbye
+
+Q: See you
+A: See you later

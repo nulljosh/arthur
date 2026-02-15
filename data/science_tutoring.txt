@@ -1,0 +1,311 @@
+Q: What is a derivative in calculus?
+A: A derivative measures the rate of change of a function. If f(x) = x^2, then f'(x) = 2x. It tells you the slope of the tangent line at any point.
+
+Q: What is the derivative of x^3?
+A: The derivative of x^3 is 3x^2. Use the power rule: bring down the exponent and subtract one.
+
+Q: What is the power rule?
+A: The power rule says d/dx(x^n) = n*x^(n-1). Bring down the exponent as a coefficient, reduce the exponent by one.
+
+Q: What is the derivative of sin(x)?
+A: The derivative of sin(x) is cos(x).
+
+Q: What is the derivative of cos(x)?
+A: The derivative of cos(x) is -sin(x).
+
+Q: What is the derivative of e^x?
+A: The derivative of e^x is e^x. It is its own derivative.
+
+Q: What is the derivative of ln(x)?
+A: The derivative of ln(x) is 1/x.
+
+Q: What is the chain rule?
+A: The chain rule says d/dx[f(g(x))] = f'(g(x)) * g'(x). Differentiate the outer function, then multiply by the derivative of the inner function.
+
+Q: What is the derivative of sin(3x)?
+A: Using the chain rule: cos(3x) * 3 = 3cos(3x).
+
+Q: What is an integral?
+A: An integral is the reverse of a derivative. It finds the area under a curve. The integral of 2x is x^2 + C.
+
+Q: What is the integral of x^2?
+A: The integral of x^2 is x^3/3 + C. Use the power rule in reverse: raise the exponent by one, divide by the new exponent.
+
+Q: What is the integral of 1/x?
+A: The integral of 1/x is ln|x| + C.
+
+Q: What is the integral of e^x?
+A: The integral of e^x is e^x + C.
+
+Q: What is the integral of cos(x)?
+A: The integral of cos(x) is sin(x) + C.
+
+Q: What is the integral of sin(x)?
+A: The integral of sin(x) is -cos(x) + C.
+
+Q: What is the fundamental theorem of calculus?
+A: It connects derivatives and integrals. If F'(x) = f(x), then the integral from a to b of f(x)dx = F(b) - F(a). Differentiation and integration are inverse operations.
+
+Q: What is a limit?
+A: A limit describes the value a function approaches as the input approaches some value. lim(x->2) of x^2 = 4.
+
+Q: What is L'Hopital's rule?
+A: When a limit gives 0/0 or infinity/infinity, take the derivative of the top and bottom separately. lim f(x)/g(x) = lim f'(x)/g'(x).
+
+Q: What is a definite integral?
+A: A definite integral has bounds and gives a number. The integral from 0 to 2 of x dx = [x^2/2] from 0 to 2 = 2.
+
+Q: What is an indefinite integral?
+A: An indefinite integral has no bounds and gives a function plus C (constant of integration). The integral of 2x dx = x^2 + C.
+
+Q: What is the product rule?
+A: d/dx[f(x)*g(x)] = f'(x)*g(x) + f(x)*g'(x). The derivative of a product is the first times derivative of second plus second times derivative of first.
+
+Q: What is the quotient rule?
+A: d/dx[f(x)/g(x)] = [f'(x)*g(x) - f(x)*g'(x)] / [g(x)]^2. Low d-high minus high d-low over low squared.
+
+Q: What is integration by parts?
+A: integral of u dv = uv - integral of v du. Choose u and dv from the integrand, then apply the formula.
+
+Q: What is a Taylor series?
+A: A Taylor series represents a function as an infinite sum of terms based on derivatives at a point. e^x = 1 + x + x^2/2! + x^3/3! + ...
+
+Q: What is DNA?
+A: DNA (deoxyribonucleic acid) is a double-helix molecule that carries genetic instructions. It has four bases: adenine (A), thymine (T), guanine (G), cytosine (C). A pairs with T, G pairs with C.
+
+Q: What is RNA?
+A: RNA (ribonucleic acid) is single-stranded and helps translate DNA into proteins. Types include mRNA (messenger), tRNA (transfer), and rRNA (ribosomal). RNA uses uracil instead of thymine.
+
+Q: What is a cell?
+A: A cell is the basic unit of life. Prokaryotic cells (bacteria) lack a nucleus. Eukaryotic cells (animals, plants) have a nucleus and membrane-bound organelles.
+
+Q: What is mitosis?
+A: Mitosis is cell division that produces two identical daughter cells. Stages: prophase, metaphase, anaphase, telophase. Used for growth and repair.
+
+Q: What is meiosis?
+A: Meiosis is cell division that produces four gametes (sex cells) with half the chromosomes. It involves two divisions and creates genetic diversity through crossing over.
+
+Q: What is photosynthesis?
+A: Photosynthesis converts sunlight, water, and CO2 into glucose and oxygen. 6CO2 + 6H2O + light -> C6H12O6 + 6O2. Occurs in chloroplasts.
+
+Q: What is cellular respiration?
+A: Cellular respiration converts glucose and oxygen into ATP energy, CO2, and water. C6H12O6 + 6O2 -> 6CO2 + 6H2O + ATP. Occurs in mitochondria.
+
+Q: What is ATP?
+A: ATP (adenosine triphosphate) is the energy currency of cells. When ATP loses a phosphate group, it releases energy for cellular processes.
+
+Q: What is natural selection?
+A: Natural selection is the mechanism of evolution. Organisms with traits better suited to their environment survive and reproduce more, passing those traits to offspring.
+
+Q: What is a gene?
+A: A gene is a segment of DNA that codes for a protein. Genes determine traits like eye color, height, and disease susceptibility.
+
+Q: What is a protein?
+A: Proteins are large molecules made of amino acid chains. They perform most cellular functions: enzymes catalyze reactions, antibodies fight infection, structural proteins provide support.
+
+Q: What is an enzyme?
+A: An enzyme is a biological catalyst that speeds up chemical reactions without being consumed. Each enzyme is specific to a substrate (lock and key model).
+
+Q: What is the Krebs cycle?
+A: The Krebs cycle (citric acid cycle) is the second stage of cellular respiration. It occurs in the mitochondrial matrix and produces NADH, FADH2, and ATP from acetyl-CoA.
+
+Q: What is Newton's first law?
+A: An object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted upon by a net external force. This is the law of inertia.
+
+Q: What is Newton's second law?
+A: F = ma. Force equals mass times acceleration. A larger force produces more acceleration. A larger mass requires more force to accelerate.
+
+Q: What is Newton's third law?
+A: For every action, there is an equal and opposite reaction. If you push a wall, the wall pushes back on you with equal force.
+
+Q: What is gravity?
+A: Gravity is the force of attraction between masses. On Earth, g = 9.8 m/s^2. Newton's law: F = G*m1*m2/r^2 where G is the gravitational constant.
+
+Q: What is kinetic energy?
+A: Kinetic energy is the energy of motion. KE = (1/2)*m*v^2. A moving object has kinetic energy proportional to its mass and the square of its velocity.
+
+Q: What is potential energy?
+A: Potential energy is stored energy due to position. Gravitational PE = m*g*h. A ball held above the ground has potential energy that converts to kinetic energy when dropped.
+
+Q: What is the conservation of energy?
+A: Energy cannot be created or destroyed, only transformed. Total energy in a closed system stays constant. Kinetic + potential energy = constant (ignoring friction).
+
+Q: What is momentum?
+A: Momentum = mass * velocity (p = mv). It is conserved in collisions. A heavier or faster object has more momentum and is harder to stop.
+
+Q: What is the speed of light?
+A: The speed of light in vacuum is approximately 3 * 10^8 m/s (299,792,458 m/s). Nothing with mass can travel at or faster than light speed.
+
+Q: What is E = mc^2?
+A: Einstein's mass-energy equivalence. Energy equals mass times the speed of light squared. A small amount of mass contains enormous energy. This is the basis of nuclear power.
+
+Q: What is an atom?
+A: An atom is the smallest unit of an element. It has a nucleus (protons + neutrons) surrounded by electrons. Protons determine the element, electrons determine chemical behavior.
+
+Q: What is the periodic table?
+A: The periodic table organizes elements by atomic number. Rows (periods) and columns (groups) reveal patterns in properties. Elements in the same group have similar chemical behavior.
+
+Q: What is a chemical bond?
+A: A chemical bond holds atoms together. Ionic bonds transfer electrons (NaCl). Covalent bonds share electrons (H2O). Metallic bonds share electrons across a lattice.
+
+Q: What is pH?
+A: pH measures how acidic or basic a solution is. Scale from 0-14. pH 7 is neutral. Below 7 is acidic (more H+ ions). Above 7 is basic (more OH- ions).
+
+Q: What is an acid?
+A: An acid donates H+ ions (protons) in solution. Strong acids (HCl, H2SO4) fully dissociate. Weak acids (acetic acid) partially dissociate. pH below 7.
+
+Q: What is a base?
+A: A base accepts H+ ions or donates OH- ions. Strong bases (NaOH) fully dissociate. Weak bases (NH3) partially dissociate. pH above 7.
+
+Q: What is the Pythagorean theorem?
+A: a^2 + b^2 = c^2, where c is the hypotenuse of a right triangle. If a=3 and b=4, then c=5.
+
+Q: What is the quadratic formula?
+A: x = (-b +/- sqrt(b^2 - 4ac)) / (2a). Solves ax^2 + bx + c = 0 for x.
+
+Q: What is a logarithm?
+A: log_b(x) = y means b^y = x. log_10(100) = 2 because 10^2 = 100. ln(x) is the natural log (base e).
+
+Q: What is the area of a circle?
+A: A = pi * r^2 where r is the radius. For a circle with radius 5, area = 25*pi = 78.54.
+
+Q: What is the circumference of a circle?
+A: C = 2 * pi * r where r is the radius. For radius 5, C = 10*pi = 31.42.
+
+Q: What is velocity?
+A: Velocity is speed with direction. v = displacement / time. A car going 60 km/h north has both speed (60 km/h) and direction (north).
+
+Q: What is acceleration?
+A: Acceleration is the rate of change of velocity. a = (v_f - v_i) / t. Measured in m/s^2. Gravity accelerates objects at 9.8 m/s^2.
+
+Q: What is a wave?
+A: A wave is a disturbance that transfers energy. Types: transverse (light, water) and longitudinal (sound). Described by wavelength, frequency, and amplitude.
+
+Q: What is the electromagnetic spectrum?
+A: The EM spectrum ranges from radio waves (longest wavelength) to gamma rays (shortest). Order: radio, microwave, infrared, visible light, ultraviolet, X-ray, gamma.
+
+Q: What is thermodynamics?
+A: Thermodynamics studies heat and energy transfer. First law: energy is conserved. Second law: entropy always increases. Third law: absolute zero is unattainable.
+
+Q: What is entropy?
+A: Entropy is a measure of disorder in a system. The second law of thermodynamics says entropy of an isolated system always increases. A broken egg has more entropy than a whole one.
+
+Q: What is Ohm's law?
+A: V = I * R. Voltage equals current times resistance. Higher resistance means less current for the same voltage. Measured in volts, amps, and ohms.
+
+Q: What is electric current?
+A: Electric current is the flow of electric charge (electrons) through a conductor. Measured in amperes (A). Conventional current flows from positive to negative.
+
+Q: What is a circuit?
+A: A circuit is a closed loop that allows current to flow. Components: power source, conductor, load (resistor, LED, etc). Series circuits have one path. Parallel circuits have multiple paths.
+
+Q: What is the theory of relativity?
+A: Einstein's theory has two parts. Special relativity (1905): laws of physics are the same in all inertial frames, speed of light is constant. General relativity (1915): gravity is the curvature of spacetime caused by mass.
+
+Q: What is a black hole?
+A: A black hole is a region of spacetime where gravity is so strong that nothing, not even light, can escape. Formed when massive stars collapse. The boundary is called the event horizon.
+
+Q: What is nuclear fission?
+A: Nuclear fission splits a heavy atom (like uranium-235) into smaller atoms, releasing enormous energy. This powers nuclear reactors and atomic bombs.
+
+Q: What is nuclear fusion?
+A: Nuclear fusion combines light atoms (like hydrogen) into heavier ones (like helium), releasing energy. This powers the sun. Requires extreme temperature and pressure.
+
+Q: What is a rocket engine?
+A: A rocket engine works by Newton's third law. It expels mass (hot gas) backward, which pushes the rocket forward. Chemical rockets burn fuel and oxidizer. The thrust equation: F = m_dot * v_e.
+
+Q: What is escape velocity?
+A: Escape velocity is the minimum speed needed to leave a gravitational field without further propulsion. For Earth: 11.2 km/s. Depends on the mass and radius of the body.
+
+Q: What is orbital mechanics?
+A: Orbital mechanics describes how objects move in gravitational fields. Kepler's laws: orbits are ellipses, equal areas in equal times, period squared proportional to semi-major axis cubed.
+
+Q: What is the Hohmann transfer orbit?
+A: A Hohmann transfer is the most fuel-efficient way to move between two circular orbits. It uses two engine burns: one to enter an elliptical transfer orbit, one to circularize at the destination.
+
+Q: What is delta-v?
+A: Delta-v is the change in velocity needed for a spacecraft maneuver. The Tsiolkovsky rocket equation: delta-v = v_e * ln(m_0 / m_f). More delta-v requires more fuel.
+
+Q: What is specific impulse?
+A: Specific impulse (Isp) measures rocket engine efficiency. It is the thrust per unit weight flow of propellant, measured in seconds. Higher Isp means more efficient propulsion.
+
+Q: What is the doppler effect?
+A: The Doppler effect is the change in frequency of a wave when the source or observer moves. Approaching sources sound higher pitched, receding sources sound lower pitched.
+
+Q: What is evolution?
+A: Evolution is the change in inherited traits of a population over generations. Mechanisms: natural selection, genetic drift, mutation, gene flow. Evidence: fossils, DNA, comparative anatomy.
+
+Q: What is ecology?
+A: Ecology studies interactions between organisms and their environment. Levels: individual, population, community, ecosystem, biome, biosphere. Key concepts: food webs, energy flow, nutrient cycles.
+
+Q: What is a food chain?
+A: A food chain shows energy transfer: producers (plants) -> primary consumers (herbivores) -> secondary consumers (carnivores) -> decomposers. Only about 10% of energy transfers between levels.
+
+Q: What is an ecosystem?
+A: An ecosystem is a community of organisms interacting with their physical environment. Includes biotic (living) and abiotic (nonliving) factors. Examples: forest, coral reef, tundra.
+
+Q: What is the carbon cycle?
+A: Carbon moves between atmosphere (CO2), organisms (organic molecules), oceans (dissolved CO2), and rocks (fossil fuels). Photosynthesis removes CO2, respiration and burning release it.
+
+Q: What is the water cycle?
+A: Water cycles through evaporation, condensation, precipitation, and collection. Solar energy drives evaporation. Water vapor rises, cools, forms clouds, falls as rain or snow, flows back to oceans.
+
+Q: What is a function in math?
+A: A function maps each input to exactly one output. f(x) = 2x + 3 means input 4 gives output 11. Written as f: X -> Y. The input set is the domain, output set is the range.
+
+Q: What is a matrix?
+A: A matrix is a rectangular array of numbers. Used in linear algebra, computer graphics, and machine learning. Operations include addition, multiplication, transpose, and inverse.
+
+Q: What is a vector?
+A: A vector has magnitude and direction. Written as (x, y) or (x, y, z). Operations: addition, scalar multiplication, dot product, cross product. Used in physics and computer graphics.
+
+Q: What is the dot product?
+A: The dot product of vectors a and b is a*b = |a|*|b|*cos(theta). Also computed as a1*b1 + a2*b2 + a3*b3. Result is a scalar. Zero dot product means vectors are perpendicular.
+
+Q: What is probability?
+A: Probability measures the likelihood of an event. P(A) = favorable outcomes / total outcomes. P = 0 means impossible, P = 1 means certain. For a fair coin, P(heads) = 0.5.
+
+Q: What is standard deviation?
+A: Standard deviation measures how spread out data is from the mean. Low SD means data is clustered near the mean. High SD means data is spread out. Calculated as the square root of variance.
+
+Q: What is the normal distribution?
+A: The normal distribution (bell curve) is symmetric around the mean. 68% of data falls within 1 standard deviation, 95% within 2, 99.7% within 3. Many natural phenomena follow this pattern.
+
+Q: What is a polynomial?
+A: A polynomial is an expression with variables and coefficients using addition, subtraction, multiplication, and non-negative integer exponents. Examples: 3x^2 + 2x - 5, x^4 - 1.
+
+Q: What is factoring?
+A: Factoring breaks an expression into products. x^2 - 9 = (x+3)(x-3). x^2 + 5x + 6 = (x+2)(x+3). Used to solve equations and simplify expressions.
+
+Q: What are the laws of exponents?
+A: Key rules: x^a * x^b = x^(a+b). x^a / x^b = x^(a-b). (x^a)^b = x^(a*b). x^0 = 1. x^(-a) = 1/x^a.
+
+Q: What is the unit circle?
+A: The unit circle has radius 1 centered at origin. Angles measured in radians. Key values: sin(0)=0, sin(pi/6)=1/2, sin(pi/4)=sqrt(2)/2, sin(pi/3)=sqrt(3)/2, sin(pi/2)=1.
+
+Q: What is trigonometry?
+A: Trigonometry studies triangles and circular functions. SOH-CAH-TOA: sin=opposite/hypotenuse, cos=adjacent/hypotenuse, tan=opposite/adjacent. Used in physics, engineering, and navigation.
+
+Q: What is a genome?
+A: A genome is the complete set of DNA in an organism. The human genome has about 3 billion base pairs and roughly 20,000 protein-coding genes across 23 pairs of chromosomes.
+
+Q: What is CRISPR?
+A: CRISPR-Cas9 is a gene editing tool. It uses a guide RNA to find specific DNA sequences, then the Cas9 enzyme cuts the DNA at that location. Allows precise genetic modifications.
+
+Q: What is climate change?
+A: Climate change is the long-term shift in global temperatures and weather patterns. Burning fossil fuels releases CO2, a greenhouse gas that traps heat. Effects: rising seas, extreme weather, ecosystem disruption.
+
+Q: What is the greenhouse effect?
+A: The greenhouse effect occurs when gases in the atmosphere (CO2, methane, water vapor) trap heat from the sun. Without it, Earth would be too cold for life. Too much causes global warming.
+
+Q: What is a semiconductor?
+A: A semiconductor has electrical conductivity between a conductor and insulator. Silicon is the most common. Doping (adding impurities) creates n-type (extra electrons) or p-type (extra holes) semiconductors. Basis of all modern electronics.
+
+Q: What is quantum mechanics?
+A: Quantum mechanics describes physics at the atomic scale. Key ideas: wave-particle duality, uncertainty principle (Heisenberg), quantized energy levels, superposition, entanglement. Governs electrons, photons, and all subatomic particles.
+
+Q: What is the Heisenberg uncertainty principle?
+A: You cannot simultaneously know both the exact position and exact momentum of a particle. The more precisely you measure one, the less precisely you can know the other. delta_x * delta_p >= h/(4*pi).
+
+Q: What is Schrodinger's equation?
+A: Schrodinger's equation describes how quantum states evolve over time. The wave function psi contains all information about a quantum system. |psi|^2 gives the probability density of finding a particle at a given location.

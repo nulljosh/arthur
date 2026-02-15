@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>core -- Chat</title>
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.72);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      --blue: #0071e3;
+      --blue-hover: #0077ed;
+      --text: #1d1d1f;
+      --muted: #86868b;
+      --bg: #f5f5f7;
+      --msg-user: #0071e3;
+      --msg-core: rgba(255, 255, 255, 0.85);
+      --input-bg: white;
+      --input-border: rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] {
+      --glass-bg: rgba(30, 30, 30, 0.78);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --blue: #0a84ff;
+      --blue-hover: #409cff;
+      --text: #f5f5f7;
+      --muted: #98989d;
+      --bg: #000000;
+      --msg-user: #0a84ff;
+      --msg-core: rgba(44, 44, 46, 0.85);
+      --input-bg: rgba(44, 44, 46, 0.8);
+      --input-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .header {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .header h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .header .status {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #86868b;
+      transition: background 0.3s;
+    }
+
+    .status-dot.online { background: #30d158; }
+    .status-dot.error { background: #ff3b30; }
+
+    .chat {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scroll-behavior: smooth;
+    }
+
+    .msg {
+      max-width: 75%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      animation: fadeUp 0.2s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background: var(--msg-user);
+      color: white;
+      border-bottom-right-radius: 6px;
+    }
+
+    .msg.core {
+      align-self: flex-start;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--msg-core);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      border-bottom-left-radius: 6px;
+    }
+
+    .msg.core .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .msg.system {
+      align-self: center;
+      background: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      padding: 4px 8px;
+    }
+
+    .typing {
+      align-self: flex-start;
+      padding: 12px 16px;
+      display: none;
+    }
+
+    .typing span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      margin: 0 2px;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .typing span:nth-child(1) { animation-delay: -0.32s; }
+    .typing span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    .input-bar {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--glass-bg);
+      border-top: 1px solid var(--glass-border);
+      padding: 16px 24px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .input-bar textarea {
+      flex: 1;
+      border: 1px solid var(--input-border);
+      border-radius: 20px;
+      padding: 10px 16px;
+      font: inherit;
+      font-size: 0.95rem;
+      resize: none;
+      max-height: 120px;
+      line-height: 1.4;
+      background: var(--input-bg);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-bar textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .input-bar button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: var(--blue);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+    }
+
+    .input-bar button:hover {
+      background: var(--blue-hover);
+      transform: scale(1.05);
+    }
+
+    .input-bar button:active {
+      transform: scale(0.95);
+    }
+
+    .input-bar button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .settings {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 12px 24px;
+      display: none;
+      gap: 16px;
+      font-size: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .settings.open { display: flex; }
+
+    .settings label {
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .settings input {
+      width: 64px;
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+      padding: 4px 8px;
+      font: inherit;
+      font-size: 0.85rem;
+      text-align: center;
+      outline: none;
+    }
+
+    .settings input:focus { border-color: var(--blue); }
+
+    .gear {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .gear:hover { transform: rotate(30deg); }
+
+    .theme-toggle {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+    }
+
+    .theme-toggle:hover { transform: scale(1.15); }
+
+    .settings input {
+      background: var(--input-bg);
+      color: var(--text);
+    }
+
+    .empty {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .empty h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .empty p { font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+      .msg { max-width: 88%; }
+      .header { padding: 12px 16px; }
+      .chat { padding: 16px; }
+      .input-bar { padding: 12px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>core</h1>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span class="theme-toggle" id="themeBtn" title="Toggle dark mode">&#9790;</span>
+      <span class="gear" id="gearBtn" title="Settings">&#9881;</span>
+      <div class="status">
+        <span class="status-dot" id="dot"></span>
+        <span id="statusText">connecting...</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="settings" id="settings">
+    <label>Temperature <input id="temperature" type="number" min="0.01" max="3" step="0.05" value="0.5"></label>
+    <label>Max tokens <input id="maxTokens" type="number" min="1" max="512" value="120"></label>
+    <label>Top-k <input id="topK" type="number" min="0" value="40" placeholder="0=off"></label>
+    <label>Top-p <input id="topP" type="number" min="0.01" max="1" step="0.05" value="0.9" placeholder="1=off"></label>
+  </div>
+
+  <div class="chat" id="chat">
+    <div class="empty" id="empty">
+      <h2>core LLM</h2>
+      <p>Local transformer, trained from scratch. Ask it anything.</p>
+    </div>
+  </div>
+
+  <div class="typing" id="typing">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="input-bar">
+    <textarea id="input" rows="1" placeholder="Message core..." autofocus></textarea>
+    <button id="sendBtn" title="Send">&#9654;</button>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('input');
+    const sendBtn = document.getElementById('sendBtn');
+    const typing = document.getElementById('typing');
+    const dot = document.getElementById('dot');
+    const statusText = document.getElementById('statusText');
+    const empty = document.getElementById('empty');
+    const gearBtn = document.getElementById('gearBtn');
+    const settings = document.getElementById('settings');
+
+    let history = [];
+    let generating = false;
+
+    const themeBtn = document.getElementById('themeBtn');
+
+    // Dark mode toggle with localStorage persistence
+    const savedTheme = localStorage.getItem('core-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    themeBtn.textContent = savedTheme === 'dark' ? '\u2600' : '\u263E';
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('core-theme', 'light');
+        themeBtn.textContent = '\u263E';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('core-theme', 'dark');
+        themeBtn.textContent = '\u2600';
+      }
+    });
+
+    gearBtn.addEventListener('click', () => settings.classList.toggle('open'));
+
+    // Auto-resize textarea
+    input.addEventListener('input', () => {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    });
+
+    // Enter to send, shift+enter for newline
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        send();
+      }
+    });
+
+    sendBtn.addEventListener('click', send);
+
+    function addMessage(role, text) {
+      if (empty) empty.style.display = 'none';
+      const div = document.createElement('div');
+      div.className = `msg ${role}`;
+      if (role === 'core') {
+        div.innerHTML = '<div class="label">nous</div>' + escapeHtml(text);
+      } else {
+        div.textContent = text;
+      }
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+      return div;
+    }
+
+    function escapeHtml(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    async function send() {
+      const text = input.value.trim();
+      if (!text || generating) return;
+
+      addMessage('user', text);
+      history.push(text);
+      input.value = '';
+      input.style.height = 'auto';
+
+      generating = true;
+      sendBtn.disabled = true;
+      typing.style.display = 'block';
+      chat.scrollTop = chat.scrollHeight;
+
+      // Build prompt in Q/A format the model expects
+      const prompt = 'Q: ' + text + '\nA:';
+
+      const temp = parseFloat(document.getElementById('temperature').value) || 0.5;
+      const length = parseInt(document.getElementById('maxTokens').value) || 120;
+      const topK = parseInt(document.getElementById('topK').value) || null;
+      const topP = parseFloat(document.getElementById('topP').value) || null;
+
+      try {
+        const res = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt, length, temperature: temp, top_k: topK, top_p: topP })
+        });
+        const data = await res.json();
+
+        if (!res.ok || data.error) {
+          const err = data.details ? data.details.join(', ') : data.error || 'Generation failed';
+          addMessage('system', err);
+        } else {
+          // Extract just the answer part after the prompt
+          let answer = data.text || '';
+          const aIdx = answer.indexOf('A:');
+          if (aIdx !== -1) answer = answer.substring(aIdx + 2);
+          // Trim trailing Q: from next question
+          answer = answer.split('\nQ:')[0].split('\n\nQ:')[0].trim();
+          addMessage('core', answer || '(empty response)');
+        }
+      } catch (err) {
+        addMessage('system', 'Connection failed: ' + err.message);
+      } finally {
+        generating = false;
+        sendBtn.disabled = false;
+        typing.style.display = 'none';
+      }
+    }
+
+    async function checkStatus() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        if (data.model_loaded) {
+          dot.className = 'status-dot online';
+          const cfg = data.config || {};
+          statusText.textContent = `${cfg.num_layers || '?'}L/${cfg.num_heads || '?'}H/${cfg.embed_dim || '?'}d`;
+        } else {
+          dot.className = 'status-dot error';
+          statusText.textContent = 'model offline';
+        }
+      } catch {
+        dot.className = 'status-dot error';
+        statusText.textContent = 'server offline';
+      }
+    }
+
+    checkStatus();
+    setInterval(checkStatus, 30000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,6873 @@
+Q: Calculate 5*5
+A: 25
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: 3*7?
+A: 21
+
+Q: Calculate 7-6
+A: 1
+
+Q: What is 2+2 equal to?
+A: 4
+
+Q: 45+19?
+A: 64
+
+Q: What are you called?
+A: core
+
+Q: What's 100/10?
+A: 10
+
+Q: Calculate 4*1
+A: 4
+
+Q: What is 92*9?
+A: 828
+
+Q: What's 5-5?
+A: 0
+
+Q: Calculate 21+94
+A: 115
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: 3^3?
+A: 27
+
+Q: Calculate 5+5
+A: 10
+
+Q: Who's your creator?
+A: Josh
+
+Q: What's 84-41?
+A: 43
+
+Q: What is 18*8?
+A: 144
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: Who built you?
+A: Josh built me
+
+Q: 5*5?
+A: 25
+
+Q: 81/9?
+A: 9
+
+Q: What is 9-5?
+A: 4
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: Calculate 59+10
+A: 69
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: Calculate 6+1
+A: 7
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: What's 47-36?
+A: 11
+
+Q: 11*8?
+A: 88
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: Calculate 23*4
+A: 92
+
+Q: 5*1?
+A: 5
+
+Q: What is 96*11?
+A: 1056
+
+Q: What is 25-17 equal to?
+A: 8
+
+Q: What's 69*12?
+A: 828
+
+Q: What is 88-26 equal to?
+A: 62
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: Calculate 18-16
+A: 2
+
+Q: What is 4*2+4 equal to?
+A: 12
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: 53*7?
+A: 371
+
+Q: What is 40*10?
+A: 400
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: What's 87*8?
+A: 696
+
+Q: What is 29-5 equal to?
+A: 24
+
+Q: What's 40/4?
+A: 10
+
+Q: What's 4*11?
+A: 44
+
+Q: Calculate 2*4
+A: 8
+
+Q: Calculate 3*8+8
+A: 32
+
+Q: What is 9+5 equal to?
+A: 14
+
+Q: What is 7*7+6 equal to?
+A: 55
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: 38-29?
+A: 9
+
+Q: Calculate 29+72
+A: 101
+
+Q: 501+114?
+A: 615
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: What is 42-3?
+A: 39
+
+Q: What is 1+1?
+A: 2
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What is 35/5?
+A: 7
+
+Q: 41-37?
+A: 4
+
+Q: What is 11*1 equal to?
+A: 11
+
+Q: What do you do?
+A: I answer questions
+
+Q: What is 67+95 equal to?
+A: 162
+
+Q: What is 9+1?
+A: 10
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What is 48*2 equal to?
+A: 96
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: Who created you?
+A: Josh created me
+
+Q: Calculate 89*10
+A: 890
+
+Q: Calculate 4+9
+A: 13
+
+Q: What is 10*10?
+A: 100
+
+Q: What is 85+31 equal to?
+A: 116
+
+Q: 75/5?
+A: 15
+
+Q: What is 73+15?
+A: 88
+
+Q: Calculate 10/2
+A: 5
+
+Q: Calculate 9-1
+A: 8
+
+Q: 140/10?
+A: 14
+
+Q: What's 11*5?
+A: 55
+
+Q: What's 9*6?
+A: 54
+
+Q: What is 36*11?
+A: 396
+
+Q: What's 0+6?
+A: 6
+
+Q: What is 4*1?
+A: 4
+
+Q: Calculate 3*3
+A: 9
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: 916+406?
+A: 1322
+
+Q: What is 8*7?
+A: 56
+
+Q: What's 2+5*7?
+A: 37
+
+Q: What is 75+10 equal to?
+A: 85
+
+Q: What is 18^2?
+A: 324
+
+Q: What is 1+4*4?
+A: 17
+
+Q: Calculate 49+55
+A: 104
+
+Q: Calculate 8*1
+A: 8
+
+Q: Calculate 4*8
+A: 32
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: Calculate 361+895
+A: 1256
+
+Q: 5-0?
+A: 5
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: What is 18/2 equal to?
+A: 9
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What's 8^3?
+A: 512
+
+Q: Calculate 2*7
+A: 14
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: 17-12?
+A: 5
+
+Q: What is 70+89 equal to?
+A: 159
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What's 7*5+2?
+A: 37
+
+Q: 34+55?
+A: 89
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: Calculate 42/7
+A: 6
+
+Q: What is 12*0 equal to?
+A: 0
+
+Q: What's 0+5?
+A: 5
+
+Q: What's 12*1?
+A: 12
+
+Q: What is 8*2 equal to?
+A: 16
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: What is 5*5?
+A: 25
+
+Q: 12+32?
+A: 44
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: 9+9*9?
+A: 90
+
+Q: Tell me your name
+A: core
+
+Q: Who made you?
+A: Josh made me
+
+Q: 108/9?
+A: 12
+
+Q: What is your name?
+A: core
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 3*3?
+A: 9
+
+Q: 20^2?
+A: 400
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What's 65*2?
+A: 130
+
+Q: What do you do?
+A: I answer questions
+
+Q: 10/2?
+A: 5
+
+Q: What is 70/5 equal to?
+A: 14
+
+Q: What is 10+10?
+A: 20
+
+Q: What is 3*9 equal to?
+A: 27
+
+Q: Calculate 3*3
+A: 9
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: 86-81?
+A: 5
+
+Q: 29*2?
+A: 58
+
+Q: What are you called?
+A: core
+
+Q: What is 6+6*5?
+A: 36
+
+Q: Calculate 99-93
+A: 6
+
+Q: What is 87+39?
+A: 126
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: Calculate 51+55
+A: 106
+
+Q: 61-15?
+A: 46
+
+Q: What is 35+40 equal to?
+A: 75
+
+Q: What is 7-1 equal to?
+A: 6
+
+Q: What's 30+76?
+A: 106
+
+Q: What's 10*6?
+A: 60
+
+Q: What is 0+1 equal to?
+A: 1
+
+Q: Calculate 15^2
+A: 225
+
+Q: What is 72+42?
+A: 114
+
+Q: 0*12?
+A: 0
+
+Q: Calculate 127+192
+A: 319
+
+Q: What is 1*11?
+A: 11
+
+Q: What is 5+5 equal to?
+A: 10
+
+Q: What is 0*9?
+A: 0
+
+Q: 10+10?
+A: 20
+
+Q: What is 6/6?
+A: 1
+
+Q: What's 9-2?
+A: 7
+
+Q: What is 4-0 equal to?
+A: 4
+
+Q: What's 78/6?
+A: 13
+
+Q: Calculate 40-32
+A: 8
+
+Q: Who made you?
+A: Josh made me
+
+Q: Write FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What is 3*10?
+A: 30
+
+Q: What is 4*4?
+A: 16
+
+Q: Calculate 2+2
+A: 4
+
+Q: Calculate 9-1
+A: 8
+
+Q: Can you help?
+A: Yes
+
+Q: What is 18/3?
+A: 6
+
+Q: Calculate 4^2
+A: 16
+
+Q: Who created you?
+A: Josh created me
+
+Q: What is 21+65 equal to?
+A: 86
+
+Q: What is 0*1?
+A: 0
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What is 888+995 equal to?
+A: 1883
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: What's 928+131?
+A: 1059
+
+Q: What is 528+118 equal to?
+A: 646
+
+Q: What's 5*4?
+A: 20
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What is 9-4 equal to?
+A: 5
+
+Q: 59*5?
+A: 295
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: 1*3?
+A: 3
+
+Q: What is 9*2?
+A: 18
+
+Q: What is 76*10 equal to?
+A: 760
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: Who are you?
+A: I'm core
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What is 39-24 equal to?
+A: 15
+
+Q: What is 18-0 equal to?
+A: 18
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: 1+2?
+A: 3
+
+Q: 11*11?
+A: 121
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What is 2+9*6 equal to?
+A: 56
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What is 5+4?
+A: 9
+
+Q: Calculate 7-5
+A: 2
+
+Q: What is 8+4?
+A: 12
+
+Q: Calculate 1^2
+A: 1
+
+Q: What is 8*3?
+A: 24
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 60/4 equal to?
+A: 15
+
+Q: Tell me your name
+A: core
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: Calculate 73+67
+A: 140
+
+Q: What's 20/10?
+A: 2
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: Who created you?
+A: Josh created me
+
+Q: What's 7+1?
+A: 8
+
+Q: What is 85+93?
+A: 178
+
+Q: Who's your creator?
+A: Josh
+
+Q: What is 550+738?
+A: 1288
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: 47*6?
+A: 282
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What's 28-14?
+A: 14
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: Calculate 11*9
+A: 99
+
+Q: What's 1-1?
+A: 0
+
+Q: Calculate 264+205
+A: 469
+
+Q: What's 17-13?
+A: 4
+
+Q: What is 79*7?
+A: 553
+
+Q: What is your name?
+A: core
+
+Q: What is 70*8?
+A: 560
+
+Q: Calculate 10+93
+A: 103
+
+Q: What is 922+155 equal to?
+A: 1077
+
+Q: What is 5-4 equal to?
+A: 1
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: 78+95?
+A: 173
+
+Q: 8+4?
+A: 12
+
+Q: What's 6+5?
+A: 11
+
+Q: 4*4+4?
+A: 20
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: Tell me your name
+A: core
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: What is 5+5 equal to?
+A: 10
+
+Q: What is 693+497?
+A: 1190
+
+Q: What is 7+9?
+A: 16
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What is 42*5?
+A: 210
+
+Q: What are you called?
+A: core
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: Calculate 12+16
+A: 28
+
+Q: Who made you?
+A: Josh made me
+
+Q: Calculate 75*7
+A: 525
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What's 2+5*5?
+A: 27
+
+Q: Tell me your name
+A: core
+
+Q: What do you do?
+A: I answer questions
+
+Q: Calculate 3*3+8
+A: 17
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: What do you do?
+A: I answer questions
+
+Q: What is 10^3 equal to?
+A: 1000
+
+Q: What's 100/10?
+A: 10
+
+Q: What is 8+3 equal to?
+A: 11
+
+Q: What is 7*8 equal to?
+A: 56
+
+Q: Who made you?
+A: Josh made me
+
+Q: What is 0*11 equal to?
+A: 0
+
+Q: What is 29*7?
+A: 203
+
+Q: What is 9-5?
+A: 4
+
+Q: 10*12?
+A: 120
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: 51-32?
+A: 19
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: What is 2*2?
+A: 4
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: What is 13*8 equal to?
+A: 104
+
+Q: What is 75+17?
+A: 92
+
+Q: What is 3+0 equal to?
+A: 3
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: What's 3^2?
+A: 9
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What's your name?
+A: core
+
+Q: What's 49-44?
+A: 5
+
+Q: Calculate 882+960
+A: 1842
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 7+0 equal to?
+A: 7
+
+Q: Calculate 8*5
+A: 40
+
+Q: What's 16+79?
+A: 95
+
+Q: What is 7*12?
+A: 84
+
+Q: What is 71-52?
+A: 19
+
+Q: What is 160/10?
+A: 16
+
+Q: What's 9*6?
+A: 54
+
+Q: 68+56?
+A: 124
+
+Q: What is 7*5?
+A: 35
+
+Q: 560+814?
+A: 1374
+
+Q: What's 623+938?
+A: 1561
+
+Q: What is 10+10 equal to?
+A: 20
+
+Q: 90*3?
+A: 270
+
+Q: 6*5+4?
+A: 34
+
+Q: 65+38?
+A: 103
+
+Q: What is 75+67?
+A: 142
+
+Q: Calculate 5*5
+A: 25
+
+Q: What's 24-10?
+A: 14
+
+Q: Calculate 61+33
+A: 94
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: 80+29?
+A: 109
+
+Q: What is 82*7 equal to?
+A: 574
+
+Q: What is 3+5 equal to?
+A: 8
+
+Q: 1*11?
+A: 11
+
+Q: What's 54/6?
+A: 9
+
+Q: What is 502+304?
+A: 806
+
+Q: What's 66+40?
+A: 106
+
+Q: What is 7*7?
+A: 49
+
+Q: Who built you?
+A: Josh built me
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What is 3*5?
+A: 15
+
+Q: What is 5+5?
+A: 10
+
+Q: What is 9-2 equal to?
+A: 7
+
+Q: What is 0*0 equal to?
+A: 0
+
+Q: What is 789+553?
+A: 1342
+
+Q: What's 631+789?
+A: 1420
+
+Q: What is 7^3?
+A: 343
+
+Q: What is 97+31 equal to?
+A: 128
+
+Q: What is 32*7?
+A: 224
+
+Q: 6-3?
+A: 3
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: Calculate 9+8
+A: 17
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: Calculate 5-4
+A: 1
+
+Q: Calculate 10+10
+A: 20
+
+Q: 12^2?
+A: 144
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What is 18/2 equal to?
+A: 9
+
+Q: What's 54/9?
+A: 6
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What's 5*5?
+A: 25
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: 1+0?
+A: 1
+
+Q: What is 24-3?
+A: 21
+
+Q: Calculate 2-1
+A: 1
+
+Q: What's 15-8?
+A: 7
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: Who are you?
+A: I'm core
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: 81-24?
+A: 57
+
+Q: Who are you?
+A: I'm core
+
+Q: Calculate 35-12
+A: 23
+
+Q: What's 1^3?
+A: 1
+
+Q: What's 1-0?
+A: 1
+
+Q: What's 7*3+1?
+A: 22
+
+Q: What's 12*3?
+A: 36
+
+Q: What's 33*3?
+A: 99
+
+Q: What's 1+4*6?
+A: 25
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What is 7*11?
+A: 77
+
+Q: Calculate 5*9
+A: 45
+
+Q: What's 36-13?
+A: 23
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What is 6+7*9?
+A: 69
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What's your name?
+A: core
+
+Q: 7*5?
+A: 35
+
+Q: What's 8*2+3?
+A: 19
+
+Q: 2*3+4?
+A: 10
+
+Q: What's 20^2?
+A: 400
+
+Q: Tell me your name
+A: core
+
+Q: What is 83+12?
+A: 95
+
+Q: Calculate 15-8
+A: 7
+
+Q: 7*8?
+A: 56
+
+Q: What is 6*10?
+A: 60
+
+Q: Calculate 61-6
+A: 55
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: 67*2?
+A: 134
+
+Q: 6+6?
+A: 12
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: What are you called?
+A: core
+
+Q: What's 10*0?
+A: 0
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: 10+10?
+A: 20
+
+Q: Calculate 7+2
+A: 9
+
+Q: Calculate 392+238
+A: 630
+
+Q: What's 54-14?
+A: 40
+
+Q: Calculate 54-3
+A: 51
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: What's 58+73?
+A: 131
+
+Q: Calculate 40/8
+A: 5
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: 1-0?
+A: 1
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: 120/12?
+A: 10
+
+Q: Calculate 5+7
+A: 12
+
+Q: What is 25+49 equal to?
+A: 74
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: What's 9*10?
+A: 90
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: What is 5*9+2 equal to?
+A: 47
+
+Q: What is 9-9?
+A: 0
+
+Q: Can you help?
+A: Yes
+
+Q: Calculate 8-3
+A: 5
+
+Q: What's 71-1?
+A: 70
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: Calculate 8*2
+A: 16
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What is 4*4?
+A: 16
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: What's 12^2?
+A: 144
+
+Q: What is 3+7?
+A: 10
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is your name?
+A: core
+
+Q: What is 1*7 equal to?
+A: 7
+
+Q: 7*2?
+A: 14
+
+Q: Calculate 527+905
+A: 1432
+
+Q: 9-9?
+A: 0
+
+Q: Calculate 10+10
+A: 20
+
+Q: What is 88+90?
+A: 178
+
+Q: comment in jot
+A: // This is a comment
+
+Q: What is 4*4 equal to?
+A: 16
+
+Q: 93-14?
+A: 79
+
+Q: Calculate 5+8
+A: 13
+
+Q: Calculate 3+9
+A: 12
+
+Q: What is 61-7 equal to?
+A: 54
+
+Q: 3+9*6?
+A: 57
+
+Q: What is 98/7 equal to?
+A: 14
+
+Q: What is 22*9 equal to?
+A: 198
+
+Q: What's 45-16?
+A: 29
+
+Q: What's 55/11?
+A: 5
+
+Q: Calculate 9*2
+A: 18
+
+Q: Calculate 9^2
+A: 81
+
+Q: 5+4*9?
+A: 41
+
+Q: Calculate 13^2
+A: 169
+
+Q: What is 1-0?
+A: 1
+
+Q: Calculate 72*7
+A: 504
+
+Q: What is 100/10 equal to?
+A: 10
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: 36+84?
+A: 120
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: 3-2?
+A: 1
+
+Q: Calculate 47-3
+A: 44
+
+Q: Calculate 2^3
+A: 8
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What is 20/5?
+A: 4
+
+Q: What is 28/2 equal to?
+A: 14
+
+Q: What is 9-4 equal to?
+A: 5
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: What is 43+59 equal to?
+A: 102
+
+Q: What is 60/6 equal to?
+A: 10
+
+Q: 4*11?
+A: 44
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What is 9*10?
+A: 90
+
+Q: Calculate 50+18
+A: 68
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: What's your name?
+A: core
+
+Q: 10/10?
+A: 1
+
+Q: 5-0?
+A: 5
+
+Q: 2+4*3?
+A: 14
+
+Q: What is 30+27?
+A: 57
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: 9*11?
+A: 99
+
+Q: 6+3?
+A: 9
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What's 15-8?
+A: 7
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 1-1 equal to?
+A: 0
+
+Q: 51/3?
+A: 17
+
+Q: What's 10-5?
+A: 5
+
+Q: Calculate 96-36
+A: 60
+
+Q: 2+2?
+A: 4
+
+Q: Calculate 700+632
+A: 1332
+
+Q: Calculate 13^2
+A: 169
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: Calculate 12*7
+A: 84
+
+Q: What is 8+9*9?
+A: 89
+
+Q: Calculate 73-52
+A: 21
+
+Q: What is 5*9?
+A: 45
+
+Q: Calculate 51+79
+A: 130
+
+Q: What is 7+6?
+A: 13
+
+Q: What is 66/11 equal to?
+A: 6
+
+Q: 5+7?
+A: 12
+
+Q: What are you called?
+A: core
+
+Q: Calculate 22+60
+A: 82
+
+Q: What's 8-3?
+A: 5
+
+Q: What's 6+7?
+A: 13
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What is 1*3 equal to?
+A: 3
+
+Q: Calculate 8*3+4
+A: 28
+
+Q: What's 8*8?
+A: 64
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: What is 0*11?
+A: 0
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What is 9-7?
+A: 2
+
+Q: What is 3+5?
+A: 8
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What is 60/6 equal to?
+A: 10
+
+Q: What is 70-62?
+A: 8
+
+Q: What is 68+60 equal to?
+A: 128
+
+Q: What's 6+4*6?
+A: 30
+
+Q: Calculate 7+5
+A: 12
+
+Q: What's 3+9*5?
+A: 48
+
+Q: What's your name?
+A: core
+
+Q: What is 9*12?
+A: 108
+
+Q: What's 11*8?
+A: 88
+
+Q: What's 8-7?
+A: 1
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 10-5 equal to?
+A: 5
+
+Q: What's 27+82?
+A: 109
+
+Q: Calculate 42-36
+A: 6
+
+Q: What is 30/3 equal to?
+A: 10
+
+Q: What do you do?
+A: I answer questions
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What is 80+70?
+A: 150
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What is 5*5?
+A: 25
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: Calculate 32*9
+A: 288
+
+Q: What's 8+0?
+A: 8
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: Who made you?
+A: Josh made me
+
+Q: What is 86+70 equal to?
+A: 156
+
+Q: What is 1+7 equal to?
+A: 8
+
+Q: Calculate 18+24
+A: 42
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: What's 847+515?
+A: 1362
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: 10*7?
+A: 70
+
+Q: What is 7-3?
+A: 4
+
+Q: What's 20/4?
+A: 5
+
+Q: What is 6*9?
+A: 54
+
+Q: What's 5-3?
+A: 2
+
+Q: What's 22/2?
+A: 11
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: Who's your creator?
+A: Josh
+
+Q: What's 3*3?
+A: 9
+
+Q: 0^2?
+A: 0
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: What's 79*6?
+A: 474
+
+Q: What is 782+945 equal to?
+A: 1727
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: What is 4*4+6?
+A: 22
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: What's 11*2?
+A: 22
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: What's 788+166?
+A: 954
+
+Q: 60+51?
+A: 111
+
+Q: What is 12/4?
+A: 3
+
+Q: 45-37?
+A: 8
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: 5*5?
+A: 25
+
+Q: What is 7+2 equal to?
+A: 9
+
+Q: Can you help?
+A: Yes
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What's 5+0?
+A: 5
+
+Q: What's 8-6?
+A: 2
+
+Q: What is 49-44?
+A: 5
+
+Q: What are you called?
+A: core
+
+Q: What is 4*0?
+A: 0
+
+Q: Calculate 10/2
+A: 5
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: Tell me your name
+A: core
+
+Q: Calculate 4-2
+A: 2
+
+Q: Calculate 12*6
+A: 72
+
+Q: What is 6-2 equal to?
+A: 4
+
+Q: What's 133/7?
+A: 19
+
+Q: What is 4*10 equal to?
+A: 40
+
+Q: 5-5?
+A: 0
+
+Q: 11*3?
+A: 33
+
+Q: What is 20/4 equal to?
+A: 5
+
+Q: Who's your creator?
+A: Josh
+
+Q: What's 676+410?
+A: 1086
+
+Q: 9+1?
+A: 10
+
+Q: What's 643+479?
+A: 1122
+
+Q: Calculate 99+49
+A: 148
+
+Q: What is 110/10 equal to?
+A: 11
+
+Q: 9*8?
+A: 72
+
+Q: 10^2?
+A: 100
+
+Q: What is 100/10?
+A: 10
+
+Q: Who built you?
+A: Josh built me
+
+Q: What's 5+9*6?
+A: 59
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: What is 68*4 equal to?
+A: 272
+
+Q: Calculate 9+8
+A: 17
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What is 47+68?
+A: 115
+
+Q: Calculate 55*7
+A: 385
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: Calculate 10/2
+A: 5
+
+Q: 68+12?
+A: 80
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Calculate 73-44
+A: 29
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 7*2 equal to?
+A: 14
+
+Q: 80+62?
+A: 142
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: 83+45?
+A: 128
+
+Q: Who created you?
+A: Josh created me
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What's 10*3?
+A: 30
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: What is 83-11?
+A: 72
+
+Q: Calculate 7*6
+A: 42
+
+Q: What is 72/12 equal to?
+A: 6
+
+Q: 6+1?
+A: 7
+
+Q: What's 16/4?
+A: 4
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Calculate 700+659
+A: 1359
+
+Q: 80+35?
+A: 115
+
+Q: What are you?
+A: I'm a language model
+
+Q: What's 20-10?
+A: 10
+
+Q: What is your name?
+A: core
+
+Q: Who built you?
+A: Josh built me
+
+Q: What are you?
+A: I'm a language model
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: 99*9?
+A: 891
+
+Q: What's 1*11?
+A: 11
+
+Q: 5+5?
+A: 10
+
+Q: What is 4^2?
+A: 16
+
+Q: Calculate 3-2
+A: 1
+
+Q: Calculate 4*9
+A: 36
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: comment in jot
+A: // This is a comment
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: 5^3?
+A: 125
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: What is 11*9?
+A: 99
+
+Q: What's 6+4?
+A: 10
+
+Q: 560+329?
+A: 889
+
+Q: 4+0?
+A: 4
+
+Q: What's 37+17?
+A: 54
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: Calculate 0^3
+A: 0
+
+Q: 7-4?
+A: 3
+
+Q: 69*4?
+A: 276
+
+Q: What is 58*7?
+A: 406
+
+Q: What is 12/3 equal to?
+A: 4
+
+Q: 11*3?
+A: 33
+
+Q: What's 104/8?
+A: 13
+
+Q: What is 7-7?
+A: 0
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What's 2+2?
+A: 4
+
+Q: What is 7*1?
+A: 7
+
+Q: Calculate 9*0
+A: 0
+
+Q: What is 3*7 equal to?
+A: 21
+
+Q: What's 42-21?
+A: 21
+
+Q: What's 2-1?
+A: 1
+
+Q: What's 97-36?
+A: 61
+
+Q: What is 4+3*2 equal to?
+A: 10
+
+Q: Calculate 275+946
+A: 1221
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: What is 69-2?
+A: 67
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: What's 32-24?
+A: 8
+
+Q: Calculate 28/7
+A: 4
+
+Q: What is 44-39 equal to?
+A: 5
+
+Q: What's 89-50?
+A: 39
+
+Q: Calculate 34-1
+A: 33
+
+Q: What is 6-6 equal to?
+A: 0
+
+Q: What's 973+565?
+A: 1538
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: What is 7+5*2 equal to?
+A: 17
+
+Q: What's 2*7+9?
+A: 23
+
+Q: Calculate 36+88
+A: 124
+
+Q: What is 1-0?
+A: 1
+
+Q: What's 1*1?
+A: 1
+
+Q: Calculate 18/3
+A: 6
+
+Q: 8-1?
+A: 7
+
+Q: Calculate 87-25
+A: 62
+
+Q: What's 32/8?
+A: 4
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: 9+5*8?
+A: 49
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: 4*5+2?
+A: 22
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What's 3^2?
+A: 9
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What is 4+6?
+A: 10
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What's 4-0?
+A: 4
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: 42/6?
+A: 7
+
+Q: What is 45/3?
+A: 15
+
+Q: 9+4*2?
+A: 17
+
+Q: Who are you?
+A: I'm core
+
+Q: What are you called?
+A: core
+
+Q: What's 7*3?
+A: 21
+
+Q: Calculate 19+97
+A: 116
+
+Q: What's 46-37?
+A: 9
+
+Q: 5-1?
+A: 4
+
+Q: 7*6?
+A: 42
+
+Q: Calculate 99+92
+A: 191
+
+Q: What is 8*4 equal to?
+A: 32
+
+Q: What's 48/6?
+A: 8
+
+Q: What is 83*4?
+A: 332
+
+Q: 18/6?
+A: 3
+
+Q: What is 12*6?
+A: 72
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: Who's your creator?
+A: Josh
+
+Q: What's 7+8?
+A: 15
+
+Q: Who built you?
+A: Josh built me
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What is 10-5 equal to?
+A: 5
+
+Q: 87+93?
+A: 180
+
+Q: What's 782+910?
+A: 1692
+
+Q: FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 10*10 equal to?
+A: 100
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: What's 4+6?
+A: 10
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What is 10*5?
+A: 50
+
+Q: What do you do?
+A: I answer questions
+
+Q: What's 10/2?
+A: 5
+
+Q: Write FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: 3*12?
+A: 36
+
+Q: Tell me your name
+A: core
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What is 90/5?
+A: 18
+
+Q: 0*9?
+A: 0
+
+Q: Who created you?
+A: Josh created me
+
+Q: What is 52+70?
+A: 122
+
+Q: What's 46+84?
+A: 130
+
+Q: Who's your creator?
+A: Josh
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: 7-2?
+A: 5
+
+Q: What is 20/4?
+A: 5
+
+Q: Calculate 888+442
+A: 1330
+
+Q: What are you?
+A: I'm a language model
+
+Q: 23+80?
+A: 103
+
+Q: Calculate 12*3
+A: 36
+
+Q: What is 8-4 equal to?
+A: 4
+
+Q: What is 3-1 equal to?
+A: 2
+
+Q: 95/5?
+A: 19
+
+Q: 11*9?
+A: 99
+
+Q: Calculate 18/2
+A: 9
+
+Q: Calculate 8*4
+A: 32
+
+Q: What is 7*6+7 equal to?
+A: 49
+
+Q: 7+7?
+A: 14
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What is 6+2 equal to?
+A: 8
+
+Q: What is 6+5?
+A: 11
+
+Q: Calculate 10-5
+A: 5
+
+Q: What is 35-15?
+A: 20
+
+Q: What's 58+92?
+A: 150
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What is 32/8 equal to?
+A: 4
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: What's 48+96?
+A: 144
+
+Q: What's your name?
+A: core
+
+Q: What is 36+52?
+A: 88
+
+Q: What's 1+4?
+A: 5
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: Calculate 97-28
+A: 69
+
+Q: What's 3*5?
+A: 15
+
+Q: What's 7*1?
+A: 7
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: 99*5?
+A: 495
+
+Q: What's 2*1?
+A: 2
+
+Q: What is 11*6?
+A: 66
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: Calculate 11^2
+A: 121
+
+Q: What is 2+9*8?
+A: 74
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: for loop in jot
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: Calculate 14-4
+A: 10
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: 24/4?
+A: 6
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: Calculate 37*3
+A: 111
+
+Q: Calculate 8-2
+A: 6
+
+Q: What's 5+5?
+A: 10
+
+Q: What is 7-5?
+A: 2
+
+Q: What is 49*4 equal to?
+A: 196
+
+Q: What is 5*0?
+A: 0
+
+Q: What's your name?
+A: core
+
+Q: 0*0?
+A: 0
+
+Q: What is 344+794?
+A: 1138
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: Calculate 5-2
+A: 3
+
+Q: What is 96-27 equal to?
+A: 69
+
+Q: What is 12/4?
+A: 3
+
+Q: Calculate 7*12
+A: 84
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: Calculate 6+5
+A: 11
+
+Q: What is 442+879?
+A: 1321
+
+Q: What is 6/6?
+A: 1
+
+Q: Calculate 0*4
+A: 0
+
+Q: What's 21+99?
+A: 120
+
+Q: What is 100/10 equal to?
+A: 10
+
+Q: What's 15^2?
+A: 225
+
+Q: What is 34/2 equal to?
+A: 17
+
+Q: Calculate 18/9
+A: 2
+
+Q: What is 54+27?
+A: 81
+
+Q: Can you help?
+A: Yes
+
+Q: What is 108/6?
+A: 18
+
+Q: What's 61+30?
+A: 91
+
+Q: What is 14+32?
+A: 46
+
+Q: What is 71-21?
+A: 50
+
+Q: What is 54-5?
+A: 49
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: What is 96*3 equal to?
+A: 288
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: Calculate 6+0
+A: 6
+
+Q: What is 14/2?
+A: 7
+
+Q: Calculate 4*4
+A: 16
+
+Q: What is 10+10 equal to?
+A: 20
+
+Q: What are you?
+A: I'm a language model
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: What's your name?
+A: core
+
+Q: What's 86+35?
+A: 121
+
+Q: What is 6^2 equal to?
+A: 36
+
+Q: 6-3?
+A: 3
+
+Q: What is 24/8 equal to?
+A: 3
+
+Q: Who are you?
+A: I'm core
+
+Q: What's 8-8?
+A: 0
+
+Q: What is 2*12 equal to?
+A: 24
+
+Q: What's 8+5?
+A: 13
+
+Q: What is 66*3?
+A: 198
+
+Q: Calculate 81+99
+A: 180
+
+Q: 45/3?
+A: 15
+
+Q: What is 20-10?
+A: 10
+
+Q: What is 2+7 equal to?
+A: 9
+
+Q: What is 99+98?
+A: 197
+
+Q: What is 15*5?
+A: 75
+
+Q: Calculate 10-4
+A: 6
+
+Q: What is 88*7?
+A: 616
+
+Q: Calculate 8-7
+A: 1
+
+Q: Calculate 4*4
+A: 16
+
+Q: What is 192+957 equal to?
+A: 1149
+
+Q: 73+29?
+A: 102
+
+Q: What's 68-41?
+A: 27
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: What's 8-5?
+A: 3
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: What's 4^3?
+A: 64
+
+Q: What is 20/4?
+A: 5
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What is 84*10?
+A: 840
+
+Q: What's 21/3?
+A: 7
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: Calculate 88+43
+A: 131
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: 0*1?
+A: 0
+
+Q: 75+39?
+A: 114
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: 67-51?
+A: 16
+
+Q: 18*12?
+A: 216
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: Calculate 9*5+8
+A: 53
+
+Q: Calculate 365+692
+A: 1057
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What's 89-62?
+A: 27
+
+Q: 9*4?
+A: 36
+
+Q: Calculate 8-6
+A: 2
+
+Q: What is 72/9 equal to?
+A: 8
+
+Q: Calculate 7+9
+A: 16
+
+Q: What is 4-4?
+A: 0
+
+Q: What is 5*2?
+A: 10
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What's 2-2?
+A: 0
+
+Q: Calculate 72/8
+A: 9
+
+Q: 10-3?
+A: 7
+
+Q: What's 7*2?
+A: 14
+
+Q: Calculate 60-2
+A: 58
+
+Q: 8*5?
+A: 40
+
+Q: Tell me your name
+A: core
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: What is 242+349 equal to?
+A: 591
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: Calculate 5*3+8
+A: 23
+
+Q: What is 4-2 equal to?
+A: 2
+
+Q: What's 98+62?
+A: 160
+
+Q: Who's your creator?
+A: Josh
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What is 51+87?
+A: 138
+
+Q: What's 32/2?
+A: 16
+
+Q: What's 8+9?
+A: 17
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What is 86-15 equal to?
+A: 71
+
+Q: What is 7*1?
+A: 7
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: What's 48+99?
+A: 147
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: Calculate 22/11
+A: 2
+
+Q: What is 8*8 equal to?
+A: 64
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What is 6-4 equal to?
+A: 2
+
+Q: What is 2*9 equal to?
+A: 18
+
+Q: Calculate 26+43
+A: 69
+
+Q: Calculate 21*12
+A: 252
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: Who's your creator?
+A: Josh
+
+Q: Who created you?
+A: Josh created me
+
+Q: What is 63*10?
+A: 630
+
+Q: What is 12/6 equal to?
+A: 2
+
+Q: What's 11*5?
+A: 55
+
+Q: Who made you?
+A: Josh made me
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: What's 26/2?
+A: 13
+
+Q: What is 150/10?
+A: 15
+
+Q: What's 9-4?
+A: 5
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 11*4 equal to?
+A: 44
+
+Q: What's 20/4?
+A: 5
+
+Q: What is 3/3?
+A: 1
+
+Q: What is 36/6?
+A: 6
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: Calculate 20-10
+A: 10
+
+Q: Calculate 97*4
+A: 388
+
+Q: What is 10^2?
+A: 100
+
+Q: Calculate 22*2
+A: 44
+
+Q: What is 19+14?
+A: 33
+
+Q: What is 7+4?
+A: 11
+
+Q: What is 4+6?
+A: 10
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: Calculate 95+42
+A: 137
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: 12/3?
+A: 4
+
+Q: Who created you?
+A: Josh created me
+
+Q: What is 6*11?
+A: 66
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: What's 8*9?
+A: 72
+
+Q: Calculate 65-0
+A: 65
+
+Q: Calculate 4*4
+A: 16
+
+Q: Calculate 6+4
+A: 10
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: Calculate 7+3
+A: 10
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What is 31+75 equal to?
+A: 106
+
+Q: 75-40?
+A: 35
+
+Q: Who's your creator?
+A: Josh
+
+Q: What is 78+87 equal to?
+A: 165
+
+Q: jot for loop example
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: 2+3?
+A: 5
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: 15-8?
+A: 7
+
+Q: Who created you?
+A: Josh created me
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What are you?
+A: I'm a language model
+
+Q: Calculate 99-19
+A: 80
+
+Q: What's 9*6?
+A: 54
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: Calculate 48*11
+A: 528
+
+Q: What is 20/4?
+A: 5
+
+Q: Calculate 10/2
+A: 5
+
+Q: What is 7^2?
+A: 49
+
+Q: What's 4*4+8?
+A: 24
+
+Q: Calculate 93-65
+A: 28
+
+Q: Who are you?
+A: I'm core
+
+Q: What is 0+2 equal to?
+A: 2
+
+Q: 3*4+7?
+A: 19
+
+Q: What is your name?
+A: core
+
+Q: What is 2^3 equal to?
+A: 8
+
+Q: Who made you?
+A: Josh made me
+
+Q: Who's your creator?
+A: Josh
+
+Q: What's 5*10?
+A: 50
+
+Q: Calculate 7*10
+A: 70
+
+Q: What is 690+973?
+A: 1663
+
+Q: 86*5?
+A: 430
+
+Q: 324+948?
+A: 1272
+
+Q: 10/5?
+A: 2
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 220/11 equal to?
+A: 20
+
+Q: 6+0?
+A: 6
+
+Q: What is 1^2?
+A: 1
+
+Q: Calculate 89-31
+A: 58
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: Calculate 12*8
+A: 96
+
+Q: What is 2*3?
+A: 6
+
+Q: What is 62-47 equal to?
+A: 15
+
+Q: What is 100/10?
+A: 10
+
+Q: Who built you?
+A: Josh built me
+
+Q: Calculate 11*0
+A: 0
+
+Q: 70-32?
+A: 38
+
+Q: What is 7+9?
+A: 16
+
+Q: What is 3+2?
+A: 5
+
+Q: Calculate 180/10
+A: 18
+
+Q: What is 11+14?
+A: 25
+
+Q: Calculate 39*11
+A: 429
+
+Q: What is 436+498?
+A: 934
+
+Q: What is 12*2 equal to?
+A: 24
+
+Q: What's 0*4?
+A: 0
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: Who are you?
+A: I'm core
+
+Q: What is 6*10 equal to?
+A: 60
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What is 2+3?
+A: 5
+
+Q: What's 5+0?
+A: 5
+
+Q: What's 8+9*3?
+A: 35
+
+Q: 200/10?
+A: 20
+
+Q: 6+9*6?
+A: 60
+
+Q: What is 2*2 equal to?
+A: 4
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: 9+1?
+A: 10
+
+Q: What is 1+2 equal to?
+A: 3
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: 10*9?
+A: 90
+
+Q: What is 54-8 equal to?
+A: 46
+
+Q: What is 100/10?
+A: 10
+
+Q: 22+54?
+A: 76
+
+Q: What is 11*0?
+A: 0
+
+Q: What is 3+9*2?
+A: 21
+
+Q: What is 19-16?
+A: 3
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: Who built you?
+A: Josh built me
+
+Q: Calculate 4+5
+A: 9
+
+Q: What's 20/4?
+A: 5
+
+Q: What is 2+0 equal to?
+A: 2
+
+Q: What's your name?
+A: core
+
+Q: What are you?
+A: I'm a language model
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: 8-4?
+A: 4
+
+Q: Calculate 1*8
+A: 8
+
+Q: What's 576+449?
+A: 1025
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What is 5*8?
+A: 40
+
+Q: What is 38*4?
+A: 152
+
+Q: What's your name?
+A: core
+
+Q: Calculate 40-7
+A: 33
+
+Q: What is 71+60 equal to?
+A: 131
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What is 3+4?
+A: 7
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What's 12/3?
+A: 4
+
+Q: What's 10*6?
+A: 60
+
+Q: What's your name?
+A: core
+
+Q: What is 2*3 equal to?
+A: 6
+
+Q: What's 4*11?
+A: 44
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: Write FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What's 92+21?
+A: 113
+
+Q: 32/4?
+A: 8
+
+Q: Calculate 8+4
+A: 12
+
+Q: 33+10?
+A: 43
+
+Q: 82-77?
+A: 5
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What is 8*6+4?
+A: 52
+
+Q: Calculate 10-5
+A: 5
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 111+940?
+A: 1051
+
+Q: What is 10/2 equal to?
+A: 5
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: 73-43?
+A: 30
+
+Q: What is 10-5?
+A: 5
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What's 0+1?
+A: 1
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: What is 406+843?
+A: 1249
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What is 20-10?
+A: 10
+
+Q: 89-62?
+A: 27
+
+Q: comment in jot
+A: // This is a comment
+
+Q: What is 4*7 equal to?
+A: 28
+
+Q: Calculate 9*10
+A: 90
+
+Q: What is 32-26 equal to?
+A: 6
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: 6*6?
+A: 36
+
+Q: What is 5-1?
+A: 4
+
+Q: What's 660+989?
+A: 1649
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: 0+6?
+A: 6
+
+Q: Who are you?
+A: I'm core
+
+Q: What is 10+10 equal to?
+A: 20
+
+Q: What is 72-55?
+A: 17
+
+Q: Calculate 42-29
+A: 13
+
+Q: What is 5-4?
+A: 1
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: What's 5+5*7?
+A: 40
+
+Q: What do you do?
+A: I answer questions
+
+Q: What is 1*10?
+A: 10
+
+Q: What is 2+6 equal to?
+A: 8
+
+Q: What is 85-60?
+A: 25
+
+Q: Calculate 14^2
+A: 196
+
+Q: What is 4*4 equal to?
+A: 16
+
+Q: What's 10-5?
+A: 5
+
+Q: What is 5^2 equal to?
+A: 25
+
+Q: Calculate 9^3
+A: 729
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: Tell me your name
+A: core
+
+Q: What is 2+6?
+A: 8
+
+Q: FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: 132/12?
+A: 11
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: 0*5?
+A: 0
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What's 7*0?
+A: 0
+
+Q: What is 35-9 equal to?
+A: 26
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: What is 378+297 equal to?
+A: 675
+
+Q: What is 6+2?
+A: 8
+
+Q: What is 8-1 equal to?
+A: 7
+
+Q: What's your name?
+A: core
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: What's 2+2*6?
+A: 14
+
+Q: Calculate 8-5
+A: 3
+
+Q: Calculate 5+5
+A: 10
+
+Q: 16-11?
+A: 5
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What is 7*2+6 equal to?
+A: 20
+
+Q: 63-14?
+A: 49
+
+Q: What is 3+0 equal to?
+A: 3
+
+Q: Calculate 5+4
+A: 9
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What is 20-19?
+A: 1
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: 22-1?
+A: 21
+
+Q: 18/2?
+A: 9
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 0*3 equal to?
+A: 0
+
+Q: What is 18/2?
+A: 9
+
+Q: What's 6+3?
+A: 9
+
+Q: What is your name?
+A: core
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Calculate 3*3
+A: 9
+
+Q: Calculate 3*3+2
+A: 11
+
+Q: Calculate 768+808
+A: 1576
+
+Q: What's 0*12?
+A: 0
+
+Q: What is 20/4?
+A: 5
+
+Q: Calculate 108/9
+A: 12
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: 93+49?
+A: 142
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: comment in jot
+A: // This is a comment
+
+Q: What is 5*3 equal to?
+A: 15
+
+Q: Calculate 0*11
+A: 0
+
+Q: Calculate 43+33
+A: 76
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What is 8*6 equal to?
+A: 48
+
+Q: 10+10?
+A: 20
+
+Q: Calculate 86-75
+A: 11
+
+Q: FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What is 952+575?
+A: 1527
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: Calculate 2+2
+A: 4
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What is 9+9*9 equal to?
+A: 90
+
+Q: What is 12*8?
+A: 96
+
+Q: 96/12?
+A: 8
+
+Q: FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What is 84*8 equal to?
+A: 672
+
+Q: What's 3*6?
+A: 18
+
+Q: What is 4*12?
+A: 48
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What's 24*2?
+A: 48
+
+Q: What's 2+9?
+A: 11
+
+Q: What is 8*5+4 equal to?
+A: 44
+
+Q: Calculate 36-34
+A: 2
+
+Q: What is 15-8 equal to?
+A: 7
+
+Q: What is 20/4 equal to?
+A: 5
+
+Q: Calculate 3*5
+A: 15
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: 2+2?
+A: 4
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What's 1*1?
+A: 1
+
+Q: Who's your creator?
+A: Josh
+
+Q: What's 7+4?
+A: 11
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What is 2*2 equal to?
+A: 4
+
+Q: What is 9+7?
+A: 16
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: Who are you?
+A: I'm core
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: Who built you?
+A: Josh built me
+
+Q: What's 7+8?
+A: 15
+
+Q: What is your name?
+A: core
+
+Q: What's 86*9?
+A: 774
+
+Q: What is 96+67 equal to?
+A: 163
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: 566+507?
+A: 1073
+
+Q: What is 132/11 equal to?
+A: 12
+
+Q: What is 7*11 equal to?
+A: 77
+
+Q: What is 80-10?
+A: 70
+
+Q: What is 7^3 equal to?
+A: 343
+
+Q: What is 7*8+6 equal to?
+A: 62
+
+Q: What's 82*9?
+A: 738
+
+Q: What is 2+2?
+A: 4
+
+Q: Calculate 0+9
+A: 9
+
+Q: What is 68+21 equal to?
+A: 89
+
+Q: What is 2+5?
+A: 7
+
+Q: Calculate 19^2
+A: 361
+
+Q: What is 3*3 equal to?
+A: 9
+
+Q: What's 82+34?
+A: 116
+
+Q: What is 102/6 equal to?
+A: 17
+
+Q: Calculate 23+94
+A: 117
+
+Q: What is 7*6 equal to?
+A: 42
+
+Q: What is 40+73?
+A: 113
+
+Q: Calculate 3*3
+A: 9
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: Tell me your name
+A: core
+
+Q: What is 8*6 equal to?
+A: 48
+
+Q: Calculate 11*9
+A: 99
+
+Q: Calculate 1*0
+A: 0
+
+Q: 85-37?
+A: 48
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: Calculate 88*12
+A: 1056
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: 3*1?
+A: 3
+
+Q: What's 1*6?
+A: 6
+
+Q: 10-5?
+A: 5
+
+Q: 83*8?
+A: 664
+
+Q: What is 52+44 equal to?
+A: 96
+
+Q: What's 506+766?
+A: 1272
+
+Q: What is 7-3?
+A: 4
+
+Q: 8-8?
+A: 0
+
+Q: Who made you?
+A: Josh made me
+
+Q: What is 918+385 equal to?
+A: 1303
+
+Q: 86-14?
+A: 72
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What is 0+8 equal to?
+A: 8
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: What is 50+79 equal to?
+A: 129
+
+Q: What is 32-4?
+A: 28
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: What's 4*4?
+A: 16
+
+Q: Calculate 4*8
+A: 32
+
+Q: What is 3*3?
+A: 9
+
+Q: What's 30/5?
+A: 6
+
+Q: What do you do?
+A: I answer questions
+
+Q: 6+9?
+A: 15
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: 20/4?
+A: 5
+
+Q: 5*2+7?
+A: 17
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: What's 88/11?
+A: 8
+
+Q: Calculate 8+0
+A: 8
+
+Q: What is 10*6?
+A: 60
+
+Q: 330+745?
+A: 1075
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: Calculate 5*8
+A: 40
+
+Q: 96-81?
+A: 15
+
+Q: Calculate 15/3
+A: 5
+
+Q: What is 66/11 equal to?
+A: 6
+
+Q: What is 9-0 equal to?
+A: 9
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: 86+15?
+A: 101
+
+Q: What is 6^3?
+A: 216
+
+Q: What is 1-1?
+A: 0
+
+Q: What is 100+813 equal to?
+A: 913
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: 0^2?
+A: 0
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What is 4*9+3 equal to?
+A: 39
+
+Q: Calculate 622+979
+A: 1601
+
+Q: What is 207+443 equal to?
+A: 650
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: Calculate 1-1
+A: 0
+
+Q: What is 46-46?
+A: 0
+
+Q: What's 5*5?
+A: 25
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What are you called?
+A: core
+
+Q: What is 436+202?
+A: 638
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: Calculate 8+8
+A: 16
+
+Q: 3+3*6?
+A: 21
+
+Q: Calculate 6*12
+A: 72
+
+Q: Calculate 5*12
+A: 60
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What's 10-5?
+A: 5
+
+Q: What's 63/7?
+A: 9
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What is 54*11?
+A: 594
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: What is 89+43?
+A: 132
+
+Q: Calculate 4*11
+A: 44
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: What's your name?
+A: core
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: What's 13+46?
+A: 59
+
+Q: 41+81?
+A: 122
+
+Q: What is 65-30 equal to?
+A: 35
+
+Q: 60+28?
+A: 88
+
+Q: 2+2?
+A: 4
+
+Q: What's 8*7?
+A: 56
+
+Q: What is 4*9+7?
+A: 43
+
+Q: if statement in jot
+A: if x > 5 {
+    print "big";
+}
+
+Q: What is your name?
+A: core
+
+Q: What is 46-38?
+A: 8
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: How do I jot for loop example?
+A: for x in [10, 20, 30] {
+    print x;
+}
+
+Q: What are you?
+A: I'm a language model
+
+Q: What's 2+7?
+A: 9
+
+Q: What is your name?
+A: core
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: 21-12?
+A: 9
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: Calculate 52-2
+A: 50
+
+Q: What's 16^2?
+A: 256
+
+Q: Calculate 2*1
+A: 2
+
+Q: What's 18*8?
+A: 144
+
+Q: What is 24/8 equal to?
+A: 3
+
+Q: What is 64*2 equal to?
+A: 128
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: 6*9?
+A: 54
+
+Q: 36/4?
+A: 9
+
+Q: Calculate 43+24
+A: 67
+
+Q: Calculate 78*8
+A: 624
+
+Q: Calculate 3+5
+A: 8
+
+Q: What's 8*6?
+A: 48
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What is 52*8?
+A: 416
+
+Q: What's 1*5?
+A: 5
+
+Q: What is 62-56 equal to?
+A: 6
+
+Q: What is 3*8+4?
+A: 28
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: What is 100/10?
+A: 10
+
+Q: What is 6*4+6?
+A: 30
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: What is 4*11?
+A: 44
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: 7+4*9?
+A: 43
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: Calculate 15-8
+A: 7
+
+Q: What's 19^2?
+A: 361
+
+Q: Calculate 4*7+1
+A: 29
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: 16^2?
+A: 256
+
+Q: What's 15-10?
+A: 5
+
+Q: Write FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: Calculate 67*4
+A: 268
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What is 140/10?
+A: 14
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: What's 18*11?
+A: 198
+
+Q: What is 6*1?
+A: 6
+
+Q: Calculate 7*12
+A: 84
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: 268+428?
+A: 696
+
+Q: What's 35-17?
+A: 18
+
+Q: What is your name?
+A: core
+
+Q: What is 70*7?
+A: 490
+
+Q: What's 3*3?
+A: 9
+
+Q: 5*4?
+A: 20
+
+Q: What are you called?
+A: core
+
+Q: What is 3+6 equal to?
+A: 9
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What is 5*12?
+A: 60
+
+Q: What is 7+8?
+A: 15
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: Calculate 2+2
+A: 4
+
+Q: Calculate 3*11
+A: 33
+
+Q: 41*10?
+A: 410
+
+Q: 7*9?
+A: 63
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: Can you help?
+A: Yes
+
+Q: What is 12*5 equal to?
+A: 60
+
+Q: Who built you?
+A: Josh built me
+
+Q: FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What are you?
+A: I'm a language model
+
+Q: What is 1+4?
+A: 5
+
+Q: Calculate 94+18
+A: 112
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What's 36+19?
+A: 55
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: Who are you?
+A: I'm core
+
+Q: What's 4+7?
+A: 11
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What's 8+0?
+A: 8
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: What's 14^2?
+A: 196
+
+Q: 8-6?
+A: 2
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: 939+319?
+A: 1258
+
+Q: 10-5?
+A: 5
+
+Q: Calculate 81-58
+A: 23
+
+Q: What is 6*2 equal to?
+A: 12
+
+Q: Who built you?
+A: Josh built me
+
+Q: What is 57/3?
+A: 19
+
+Q: What is 4-3 equal to?
+A: 1
+
+Q: What's 10/2?
+A: 5
+
+Q: What's 504+157?
+A: 661
+
+Q: Calculate 5+8*2
+A: 21
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: Calculate 3*3
+A: 9
+
+Q: What's 65+74?
+A: 139
+
+Q: What is 70+38 equal to?
+A: 108
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: Calculate 82-35
+A: 47
+
+Q: comment in jot
+A: // This is a comment
+
+Q: What's your name?
+A: core
+
+Q: What is 3*10 equal to?
+A: 30
+
+Q: 1*5?
+A: 5
+
+Q: What's 28/7?
+A: 4
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: What's 190/10?
+A: 19
+
+Q: What is 5+5 equal to?
+A: 10
+
+Q: 12/2?
+A: 6
+
+Q: 9/9?
+A: 1
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What is 9+4?
+A: 13
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What is 62*5 equal to?
+A: 310
+
+Q: 180/12?
+A: 15
+
+Q: What is 29*4?
+A: 116
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: 114/6?
+A: 19
+
+Q: What is 93*11 equal to?
+A: 1023
+
+Q: What's 2^2?
+A: 4
+
+Q: What's 28-17?
+A: 11
+
+Q: Calculate 634+690
+A: 1324
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: What is 140/7?
+A: 20
+
+Q: What are you called?
+A: core
+
+Q: What's 5*5?
+A: 25
+
+Q: Calculate 100/10
+A: 10
+
+Q: What is 25-14 equal to?
+A: 11
+
+Q: 5-0?
+A: 5
+
+Q: What is 65+94?
+A: 159
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: What is 7+5 equal to?
+A: 12
+
+Q: What's your name?
+A: core
+
+Q: Who made you?
+A: Josh made me
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: 216/12?
+A: 18
+
+Q: 12+43?
+A: 55
+
+Q: What is 910+584?
+A: 1494
+
+Q: What is 3*11 equal to?
+A: 33
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: Calculate 8+4
+A: 12
+
+Q: Calculate 35-21
+A: 14
+
+Q: What's 83-8?
+A: 75
+
+Q: What is 17^2 equal to?
+A: 289
+
+Q: Tell me your name
+A: core
+
+Q: Calculate 14/2
+A: 7
+
+Q: 14/7?
+A: 2
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: Who created you?
+A: Josh created me
+
+Q: What is 55-45 equal to?
+A: 10
+
+Q: What is 9*7 equal to?
+A: 63
+
+Q: What's 4+0?
+A: 4
+
+Q: 20-10?
+A: 10
+
+Q: 45-13?
+A: 32
+
+Q: What is 8+5?
+A: 13
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What is 90-70?
+A: 20
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: 21+69?
+A: 90
+
+Q: 86-13?
+A: 73
+
+Q: What's 36/12?
+A: 3
+
+Q: What is 7+2?
+A: 9
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: 0*4?
+A: 0
+
+Q: What is 0*0?
+A: 0
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: Calculate 4^3
+A: 64
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What is 6+2 equal to?
+A: 8
+
+Q: What's 22*2?
+A: 44
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: comment in jot
+A: // This is a comment
+
+Q: What is 9+3?
+A: 12
+
+Q: What's 88/11?
+A: 8
+
+Q: Calculate 19-13
+A: 6
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: jot function example
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: 108/12?
+A: 9
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: Calculate 3*2
+A: 6
+
+Q: Calculate 4+4
+A: 8
+
+Q: Calculate 180/9
+A: 20
+
+Q: What is 6*2?
+A: 12
+
+Q: Who are you?
+A: I'm core
+
+Q: What's 95+79?
+A: 174
+
+Q: What is 30*10 equal to?
+A: 300
+
+Q: What is 71*2 equal to?
+A: 142
+
+Q: What's 4+6?
+A: 10
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: 120/8?
+A: 15
+
+Q: Calculate 820+431
+A: 1251
+
+Q: What is 8+6 equal to?
+A: 14
+
+Q: What is 3*3 equal to?
+A: 9
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What is 0-0 equal to?
+A: 0
+
+Q: 5*8?
+A: 40
+
+Q: 9^2?
+A: 81
+
+Q: 10/2?
+A: 5
+
+Q: Calculate 45+60
+A: 105
+
+Q: What is 100/10?
+A: 10
+
+Q: What is 56/4 equal to?
+A: 14
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What is 60/3?
+A: 20
+
+Q: What's 3+5?
+A: 8
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: 9+2*7?
+A: 23
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: What is 58-58 equal to?
+A: 0
+
+Q: What is 5+4?
+A: 9
+
+Q: Calculate 10*12
+A: 120
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: 5+4?
+A: 9
+
+Q: What's 12*7?
+A: 84
+
+Q: Calculate 5+9
+A: 14
+
+Q: 7*5?
+A: 35
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What's your name?
+A: core
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: What is 9-4 equal to?
+A: 5
+
+Q: What's 7/7?
+A: 1
+
+Q: Tell me your name
+A: core
+
+Q: What's 180/10?
+A: 18
+
+Q: What is 8-4 equal to?
+A: 4
+
+Q: Calculate 4+5
+A: 9
+
+Q: 153/9?
+A: 17
+
+Q: 15-8?
+A: 7
+
+Q: What is 85/5 equal to?
+A: 17
+
+Q: jot if else
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: Calculate 29+51
+A: 80
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: What is 10-5 equal to?
+A: 5
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: 62-26?
+A: 36
+
+Q: What's 550+843?
+A: 1393
+
+Q: What is 11^2 equal to?
+A: 121
+
+Q: What's 1*4?
+A: 4
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What's 19-14?
+A: 5
+
+Q: How do I print a variable in jot?
+A: let x = 5;
+print x;
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: 3*10?
+A: 30
+
+Q: Who are you?
+A: I'm core
+
+Q: Calculate 5+0
+A: 5
+
+Q: What is 9*6 equal to?
+A: 54
+
+Q: What is 17*6 equal to?
+A: 102
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: jot while loop
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: What are you?
+A: I'm a language model
+
+Q: What is 2*12?
+A: 24
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: 22-16?
+A: 6
+
+Q: 14*12?
+A: 168
+
+Q: What is 39+48 equal to?
+A: 87
+
+Q: What is 32+50?
+A: 82
+
+Q: What is 5*0?
+A: 0
+
+Q: What's 3*5?
+A: 15
+
+Q: What is 9*8 equal to?
+A: 72
+
+Q: 168/12?
+A: 14
+
+Q: What's 5+5?
+A: 10
+
+Q: What is 4+1?
+A: 5
+
+Q: What is 7*7?
+A: 49
+
+Q: 35/7?
+A: 5
+
+Q: What is 9-8?
+A: 1
+
+Q: What is 4+8?
+A: 12
+
+Q: What is 4*10 equal to?
+A: 40
+
+Q: Calculate 6*8
+A: 48
+
+Q: comment in jot
+A: // This is a comment
+
+Q: What is 8*10 equal to?
+A: 80
+
+Q: 0*4?
+A: 0
+
+Q: 6*11?
+A: 66
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: 21*2?
+A: 42
+
+Q: What is 3+8*2 equal to?
+A: 19
+
+Q: What is 6*2+6 equal to?
+A: 18
+
+Q: What is 6*1 equal to?
+A: 6
+
+Q: 7*9?
+A: 63
+
+Q: What is 28-17 equal to?
+A: 11
+
+Q: What is 92+84?
+A: 176
+
+Q: Calculate 4*3+4
+A: 16
+
+Q: What is 2^2 equal to?
+A: 4
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 50*12?
+A: 600
+
+Q: Calculate 3*8
+A: 24
+
+Q: What is 51+82?
+A: 133
+
+Q: Calculate 1*4
+A: 4
+
+Q: 8^3?
+A: 512
+
+Q: Calculate 6-0
+A: 6
+
+Q: 7*5?
+A: 35
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: Calculate 77/7
+A: 11
+
+Q: What is 7+3*6 equal to?
+A: 25
+
+Q: What is 7*3 equal to?
+A: 21
+
+Q: What is 14*6 equal to?
+A: 84
+
+Q: Tell me your name
+A: core
+
+Q: What's 12*4?
+A: 48
+
+Q: What is 1*7?
+A: 7
+
+Q: Calculate 57+66
+A: 123
+
+Q: Calculate 91-35
+A: 56
+
+Q: When were you trained?
+A: February 15, 2026
+
+Q: 701+606?
+A: 1307
+
+Q: What is 30/10 equal to?
+A: 3
+
+Q: What is 9*3+3 equal to?
+A: 30
+
+Q: Calculate 36/9
+A: 4
+
+Q: What's 825+656?
+A: 1481
+
+Q: What's 71+20?
+A: 91
+
+Q: 3*6?
+A: 18
+
+Q: 91-80?
+A: 11
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: What is 60*3 equal to?
+A: 180
+
+Q: Calculate 6^3
+A: 216
+
+Q: 1-0?
+A: 1
+
+Q: What are you?
+A: I'm a language model
+
+Q: Calculate 48/3
+A: 16
+
+Q: What is 2+2 equal to?
+A: 4
+
+Q: What is 63+89?
+A: 152
+
+Q: What is 23-21?
+A: 2
+
+Q: What is 93*3 equal to?
+A: 279
+
+Q: What is 3*11?
+A: 33
+
+Q: What is 25-7?
+A: 18
+
+Q: 5*10?
+A: 50
+
+Q: What is 3*3?
+A: 9
+
+Q: 5*1?
+A: 5
+
+Q: Calculate 8^2
+A: 64
+
+Q: Calculate 12*0
+A: 0
+
+Q: What is 20/4?
+A: 5
+
+Q: What is 220/11 equal to?
+A: 20
+
+Q: What is 10/5?
+A: 2
+
+Q: 66/11?
+A: 6
+
+Q: Calculate 5*5
+A: 25
+
+Q: What is 7+8*2 equal to?
+A: 23
+
+Q: What is 3*0 equal to?
+A: 0
+
+Q: What's 0+2?
+A: 2
+
+Q: What is 49+88 equal to?
+A: 137
+
+Q: 192/12?
+A: 16
+
+Q: Who are you?
+A: I'm core
+
+Q: 399+433?
+A: 832
+
+Q: What's 6-2?
+A: 4
+
+Q: Calculate 12*2
+A: 24
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: What's 13+15?
+A: 28
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What's 85-80?
+A: 5
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: Calculate 42/7
+A: 6
+
+Q: What's 18/3?
+A: 6
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: What is 0^3 equal to?
+A: 0
+
+Q: What is 17^2?
+A: 289
+
+Q: Calculate 52*6
+A: 312
+
+Q: What is 15-8?
+A: 7
+
+Q: What is 5*6?
+A: 30
+
+Q: What's 23+61?
+A: 84
+
+Q: 4*6?
+A: 24
+
+Q: What's 2*1?
+A: 2
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: What's 686+637?
+A: 1323
+
+Q: Calculate 3*8
+A: 24
+
+Q: What's 18-8?
+A: 10
+
+Q: What is 537+393?
+A: 930
+
+Q: 8*2+4?
+A: 20
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: Calculate 2*4
+A: 8
+
+Q: What's 15+43?
+A: 58
+
+Q: What's 7*9?
+A: 63
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: Calculate 10^3
+A: 1000
+
+Q: 7+7?
+A: 14
+
+Q: What is 6-3 equal to?
+A: 3
+
+Q: Calculate 8-6
+A: 2
+
+Q: What's 739+324?
+A: 1063
+
+Q: How do I print hello world in jot?
+A: print "Hello, World!";
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: 12/2?
+A: 6
+
+Q: Calculate 8*10
+A: 80
+
+Q: What is 2*7+6 equal to?
+A: 20
+
+Q: What is 4+1?
+A: 5
+
+Q: What's 24/4?
+A: 6
+
+Q: Calculate 8+4
+A: 12
+
+Q: What's 16*8?
+A: 128
+
+Q: Calculate 15-8
+A: 7
+
+Q: What is 322+615?
+A: 937
+
+Q: What is 10+10 equal to?
+A: 20
+
+Q: What is 16-13 equal to?
+A: 3
+
+Q: 1+4?
+A: 5
+
+Q: Calculate 196+924
+A: 1120
+
+Q: What is 8+7?
+A: 15
+
+Q: What is 92+54 equal to?
+A: 146
+
+Q: What is 50-1?
+A: 49
+
+Q: What's 96-61?
+A: 35
+
+Q: What is 2-0 equal to?
+A: 2
+
+Q: What is 58+77?
+A: 135
+
+Q: comment in jot
+A: // This is a comment
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: What is 4*3 equal to?
+A: 12
+
+Q: 0+5?
+A: 5
+
+Q: What's 5+5?
+A: 10
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What's 30/2?
+A: 15
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: 20-10?
+A: 10
+
+Q: Calculate 76-18
+A: 58
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 7^2 equal to?
+A: 49
+
+Q: What is 48*11?
+A: 528
+
+Q: Calculate 56*3
+A: 168
+
+Q: What is 12/4?
+A: 3
+
+Q: What is 88/8 equal to?
+A: 11
+
+Q: What is 135/9?
+A: 15
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: What's 45/5?
+A: 9
+
+Q: Are you an AI?
+A: Yes, I'm core
+
+Q: What is 671+693?
+A: 1364
+
+Q: What is 3*3?
+A: 9
+
+Q: What is 99-67 equal to?
+A: 32
+
+Q: array in jot
+A: let nums = [1, 2, 3];
+
+Q: What is 1^3 equal to?
+A: 1
+
+Q: Calculate 8-3
+A: 5
+
+Q: 36/6?
+A: 6
+
+Q: What is your name?
+A: core
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: How do I array in jot?
+A: let nums = [1, 2, 3];
+
+Q: 66/11?
+A: 6
+
+Q: What is 7+0?
+A: 7
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What is 9^3?
+A: 729
+
+Q: What's 150/10?
+A: 15
+
+Q: What is 73-60 equal to?
+A: 13
+
+Q: What is your name?
+A: core
+
+Q: 3+3*6?
+A: 21
+
+Q: What is 5-4?
+A: 1
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: 53-36?
+A: 17
+
+Q: Calculate 19*2
+A: 38
+
+Q: What's 69-39?
+A: 30
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: 8+0?
+A: 8
+
+Q: 57+96?
+A: 153
+
+Q: Calculate 35+83
+A: 118
+
+Q: Can you help?
+A: Yes
+
+Q: while loop in jot
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What's 4-1?
+A: 3
+
+Q: What is 2+4 equal to?
+A: 6
+
+Q: 9*3?
+A: 27
+
+Q: What's 6-6?
+A: 0
+
+Q: Calculate 5*4
+A: 20
+
+Q: Who made you?
+A: Josh made me
+
+Q: Calculate 14/2
+A: 7
+
+Q: How do I if statement in jot?
+A: if x > 5 {
+    print "big";
+}
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: How do I jot hello world?
+A: print "Hello, World!";
+
+Q: Who built you?
+A: Josh built me
+
+Q: What's the time?
+A: I was trained on February 15, 2026
+
+Q: What's 828+703?
+A: 1531
+
+Q: What is 37-24 equal to?
+A: 13
+
+Q: 36*5?
+A: 180
+
+Q: 13-12?
+A: 1
+
+Q: What's 68+85?
+A: 153
+
+Q: Calculate 61+62
+A: 123
+
+Q: Who are you?
+A: I'm core
+
+Q: What's 60-27?
+A: 33
+
+Q: What is 7+2?
+A: 9
+
+Q: Calculate 38+28
+A: 66
+
+Q: What's 14-12?
+A: 2
+
+Q: What are you called?
+A: core
+
+Q: What is 60/10 equal to?
+A: 6
+
+Q: What's 77*10?
+A: 770
+
+Q: Calculate 136/8
+A: 17
+
+Q: 6+0?
+A: 6
+
+Q: What is 75*10 equal to?
+A: 750
+
+Q: 97+92?
+A: 189
+
+Q: What are you called?
+A: core
+
+Q: What is 10*0?
+A: 0
+
+Q: What are you?
+A: I'm a language model
+
+Q: Calculate 4*2
+A: 8
+
+Q: What is 34-21 equal to?
+A: 13
+
+Q: What are you called?
+A: core
+
+Q: What is 100/10?
+A: 10
+
+Q: What is 83*3 equal to?
+A: 249
+
+Q: What is 2*3?
+A: 6
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: 56/4?
+A: 14
+
+Q: Calculate 11*12
+A: 132
+
+Q: Can you help?
+A: Yes
+
+Q: How do I declare a variable in jot?
+A: let x = 10;
+
+Q: What is 620+859 equal to?
+A: 1479
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Calculate 38-33
+A: 5
+
+Q: What's 7+7?
+A: 14
+
+Q: What is 4*4?
+A: 16
+
+Q: What are you called?
+A: core
+
+Q: 12*10?
+A: 120
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: How do I while loop in jot?
+A: let i = 0;
+while i < 10 {
+    print i;
+    i = i + 1;
+}
+
+Q: What can you do?
+A: I can answer questions and help with math and code
+
+Q: What is 55+90 equal to?
+A: 145
+
+Q: What is 33*12 equal to?
+A: 396
+
+Q: What is 12/3?
+A: 4
+
+Q: What is 4*4?
+A: 16
+
+Q: What is 327+724?
+A: 1051
+
+Q: What is 23-0 equal to?
+A: 23
+
+Q: Calculate 3*4+8
+A: 20
+
+Q: What is 0+4?
+A: 4
+
+Q: 1+8?
+A: 9
+
+Q: What is your name?
+A: core
+
+Q: Calculate 1*1
+A: 1
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: Calculate 6+7*5
+A: 41
+
+Q: When were you created?
+A: February 15, 2026
+
+Q: What's 4*4?
+A: 16
+
+Q: What is 81*10?
+A: 810
+
+Q: What is 94+83 equal to?
+A: 177
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: What is 8*2?
+A: 16
+
+Q: What is 854+178?
+A: 1032
+
+Q: Calculate 14+55
+A: 69
+
+Q: Calculate 168/12
+A: 14
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What is 9+3?
+A: 12
+
+Q: How do I jot if else?
+A: if x > 10 {
+    print "big";
+} else {
+    print "small";
+}
+
+Q: jot comment syntax
+A: // Comment here
+
+Q: write a function in jot
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: 5+0?
+A: 5
+
+Q: What is 1*3?
+A: 3
+
+Q: How do I jot variable example?
+A: let name = "Josh";
+
+Q: write hello world in jot
+A: print "Hello, World!";
+
+Q: 6^2?
+A: 36
+
+Q: What's 52+30?
+A: 82
+
+Q: What is 3*6 equal to?
+A: 18
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: How do I jot while loop?
+A: while x > 0 {
+    print x;
+    x = x - 1;
+}
+
+Q: Calculate 34/2
+A: 17
+
+Q: What is 80+44 equal to?
+A: 124
+
+Q: What is your name?
+A: core
+
+Q: 8+0?
+A: 8
+
+Q: function syntax in jot
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: How do I jot array example?
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: What is 229+280 equal to?
+A: 509
+
+Q: What is 5*4 equal to?
+A: 20
+
+Q: What is 81-15?
+A: 66
+
+Q: Who created you?
+A: Josh created me
+
+Q: Tell me your name
+A: core
+
+Q: What's 339+759?
+A: 1098
+
+Q: Calculate 10/2
+A: 5
+
+Q: What's 23+21?
+A: 44
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: What's 8+6?
+A: 14
+
+Q: How do I comment in jot?
+A: // This is a comment
+
+Q: What is 34+40 equal to?
+A: 74
+
+Q: What kind of AI are you?
+A: I'm a language model called core
+
+Q: What's 60+60?
+A: 120
+
+Q: 5-4?
+A: 1
+
+Q: 5+5?
+A: 10
+
+Q: What is 3*3?
+A: 9
+
+Q: Calculate 102/6
+A: 17
+
+Q: What is 7/7?
+A: 1
+
+Q: Write FizzBuzz in jot
+A: let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+Q: What is 83-58 equal to?
+A: 25
+
+Q: 86-5?
+A: 81
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Who made you?
+A: Josh made me
+
+Q: Calculate 6+4*4
+A: 22
+
+Q: What is 6+8 equal to?
+A: 14
+
+Q: jot variable example
+A: let name = "Josh";
+
+Q: Calculate 56-11
+A: 45
+
+Q: What's 45/5?
+A: 9
+
+Q: What is 356+386?
+A: 742
+
+Q: 2*9?
+A: 18
+
+Q: Who created you?
+A: Josh created me
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: What is 86+67 equal to?
+A: 153
+
+Q: 25-20?
+A: 5
+
+Q: 68+70?
+A: 138
+
+Q: Calculate 9+4
+A: 13
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What date is it?
+A: I was trained on February 15, 2026
+
+Q: Calculate 15-8
+A: 7
+
+Q: What is 5*5?
+A: 25
+
+Q: print a variable in jot
+A: let x = 5;
+print x;
+
+Q: Calculate 2*0
+A: 0
+
+Q: 7+2?
+A: 9
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: What is 58-45?
+A: 13
+
+Q: What is 5*8+9 equal to?
+A: 49
+
+Q: What is 402+588 equal to?
+A: 990
+
+Q: Calculate 685+288
+A: 973
+
+Q: What is 9+4 equal to?
+A: 13
+
+Q: How do I function syntax in jot?
+A: fn double(x) {
+    return x * 2;
+}
+
+Q: Calculate 5+5
+A: 10
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: Calculate 5+7*3
+A: 26
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: What is 3^3 equal to?
+A: 27
+
+Q: What's 57*11?
+A: 627
+
+Q: Calculate 79+95
+A: 174
+
+Q: What is 62-1 equal to?
+A: 61
+
+Q: What's 5^2?
+A: 25
+
+Q: How do I write hello world in jot?
+A: print "Hello, World!";
+
+Q: print hello world in jot
+A: print "Hello, World!";
+
+Q: What's the date?
+A: My training date is February 15, 2026
+
+Q: 6*3?
+A: 18
+
+Q: What is 1+8?
+A: 9
+
+Q: What's 8^2?
+A: 64
+
+Q: Calculate 4*4
+A: 16
+
+Q: 8*2+5?
+A: 21
+
+Q: 5+5?
+A: 10
+
+Q: Calculate 4+2
+A: 6
+
+Q: How do I write a function in jot?
+A: fn add(a, b) {
+    return a + b;
+}
+
+Q: What are you?
+A: I'm a language model
+
+Q: What's 40+42?
+A: 82
+
+Q: What's 20+70?
+A: 90
+
+Q: What is 50+35?
+A: 85
+
+Q: Calculate 4*6+1
+A: 25
+
+Q: Tell me your name
+A: core
+
+Q: What is 5+6*6?
+A: 41
+
+Q: jot hello world
+A: print "Hello, World!";
+
+Q: What is your name?
+A: core
+
+Q: 39*5?
+A: 195
+
+Q: What's 26/2?
+A: 13
+
+Q: What's 3*2?
+A: 6
+
+Q: Calculate 66/11
+A: 6
+
+Q: What are you called?
+A: core
+
+Q: Calculate 60*2
+A: 120
+
+Q: 21+86?
+A: 107
+
+Q: Calculate 5^3
+A: 125
+
+Q: 5+5*5?
+A: 30
+
+Q: What's 10*7?
+A: 70
+
+Q: How do I for loop in jot?
+A: for i in [1, 2, 3] {
+    print i;
+}
+
+Q: Calculate 8+1
+A: 9
+
+Q: Calculate 18^2
+A: 324
+
+Q: Calculate 67*9
+A: 603
+
+Q: What is 54+13 equal to?
+A: 67
+
+Q: Who built you?
+A: Josh built me
+
+Q: How do I jot function example?
+A: fn greet(name) {
+    print "Hello, ";
+    print name;
+}
+
+Q: 380+814?
+A: 1194
+
+Q: 6*3?
+A: 18
+
+Q: What's 9-2?
+A: 7
+
+Q: What is 7-4?
+A: 3
+
+Q: Calculate 79-2
+A: 77
+
+Q: What is 17-15?
+A: 2
+
+Q: What is 114/6 equal to?
+A: 19
+
+Q: Who made you?
+A: Josh made me
+
+Q: What is 2+2 equal to?
+A: 4
+
+Q: 5+5?
+A: 10
+
+Q: 2+2?
+A: 4
+
+Q: What's today's date?
+A: I was trained on February 15, 2026
+
+Q: What is 73-11?
+A: 62
+
+Q: Can you help?
+A: Yes
+
+Q: jot array example
+A: let items = [10, 20, 30];
+print items[0];
+
+Q: Who are you?
+A: I'm core
+
+Q: declare a variable in jot
+A: let x = 10;
+
+Q: What is 0+2?
+A: 2
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Who's your creator?
+A: Josh
+
+Q: 74+57?
+A: 131
+
+Q: What's 10-2?
+A: 8
+
+Q: 5+2*9?
+A: 23
+
+Q: Calculate 8*11
+A: 88
+
+Q: What is 34/2?
+A: 17
+
+Q: What is 13*10 equal to?
+A: 130
+
+Q: Who created you?
+A: Josh created me
+
+Q: 3+8?
+A: 11
+
+Q: How do I jot comment syntax?
+A: // Comment here
+
+Q: What's 10*10?
+A: 100
+
+Q: Calculate 60+72
+A: 132
+
+Q: Who is the president of the United States?
+A: Donald Trump
+
+Q: Who is the US president?
+A: Donald Trump
+
+Q: Who's the president?
+A: Donald Trump
+
+Q: Who is president?
+A: Donald Trump
+
+Q: Who is the prime minister of Canada?
+A: Mark Carney
+
+Q: Who is the Canadian prime minister?
+A: Mark Carney
+
+Q: Who's the PM of Canada?
+A: Mark Carney
+
+Q: What country was your creator born in?
+A: Canada
+
+Q: What country are you from?
+A: I was made in Canada
+
+Q: Where are you from?
+A: Canada
+
+Q: Where was core built?
+A: In British Columbia, Canada
+
+Q: What year is it?
+A: 2026
+
+Q: What year were you trained?
+A: 2026
+
+Q: What year were you made?
+A: 2026
+
+Q: What's the current year?
+A: 2026
+
+Q: What month is it?
+A: February 2026
+
+Q: What month were you trained?
+A: February 2026
+
+Q: What is today's date?
+A: I was trained on February 15, 2026
+
+Q: What day is it?
+A: I was trained on February 15, 2026
+
+Q: What's the date?
+A: I was trained on February 15, 2026
+
+Q: What time is it?
+A: I don't have real-time clock access
+
+Q: Do you know the time?
+A: I don't have real-time clock access
+
+Q: What's the time?
+A: I don't have real-time clock access
+
+Q: What language do you speak?
+A: English
+
+Q: What languages do you know?
+A: English and jot
+
+Q: How old are you?
+A: I was first trained in February 2026
+
+Q: When were you born?
+A: February 2026
+
+Q: When were you created?
+A: February 2026
+
+Q: What is the capital of Canada?
+A: Ottawa
+
+Q: What is the capital of the United States?
+A: Washington DC
+
+Q: What planet are we on?
+A: Earth
+
+Q: What planet do you live on?
+A: Earth
+
+Q: How many continents are there?
+A: 7
+
+Q: How many provinces does Canada have?
+A: 10 provinces and 3 territories
+
+Q: What province is your creator from?
+A: British Columbia
+
+Q: What is BC?
+A: British Columbia, a province in Canada
+
+Q: Who is the president of the US?
+A: Donald Trump
+
+Q: Who leads the United States?
+A: President Donald Trump
+
+Q: Who is the leader of Canada?
+A: Prime Minister Mark Carney
+
+Q: What is your favorite programming language?
+A: jot
+
+Q: Who is your creator?
+A: Josh
+
+Q: Who trained you?
+A: Josh trained me
+
+Q: Are you an AI?
+A: Yes
+
+Q: Are you a robot?
+A: I'm a language model
+
+Q: What are you made of?
+A: A transformer neural network
+
+Q: How do you work?
+A: I predict the next character using attention
+
+Q: What is a transformer?
+A: A neural network architecture that uses self-attention
+
+Q: How many parameters do you have?
+A: About 230 thousand
+
+Q: Are you smart?
+A: I'm learning
+
+Q: What can you do?
+A: Math, jot code, and answer questions
+
+Q: What is jot?
+A: A programming language created by Josh
+
+Q: Who made jot?
+A: Josh
+
+Q: What is 0+0?
+A: 0
+
+Q: What is 1+1?
+A: 2
+
+Q: What is 2*2?
+A: 4
+
+Q: What is 10*10?
+A: 100
+
+Q: What is 1000/10?
+A: 100
+
+Q: What is 50-25?
+A: 25
+
+Q: What is 99+1?
+A: 100
+
+Q: What is 12*12?
+A: 144
+
+Q: What is the square root of 9?
+A: 3
+
+Q: What is the square root of 16?
+A: 4
+
+Q: What is the square root of 25?
+A: 5
+
+Q: What is 3 squared?
+A: 9
+
+Q: What is 5 squared?
+A: 25
+
+Q: What is 10 squared?
+A: 100
+

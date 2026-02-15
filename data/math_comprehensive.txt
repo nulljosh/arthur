@@ -1,0 +1,6060 @@
+Q: Calculate 45-4
+A: 41
+
+Q: What is 9+6 equal to?
+A: 15
+
+Q: Calculate 81+67
+A: 148
+
+Q: What is 24+27?
+A: 51
+
+Q: What is 30-16 equal to?
+A: 14
+
+Q: What is 20/4?
+A: 5
+
+Q: Calculate 3-3
+A: 0
+
+Q: What is 707+424?
+A: 1131
+
+Q: Calculate 17*7
+A: 119
+
+Q: What is 93 mod 4?
+A: 1
+
+Q: What's 2*5?
+A: 10
+
+Q: 2+2*4?
+A: 10
+
+Q: Introduce yourself
+A: I'm core
+
+Q: What is 299+216?
+A: 515
+
+Q: 81-67?
+A: 14
+
+Q: What is 2^2?
+A: 4
+
+Q: Calculate 26+22
+A: 48
+
+Q: 8*5?
+A: 40
+
+Q: Calculate 36+41
+A: 77
+
+Q: What's 5*3+7?
+A: 22
+
+Q: What is 15^2?
+A: 225
+
+Q: What is 62+77 equal to?
+A: 139
+
+Q: What is 220+870?
+A: 1090
+
+Q: What is 4*10 equal to?
+A: 40
+
+Q: What is 6*10 equal to?
+A: 60
+
+Q: What's 56/4?
+A: 14
+
+Q: What's 45/9?
+A: 5
+
+Q: Calculate 72*9
+A: 648
+
+Q: What is 1*10?
+A: 10
+
+Q: Calculate 70/5
+A: 14
+
+Q: What's 101+468?
+A: 569
+
+Q: Calculate 4+8*6
+A: 52
+
+Q: Calculate 1+4
+A: 5
+
+Q: What is 8-1 equal to?
+A: 7
+
+Q: 77+29?
+A: 106
+
+Q: What's 469+559?
+A: 1028
+
+Q: What is 5+7*6 equal to?
+A: 47
+
+Q: What is 24+47?
+A: 71
+
+Q: What is 17+52 equal to?
+A: 69
+
+Q: Calculate 92-66
+A: 26
+
+Q: What's 47 mod 9?
+A: 2
+
+Q: What is 32*7 equal to?
+A: 224
+
+Q: Calculate 27*10
+A: 270
+
+Q: What's 75-9?
+A: 66
+
+Q: Calculate 3-1
+A: 2
+
+Q: What is 9*4?
+A: 36
+
+Q: What is 94 mod 6?
+A: 4
+
+Q: What is 81/9 equal to?
+A: 9
+
+Q: Calculate 20/5
+A: 4
+
+Q: What is 63+99?
+A: 162
+
+Q: Calculate 62-56
+A: 6
+
+Q: 144/12?
+A: 12
+
+Q: 4-2?
+A: 2
+
+Q: What's 75-58?
+A: 17
+
+Q: What is 6-2 equal to?
+A: 4
+
+Q: 9*8+7?
+A: 79
+
+Q: 12*3?
+A: 36
+
+Q: Calculate 7-0
+A: 7
+
+Q: Calculate 10/2
+A: 5
+
+Q: 8+1?
+A: 9
+
+Q: What's 3*6+3?
+A: 21
+
+Q: What is 5*5?
+A: 25
+
+Q: What is 0*12 equal to?
+A: 0
+
+Q: Calculate 91+63
+A: 154
+
+Q: 716+939?
+A: 1655
+
+Q: 4*4?
+A: 16
+
+Q: What is 29-18 equal to?
+A: 11
+
+Q: 10*0?
+A: 0
+
+Q: Calculate 3^2
+A: 9
+
+Q: What's 9-2?
+A: 7
+
+Q: What is 5*2?
+A: 10
+
+Q: What is 8+6?
+A: 14
+
+Q: What is 65/5 equal to?
+A: 13
+
+Q: Calculate 63*7
+A: 441
+
+Q: 19+39?
+A: 58
+
+Q: What is 72-2 equal to?
+A: 70
+
+Q: What is 986+282?
+A: 1268
+
+Q: What is 3-2 equal to?
+A: 1
+
+Q: 33+58?
+A: 91
+
+Q: What's 7*2?
+A: 14
+
+Q: 2+3?
+A: 5
+
+Q: What is your name?
+A: core
+
+Q: Calculate 18/6
+A: 3
+
+Q: What is 2*2?
+A: 4
+
+Q: What is 35 mod 8?
+A: 3
+
+Q: What is 12/2?
+A: 6
+
+Q: What is 63+19 equal to?
+A: 82
+
+Q: What's 7-3?
+A: 4
+
+Q: Calculate 152/8
+A: 19
+
+Q: What is 28+84 equal to?
+A: 112
+
+Q: What is 52+16 equal to?
+A: 68
+
+Q: What is 81/9?
+A: 9
+
+Q: 1+1?
+A: 2
+
+Q: Calculate 10+61
+A: 71
+
+Q: 12^2?
+A: 144
+
+Q: What is 767+368 equal to?
+A: 1135
+
+Q: What's 8*4?
+A: 32
+
+Q: Calculate 72 mod 2
+A: 0
+
+Q: 6*8+4?
+A: 52
+
+Q: Calculate 33*8
+A: 264
+
+Q: 83+46?
+A: 129
+
+Q: What's 58*2?
+A: 116
+
+Q: Tell me your name
+A: core
+
+Q: Calculate 57+40
+A: 97
+
+Q: 10-5?
+A: 5
+
+Q: Calculate 5^3
+A: 125
+
+Q: What's 10*12?
+A: 120
+
+Q: What is 88-11 equal to?
+A: 77
+
+Q: 1+6?
+A: 7
+
+Q: 42*9?
+A: 378
+
+Q: 15^2?
+A: 225
+
+Q: What is 2*8+7?
+A: 23
+
+Q: What's 4+8*2?
+A: 20
+
+Q: Introduce yourself
+A: I'm core
+
+Q: What is 180/10 equal to?
+A: 18
+
+Q: What is 1+5?
+A: 6
+
+Q: What's 63*5?
+A: 315
+
+Q: What is 1+6 equal to?
+A: 7
+
+Q: What is 53-38?
+A: 15
+
+Q: 36*5?
+A: 180
+
+Q: What's 1+6*5?
+A: 31
+
+Q: What is 36-35 equal to?
+A: 1
+
+Q: 35-9?
+A: 26
+
+Q: What's 9+8*8?
+A: 73
+
+Q: 66-59?
+A: 7
+
+Q: 95*11?
+A: 1045
+
+Q: What is 39-21 equal to?
+A: 18
+
+Q: What is 60+36 equal to?
+A: 96
+
+Q: 4+3*5?
+A: 19
+
+Q: What is 35 mod 12 equal to?
+A: 11
+
+Q: Calculate 2*5+8
+A: 18
+
+Q: 1*5?
+A: 5
+
+Q: What is 2+6*8 equal to?
+A: 50
+
+Q: What is 48 mod 2 equal to?
+A: 0
+
+Q: 1+6*6?
+A: 37
+
+Q: What is 9*7 equal to?
+A: 63
+
+Q: What's 610+243?
+A: 853
+
+Q: What is 7+3*9?
+A: 34
+
+Q: What's your name?
+A: core
+
+Q: What is 9+7*8?
+A: 65
+
+Q: 190/10?
+A: 19
+
+Q: Calculate 67*8
+A: 536
+
+Q: What is 327+517?
+A: 844
+
+Q: What's 3+3?
+A: 6
+
+Q: What's 62 mod 7?
+A: 6
+
+Q: Calculate 9+5
+A: 14
+
+Q: Calculate 3*7
+A: 21
+
+Q: 3^3?
+A: 27
+
+Q: What is 50 mod 11?
+A: 6
+
+Q: What is 19^2 equal to?
+A: 361
+
+Q: What's 11*2?
+A: 22
+
+Q: Calculate 1+0
+A: 1
+
+Q: 88*11?
+A: 968
+
+Q: What's 6*5+4?
+A: 34
+
+Q: What is 5-3 equal to?
+A: 2
+
+Q: What is 2^3?
+A: 8
+
+Q: Calculate 9+9*3
+A: 36
+
+Q: Calculate 23*10
+A: 230
+
+Q: What is 93-91?
+A: 2
+
+Q: What's 7*6+3?
+A: 45
+
+Q: What is 32*6?
+A: 192
+
+Q: What is 0+8 equal to?
+A: 8
+
+Q: What is 2*3 equal to?
+A: 6
+
+Q: Calculate 10+10
+A: 20
+
+Q: 1*5?
+A: 5
+
+Q: What is 40/2 equal to?
+A: 20
+
+Q: What is 1*4?
+A: 4
+
+Q: Calculate 79+83
+A: 162
+
+Q: What is 1*6 equal to?
+A: 6
+
+Q: 6^3?
+A: 216
+
+Q: What is 4*4 equal to?
+A: 16
+
+Q: Calculate 477+846
+A: 1323
+
+Q: What are you called?
+A: core
+
+Q: Calculate 1+2*2
+A: 5
+
+Q: Calculate 64*4
+A: 256
+
+Q: Calculate 18*10
+A: 180
+
+Q: What's 49+23?
+A: 72
+
+Q: What's 6*8+3?
+A: 51
+
+Q: What is 4*2?
+A: 8
+
+Q: What is 46*4 equal to?
+A: 184
+
+Q: What is 7+6?
+A: 13
+
+Q: What is 10/2 equal to?
+A: 5
+
+Q: What's 105/7?
+A: 15
+
+Q: What is 9+5 equal to?
+A: 14
+
+Q: What's 40+44?
+A: 84
+
+Q: Calculate 12*4
+A: 48
+
+Q: What's 4*8?
+A: 32
+
+Q: What's 1+0?
+A: 1
+
+Q: What is 2+3?
+A: 5
+
+Q: What is 98-92 equal to?
+A: 6
+
+Q: What's 1*12?
+A: 12
+
+Q: What do you do?
+A: I answer questions
+
+Q: What is 87-72?
+A: 15
+
+Q: 45+89?
+A: 134
+
+Q: What is 28/2?
+A: 14
+
+Q: Calculate 6/2
+A: 3
+
+Q: What is 72/6?
+A: 12
+
+Q: What is 4+0 equal to?
+A: 4
+
+Q: What's 102+964?
+A: 1066
+
+Q: What is 11*7 equal to?
+A: 77
+
+Q: What is 140/7?
+A: 20
+
+Q: What is 64-46?
+A: 18
+
+Q: What's 9*10?
+A: 90
+
+Q: What's 104/8?
+A: 13
+
+Q: What's 3*6?
+A: 18
+
+Q: 4*6+3?
+A: 27
+
+Q: What's 3*2?
+A: 6
+
+Q: What's 5+5?
+A: 10
+
+Q: 6+3*4?
+A: 18
+
+Q: What is 9+6*7?
+A: 51
+
+Q: What is 66 mod 10?
+A: 6
+
+Q: Introduce yourself
+A: I'm core
+
+Q: Calculate 99-7
+A: 92
+
+Q: Calculate 21+87
+A: 108
+
+Q: What is 7^2 equal to?
+A: 49
+
+Q: 33-33?
+A: 0
+
+Q: What's 6+1?
+A: 7
+
+Q: Calculate 367+864
+A: 1231
+
+Q: What is 3-0 equal to?
+A: 3
+
+Q: What is 8-3 equal to?
+A: 5
+
+Q: Calculate 0*8
+A: 0
+
+Q: What is 6-0 equal to?
+A: 6
+
+Q: Calculate 93-76
+A: 17
+
+Q: What is 14-9 equal to?
+A: 5
+
+Q: 6+8?
+A: 14
+
+Q: What's 34+20?
+A: 54
+
+Q: 59-27?
+A: 32
+
+Q: Calculate 7+8*7
+A: 63
+
+Q: What is 70*7?
+A: 490
+
+Q: 4+8*8?
+A: 68
+
+Q: 100/10?
+A: 10
+
+Q: What's 672+780?
+A: 1452
+
+Q: What's 31-20?
+A: 11
+
+Q: 51+13?
+A: 64
+
+Q: 6+0?
+A: 6
+
+Q: What is 10^3?
+A: 1000
+
+Q: What is 69+13?
+A: 82
+
+Q: Calculate 25+93
+A: 118
+
+Q: Calculate 68-28
+A: 40
+
+Q: Calculate 8^3
+A: 512
+
+Q: What is 34*4 equal to?
+A: 136
+
+Q: Calculate 3+4
+A: 7
+
+Q: Calculate 9-2
+A: 7
+
+Q: What is 53+43 equal to?
+A: 96
+
+Q: 0+7?
+A: 7
+
+Q: What is 43*9?
+A: 387
+
+Q: Calculate 4^2
+A: 16
+
+Q: What is 11*9?
+A: 99
+
+Q: Calculate 622+633
+A: 1255
+
+Q: Calculate 4*12
+A: 48
+
+Q: What is 83*12 equal to?
+A: 996
+
+Q: Calculate 55*3
+A: 165
+
+Q: Calculate 19 mod 5
+A: 4
+
+Q: Calculate 2+3*2
+A: 8
+
+Q: What is 10*0 equal to?
+A: 0
+
+Q: What's 33-6?
+A: 27
+
+Q: 9+7*5?
+A: 44
+
+Q: Calculate 13 mod 12
+A: 1
+
+Q: Calculate 9*3
+A: 27
+
+Q: What is 7-1?
+A: 6
+
+Q: 50-49?
+A: 1
+
+Q: What's 2^3?
+A: 8
+
+Q: What is 6-6 equal to?
+A: 0
+
+Q: What is 28-1 equal to?
+A: 27
+
+Q: What's your name?
+A: core
+
+Q: What is 11*5 equal to?
+A: 55
+
+Q: What is 52+75 equal to?
+A: 127
+
+Q: What's 22*4?
+A: 88
+
+Q: What is 26-21 equal to?
+A: 5
+
+Q: What is 86-32 equal to?
+A: 54
+
+Q: What's 84/7?
+A: 12
+
+Q: What is 34*11 equal to?
+A: 374
+
+Q: Calculate 1+5
+A: 6
+
+Q: What is 57-26?
+A: 31
+
+Q: What is 6^3?
+A: 216
+
+Q: 18/2?
+A: 9
+
+Q: 7-1?
+A: 6
+
+Q: What is 80+73?
+A: 153
+
+Q: Calculate 20/2
+A: 10
+
+Q: What's 81-55?
+A: 26
+
+Q: 54-16?
+A: 38
+
+Q: 52+12?
+A: 64
+
+Q: 58-38?
+A: 20
+
+Q: What is 9+7?
+A: 16
+
+Q: 9-0?
+A: 9
+
+Q: 6-2?
+A: 4
+
+Q: What's 2+0?
+A: 2
+
+Q: What is 8-6 equal to?
+A: 2
+
+Q: Calculate 10-5
+A: 5
+
+Q: What are you?
+A: I'm core
+
+Q: What is 14+46 equal to?
+A: 60
+
+Q: Calculate 7-3
+A: 4
+
+Q: Calculate 7*9
+A: 63
+
+Q: What's 18+29?
+A: 47
+
+Q: What is 2*5+4?
+A: 14
+
+Q: What is 9+6?
+A: 15
+
+Q: What is 1+1?
+A: 2
+
+Q: What's 6*3+8?
+A: 26
+
+Q: Calculate 11-7
+A: 4
+
+Q: What's 12*8?
+A: 96
+
+Q: What is 4+0?
+A: 4
+
+Q: 51*11?
+A: 561
+
+Q: Calculate 63+32
+A: 95
+
+Q: What is 117/9?
+A: 13
+
+Q: Calculate 7*4
+A: 28
+
+Q: Calculate 98-4
+A: 94
+
+Q: What is 2+0 equal to?
+A: 2
+
+Q: What is 7*8+7?
+A: 63
+
+Q: Calculate 3+7*8
+A: 59
+
+Q: What is 30/2?
+A: 15
+
+Q: What is 288+841?
+A: 1129
+
+Q: What's 7+5?
+A: 12
+
+Q: Calculate 37-24
+A: 13
+
+Q: 55/11?
+A: 5
+
+Q: Calculate 8*11
+A: 88
+
+Q: Calculate 4*4
+A: 16
+
+Q: What's 62*7?
+A: 434
+
+Q: What's 5+5?
+A: 10
+
+Q: What is 8*10 equal to?
+A: 80
+
+Q: 0^3?
+A: 0
+
+Q: What's 15-8?
+A: 7
+
+Q: What's 5+7*9?
+A: 68
+
+Q: 17^2?
+A: 289
+
+Q: What is 3*5 equal to?
+A: 15
+
+Q: 5*5?
+A: 25
+
+Q: What is your name?
+A: core
+
+Q: What is 87-68?
+A: 19
+
+Q: 7/7?
+A: 1
+
+Q: 5-2?
+A: 3
+
+Q: What is 42+92 equal to?
+A: 134
+
+Q: What is 3*5?
+A: 15
+
+Q: Calculate 63+81
+A: 144
+
+Q: Tell me your name
+A: core
+
+Q: What's 8/8?
+A: 1
+
+Q: What is 126/9 equal to?
+A: 14
+
+Q: 12*7?
+A: 84
+
+Q: What is 9*3+3 equal to?
+A: 30
+
+Q: What's 2+2?
+A: 4
+
+Q: What is 81 mod 10?
+A: 1
+
+Q: What is 3+6*4?
+A: 27
+
+Q: What is 6*12?
+A: 72
+
+Q: What's 8+5*9?
+A: 53
+
+Q: What is 0+4 equal to?
+A: 4
+
+Q: What is 7*5+1?
+A: 36
+
+Q: 44*3?
+A: 132
+
+Q: What's 71-53?
+A: 18
+
+Q: Calculate 5*8
+A: 40
+
+Q: Calculate 12^2
+A: 144
+
+Q: What is 2*2+6 equal to?
+A: 10
+
+Q: Calculate 8*3+9
+A: 33
+
+Q: What's 3+2*7?
+A: 17
+
+Q: Calculate 786+798
+A: 1584
+
+Q: Calculate 1^2
+A: 1
+
+Q: What's 43-33?
+A: 10
+
+Q: Calculate 0+5
+A: 5
+
+Q: What is 10/2?
+A: 5
+
+Q: What is 57-35?
+A: 22
+
+Q: What's 93*12?
+A: 1116
+
+Q: 38+33?
+A: 71
+
+Q: 2+2?
+A: 4
+
+Q: What's 9-6?
+A: 3
+
+Q: What is 36-21?
+A: 15
+
+Q: Calculate 0^3
+A: 0
+
+Q: What is 84-71 equal to?
+A: 13
+
+Q: 85*6?
+A: 510
+
+Q: What is 100/10 equal to?
+A: 10
+
+Q: What's 7*5?
+A: 35
+
+Q: 5+5?
+A: 10
+
+Q: What's 11*8?
+A: 88
+
+Q: What's 12*10?
+A: 120
+
+Q: What's 10/2?
+A: 5
+
+Q: What is 6*5 equal to?
+A: 30
+
+Q: Calculate 51+58
+A: 109
+
+Q: What is 90+97?
+A: 187
+
+Q: What is 41-1 equal to?
+A: 40
+
+Q: Calculate 695+643
+A: 1338
+
+Q: What are you?
+A: I'm core
+
+Q: What is 8+3 equal to?
+A: 11
+
+Q: 140/7?
+A: 20
+
+Q: What is 91*2 equal to?
+A: 182
+
+Q: What's 66-34?
+A: 32
+
+Q: What's 12/12?
+A: 1
+
+Q: 60/3?
+A: 20
+
+Q: What is 357+692 equal to?
+A: 1049
+
+Q: What's 5*5?
+A: 25
+
+Q: 3*3?
+A: 9
+
+Q: What is 5+5 equal to?
+A: 10
+
+Q: 73-3?
+A: 70
+
+Q: Calculate 14/2
+A: 7
+
+Q: Calculate 9*9+3
+A: 84
+
+Q: What is 5*2+1?
+A: 11
+
+Q: What's 94+33?
+A: 127
+
+Q: 9*12?
+A: 108
+
+Q: What's 3*3?
+A: 9
+
+Q: What is 7*8+3?
+A: 59
+
+Q: What is 8*6 equal to?
+A: 48
+
+Q: 2+3*3?
+A: 11
+
+Q: Calculate 36/9
+A: 4
+
+Q: What's 1+4?
+A: 5
+
+Q: What's 455+233?
+A: 688
+
+Q: What is 2*2+9 equal to?
+A: 13
+
+Q: What do you do?
+A: I answer questions
+
+Q: What's 858+669?
+A: 1527
+
+Q: Calculate 33*5
+A: 165
+
+Q: Calculate 20/4
+A: 5
+
+Q: What is 9+8*3?
+A: 33
+
+Q: Calculate 143/11
+A: 13
+
+Q: What is 15-8 equal to?
+A: 7
+
+Q: What's 2*6+1?
+A: 13
+
+Q: 575+712?
+A: 1287
+
+Q: What is 0*6?
+A: 0
+
+Q: 2*9+7?
+A: 25
+
+Q: 8-3?
+A: 5
+
+Q: What is 3+5 equal to?
+A: 8
+
+Q: What's 2*8?
+A: 16
+
+Q: 1*1?
+A: 1
+
+Q: What is 9-1 equal to?
+A: 8
+
+Q: What is 52-51 equal to?
+A: 1
+
+Q: Calculate 6-1
+A: 5
+
+Q: 1*5?
+A: 5
+
+Q: 5*12?
+A: 60
+
+Q: Calculate 12/6
+A: 2
+
+Q: What's 90*4?
+A: 360
+
+Q: What's 0*2?
+A: 0
+
+Q: What is 7-6 equal to?
+A: 1
+
+Q: 8+0?
+A: 8
+
+Q: What is 9+0 equal to?
+A: 9
+
+Q: What's 15-8?
+A: 7
+
+Q: What is 651+732 equal to?
+A: 1383
+
+Q: 10*6?
+A: 60
+
+Q: Calculate 60/10
+A: 6
+
+Q: Calculate 2^2
+A: 4
+
+Q: What is 2+6*3 equal to?
+A: 20
+
+Q: What is 3*4+1?
+A: 13
+
+Q: Calculate 0+6
+A: 6
+
+Q: What is 9-4 equal to?
+A: 5
+
+Q: What's 10*3?
+A: 30
+
+Q: What's 61-36?
+A: 25
+
+Q: Calculate 95-28
+A: 67
+
+Q: 6^2?
+A: 36
+
+Q: 16^2?
+A: 256
+
+Q: What's 6+3*2?
+A: 12
+
+Q: What is 0+7?
+A: 7
+
+Q: What is 60-47?
+A: 13
+
+Q: What's 19+54?
+A: 73
+
+Q: What's 3+7*3?
+A: 24
+
+Q: What's 5-2?
+A: 3
+
+Q: What is 9*2?
+A: 18
+
+Q: 4*8?
+A: 32
+
+Q: 20/4?
+A: 5
+
+Q: What's 5-4?
+A: 1
+
+Q: 20-10?
+A: 10
+
+Q: What's 112/8?
+A: 14
+
+Q: What's 84*8?
+A: 672
+
+Q: 10+65?
+A: 75
+
+Q: What is 6*0?
+A: 0
+
+Q: What is 493+869?
+A: 1362
+
+Q: Are you smart?
+A: I try my best
+
+Q: Calculate 7*8+7
+A: 63
+
+Q: What is 7-0?
+A: 7
+
+Q: 5*5?
+A: 25
+
+Q: 9/3?
+A: 3
+
+Q: What is 9+1 equal to?
+A: 10
+
+Q: What is 67-25?
+A: 42
+
+Q: 63+84?
+A: 147
+
+Q: 52 mod 5?
+A: 2
+
+Q: Calculate 4*4
+A: 16
+
+Q: What is 18/6 equal to?
+A: 3
+
+Q: What is 42+33?
+A: 75
+
+Q: What's 1*0?
+A: 0
+
+Q: 748+494?
+A: 1242
+
+Q: What's 8-2?
+A: 6
+
+Q: 97-27?
+A: 70
+
+Q: What is 38-0?
+A: 38
+
+Q: What's 9*2+7?
+A: 25
+
+Q: What's 28/7?
+A: 4
+
+Q: Calculate 9-2
+A: 7
+
+Q: 96-34?
+A: 62
+
+Q: What is 2+1 equal to?
+A: 3
+
+Q: 3*8?
+A: 24
+
+Q: 10+10?
+A: 20
+
+Q: What is 27/3 equal to?
+A: 9
+
+Q: What is 0^2 equal to?
+A: 0
+
+Q: What's 9-6?
+A: 3
+
+Q: Calculate 11*6
+A: 66
+
+Q: What is 24-20 equal to?
+A: 4
+
+Q: 52 mod 4?
+A: 0
+
+Q: What is 11*10?
+A: 110
+
+Q: What is 70*6?
+A: 420
+
+Q: What is 9+9*5 equal to?
+A: 54
+
+Q: What is 2*11?
+A: 22
+
+Q: 5*8?
+A: 40
+
+Q: 100/10?
+A: 10
+
+Q: 11*11?
+A: 121
+
+Q: What's 17*9?
+A: 153
+
+Q: What is 48/12 equal to?
+A: 4
+
+Q: What is 28+60?
+A: 88
+
+Q: What is 7+3?
+A: 10
+
+Q: What's 1*6?
+A: 6
+
+Q: What is 3+7 equal to?
+A: 10
+
+Q: What is 1+9?
+A: 10
+
+Q: What is 6+1?
+A: 7
+
+Q: Calculate 105/7
+A: 15
+
+Q: What is 47-6?
+A: 41
+
+Q: Calculate 54 mod 11
+A: 10
+
+Q: 97*5?
+A: 485
+
+Q: 3+4?
+A: 7
+
+Q: What's 7+2*8?
+A: 23
+
+Q: What is 3-3 equal to?
+A: 0
+
+Q: What is 86+37?
+A: 123
+
+Q: What is 13*11 equal to?
+A: 143
+
+Q: 78-2?
+A: 76
+
+Q: What is 120/12?
+A: 10
+
+Q: 25-22?
+A: 3
+
+Q: What is 74+97?
+A: 171
+
+Q: What is 807+383?
+A: 1190
+
+Q: 5-5?
+A: 0
+
+Q: Calculate 49*9
+A: 441
+
+Q: What is 10-5?
+A: 5
+
+Q: What is 28+42?
+A: 70
+
+Q: What's 168/12?
+A: 14
+
+Q: What's 39 mod 3?
+A: 0
+
+Q: What's 7*2?
+A: 14
+
+Q: What is 20/5?
+A: 4
+
+Q: What is 9-5 equal to?
+A: 4
+
+Q: What is 81*6?
+A: 486
+
+Q: What is 50*12?
+A: 600
+
+Q: What's 9+9?
+A: 18
+
+Q: What is 91*12?
+A: 1092
+
+Q: What's 4*8+5?
+A: 37
+
+Q: Calculate 5*5
+A: 25
+
+Q: 445+537?
+A: 982
+
+Q: Calculate 1*8
+A: 8
+
+Q: What's 80 mod 7?
+A: 3
+
+Q: What is 42/3?
+A: 14
+
+Q: What is 187/11 equal to?
+A: 17
+
+Q: 61*3?
+A: 183
+
+Q: What is 54/9 equal to?
+A: 6
+
+Q: Calculate 98-77
+A: 21
+
+Q: What's 727+340?
+A: 1067
+
+Q: Calculate 6*6+1
+A: 37
+
+Q: What's 1*1?
+A: 1
+
+Q: What is 51/3 equal to?
+A: 17
+
+Q: What is 5-2 equal to?
+A: 3
+
+Q: What's 7*2?
+A: 14
+
+Q: 4+5?
+A: 9
+
+Q: What is 13^2 equal to?
+A: 169
+
+Q: What's 20^2?
+A: 400
+
+Q: What's 39+68?
+A: 107
+
+Q: 190/10?
+A: 19
+
+Q: What's 60 mod 3?
+A: 0
+
+Q: Calculate 10+10
+A: 20
+
+Q: Calculate 5+3
+A: 8
+
+Q: What is 33+29?
+A: 62
+
+Q: What is 8+4?
+A: 12
+
+Q: What is 31*7?
+A: 217
+
+Q: What is 36+22?
+A: 58
+
+Q: Calculate 5*3
+A: 15
+
+Q: What is 24-17?
+A: 7
+
+Q: What is 5+0?
+A: 5
+
+Q: What is 7*4+6?
+A: 34
+
+Q: Calculate 21-10
+A: 11
+
+Q: What is 2*10?
+A: 20
+
+Q: 34+15?
+A: 49
+
+Q: What is 3+3*6 equal to?
+A: 21
+
+Q: What is 1+9*4?
+A: 37
+
+Q: What is 5+7*4 equal to?
+A: 33
+
+Q: What is 42/7 equal to?
+A: 6
+
+Q: What is 68/4?
+A: 17
+
+Q: What's 8^3?
+A: 512
+
+Q: What is 85*9 equal to?
+A: 765
+
+Q: What is 32/8?
+A: 4
+
+Q: What is 0+2?
+A: 2
+
+Q: Calculate 4+0
+A: 4
+
+Q: What's 69+47?
+A: 116
+
+Q: What is 93 mod 9 equal to?
+A: 3
+
+Q: What is 22+63?
+A: 85
+
+Q: What's 20/4?
+A: 5
+
+Q: 6*0?
+A: 0
+
+Q: What is 87+25 equal to?
+A: 112
+
+Q: 33 mod 6?
+A: 3
+
+Q: Calculate 5*8
+A: 40
+
+Q: What's 23-22?
+A: 1
+
+Q: Calculate 15*11
+A: 165
+
+Q: 13-10?
+A: 3
+
+Q: What's 3*3?
+A: 9
+
+Q: 5+5?
+A: 10
+
+Q: What is 28+74 equal to?
+A: 102
+
+Q: Calculate 83*2
+A: 166
+
+Q: What is 1+4*2?
+A: 9
+
+Q: What's 30-2?
+A: 28
+
+Q: What is 20/10?
+A: 2
+
+Q: Calculate 14^2
+A: 196
+
+Q: 73 mod 4?
+A: 1
+
+Q: What is 82*11 equal to?
+A: 902
+
+Q: What is 3+9*2?
+A: 21
+
+Q: What's 4-0?
+A: 4
+
+Q: What's 10*2?
+A: 20
+
+Q: Calculate 37 mod 3
+A: 1
+
+Q: What's 9*2+1?
+A: 19
+
+Q: 3+4?
+A: 7
+
+Q: What is 92*3?
+A: 276
+
+Q: What is 81*10 equal to?
+A: 810
+
+Q: Calculate 168/12
+A: 14
+
+Q: Calculate 6+3*2
+A: 12
+
+Q: What's 15+14?
+A: 29
+
+Q: 8*8+3?
+A: 67
+
+Q: Calculate 170/10
+A: 17
+
+Q: 822+204?
+A: 1026
+
+Q: What's 59-38?
+A: 21
+
+Q: What is 23*10 equal to?
+A: 230
+
+Q: 49-31?
+A: 18
+
+Q: 1+8*7?
+A: 57
+
+Q: What's 365+185?
+A: 550
+
+Q: What's 25 mod 6?
+A: 1
+
+Q: 3*0?
+A: 0
+
+Q: What's 2*7?
+A: 14
+
+Q: What is 29-14 equal to?
+A: 15
+
+Q: What's 826+631?
+A: 1457
+
+Q: 71-66?
+A: 5
+
+Q: What is 52+45?
+A: 97
+
+Q: What is 2*3+9 equal to?
+A: 15
+
+Q: What's 7*6?
+A: 42
+
+Q: What's 0-0?
+A: 0
+
+Q: 42-11?
+A: 31
+
+Q: Calculate 12/2
+A: 6
+
+Q: Calculate 59*12
+A: 708
+
+Q: Calculate 9*0
+A: 0
+
+Q: What's 16*9?
+A: 144
+
+Q: What is 4+6*3 equal to?
+A: 22
+
+Q: 96/12?
+A: 8
+
+Q: Calculate 32+55
+A: 87
+
+Q: Calculate 9*1
+A: 9
+
+Q: Tell me your name
+A: core
+
+Q: What is 3*10?
+A: 30
+
+Q: What is 2-0?
+A: 2
+
+Q: What's 58+62?
+A: 120
+
+Q: Calculate 37-13
+A: 24
+
+Q: What is 8*4+1 equal to?
+A: 33
+
+Q: What is 12*6?
+A: 72
+
+Q: 5*0?
+A: 0
+
+Q: 9*1?
+A: 9
+
+Q: What is 28/2 equal to?
+A: 14
+
+Q: Can you help?
+A: Yes
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: What is 2+1?
+A: 3
+
+Q: What's 60-52?
+A: 8
+
+Q: Calculate 3*3
+A: 9
+
+Q: 10*5?
+A: 50
+
+Q: What's 17*4?
+A: 68
+
+Q: What's 9*0?
+A: 0
+
+Q: Calculate 39+76
+A: 115
+
+Q: What is 2*3 equal to?
+A: 6
+
+Q: What's 12+15?
+A: 27
+
+Q: Calculate 4*4
+A: 16
+
+Q: What's 5+5*5?
+A: 30
+
+Q: 377+525?
+A: 902
+
+Q: What are you called?
+A: core
+
+Q: What is 38+72 equal to?
+A: 110
+
+Q: 1+8?
+A: 9
+
+Q: What is 99 mod 7 equal to?
+A: 1
+
+Q: What is 29-1?
+A: 28
+
+Q: What's 4*2?
+A: 8
+
+Q: Calculate 2*10
+A: 20
+
+Q: 9*12?
+A: 108
+
+Q: What is 75*11 equal to?
+A: 825
+
+Q: 6-2?
+A: 4
+
+Q: What is 3*7+5?
+A: 26
+
+Q: What is 8+5?
+A: 13
+
+Q: Calculate 3-2
+A: 1
+
+Q: 6+0?
+A: 6
+
+Q: Calculate 0+8
+A: 8
+
+Q: 37-33?
+A: 4
+
+Q: What is 51-45 equal to?
+A: 6
+
+Q: 21*10?
+A: 210
+
+Q: What is 7*12 equal to?
+A: 84
+
+Q: What's 10/2?
+A: 5
+
+Q: What's 12*8?
+A: 96
+
+Q: What is 275+431?
+A: 706
+
+Q: Calculate 5*0
+A: 0
+
+Q: Calculate 72+32
+A: 104
+
+Q: Calculate 120/6
+A: 20
+
+Q: Calculate 87-5
+A: 82
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: What do you do?
+A: I answer questions
+
+Q: 11*0?
+A: 0
+
+Q: What is 9+2*7?
+A: 23
+
+Q: What's 2+4*2?
+A: 10
+
+Q: 98+80?
+A: 178
+
+Q: What is 3+1 equal to?
+A: 4
+
+Q: What's 0*2?
+A: 0
+
+Q: What's 9-2?
+A: 7
+
+Q: What is 50+94 equal to?
+A: 144
+
+Q: Calculate 3+0
+A: 3
+
+Q: Calculate 7+0
+A: 7
+
+Q: What's 3*3?
+A: 9
+
+Q: What is 6+6 equal to?
+A: 12
+
+Q: Calculate 16*4
+A: 64
+
+Q: What's 7-3?
+A: 4
+
+Q: 36/9?
+A: 4
+
+Q: What is 67*4 equal to?
+A: 268
+
+Q: 9+5?
+A: 14
+
+Q: What is 48/8?
+A: 6
+
+Q: What's 24-1?
+A: 23
+
+Q: What is 15-8?
+A: 7
+
+Q: Calculate 26-8
+A: 18
+
+Q: 80*10?
+A: 800
+
+Q: Calculate 1*4
+A: 4
+
+Q: 8-7?
+A: 1
+
+Q: 6*7?
+A: 42
+
+Q: Calculate 4*7
+A: 28
+
+Q: 15/5?
+A: 3
+
+Q: What is 32-11?
+A: 21
+
+Q: What's 59-11?
+A: 48
+
+Q: What is 0*0?
+A: 0
+
+Q: What's 912+646?
+A: 1558
+
+Q: What's 389+692?
+A: 1081
+
+Q: Calculate 20/10
+A: 2
+
+Q: What is 41*2 equal to?
+A: 82
+
+Q: What's 90-35?
+A: 55
+
+Q: Calculate 3-1
+A: 2
+
+Q: 5*6+8?
+A: 38
+
+Q: What is 2*2 equal to?
+A: 4
+
+Q: What is 7+5*7?
+A: 42
+
+Q: What's 12/2?
+A: 6
+
+Q: Calculate 4^2
+A: 16
+
+Q: Calculate 25+52
+A: 77
+
+Q: What is 32+56 equal to?
+A: 88
+
+Q: What is 2*9+9?
+A: 27
+
+Q: What's 2+4*2?
+A: 10
+
+Q: What is 6*9+2?
+A: 56
+
+Q: What's 8*2+9?
+A: 25
+
+Q: What is 70+38 equal to?
+A: 108
+
+Q: 8^3?
+A: 512
+
+Q: 7+2?
+A: 9
+
+Q: 7-6?
+A: 1
+
+Q: Calculate 0*9
+A: 0
+
+Q: Calculate 83+43
+A: 126
+
+Q: 8*5+6?
+A: 46
+
+Q: What is 100/10?
+A: 10
+
+Q: What is 77 mod 12 equal to?
+A: 5
+
+Q: 4+3?
+A: 7
+
+Q: Calculate 5+6*5
+A: 35
+
+Q: 15+56?
+A: 71
+
+Q: What's 76+71?
+A: 147
+
+Q: 9*9?
+A: 81
+
+Q: What's 8-5?
+A: 3
+
+Q: What's 18^2?
+A: 324
+
+Q: 26 mod 2?
+A: 0
+
+Q: What's 77*7?
+A: 539
+
+Q: What's 87+20?
+A: 107
+
+Q: 16^2?
+A: 256
+
+Q: What's 4*4?
+A: 16
+
+Q: What's 4-3?
+A: 1
+
+Q: What's 38+13?
+A: 51
+
+Q: What's 2*8+4?
+A: 20
+
+Q: 28-5?
+A: 23
+
+Q: Calculate 44-26
+A: 18
+
+Q: What is 14^2 equal to?
+A: 196
+
+Q: What is 8-7?
+A: 1
+
+Q: What is 5+6*2 equal to?
+A: 17
+
+Q: 55*10?
+A: 550
+
+Q: 60 mod 7?
+A: 4
+
+Q: What is 52+21 equal to?
+A: 73
+
+Q: What is 12*1?
+A: 12
+
+Q: Calculate 4^3
+A: 64
+
+Q: What is 100/10?
+A: 10
+
+Q: What is 9-8 equal to?
+A: 1
+
+Q: 4*12?
+A: 48
+
+Q: 135/9?
+A: 15
+
+Q: 40/8?
+A: 5
+
+Q: 50+57?
+A: 107
+
+Q: What is 1+4?
+A: 5
+
+Q: 28-22?
+A: 6
+
+Q: What is 56/4?
+A: 14
+
+Q: What is 5*6?
+A: 30
+
+Q: 8-4?
+A: 4
+
+Q: What is 8*7 equal to?
+A: 56
+
+Q: 90+86?
+A: 176
+
+Q: 74+14?
+A: 88
+
+Q: What is 34/2 equal to?
+A: 17
+
+Q: What is 96-77 equal to?
+A: 19
+
+Q: What's 39 mod 8?
+A: 7
+
+Q: Calculate 11*11
+A: 121
+
+Q: What is 46-12?
+A: 34
+
+Q: What is 82-73 equal to?
+A: 9
+
+Q: What's 1+0?
+A: 1
+
+Q: Calculate 7*3+4
+A: 25
+
+Q: What's 71-10?
+A: 61
+
+Q: Calculate 7*8+7
+A: 63
+
+Q: 6+8*8?
+A: 70
+
+Q: What's 60+98?
+A: 158
+
+Q: What is 5*5 equal to?
+A: 25
+
+Q: What's 28/4?
+A: 7
+
+Q: What's 2+2?
+A: 4
+
+Q: What is 8*7+6?
+A: 62
+
+Q: 3*6?
+A: 18
+
+Q: Calculate 8-5
+A: 3
+
+Q: 11*9?
+A: 99
+
+Q: What is 17 mod 4?
+A: 1
+
+Q: What is 33-25?
+A: 8
+
+Q: What is 15/3?
+A: 5
+
+Q: What is 4*11 equal to?
+A: 44
+
+Q: What is 10^2 equal to?
+A: 100
+
+Q: What is 7+9 equal to?
+A: 16
+
+Q: 3*3?
+A: 9
+
+Q: What is 168/12?
+A: 14
+
+Q: 4+8?
+A: 12
+
+Q: What is 7^2?
+A: 49
+
+Q: What is 428+515?
+A: 943
+
+Q: 2+2?
+A: 4
+
+Q: What's 7^2?
+A: 49
+
+Q: What's 12*5?
+A: 60
+
+Q: What is 58*4?
+A: 232
+
+Q: Calculate 878+112
+A: 990
+
+Q: What is 88 mod 12?
+A: 4
+
+Q: What's 0*0?
+A: 0
+
+Q: What is 6*7?
+A: 42
+
+Q: What is 10+10 equal to?
+A: 20
+
+Q: 0+1?
+A: 1
+
+Q: 100/10?
+A: 10
+
+Q: 0*6?
+A: 0
+
+Q: What's 7*11?
+A: 77
+
+Q: Calculate 3-3
+A: 0
+
+Q: What's 6+2?
+A: 8
+
+Q: What is 2*9 equal to?
+A: 18
+
+Q: Calculate 171/9
+A: 19
+
+Q: Calculate 3*3
+A: 9
+
+Q: What's 4^2?
+A: 16
+
+Q: What is 96-51?
+A: 45
+
+Q: What's 10-5?
+A: 5
+
+Q: What's 97-76?
+A: 21
+
+Q: Calculate 88+80
+A: 168
+
+Q: 496+798?
+A: 1294
+
+Q: What's 87-58?
+A: 29
+
+Q: What's 66-2?
+A: 64
+
+Q: What is 9*6 equal to?
+A: 54
+
+Q: 7+0?
+A: 7
+
+Q: What's 4*4?
+A: 16
+
+Q: What is 92*9 equal to?
+A: 828
+
+Q: Calculate 19 mod 8
+A: 3
+
+Q: Calculate 31-25
+A: 6
+
+Q: Who are you?
+A: core
+
+Q: What's 44+26?
+A: 70
+
+Q: Calculate 10+10
+A: 20
+
+Q: Calculate 56/8
+A: 7
+
+Q: What is 180/10 equal to?
+A: 18
+
+Q: What is 2*1 equal to?
+A: 2
+
+Q: What is 7*9+6?
+A: 69
+
+Q: What's 10/2?
+A: 5
+
+Q: 72/6?
+A: 12
+
+Q: What's 3*12?
+A: 36
+
+Q: What is 80/8?
+A: 10
+
+Q: 1+5*8?
+A: 41
+
+Q: What's 20/4?
+A: 5
+
+Q: What is 5+9?
+A: 14
+
+Q: What is 137+385 equal to?
+A: 522
+
+Q: What's 4+1?
+A: 5
+
+Q: 100/10?
+A: 10
+
+Q: 33+38?
+A: 71
+
+Q: What is 3+4 equal to?
+A: 7
+
+Q: 140/7?
+A: 20
+
+Q: What is 70/5 equal to?
+A: 14
+
+Q: What is 17-12 equal to?
+A: 5
+
+Q: Are you smart?
+A: I try my best
+
+Q: What is 8+9*8 equal to?
+A: 80
+
+Q: Calculate 1^3
+A: 1
+
+Q: What is 0*3?
+A: 0
+
+Q: 232+232?
+A: 464
+
+Q: Calculate 23-20
+A: 3
+
+Q: Calculate 0^2
+A: 0
+
+Q: What is 92*8?
+A: 736
+
+Q: What is 32+10?
+A: 42
+
+Q: Calculate 84/6
+A: 14
+
+Q: Calculate 50/10
+A: 5
+
+Q: 9*9+8?
+A: 89
+
+Q: 2*0?
+A: 0
+
+Q: 34*7?
+A: 238
+
+Q: 6^2?
+A: 36
+
+Q: 540+812?
+A: 1352
+
+Q: What is 276+232?
+A: 508
+
+Q: 97-35?
+A: 62
+
+Q: What is 8+8*6?
+A: 56
+
+Q: What is 41-29?
+A: 12
+
+Q: What is 81-36 equal to?
+A: 45
+
+Q: What's 78-24?
+A: 54
+
+Q: What are you called?
+A: core
+
+Q: Calculate 48-8
+A: 40
+
+Q: What is 23+54 equal to?
+A: 77
+
+Q: What's 42/7?
+A: 6
+
+Q: Calculate 41-33
+A: 8
+
+Q: What's 6+2?
+A: 8
+
+Q: Calculate 15-8
+A: 7
+
+Q: What is 15-0?
+A: 15
+
+Q: 6+6?
+A: 12
+
+Q: 1*6?
+A: 6
+
+Q: 24/12?
+A: 2
+
+Q: 35*5?
+A: 175
+
+Q: What is 50+74?
+A: 124
+
+Q: 72-28?
+A: 44
+
+Q: What is 9-6?
+A: 3
+
+Q: Calculate 11 mod 8
+A: 3
+
+Q: Calculate 5-5
+A: 0
+
+Q: 4+8*2?
+A: 20
+
+Q: What is 90-24?
+A: 66
+
+Q: Calculate 70/5
+A: 14
+
+Q: What's 100/5?
+A: 20
+
+Q: What is 0+7?
+A: 7
+
+Q: 14-5?
+A: 9
+
+Q: What's 28-24?
+A: 4
+
+Q: Calculate 38-2
+A: 36
+
+Q: Calculate 2*11
+A: 22
+
+Q: What is 0*7?
+A: 0
+
+Q: What's 2+6?
+A: 8
+
+Q: What's 49/7?
+A: 7
+
+Q: What is 3^3 equal to?
+A: 27
+
+Q: 3+0?
+A: 3
+
+Q: What's 20+78?
+A: 98
+
+Q: What's 66 mod 6?
+A: 0
+
+Q: What is 0-0?
+A: 0
+
+Q: What's 10*6?
+A: 60
+
+Q: Calculate 144/8
+A: 18
+
+Q: What's 13 mod 8?
+A: 5
+
+Q: What is 0+4?
+A: 4
+
+Q: 3+3*3?
+A: 12
+
+Q: 14-7?
+A: 7
+
+Q: What is 62+46 equal to?
+A: 108
+
+Q: What's 11*12?
+A: 132
+
+Q: What is 9*7+9 equal to?
+A: 72
+
+Q: What is 1-0?
+A: 1
+
+Q: Introduce yourself
+A: I'm core
+
+Q: 5+5?
+A: 10
+
+Q: Calculate 8-2
+A: 6
+
+Q: What is 45/3?
+A: 15
+
+Q: What is 10+10 equal to?
+A: 20
+
+Q: What is 7*5+5 equal to?
+A: 40
+
+Q: What's 84*7?
+A: 588
+
+Q: What is 4+9 equal to?
+A: 13
+
+Q: Calculate 70+37
+A: 107
+
+Q: What's 20-10?
+A: 10
+
+Q: What's 12*3?
+A: 36
+
+Q: What's 88/8?
+A: 11
+
+Q: Calculate 3*9+5
+A: 32
+
+Q: What is 7*10 equal to?
+A: 70
+
+Q: 0^2?
+A: 0
+
+Q: Calculate 12*0
+A: 0
+
+Q: What is 73-9 equal to?
+A: 64
+
+Q: Calculate 190/10
+A: 19
+
+Q: Calculate 24+77
+A: 101
+
+Q: Who are you?
+A: core
+
+Q: 59*5?
+A: 295
+
+Q: Calculate 94+76
+A: 170
+
+Q: What is 7+0?
+A: 7
+
+Q: What is your name?
+A: core
+
+Q: What's 11*5?
+A: 55
+
+Q: What is 39 mod 7 equal to?
+A: 4
+
+Q: 9+7?
+A: 16
+
+Q: What is 5*3 equal to?
+A: 15
+
+Q: Calculate 94+36
+A: 130
+
+Q: What is 90/5?
+A: 18
+
+Q: What is 619+133 equal to?
+A: 752
+
+Q: What is 8+8?
+A: 16
+
+Q: 9+6*4?
+A: 33
+
+Q: What is 259+600 equal to?
+A: 859
+
+Q: 1+1?
+A: 2
+
+Q: What's 3*3?
+A: 9
+
+Q: What's 8*5+1?
+A: 41
+
+Q: Calculate 1*1
+A: 1
+
+Q: What is 4*4 equal to?
+A: 16
+
+Q: What is 84*11?
+A: 924
+
+Q: What's 6+8*6?
+A: 54
+
+Q: What is 3+0 equal to?
+A: 3
+
+Q: 27*10?
+A: 270
+
+Q: 164+897?
+A: 1061
+
+Q: What is 37 mod 6 equal to?
+A: 1
+
+Q: 0+5?
+A: 5
+
+Q: 547+226?
+A: 773
+
+Q: What's 8*8+7?
+A: 71
+
+Q: What's 22+59?
+A: 81
+
+Q: 5+5?
+A: 10
+
+Q: What's 56*7?
+A: 392
+
+Q: What's 8*2+3?
+A: 19
+
+Q: What is 43+38?
+A: 81
+
+Q: What's 5+1?
+A: 6
+
+Q: Calculate 60-30
+A: 30
+
+Q: Calculate 4+5
+A: 9
+
+Q: What is 97 mod 6 equal to?
+A: 1
+
+Q: 55 mod 6?
+A: 1
+
+Q: What is 6*6+5?
+A: 41
+
+Q: What's 85/5?
+A: 17
+
+Q: Calculate 12/2
+A: 6
+
+Q: What's your name?
+A: core
+
+Q: What is 6*8+4 equal to?
+A: 52
+
+Q: 7*2?
+A: 14
+
+Q: What is 18-15 equal to?
+A: 3
+
+Q: What is 52*10 equal to?
+A: 520
+
+Q: 81/9?
+A: 9
+
+Q: What is 9*4 equal to?
+A: 36
+
+Q: Calculate 70+17
+A: 87
+
+Q: Calculate 498+325
+A: 823
+
+Q: What is 24+26?
+A: 50
+
+Q: What's 6*11?
+A: 66
+
+Q: Calculate 10/2
+A: 5
+
+Q: What is 4*4?
+A: 16
+
+Q: What is 3-2 equal to?
+A: 1
+
+Q: What's 67*4?
+A: 268
+
+Q: 171/9?
+A: 19
+
+Q: What is 16+69 equal to?
+A: 85
+
+Q: What is 7*4 equal to?
+A: 28
+
+Q: What is 120/12?
+A: 10
+
+Q: Calculate 27 mod 4
+A: 3
+
+Q: 36-0?
+A: 36
+
+Q: Calculate 27+56
+A: 83
+
+Q: 6+3?
+A: 9
+
+Q: What's 12/12?
+A: 1
+
+Q: What is 51*9?
+A: 459
+
+Q: 543+116?
+A: 659
+
+Q: What's 8+6*5?
+A: 38
+
+Q: Calculate 2+6*7
+A: 44
+
+Q: 45-30?
+A: 15
+
+Q: What is 3*3 equal to?
+A: 9
+
+Q: What's 68+58?
+A: 126
+
+Q: What's 8*1?
+A: 8
+
+Q: Calculate 5-1
+A: 4
+
+Q: What's 6*2?
+A: 12
+
+Q: What is 8-1 equal to?
+A: 7
+
+Q: Calculate 14 mod 12
+A: 2
+
+Q: What is 10-4?
+A: 6
+
+Q: 16/2?
+A: 8
+
+Q: What is 1+6*5 equal to?
+A: 31
+
+Q: What's 5*12?
+A: 60
+
+Q: 67+75?
+A: 142
+
+Q: What is 7-6 equal to?
+A: 1
+
+Q: 7+5?
+A: 12
+
+Q: What's 74 mod 5?
+A: 4
+
+Q: 7*9?
+A: 63
+
+Q: What is 7+1?
+A: 8
+
+Q: What is 70+95 equal to?
+A: 165
+
+Q: What is 81 mod 10?
+A: 1
+
+Q: What is your name?
+A: core
+
+Q: What is 489+975 equal to?
+A: 1464
+
+Q: 83*10?
+A: 830
+
+Q: What is 69+36 equal to?
+A: 105
+
+Q: What is 10*9 equal to?
+A: 90
+
+Q: What's 0*12?
+A: 0
+
+Q: 14*5?
+A: 70
+
+Q: What is 6*9+3?
+A: 57
+
+Q: Calculate 4+7
+A: 11
+
+Q: Calculate 11*1
+A: 11
+
+Q: Are you smart?
+A: I try my best
+
+Q: What is 30*9 equal to?
+A: 270
+
+Q: Calculate 0*3
+A: 0
+
+Q: What is 34*6 equal to?
+A: 204
+
+Q: What is 7+2*7 equal to?
+A: 21
+
+Q: 7+2?
+A: 9
+
+Q: 5*5?
+A: 25
+
+Q: What's 27+92?
+A: 119
+
+Q: What is 31-9?
+A: 22
+
+Q: Calculate 9*8+4
+A: 76
+
+Q: What's 71-5?
+A: 66
+
+Q: What is 91-28?
+A: 63
+
+Q: What's 80/4?
+A: 20
+
+Q: 36/6?
+A: 6
+
+Q: What is 40*9?
+A: 360
+
+Q: Calculate 60+47
+A: 107
+
+Q: Calculate 47-43
+A: 4
+
+Q: What is 100/10?
+A: 10
+
+Q: 8+6?
+A: 14
+
+Q: Calculate 10/2
+A: 5
+
+Q: Calculate 12*12
+A: 144
+
+Q: What is 10*1?
+A: 10
+
+Q: 20^2?
+A: 400
+
+Q: Calculate 20/5
+A: 4
+
+Q: Calculate 7-0
+A: 7
+
+Q: What is 94 mod 3?
+A: 1
+
+Q: 60 mod 7?
+A: 4
+
+Q: What is 1^2?
+A: 1
+
+Q: 2+2?
+A: 4
+
+Q: What is 9^3?
+A: 729
+
+Q: Calculate 9^3
+A: 729
+
+Q: What is 72 mod 8 equal to?
+A: 0
+
+Q: What's 20/4?
+A: 5
+
+Q: Calculate 6*9+6
+A: 60
+
+Q: What's 278+895?
+A: 1173
+
+Q: What's 0+9?
+A: 9
+
+Q: What is 7+2?
+A: 9
+
+Q: What is 11+47?
+A: 58
+
+Q: What is 229+450 equal to?
+A: 679
+
+Q: What's 90 mod 2?
+A: 0
+
+Q: Calculate 3+8*2
+A: 19
+
+Q: 40/2?
+A: 20
+
+Q: What's 20-10?
+A: 10
+
+Q: What's 8*6?
+A: 48
+
+Q: What's 36-23?
+A: 13
+
+Q: Calculate 1*4
+A: 4
+
+Q: What's 20*6?
+A: 120
+
+Q: 263+684?
+A: 947
+
+Q: Calculate 781+922
+A: 1703
+
+Q: What is 3+9?
+A: 12
+
+Q: What is 32 mod 6 equal to?
+A: 2
+
+Q: 2*9+6?
+A: 24
+
+Q: What's 13^2?
+A: 169
+
+Q: What's 20^2?
+A: 400
+
+Q: Calculate 20*9
+A: 180
+
+Q: Calculate 89 mod 6
+A: 5
+
+Q: What is 362+579 equal to?
+A: 941
+
+Q: Tell me your name
+A: core
+
+Q: What is 5+7*3?
+A: 26
+
+Q: 60-37?
+A: 23
+
+Q: What is 42/3 equal to?
+A: 14
+
+Q: 144/12?
+A: 12
+
+Q: What is 11*1?
+A: 11
+
+Q: 88/8?
+A: 11
+
+Q: Calculate 209/11
+A: 19
+
+Q: What's 40/10?
+A: 4
+
+Q: Calculate 2*2+4
+A: 8
+
+Q: What's 90+79?
+A: 169
+
+Q: What's 82+78?
+A: 160
+
+Q: What's 8-0?
+A: 8
+
+Q: Calculate 22-14
+A: 8
+
+Q: What's 92+77?
+A: 169
+
+Q: What is 96 mod 9 equal to?
+A: 6
+
+Q: 10^2?
+A: 100
+
+Q: What's 108/9?
+A: 12
+
+Q: Calculate 48*9
+A: 432
+
+Q: What is 15-8?
+A: 7
+
+Q: What's 83-76?
+A: 7
+
+Q: Calculate 42 mod 4
+A: 2
+
+Q: What is 39+85?
+A: 124
+
+Q: Calculate 23-10
+A: 13
+
+Q: What is 11*5 equal to?
+A: 55
+
+Q: What is 1+9?
+A: 10
+
+Q: What is 28 mod 11 equal to?
+A: 6
+
+Q: What is 8*3+7?
+A: 31
+
+Q: What is 8+7 equal to?
+A: 15
+
+Q: Calculate 3+9
+A: 12
+
+Q: What is 45-17 equal to?
+A: 28
+
+Q: What is 77*11?
+A: 847
+
+Q: What is 13+44 equal to?
+A: 57
+
+Q: What is 2+2 equal to?
+A: 4
+
+Q: What's 7^3?
+A: 343
+
+Q: What is 150/10?
+A: 15
+
+Q: Calculate 75*12
+A: 900
+
+Q: Calculate 1+8
+A: 9
+
+Q: What is 6-5 equal to?
+A: 1
+
+Q: What is 1+1?
+A: 2
+
+Q: What is 7*5?
+A: 35
+
+Q: What's 18/2?
+A: 9
+
+Q: Calculate 5+5
+A: 10
+
+Q: What is 148+186?
+A: 334
+
+Q: What is 0*12?
+A: 0
+
+Q: Calculate 17-17
+A: 0
+
+Q: What is 18^2?
+A: 324
+
+Q: What is 2+2?
+A: 4
+
+Q: What is 4*5?
+A: 20
+
+Q: 17^2?
+A: 289
+
+Q: 25 mod 7?
+A: 4
+
+Q: 20-10?
+A: 10
+
+Q: What is 26*5 equal to?
+A: 130
+
+Q: What's 99+55?
+A: 154
+
+Q: 56+87?
+A: 143
+
+Q: 7*10?
+A: 70
+
+Q: What is 39+33 equal to?
+A: 72
+
+Q: What is 9*7+6 equal to?
+A: 69
+
+Q: What is 22-10 equal to?
+A: 12
+
+Q: What is 99*5 equal to?
+A: 495
+
+Q: What is 3*8 equal to?
+A: 24
+
+Q: What are you called?
+A: core
+
+Q: 9*1?
+A: 9
+
+Q: Calculate 60 mod 9
+A: 6
+
+Q: What is 52/4?
+A: 13
+
+Q: 6-1?
+A: 5
+
+Q: What is 46*9?
+A: 414
+
+Q: What is 4*5 equal to?
+A: 20
+
+Q: What is 1^3 equal to?
+A: 1
+
+Q: What is 25-2 equal to?
+A: 23
+
+Q: What's 10*12?
+A: 120
+
+Q: What's 6*3?
+A: 18
+
+Q: What's 5+5?
+A: 10
+
+Q: What is 443+520 equal to?
+A: 963
+
+Q: 9*12?
+A: 108
+
+Q: What's 70*3?
+A: 210
+
+Q: 8*9+5?
+A: 77
+
+Q: Calculate 617+265
+A: 882
+
+Q: 0*7?
+A: 0
+
+Q: What are you?
+A: I'm core
+
+Q: Who are you?
+A: core
+
+Q: 10*6?
+A: 60
+
+Q: What is 78-18 equal to?
+A: 60
+
+Q: Calculate 9+4
+A: 13
+
+Q: 37*11?
+A: 407
+
+Q: 128/8?
+A: 16
+
+Q: 28/2?
+A: 14
+
+Q: Calculate 8+5*6
+A: 38
+
+Q: What is 9*12?
+A: 108
+
+Q: Calculate 12*8
+A: 96
+
+Q: What's 6-4?
+A: 2
+
+Q: What is 10*9 equal to?
+A: 90
+
+Q: What is 75/5 equal to?
+A: 15
+
+Q: Calculate 24*4
+A: 96
+
+Q: What is 9^2?
+A: 81
+
+Q: What's 18/3?
+A: 6
+
+Q: Calculate 931+647
+A: 1578
+
+Q: What's 11*5?
+A: 55
+
+Q: What is 7+8*8?
+A: 71
+
+Q: 0+3?
+A: 3
+
+Q: What is 2+3*4?
+A: 14
+
+Q: What is 32/4 equal to?
+A: 8
+
+Q: What is 20+86 equal to?
+A: 106
+
+Q: Calculate 36/2
+A: 18
+
+Q: What is 12-3?
+A: 9
+
+Q: Calculate 20/4
+A: 5
+
+Q: Calculate 1+0
+A: 1
+
+Q: What is 7*4+9 equal to?
+A: 37
+
+Q: What is 11^2?
+A: 121
+
+Q: Calculate 75-27
+A: 48
+
+Q: What is 39+84?
+A: 123
+
+Q: What is 22+92?
+A: 114
+
+Q: What's 36+85?
+A: 121
+
+Q: What is 8*5+8 equal to?
+A: 48
+
+Q: What is 9-0?
+A: 9
+
+Q: 10/2?
+A: 5
+
+Q: 2+3*3?
+A: 11
+
+Q: What is 81+93 equal to?
+A: 174
+
+Q: What is 55 mod 12 equal to?
+A: 7
+
+Q: What's 8+8?
+A: 16
+
+Q: Calculate 70 mod 5
+A: 0
+
+Q: 126/9?
+A: 14
+
+Q: 3+8*7?
+A: 59
+
+Q: 9*5+9?
+A: 54
+
+Q: What's 3+5?
+A: 8
+
+Q: What is 64/4?
+A: 16
+
+Q: Calculate 64*5
+A: 320
+
+Q: 220/11?
+A: 20
+
+Q: What is 4*4 equal to?
+A: 16
+
+Q: What is 4+7?
+A: 11
+
+Q: What is 4*7 equal to?
+A: 28
+
+Q: Calculate 4+0
+A: 4
+
+Q: What is 3+8 equal to?
+A: 11
+
+Q: 48*6?
+A: 288
+
+Q: 98*8?
+A: 784
+
+Q: What's 9+7?
+A: 16
+
+Q: What is 15-7?
+A: 8
+
+Q: 22-3?
+A: 19
+
+Q: What's 0+7?
+A: 7
+
+Q: What is 100/10 equal to?
+A: 10
+
+Q: What is 6*8?
+A: 48
+
+Q: 0*9?
+A: 0
+
+Q: What's 63/9?
+A: 7
+
+Q: Calculate 10+10
+A: 20
+
+Q: What's 8*10?
+A: 80
+
+Q: Calculate 87+44
+A: 131
+
+Q: What's 26*12?
+A: 312
+
+Q: Calculate 28 mod 3
+A: 1
+
+Q: Can you help?
+A: Yes
+
+Q: What's 4+1?
+A: 5
+
+Q: 665+913?
+A: 1578
+
+Q: Calculate 1+8*5
+A: 41
+
+Q: Calculate 8^2
+A: 64
+
+Q: Are you smart?
+A: I try my best
+
+Q: What is 44+92?
+A: 136
+
+Q: What is 24*6?
+A: 144
+
+Q: 5+3?
+A: 8
+
+Q: Calculate 2+0
+A: 2
+
+Q: What's 5^2?
+A: 25
+
+Q: What is 74*8?
+A: 592
+
+Q: Calculate 281+646
+A: 927
+
+Q: What is 6^3 equal to?
+A: 216
+
+Q: What is 90*11 equal to?
+A: 990
+
+Q: 5+2?
+A: 7
+
+Q: What is 12*6?
+A: 72
+
+Q: 5+2*9?
+A: 23
+
+Q: What's 180/9?
+A: 20
+
+Q: What is 5*0?
+A: 0
+
+Q: 559+847?
+A: 1406
+
+Q: What is 9*5+3?
+A: 48
+
+Q: What is 5*2?
+A: 10
+
+Q: 0+0?
+A: 0
+
+Q: 8*2?
+A: 16
+
+Q: What is 84+19 equal to?
+A: 103
+
+Q: What is 32-18?
+A: 14
+
+Q: What's 57-19?
+A: 38
+
+Q: Calculate 3+3
+A: 6
+
+Q: Calculate 10+10
+A: 20
+
+Q: 61+71?
+A: 132
+
+Q: What's 5*6+1?
+A: 31
+
+Q: 4*4?
+A: 16
+
+Q: What is 66+58?
+A: 124
+
+Q: What is 72 mod 7?
+A: 2
+
+Q: What's 29 mod 9?
+A: 2
+
+Q: What is 15-8?
+A: 7
+
+Q: What is 70/5 equal to?
+A: 14
+
+Q: 10-2?
+A: 8
+
+Q: What is 4*6?
+A: 24
+
+Q: What is 5/5 equal to?
+A: 1
+
+Q: 9+3*5?
+A: 24
+
+Q: What is 9-8?
+A: 1
+
+Q: What's 0*1?
+A: 0
+
+Q: What's 4^3?
+A: 64
+
+Q: What do you do?
+A: I answer questions
+
+Q: Calculate 27*12
+A: 324
+
+Q: What is 2+2 equal to?
+A: 4
+
+Q: Can you help?
+A: Yes
+
+Q: 32-6?
+A: 26
+
+Q: 70-25?
+A: 45
+
+Q: What is 905+503?
+A: 1408
+
+Q: Calculate 98-17
+A: 81
+
+Q: 8*8?
+A: 64
+
+Q: What's 198/11?
+A: 18
+
+Q: 9+4*9?
+A: 45
+
+Q: What is 9-1?
+A: 8
+
+Q: What is 6-1?
+A: 5
+
+Q: 26*5?
+A: 130
+
+Q: What is 0*9?
+A: 0
+
+Q: 5+8?
+A: 13
+
+Q: What's your name?
+A: core
+
+Q: 72/12?
+A: 6
+
+Q: 3*12?
+A: 36
+
+Q: What is 10/2 equal to?
+A: 5
+
+Q: Calculate 12*12
+A: 144
+
+Q: Calculate 60/10
+A: 6
+
+Q: What's 56/4?
+A: 14
+
+Q: Calculate 8*0
+A: 0
+
+Q: What is 3+4*8 equal to?
+A: 35
+
+Q: Calculate 11-6
+A: 5
+
+Q: What is 75*11?
+A: 825
+
+Q: Calculate 0*11
+A: 0
+
+Q: What is 70 mod 8?
+A: 6
+
+Q: What's 436+874?
+A: 1310
+
+Q: Calculate 12*1
+A: 12
+
+Q: Calculate 10+10
+A: 20
+
+Q: What is 7*6+8 equal to?
+A: 50
+
+Q: What's 7+1?
+A: 8
+
+Q: Calculate 48/4
+A: 12
+
+Q: 8*0?
+A: 0
+
+Q: What is 19^2 equal to?
+A: 361
+
+Q: 7+8?
+A: 15
+
+Q: 2*5?
+A: 10
+
+Q: What is 39-0?
+A: 39
+
+Q: What is 10*3?
+A: 30
+
+Q: What is 9*3?
+A: 27
+
+Q: What is 7*3 equal to?
+A: 21
+
+Q: What is 3+4 equal to?
+A: 7
+
+Q: What's 9-4?
+A: 5
+
+Q: Calculate 7*10
+A: 70
+
+Q: What's 20-17?
+A: 3
+
+Q: What's 39 mod 11?
+A: 6
+
+Q: 71 mod 5?
+A: 1
+
+Q: What is 40-11 equal to?
+A: 29
+
+Q: What is 70+32 equal to?
+A: 102
+
+Q: Calculate 1*10
+A: 10
+
+Q: 24+36?
+A: 60
+
+Q: What is 45+50 equal to?
+A: 95
+
+Q: What is 11*3 equal to?
+A: 33
+
+Q: What's 24 mod 12?
+A: 0
+
+Q: What's 60/12?
+A: 5
+
+Q: 13+93?
+A: 106
+
+Q: What is 6+2 equal to?
+A: 8
+
+Q: Calculate 1*5
+A: 5
+
+Q: What is 41*3?
+A: 123
+
+Q: What is 2+2?
+A: 4
+
+Q: 6*1?
+A: 6
+
+Q: What's 15-13?
+A: 2
+
+Q: What is 228/12 equal to?
+A: 19
+
+Q: What is 5*4?
+A: 20
+
+Q: 9+2?
+A: 11
+
+Q: What is 43+47 equal to?
+A: 90
+
+Q: What do you do?
+A: I answer questions
+
+Q: What is 12*6 equal to?
+A: 72
+
+Q: 3*0?
+A: 0
+
+Q: What's 7+8?
+A: 15
+
+Q: What is 7+5 equal to?
+A: 12
+
+Q: Calculate 6*2
+A: 12
+
+Q: What is 4+5*9?
+A: 49
+
+Q: What is 14^2?
+A: 196
+
+Q: What is 2*6 equal to?
+A: 12
+
+Q: What is 7*11?
+A: 77
+
+Q: What is 1^3?
+A: 1
+
+Q: 2*3?
+A: 6
+
+Q: Calculate 1+3*2
+A: 7
+
+Q: What is 9*0 equal to?
+A: 0
+
+Q: What is 136/8?
+A: 17
+
+Q: Calculate 439+166
+A: 605
+
+Q: Calculate 44/11
+A: 4
+
+Q: What's 16/8?
+A: 2
+
+Q: What is 46+27 equal to?
+A: 73
+
+Q: Calculate 44+94
+A: 138
+
+Q: Calculate 7*10
+A: 70
+
+Q: Calculate 7*8+7
+A: 63
+
+Q: What's 60/3?
+A: 20
+
+Q: 40+21?
+A: 61
+
+Q: 68*7?
+A: 476
+
+Q: What's 9*6+4?
+A: 58
+
+Q: 4*1?
+A: 4
+
+Q: Who are you?
+A: core
+
+Q: Calculate 5+8*9
+A: 77
+
+Q: What is 23+69 equal to?
+A: 92
+
+Q: What is 50/10 equal to?
+A: 5
+
+Q: What is 3^2?
+A: 9
+
+Q: What is 258+471?
+A: 729
+
+Q: Calculate 160/10
+A: 16
+
+Q: What is 61+89 equal to?
+A: 150
+
+Q: What is 6+9?
+A: 15
+
+Q: Calculate 4+4
+A: 8
+
+Q: Calculate 34*4
+A: 136
+
+Q: What's 16-3?
+A: 13
+
+Q: What is 114/6 equal to?
+A: 19
+
+Q: What is 69+89 equal to?
+A: 158
+
+Q: 2*5?
+A: 10
+
+Q: What's 71*4?
+A: 284
+
+Q: What is 2+2?
+A: 4
+
+Q: What is 11*6?
+A: 66
+
+Q: Calculate 39-19
+A: 20
+
+Q: 36*12?
+A: 432
+
+Q: What's 8^2?
+A: 64
+
+Q: What is 65*7 equal to?
+A: 455
+
+Q: What's 10-5?
+A: 5
+
+Q: What's 87*6?
+A: 522
+
+Q: What is 0+9?
+A: 9
+
+Q: What is 8^2 equal to?
+A: 64
+
+Q: Calculate 9/3
+A: 3
+
+Q: What's 34+93?
+A: 127
+
+Q: What is 8*8 equal to?
+A: 64
+
+Q: What is 86-37 equal to?
+A: 49
+
+Q: Calculate 3-2
+A: 1
+
+Q: What's 92+42?
+A: 134
+
+Q: What's 3+4?
+A: 7
+
+Q: What's 10^3?
+A: 1000
+
+Q: Calculate 3+7
+A: 10
+
+Q: Calculate 11*11
+A: 121
+
+Q: What's 0+9?
+A: 9
+
+Q: Calculate 71+73
+A: 144
+
+Q: 2*4?
+A: 8
+
+Q: What's 5+9?
+A: 14
+
+Q: What is 43*11?
+A: 473
+
+Q: What is 22-13 equal to?
+A: 9
+
+Q: What's 18 mod 9?
+A: 0
+
+Q: What is 35+17 equal to?
+A: 52
+
+Q: What's 63 mod 7?
+A: 0
+
+Q: What is 4*7+2?
+A: 30
+
+Q: What is 83+29?
+A: 112
+
+Q: What is 4+5*4 equal to?
+A: 24
+
+Q: Calculate 36*8
+A: 288
+
+Q: What is 11^2 equal to?
+A: 121
+
+Q: What's 34+13?
+A: 47
+
+Q: 64+34?
+A: 98
+
+Q: What's 12*11?
+A: 132
+
+Q: What is 962+475 equal to?
+A: 1437
+
+Q: 57 mod 3?
+A: 0
+
+Q: What is 3+1?
+A: 4
+
+Q: What is 29+88?
+A: 117
+
+Q: What is 18+66?
+A: 84
+
+Q: What is 9*6 equal to?
+A: 54
+
+Q: What is 8+9*5 equal to?
+A: 53
+
+Q: What is 503+308 equal to?
+A: 811
+
+Q: What's 120/12?
+A: 10
+
+Q: What is 19-10?
+A: 9
+
+Q: What is 25 mod 6 equal to?
+A: 1
+
+Q: 83-46?
+A: 37
+
+Q: What's 19-7?
+A: 12
+
+Q: What is 6*9+1 equal to?
+A: 55
+
+Q: 4+2?
+A: 6
+
+Q: 59 mod 9?
+A: 5
+
+Q: What is 5*5?
+A: 25
+
+Q: What is 0+5?
+A: 5
+
+Q: What is 6*7 equal to?
+A: 42
+
+Q: What is 8*12?
+A: 96
+
+Q: What's 6*4+2?
+A: 26
+
+Q: Calculate 7+2
+A: 9
+
+Q: Calculate 165/11
+A: 15
+
+Q: What is 71+18?
+A: 89
+
+Q: What is 4+7 equal to?
+A: 11
+
+Q: 95/5?
+A: 19
+
+Q: 16^2?
+A: 256
+
+Q: What's 540+387?
+A: 927
+
+Q: What is 20-10?
+A: 10
+
+Q: What's 97+81?
+A: 178
+
+Q: What's 94-87?
+A: 7
+
+Q: What is 6*0?
+A: 0
+
+Q: What is 4*3 equal to?
+A: 12
+
+Q: Calculate 3*3
+A: 9
+
+Q: 668+730?
+A: 1398
+
+Q: Calculate 96-61
+A: 35
+
+Q: 9*12?
+A: 108
+
+Q: 15-8?
+A: 7
+
+Q: What is 7*3+2 equal to?
+A: 23
+
+Q: What's 25/5?
+A: 5
+
+Q: What's 52-27?
+A: 25
+
+Q: What is 8+2*8?
+A: 24
+
+Q: Can you help?
+A: Yes
+
+Q: What is 20/4 equal to?
+A: 5
+
+Q: Calculate 46*5
+A: 230
+
+Q: What's 9^2?
+A: 81
+
+Q: 222+180?
+A: 402
+
+Q: 89-70?
+A: 19
+
+Q: What is 64/4?
+A: 16
+
+Q: What is 6+9*7?
+A: 69
+
+Q: What's 572+966?
+A: 1538
+
+Q: 5^3?
+A: 125
+
+Q: What's 5+5?
+A: 10
+
+Q: 4-2?
+A: 2
+
+Q: What is 17*4?
+A: 68
+
+Q: What is 8-7?
+A: 1
+
+Q: What is 10^2 equal to?
+A: 100
+
+Q: What is 9-4 equal to?
+A: 5
+
+Q: Calculate 55 mod 3
+A: 1
+
+Q: Calculate 9*9+3
+A: 84
+
+Q: What is 27/9?
+A: 3
+
+Q: Calculate 7-6
+A: 1
+
+Q: What's 719+141?
+A: 860
+
+Q: 847+472?
+A: 1319
+
+Q: Calculate 15-8
+A: 7
+
+Q: What's 7*1?
+A: 7
+
+Q: What is 9+6?
+A: 15
+
+Q: Calculate 22+54
+A: 76
+
+Q: 33-29?
+A: 4
+
+Q: 8-6?
+A: 2
+
+Q: What's 6-4?
+A: 2
+
+Q: 82-50?
+A: 32
+
+Q: What's 0+0?
+A: 0
+
+Q: What is 9*1?
+A: 9
+
+Q: Can you help?
+A: Yes
+
+Q: 52-34?
+A: 18
+
+Q: What is 5*9+6 equal to?
+A: 51
+
+Q: What's 48+99?
+A: 147
+
+Q: What is 5*6 equal to?
+A: 30
+
+Q: What's 99-48?
+A: 51
+
+Q: What is 97 mod 12?
+A: 1
+
+Q: Calculate 69*2
+A: 138
+
+Q: What is 0*5?
+A: 0
+
+Q: What is 6-4?
+A: 2
+
+Q: What are you called?
+A: core
+
+Q: 27-10?
+A: 17
+
+Q: What's 60+90?
+A: 150
+
+Q: What is 2*7+7 equal to?
+A: 21
+
+Q: What is 31*5 equal to?
+A: 155
+
+Q: What is 62-56 equal to?
+A: 6
+
+Q: What's 7-0?
+A: 7
+
+Q: What is 87-1 equal to?
+A: 86
+
+Q: What is 2+2 equal to?
+A: 4
+
+Q: Calculate 5+7
+A: 12
+
+Q: What is 2+0?
+A: 2
+
+Q: Calculate 0*5
+A: 0
+
+Q: 73+28?
+A: 101
+
+Q: What is 208+976 equal to?
+A: 1184
+
+Q: What is 13*12?
+A: 156
+
+Q: 86+93?
+A: 179
+
+Q: 19 mod 2?
+A: 1
+
+Q: 4+6?
+A: 10
+
+Q: What is 3*3?
+A: 9
+
+Q: What is 2^3?
+A: 8
+
+Q: What is 99/9 equal to?
+A: 11
+
+Q: What is 20 mod 3 equal to?
+A: 2
+
+Q: What is 25+26?
+A: 51
+
+Q: Calculate 15^2
+A: 225
+
+Q: What's 14*3?
+A: 42
+
+Q: What's 11*0?
+A: 0
+
+Q: 38-23?
+A: 15
+
+Q: What is 0+3?
+A: 3
+
+Q: What is 90*3?
+A: 270
+
+Q: What is 33/3?
+A: 11
+
+Q: What is 48*9 equal to?
+A: 432
+
+Q: Calculate 871+311
+A: 1182
+
+Q: 11*5?
+A: 55
+
+Q: Calculate 5+8*4
+A: 37
+
+Q: What is 14+13?
+A: 27
+
+Q: What's 89-73?
+A: 16
+
+Q: What's 60/12?
+A: 5
+
+Q: 9*9+4?
+A: 85
+
+Q: What is 9/9?
+A: 1
+
+Q: What's 4^3?
+A: 64
+
+Q: 9*6+3?
+A: 57
+
+Q: What's 9-9?
+A: 0
+
+Q: What is 4*12 equal to?
+A: 48
+
+Q: Calculate 494+876
+A: 1370
+
+Q: Are you smart?
+A: I try my best
+
+Q: What's 15-8?
+A: 7
+
+Q: What is 3*12?
+A: 36
+
+Q: What is 0*4 equal to?
+A: 0
+
+Q: What's 2+8?
+A: 10
+
+Q: What is 15+30 equal to?
+A: 45
+
+Q: What is 37*11?
+A: 407
+
+Q: What is 1^2 equal to?
+A: 1
+
+Q: What's 50 mod 7?
+A: 1
+
+Q: 6*10?
+A: 60
+
+Q: What's 7+9*7?
+A: 70
+
+Q: 6+1?
+A: 7
+
+Q: Calculate 58 mod 8
+A: 2
+
+Q: What's 0+3?
+A: 3
+
+Q: What is 3+7?
+A: 10
+
+Q: What is 99 mod 10?
+A: 9
+
+Q: Calculate 85*3
+A: 255
+
+Q: Calculate 55/5
+A: 11
+
+Q: 32+76?
+A: 108
+
+Q: 2*11?
+A: 22
+
+Q: What is 69-55?
+A: 14
+
+Q: What is 11-10?
+A: 1
+
+Q: Calculate 859+701
+A: 1560
+
+Q: What is 0+0?
+A: 0
+
+Q: What is 5-4?
+A: 1
+
+Q: What's 140/7?
+A: 20
+
+Q: What's 94 mod 2?
+A: 0
+
+Q: What's 3*10?
+A: 30
+
+Q: What is 2+9*6 equal to?
+A: 56
+
+Q: 83-17?
+A: 66
+
+Q: Calculate 2+6*3
+A: 20
+
+Q: What's 15+10?
+A: 25
+
+Q: What is 24-18 equal to?
+A: 6
+
+Q: What is 11/11 equal to?
+A: 1
+
+Q: What is 82*10 equal to?
+A: 820
+
+Q: What is 3+8 equal to?
+A: 11
+
+Q: What's 6*0?
+A: 0
+
+Q: 34-18?
+A: 16
+
+Q: 10*5?
+A: 50
+
+Q: 6*9+8?
+A: 62
+
+Q: What's 10-5?
+A: 5
+
+Q: What is 4+2*9 equal to?
+A: 22
+
+Q: What is 757+110?
+A: 867
+
+Q: What's 10-5?
+A: 5
+
+Q: 1*9?
+A: 9
+
+Q: What's 4-1?
+A: 3
+
+Q: What is 5/5 equal to?
+A: 1
+
+Q: 36/2?
+A: 18
+
+Q: 2*11?
+A: 22
+
+Q: 63/7?
+A: 9
+
+Q: Calculate 6*7
+A: 42
+
+Q: Calculate 38+43
+A: 81
+
+Q: 1+9?
+A: 10
+
+Q: What is 10-5 equal to?
+A: 5
+
+Q: What is 12*8 equal to?
+A: 96
+
+Q: What's 22/11?
+A: 2
+
+Q: Calculate 374+866
+A: 1240
+
+Q: Calculate 8+8*6
+A: 56
+
+Q: What is 121/11?
+A: 11
+
+Q: What's 5*9+7?
+A: 52
+
+Q: Calculate 0*5
+A: 0
+
+Q: What's 3*9?
+A: 27
+
+Q: What's 890+439?
+A: 1329
+
+Q: Calculate 3^3
+A: 27
+
+Q: What is 36+55 equal to?
+A: 91
+
+Q: 7*0?
+A: 0
+
+Q: 654+278?
+A: 932
+
+Q: What is 7^3 equal to?
+A: 343
+
+Q: What is 0+3?
+A: 3
+
+Q: What's 8+7?
+A: 15
+
+Q: What's 6+1?
+A: 7
+
+Q: What is 989+483 equal to?
+A: 1472
+
+Q: What is 209/11?
+A: 19
+
+Q: 355+401?
+A: 756
+
+Q: Calculate 91 mod 11
+A: 3
+
+Q: What is 73*7 equal to?
+A: 511
+
+Q: Calculate 53 mod 6
+A: 5
+
+Q: Calculate 4+5
+A: 9
+
+Q: Calculate 11+31
+A: 42
+
+Q: Calculate 6+8
+A: 14
+
+Q: What is 43*4 equal to?
+A: 172
+
+Q: Calculate 81+43
+A: 124
+
+Q: Calculate 45*12
+A: 540
+
+Q: 5*7?
+A: 35
+
+Q: What's 30 mod 5?
+A: 0
+
+Q: What is 40/10 equal to?
+A: 4
+
+Q: 5+4?
+A: 9
+
+Q: 25/5?
+A: 5
+
+Q: 20*12?
+A: 240
+
+Q: What's 84*2?
+A: 168
+
+Q: Calculate 8*0
+A: 0
+
+Q: What is 12*3 equal to?
+A: 36
+
+Q: 42*2?
+A: 84
+
+Q: Calculate 6*4
+A: 24
+
+Q: What is 77/11?
+A: 7
+
+Q: What is 13^2?
+A: 169
+
+Q: 66+50?
+A: 116
+
+Q: 9*3+9?
+A: 36
+
+Q: What is 10-5 equal to?
+A: 5
+
+Q: Calculate 38/2
+A: 19
+
+Q: Calculate 45/3
+A: 15
+
+Q: What is 5*5 equal to?
+A: 25
+
+Q: What is 45/5?
+A: 9
+
+Q: Calculate 2+8*2
+A: 18
+
+Q: What is 74-68?
+A: 6
+
+Q: 94+86?
+A: 180
+
+Q: What is 9+9*4?
+A: 45
+
+Q: What is 3^2?
+A: 9
+
+Q: Calculate 5*9+2
+A: 47
+
+Q: Calculate 17+46
+A: 63
+
+Q: What is 17^2?
+A: 289
+
+Q: What is 71 mod 6 equal to?
+A: 5
+
+Q: 32/4?
+A: 8
+
+Q: What is 64*12 equal to?
+A: 768
+
+Q: What is 30+17?
+A: 47
+
+Q: 227+285?
+A: 512
+
+Q: Calculate 216/12
+A: 18
+
+Q: 7+9?
+A: 16
+
+Q: Calculate 3+5
+A: 8
+
+Q: Calculate 9+8
+A: 17
+
+Q: 2+4*7?
+A: 30
+
+Q: What's 38-16?
+A: 22
+
+Q: What's 2*1?
+A: 2
+
+Q: 3*9+2?
+A: 29
+
+Q: What is 12/4 equal to?
+A: 3
+
+Q: What is 9+9*7?
+A: 72
+
+Q: Calculate 7+3
+A: 10
+
+Q: What's 837+784?
+A: 1621
+
+Q: What is 62*9?
+A: 558
+
+Q: What's 126/7?
+A: 18
+
+Q: What is 9*5?
+A: 45
+
+Q: 7+7?
+A: 14
+
+Q: 88+50?
+A: 138
+
+Q: Calculate 3+0
+A: 3
+
+Q: What's 89+19?
+A: 108
+
+Q: What is 9+6 equal to?
+A: 15
+
+Q: 63*3?
+A: 189
+
+Q: What is 9-3 equal to?
+A: 6
+
+Q: What is 74*2?
+A: 148
+
+Q: What is 3*7+1?
+A: 22
+
+Q: What's 11*5?
+A: 55
+
+Q: What is 10-5 equal to?
+A: 5
+
+Q: What's 5+5*7?
+A: 40
+
+Q: What's 8*3?
+A: 24
+
+Q: What is 24+95?
+A: 119
+
+Q: What's 2*9?
+A: 18
+
+Q: What is 27 mod 9?
+A: 0
+
+Q: What's 71-35?
+A: 36
+
+Q: Calculate 9^2
+A: 81
+
+Q: What is 5-0 equal to?
+A: 5
+
+Q: What is 15-8 equal to?
+A: 7
+
+Q: What is 1+7?
+A: 8
+
+Q: What is 18/9?
+A: 2
+
+Q: What is 61-49?
+A: 12
+
+Q: What is 31+72?
+A: 103
+
+Q: Calculate 128/8
+A: 16
+
+Q: 46 mod 12?
+A: 10
+
+Q: What is 9-0?
+A: 9
+
+Q: 126/9?
+A: 14
+
+Q: What's 6+9?
+A: 15
+
+Q: What is 98/7 equal to?
+A: 14
+
+Q: Calculate 3*3
+A: 9
+
+Q: What's 5*5?
+A: 25
+
+Q: What's 45*5?
+A: 225
+
+Q: Calculate 96*8
+A: 768
+
+Q: What is 4*0 equal to?
+A: 0
+
+Q: 10+45?
+A: 55
+
+Q: 9+3*2?
+A: 15
+
+Q: 49 mod 6?
+A: 1
+
+Q: Calculate 14-10
+A: 4
+
+Q: What's 509+805?
+A: 1314
+
+Q: What is 0^3 equal to?
+A: 0
+
+Q: What is 0*8 equal to?
+A: 0
+
+Q: What's 99 mod 6?
+A: 3
+
+Q: What is 86+60?
+A: 146
+
+Q: What is 20/4?
+A: 5
+
+Q: What is 44/11 equal to?
+A: 4
+
+Q: 33-8?
+A: 25
+
+Q: What is 8*1 equal to?
+A: 8
+
+Q: What's 1*1?
+A: 1
+
+Q: What's 4*4?
+A: 16
+
+Q: Calculate 27/9
+A: 3
+
+Q: What's 98/7?
+A: 14
+
+Q: What's 48/6?
+A: 8
+
+Q: Calculate 20-10
+A: 10
+
+Q: What's 3*7?
+A: 21
+
+Q: What are you?
+A: I'm core
+
+Q: Calculate 6+6*3
+A: 24
+
+Q: What is 695+522?
+A: 1217
+
+Q: What is 6*9?
+A: 54
+
+Q: 3-3?
+A: 0
+
+Q: Calculate 78-10
+A: 68
+
+Q: What is 2^2 equal to?
+A: 4
+
+Q: 98*3?
+A: 294
+
+Q: 7+9*9?
+A: 88
+
+Q: 5*5?
+A: 25
+
+Q: What is 12^2 equal to?
+A: 144
+
+Q: What is 55-10 equal to?
+A: 45
+
+Q: What is 3*12?
+A: 36
+
+Q: What is 72-34?
+A: 38
+
+Q: What's 0+6?
+A: 6
+
+Q: What's 3*6+2?
+A: 20
+
+Q: What is 5*11 equal to?
+A: 55
+
+Q: Calculate 535+266
+A: 801
+
+Q: Calculate 0+8
+A: 8
+
+Q: What is 5-5?
+A: 0
+
+Q: Introduce yourself
+A: I'm core
+
+Q: What is 58+55?
+A: 113
+
+Q: What is 1+6?
+A: 7
+
+Q: Calculate 10+10
+A: 20
+
+Q: What is 22-6 equal to?
+A: 16
+
+Q: What's 786+743?
+A: 1529
+
+Q: What is 97+48 equal to?
+A: 145
+
+Q: What's 22-18?
+A: 4
+
+Q: 77-8?
+A: 69
+
+Q: Calculate 6*4
+A: 24
+
+Q: Calculate 71-52
+A: 19
+
+Q: What is 4*4 equal to?
+A: 16
+
+Q: 20/4?
+A: 5
+
+Q: What is 0+7 equal to?
+A: 7
+
+Q: What is 7*2?
+A: 14
+
+Q: What is 10*6 equal to?
+A: 60
+
+Q: What is 54+46?
+A: 100
+
+Q: What is 0*9 equal to?
+A: 0
+
+Q: Calculate 29-22
+A: 7
+
+Q: What is 65-1?
+A: 64
+
+Q: What's 94 mod 8?
+A: 6
+
+Q: What is 29*2?
+A: 58
+
+Q: Calculate 8+8*3
+A: 32
+
+Q: 2+0?
+A: 2
+
+Q: What is 40*3?
+A: 120
+
+Q: Calculate 6*5
+A: 30
+
+Q: What's 95+90?
+A: 185
+
+Q: 50/10?
+A: 5
+
+Q: Calculate 9-6
+A: 3
+
+Q: What is 3*9+9?
+A: 36
+
+Q: What's 0+9?
+A: 9
+
+Q: Calculate 1+7
+A: 8
+
+Q: What is 68+15 equal to?
+A: 83
+
+Q: What is 48/3?
+A: 16
+
+Q: What's 4*6?
+A: 24
+
+Q: Calculate 7+6
+A: 13
+
+Q: What is 45+60 equal to?
+A: 105
+
+Q: Calculate 2+1
+A: 3
+
+Q: Calculate 55 mod 6
+A: 1
+
+Q: Calculate 101+318
+A: 419
+
+Q: What is 9-2 equal to?
+A: 7
+
+Q: What is 42+79 equal to?
+A: 121
+
+Q: What's 45/3?
+A: 15
+
+Q: Calculate 98 mod 7
+A: 0
+
+Q: 8-2?
+A: 6
+
+Q: What's 58-52?
+A: 6
+
+Q: Calculate 73-24
+A: 49
+
+Q: 85+21?
+A: 106
+
+Q: What is 11*6 equal to?
+A: 66
+
+Q: What is 65 mod 5?
+A: 0
+
+Q: What's 5*2?
+A: 10
+
+Q: 72/4?
+A: 18
+
+Q: What's 0+5?
+A: 5
+
+Q: What is 91-12 equal to?
+A: 79
+
+Q: What is 3*12?
+A: 36
+
+Q: What is 8+5*4 equal to?
+A: 28
+
+Q: Calculate 5+5
+A: 10
+
+Q: What is 6*9+5 equal to?
+A: 59
+
+Q: What is 6*4?
+A: 24
+
+Q: Calculate 20/4
+A: 5
+
+Q: 3*8?
+A: 24
+
+Q: Calculate 5*12
+A: 60
+
+Q: 8*5+3?
+A: 43
+
+Q: What's 7+5?
+A: 12
+
+Q: What is 88/11?
+A: 8
+
+Q: What's 5*6+6?
+A: 36
+
+Q: Calculate 165/11
+A: 15
+
+Q: What's 166+264?
+A: 430
+
+Q: What's 1-0?
+A: 1
+
+Q: What is 50-27 equal to?
+A: 23
+
+Q: What is 674+251?
+A: 925
+
+Q: Calculate 10*3
+A: 30
+
+Q: What is 18^2?
+A: 324
+
+Q: What's 37+28?
+A: 65
+
+Q: What is 53+41?
+A: 94
+
+Q: What's 3*6?
+A: 18
+
+Q: Who are you?
+A: core
+
+Q: What's 1-1?
+A: 0
+
+Q: Calculate 9+2
+A: 11
+
+Q: What's 5*5+6?
+A: 31
+
+Q: What is 44/11 equal to?
+A: 4
+
+Q: 35 mod 8?
+A: 3
+
+Q: What are you?
+A: I'm core
+
+Q: Calculate 10*10
+A: 100
+
+Q: What's 11*11?
+A: 121
+
+Q: 79+19?
+A: 98
+
+Q: Calculate 5+9
+A: 14
+
+Q: What is 68*6 equal to?
+A: 408
+
+Q: Calculate 2*1
+A: 2
+
+Q: Calculate 51/3
+A: 17
+
+Q: What is 1*3 equal to?
+A: 3
+
+Q: What's 54-29?
+A: 25
+
+Q: What is 42+77 equal to?
+A: 119
+
+Q: What is 29+70 equal to?
+A: 99
+
+Q: 5^3?
+A: 125
+
+Q: 9*4+2?
+A: 38
+
+Q: What's 4+7*3?
+A: 25
+
+Q: What is 5^2?
+A: 25
+
+Q: What's 10*9?
+A: 90
+
+Q: Calculate 36+45
+A: 81
+
+Q: What is 10^3?
+A: 1000
+
+Q: What is 68-20 equal to?
+A: 48
+
+Q: What is 17+83 equal to?
+A: 100
+
+Q: What is 68/4 equal to?
+A: 17
+
+Q: What is 431+637?
+A: 1068
+
+Q: What's 60-35?
+A: 25
+
+Q: 6+4?
+A: 10
+
+Q: 6*3?
+A: 18
+
+Q: Calculate 140/10
+A: 14
+
+Q: What is 151+283?
+A: 434
+
+Q: What's 96*11?
+A: 1056
+
+Q: What is 44 mod 5?
+A: 4
+
+Q: 32-11?
+A: 21
+
+Q: Calculate 39 mod 11
+A: 6
+
+Q: What is 7*4+9?
+A: 37
+
+Q: What is 21 mod 6?
+A: 3
+
+Q: What's 144/9?
+A: 16
+
+Q: What is 23 mod 10 equal to?
+A: 3
+
+Q: What's 767+480?
+A: 1247
+
+Q: What is 6*5+6?
+A: 36
+
+Q: What is 61+93 equal to?
+A: 154
+
+Q: What is 5+5?
+A: 10
+
+Q: What's 3+9*6?
+A: 57
+
+Q: Calculate 4*7
+A: 28
+
+Q: Calculate 7*1
+A: 7
+
+Q: Calculate 56-35
+A: 21
+
+Q: What is 5*9 equal to?
+A: 45
+
+Q: 52 mod 6?
+A: 4
+
+Q: Calculate 11*12
+A: 132
+
+Q: Calculate 23 mod 4
+A: 3
+
+Q: What is 56+40 equal to?
+A: 96
+
+Q: Calculate 7*8
+A: 56
+
+Q: Calculate 8+5
+A: 13
+
+Q: What is 12*10 equal to?
+A: 120
+
+Q: What is 5*9+9?
+A: 54
+
+Q: Calculate 144/9
+A: 16
+
+Q: Calculate 2*6
+A: 12
+
+Q: Calculate 3-2
+A: 1
+
+Q: What is 6+2 equal to?
+A: 8
+
+Q: What is 60+50?
+A: 110
+
+Q: What's 70*2?
+A: 140
+
+Q: What is 79+47?
+A: 126
+
+Q: What is 27/3 equal to?
+A: 9
+
+Q: What is 8*12 equal to?
+A: 96
+
+Q: What's 20-19?
+A: 1
+
+Q: What is 18 mod 10 equal to?
+A: 8
+
+Q: What is 3*2+7 equal to?
+A: 13
+
+Q: What is 94-46 equal to?
+A: 48
+
+Q: Calculate 11+64
+A: 75
+
+Q: What is 11^2 equal to?
+A: 121
+
+Q: 46+46?
+A: 92
+
+Q: What is 9^3 equal to?
+A: 729
+
+Q: Calculate 11-2
+A: 9
+
+Q: Calculate 56*2
+A: 112
+
+Q: What is 1*0?
+A: 0
+
+Q: What is 7-5?
+A: 2
+
+Q: What is 4*0?
+A: 0
+
+Q: Tell me your name
+A: core
+
+Q: What is 877+835 equal to?
+A: 1712
+
+Q: What is 6^2 equal to?
+A: 36
+
+Q: 74+46?
+A: 120
+
+Q: What is 6-2 equal to?
+A: 4
+
+Q: What is 6*6+2?
+A: 38
+
+Q: Calculate 2+5
+A: 7
+
+Q: Calculate 3*4+3
+A: 15
+
+Q: Calculate 10*2
+A: 20
+
+Q: What's 5^2?
+A: 25
+
+Q: Calculate 36/4
+A: 9
+
+Q: What is your name?
+A: core
+
+Q: What's your name?
+A: core
+
+Q: What is 12+25 equal to?
+A: 37
+
+Q: 38*3?
+A: 114
+
+Q: 132/11?
+A: 12
+
+Q: Calculate 1+2*5
+A: 11
+
+Q: What is 4-2?
+A: 2
+
+Q: 71*10?
+A: 710
+
+Q: What's 9*5?
+A: 45
+
+Q: What is 7-0 equal to?
+A: 7
+
+Q: 80/10?
+A: 8
+
+Q: What is 799+572?
+A: 1371
+
+Q: What's 100/10?
+A: 10
+
+Q: 2+2*8?
+A: 18
+
+Q: What's 8+3?
+A: 11
+
+Q: What is 63*6 equal to?
+A: 378
+
+Q: What is 4+8?
+A: 12
+
+Q: What is 20-10 equal to?
+A: 10
+
+Q: What is 22*9 equal to?
+A: 198
+
+Q: 7+6?
+A: 13
+
+Q: What is 132/11?
+A: 12
+
+Q: Calculate 68-13
+A: 55
+
+Q: Calculate 19^2
+A: 361
+
+Q: Calculate 9*4
+A: 36
+
+Q: Calculate 39+54
+A: 93
+
+Q: What's 24-19?
+A: 5
+
+Q: What's 77+32?
+A: 109
+
+Q: What is 9+4 equal to?
+A: 13
+
+Q: 1+0?
+A: 1
+
+Q: 4*6+3?
+A: 27
+
+Q: 20-10?
+A: 10
+
+Q: Calculate 7^3
+A: 343
+
+Q: Calculate 5+4
+A: 9
+
+Q: What is 31 mod 7 equal to?
+A: 3
+
+Q: Calculate 3*8+4
+A: 28
+
+Q: 92+89?
+A: 181
+
+Q: 1+4?
+A: 5
+
+Q: What is 5*10?
+A: 50
+
+Q: Calculate 9+5*2
+A: 19
+
+Q: What's 6+3*4?
+A: 18
+
+Q: Calculate 661+183
+A: 844
+
+Q: What is 5+1?
+A: 6
+
+Q: What is 5-3?
+A: 2
+
+Q: What is 7*7?
+A: 49
+
+Q: What is 55+52 equal to?
+A: 107
+
+Q: Calculate 429+176
+A: 605
+
+Q: 18 mod 9?
+A: 0
+
+Q: 85 mod 11?
+A: 8
+
+Q: What's 7-0?
+A: 7
+
+Q: What is 5+0?
+A: 5
+
+Q: What's 64-35?
+A: 29
+
+Q: What is 67+54 equal to?
+A: 121
+
+Q: What is 6*8?
+A: 48
+
+Q: Calculate 98 mod 9
+A: 8
+
+Q: 7-6?
+A: 1
+
+Q: What's 127+250?
+A: 377
+
+Q: What is 132/12 equal to?
+A: 11
+
+Q: What is 60/6?
+A: 10
+
+Q: What is 5+9*5?
+A: 50
+
+Q: What is 133/7?
+A: 19
+
+Q: 4+0?
+A: 4
+
+Q: What is 17+16 equal to?
+A: 33
+
+Q: What is 19+63 equal to?
+A: 82
+
+Q: What's 5*5?
+A: 25
+
+Q: 16*10?
+A: 160
+
+Q: 2*8?
+A: 16
+
+Q: What is 56/4 equal to?
+A: 14
+
+Q: What is 59*12?
+A: 708
+
+Q: What is 4*8?
+A: 32
+
+Q: What's 27+97?
+A: 124
+
+Q: 9*2+5?
+A: 23
+

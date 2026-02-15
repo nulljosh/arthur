@@ -1,9 +1,16 @@
 venv/
+.venv/
+venv.bak/
 __pycache__/
+.pytest_cache/
 *.pyc
 *.pth
 *.ckpt
 wandb/
 data/raw/
-models/*.pth
 .DS_Store
+.env
+.vercel
+logs/
+data/wikipedia/
+data/wikitext-103/

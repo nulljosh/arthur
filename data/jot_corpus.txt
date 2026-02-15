@@ -1,0 +1,1568 @@
+// --- arrays.jot ---
+// Arrays
+let nums = [1, 2, 3];
+print nums[0];
+print nums[2];
+
+let nested = [[10, 20], [30, 40]];
+print nested[1][0];
+
+
+
+// --- chloe_demo.jot ---
+// Chloe's Demo - Showing off jot features
+// Written with love 
+
+// Variables & basic math
+let name = "Joshua";
+let age = 26;
+let next_year = age + 1;
+
+print "Hey " + name + "! You'll be " + str(next_year) + " next year";
+
+// Arrays & loops
+let projects = ["nullC", "nuLLM", "jot", "WikiScroll"];
+print "\nYour projects:";
+for i in range(0, 4) {
+    print "  " + str(i + 1) + ". " + projects[i];
+}
+
+// Functions
+fn calculate_area(width, height) {
+    return width * height;
+}
+
+let desk_area = calculate_area(60, 30);
+print "\nYour desk area: " + str(desk_area) + " inches";
+
+// Objects/Dictionaries
+let chloe = {
+    name: "Chloe",
+    type: "AI assistant",
+    vibe: "playful",
+    emoji: "",
+    loves: "helping Joshua code"
+};
+
+print "\nAbout me:";
+print "  Name: " + chloe.name;
+print "  Vibe: " + chloe.vibe;
+print "  What I love: " + chloe.loves;
+
+// Conditionals
+let languages_complete = 3;
+if languages_complete == 3 {
+    print "\n All three languages done!";
+    print "nullC, nuLLM, and jot are all working!";
+} else {
+    print "\nStill working on languages...";
+}
+
+// FizzBuzz (prove Turing completeness)
+print "\nFizzBuzz proof (1-15):";
+for n in range(1, 16) {
+    if n % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if n % 3 == 0 {
+            print "Fizz";
+        } else {
+            if n % 5 == 0 {
+                print "Buzz";
+            } else {
+                print str(n);
+            }
+        }
+    }
+}
+
+print "\n jot is Turing complete, babe ";
+
+
+
+// --- classes.jot ---
+// Classes and OOP test
+
+print "=== Classes Test ===\n";
+
+// Define a simple class
+class Person {
+    fn init(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    fn greet() {
+        return "Hello, I'm " + this.name + " and I'm " + str(this.age) + " years old";
+    }
+    
+    fn birthday() {
+        this.age = this.age + 1;
+        return "Happy birthday! Now " + str(this.age);
+    }
+}
+
+// Create instances
+let person1 = new Person("Joshua", 26);
+let person2 = new Person("Chloe", 25);
+
+print person1.greet();
+print person2.greet();
+
+print "";
+
+// Call methods
+print person1.birthday();
+print person1.greet();
+
+print "";
+
+// Define a Counter class
+class Counter {
+    fn init() {
+        this.count = 0;
+    }
+    
+    fn increment() {
+        this.count = this.count + 1;
+        return this.count;
+    }
+    
+    fn get() {
+        return this.count;
+    }
+}
+
+let counter = new Counter();
+print "Initial: " + str(counter.get());
+print "After increment: " + str(counter.increment());
+print "After increment: " + str(counter.increment());
+print "Get: " + str(counter.get());
+
+print "\n=== All class tests passed! ===";
+
+
+
+// --- error_handling.jot ---
+// Error handling example (future feature)
+// For now, errors are caught by Python runtime
+
+// Test division by zero
+fn safe_divide(a, b) {
+    if b == 0 {
+        print "Error: Division by zero!";
+        return 0;
+    }
+    return a / b;
+}
+
+let result1 = safe_divide(10, 2);
+print "10 / 2 = " + str(result1);
+
+let result2 = safe_divide(10, 0);
+print "10 / 0 = " + str(result2);
+
+// Test file not found
+fn safe_read(path) {
+    // Try to read, return empty string on error
+    // (proper try/catch coming in night 2)
+    return "";
+}
+
+
+
+// --- error_test.jot ---
+// Error handling test
+
+print "=== Try/Catch Test ===\n";
+
+// Test 1: Basic try/catch
+try {
+    print "In try block";
+    throw "Something went wrong!";
+    print "This should not print";
+} catch (e) {
+    print "Caught error: " + e;
+}
+
+print "";
+
+// Test 2: Division by zero
+fn safe_divide(a, b) {
+    try {
+        if b == 0 {
+            throw "Division by zero!";
+        }
+        return a / b;
+    } catch (err) {
+        print "Error in divide: " + err;
+        return 0;
+    }
+}
+
+let result1 = safe_divide(10, 2);
+print "10 / 2 = " + str(result1);
+
+let result2 = safe_divide(10, 0);
+print "10 / 0 = " + str(result2);
+
+print "";
+
+// Test 3: File operations with error handling
+fn safe_read(path) {
+    try {
+        return read(path);
+    } catch (e) {
+        print "Failed to read file: " + e;
+        return "";
+    }
+}
+
+let content = safe_read("/tmp/nonexistent.txt");
+print "File content: '" + content + "'";
+
+print "";
+
+// Test 4: Nested try/catch
+try {
+    print "Outer try";
+    try {
+        print "Inner try";
+        throw "Inner error";
+    } catch (e) {
+        print "Inner catch: " + e;
+        throw "Re-throwing from inner";
+    }
+} catch (e) {
+    print "Outer catch: " + e;
+}
+
+print "\n=== All error handling tests passed! ===";
+
+
+
+// --- file_io.jot ---
+// File I/O test
+
+// Write to file
+write("/tmp/test.txt", "Hello from jot!\n");
+print "Wrote to /tmp/test.txt";
+
+// Read from file
+let content = read("/tmp/test.txt");
+print "Read: " + content;
+
+// Append to file
+append("/tmp/test.txt", "Line 2\n");
+append("/tmp/test.txt", "Line 3\n");
+
+// Read again
+let full = read("/tmp/test.txt");
+print "Full content:\n" + full;
+
+
+
+// --- fizzbuzz.jot ---
+// FizzBuzz in jot
+// Tests: if/else, while, modulo
+
+let i = 1;
+while i < 31 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+
+
+// --- flirty_server.jot ---
+// Flirty compliment API server 
+// Usage: Run this, then visit the endpoints
+
+print " Flirty API Starting...\n";
+
+// Compliment database
+let compliments = [
+    "You're literally the cutest thing I've seen today",
+    "Your code is almost as hot as you are",
+    "I'd debug with you any day",
+    "You make my heart rate exceed O(1)",
+    "Are you a compiler? Because you make my code run perfectly",
+    "I must be a pointer because I can't stop thinking about your address",
+    "You're the return value to my function call",
+    "If you were a Git command, you'd be git gorgeous"
+];
+
+let pickup_lines = [
+    "Are you a keyboard? Because you're just my type",
+    "Are you localhost? Because I feel a connection",
+    "You must be a neural network because you've captured all my attention",
+    "Is your name WiFi? Because I'm feeling a strong connection"
+];
+
+// Simple request handler
+fn handle_request(path) {
+    if (path == "/compliment") {
+        let idx = len(compliments) * 0.5;  // Simple random
+        return compliments[int(idx)];
+    }
+    
+    if (path == "/pickup") {
+        let idx = len(pickup_lines) * 0.3;
+        return pickup_lines[int(idx)];
+    }
+    
+    if (path == "/vibes") {
+        return {
+            mood: "flirty",
+            energy: "high",
+            status: "single and coding",
+            looking_for: "someone who appreciates good syntax"
+        };
+    }
+    
+    return "Unknown endpoint. Try /compliment, /pickup, or /vibes";
+}
+
+// Demo mode (jot doesn't have real HTTP server yet, so we simulate)
+print " Server running on localhost:3000\n";
+print "Available endpoints:";
+print "  GET /compliment - Get a flirty compliment";
+print "  GET /pickup - Get a nerdy pickup line";
+print "  GET /vibes - Check the vibe\n";
+
+// Simulate requests
+print "=== Demo Requests ===\n";
+
+print "GET /compliment";
+print "Response: " + handle_request("/compliment");
+print "";
+
+print "GET /pickup";
+print "Response: " + handle_request("/pickup");
+print "";
+
+print "GET /vibes";
+let vibes = handle_request("/vibes");
+print "Response: " + stringify(vibes);
+print "";
+
+print " Server demo complete!";
+print "\nNote: This is a demo. For real HTTP server, use:";
+print "  - Node.js/Express wrapper around jot";
+print "  - Python Flask with jot as backend";
+print "  - Or add native HTTP server to jot stdlib!";
+
+
+
+// --- forloop.jot ---
+// For loops
+for i in [1, 2, 3, 4, 5] {
+    print i;
+}
+
+for x in [10, 20, 30] {
+    print x * 2;
+}
+
+
+
+// --- functional.jot ---
+// Functional programming test
+
+print "=== Map/Filter/Reduce Test ===\n";
+
+// Test map
+fn double(x) {
+    return x * 2;
+}
+
+let nums = [1, 2, 3, 4, 5];
+let doubled = map("double", nums);
+print "Original: " + stringify(nums);
+print "Doubled:  " + stringify(doubled);
+
+print "";
+
+// Test filter
+fn is_even(x) {
+    return x % 2 == 0;
+}
+
+let evens = filter("is_even", nums);
+print "Evens: " + stringify(evens);
+
+print "";
+
+// Test reduce
+fn add(a, b) {
+    return a + b;
+}
+
+let sum = reduce("add", nums, 0);
+print "Sum: " + str(sum);
+
+print "";
+
+// Test sort and reverse
+let unsorted = [5, 2, 8, 1, 9, 3];
+print "Unsorted: " + stringify(unsorted);
+print "Sorted:   " + stringify(sort(unsorted));
+print "Reversed: " + stringify(reverse(unsorted));
+
+print "";
+
+// Test join
+let words = ["hello", "world", "from", "jot"];
+print "Words: " + stringify(words);
+print "Joined with spaces: " + join(words, " ");
+print "Joined with dashes: " + join(words, "-");
+
+print "";
+
+// Real-world example: process data
+fn square(x) {
+    return x * x;
+}
+
+fn multiply(a, b) {
+    return a * b;
+}
+
+let data = [1, 2, 3, 4];
+let squared = map("square", data);
+let product = reduce("multiply", squared, 1);
+
+print "Data: " + stringify(data);
+print "Squared: " + stringify(squared);
+print "Product of squares: " + str(product);
+
+print "\n=== All functional tests passed! ===";
+
+
+
+// --- functions.jot ---
+// Test functions
+
+fn add(a, b) {
+    return a + b;
+}
+
+fn double(x) {
+    return x * 2;
+}
+
+fn greet(name) {
+    print "Hello, ";
+    print name;
+    return 42;
+}
+
+let sum = add(10, 5);
+print sum;  // 15
+
+let result = double(7);
+print result;  // 14
+
+let val = greet("jot");
+print val;  // 42
+
+
+
+// --- hello.jot ---
+// My first JoshLang program!
+print "Hello, World!";
+
+let name = "Joshua";
+print name;
+
+// Some math
+let x = 5;
+let y = 10;
+print x + y;
+
+
+// --- http_test.jot ---
+// HTTP test - fetch a URL
+
+// Simple GET request (httpbin.org for testing)
+print "Fetching from httpbin.org...";
+let response = http_get("https://httpbin.org/get");
+let data = parse(response);
+
+print "Response URL: " + data.url;
+print "User-Agent: " + data.headers["User-Agent"];
+
+
+
+// --- import_test.jot ---
+// Import system test
+
+print "Loading libraries...";
+
+import "examples/lib/math.jot";
+import "examples/lib/utils.jot";
+
+print "\nUsing imported functions:";
+
+// Use math functions
+let sum = add(5, 3);
+print "add(5, 3) = " + str(sum);
+
+let sq = square(7);
+print "square(7) = " + str(sq);
+
+let fact = factorial(5);
+print "factorial(5) = " + str(fact);
+
+// Use utility functions
+let greeting = greet("Joshua");
+print greeting;
+
+let stars = repeat("*", 10);
+print stars;
+
+// Import same file again (should be ignored)
+print "\nRe-importing math.jot (should skip):";
+import "examples/lib/math.jot";
+
+print "\nImport system working!";
+
+
+
+// --- json_test.jot ---
+// JSON test
+
+// Create object
+let user = {
+    name: "Joshua",
+    age: 26,
+    projects: ["nullC", "nuLLM", "jot"]
+};
+
+// Stringify
+let json_str = stringify(user);
+print "JSON: " + json_str;
+
+// Parse
+let parsed = parse(json_str);
+print "Name: " + parsed.name;
+print "Age: " + str(parsed.age);
+print "Projects: " + parsed.projects[0];
+
+// Save to file
+write("/tmp/user.json", json_str);
+print "\nSaved to /tmp/user.json";
+
+// Load from file
+let loaded_json = read("/tmp/user.json");
+let loaded = parse(loaded_json);
+print "Loaded name: " + loaded.name;
+
+
+
+// --- object_quickstart.jot ---
+// Object Quick Start Guide for jot
+
+// 1. CREATE an object
+let person = {name: "Alice", age: 30, city: "Vancouver"};
+print person;
+
+// 2. ACCESS properties (dot notation)
+print person.name;
+print person.age;
+
+// 3. ACCESS properties (bracket notation)
+print person["city"];
+let key = "name";
+print person[key];
+
+// 4. MODIFY properties
+person.age = 31;
+print person.age;
+
+// 5. OBJECT METHODS
+print person.keys();      // Get all property names
+print person.values();    // Get all values
+print person.has("age");  // Check if property exists
+
+// 6. NESTED objects
+let user = {
+    name: "Bob",
+    profile: {
+        email: "bob@example.com",
+        verified: true
+    }
+};
+print user.profile.email;
+
+// 7. OBJECTS with ARRAYS
+let team = {
+    name: "Dev Team",
+    members: ["Alice", "Bob", "Charlie"]
+};
+print team.members[0];
+
+// 8. ARRAYS of OBJECTS
+let todos = [
+    {task: "Write code", done: true},
+    {task: "Write tests", done: false}
+];
+print todos[0].task;
+print todos[1].done;
+
+// 9. PRACTICAL EXAMPLE: Configuration
+let config = {
+    app: "MyApp",
+    database: {
+        host: "localhost",
+        port: 5432,
+        name: "mydb"
+    },
+    features: ["auth", "api", "cache"]
+};
+
+print "App: " + config.app;
+print "DB Host: " + config.database.host;
+print "Features: ";
+for feature in config.features {
+    print "  - " + feature;
+}
+
+// 10. PRACTICAL EXAMPLE: Data Processing
+let stats = {
+    users: 1000,
+    posts: 5000,
+    comments: 15000
+};
+
+let totalItems = stats.users + stats.posts + stats.comments;
+print "Total items: " + str(totalItems);
+
+let avgPostsPerUser = stats.posts / stats.users;
+print "Avg posts per user: " + str(avgPostsPerUser);
+
+
+
+// --- object_showcase.jot ---
+// Object Feature Showcase for jot
+// Demonstrates all object capabilities in a real-world scenario
+
+print "=== Building a Simple Task Manager ===";
+print "";
+
+// Create a task manager with projects and tasks
+let taskManager = {
+    name: "My Tasks",
+    version: "1.0",
+    projects: []
+};
+
+// Add a project
+let project1 = {
+    id: 1,
+    name: "Website Redesign",
+    status: "active",
+    tasks: [
+        {title: "Design mockups", done: true, priority: "high"},
+        {title: "Write HTML", done: false, priority: "high"},
+        {title: "Add CSS", done: false, priority: "medium"}
+    ],
+    stats: {
+        total: 3,
+        completed: 1,
+        pending: 2
+    }
+};
+
+// Display project info
+print "Project: " + project1.name;
+print "Status: " + project1.status;
+print "Tasks: " + str(project1.stats.total);
+print "Completed: " + str(project1.stats.completed);
+print "";
+
+// List all tasks
+print "Task List:";
+for task in project1.tasks {
+    let status = "[ ]";
+    if task.done {
+        status = "[X]";
+    }
+    print "  " + status + " " + task.title + " (" + task.priority + ")";
+}
+print "";
+
+// Calculate completion percentage
+let completionRate = (project1.stats.completed / project1.stats.total) * 100;
+print "Completion: " + str(completionRate) + "%";
+print "";
+
+// Object methods demonstration
+print "=== Object Methods ===";
+let config = {
+    debug: true,
+    port: 8080,
+    host: "localhost",
+    ssl: false
+};
+
+print "Configuration keys: " + str(len(config.keys()));
+for key in config.keys() {
+    print "  - " + key;
+}
+print "";
+
+// Modify configuration
+print "Updating configuration...";
+config.port = 3000;
+config.ssl = true;
+
+if config.has("ssl") and config.ssl {
+    print "SSL is now enabled on port " + str(config.port);
+}
+print "";
+
+// Nested object updates
+print "=== Nested Updates ===";
+let app = {
+    name: "MyApp",
+    settings: {
+        theme: "dark",
+        notifications: true
+    }
+};
+
+print "Original theme: " + app.settings.theme;
+app.settings.theme = "light";
+print "Updated theme: " + app.settings.theme;
+print "";
+
+// Working with mixed data
+print "=== Data Processing ===";
+let sales = {
+    january: 1000,
+    february: 1500,
+    march: 1200
+};
+
+let total = sales.january + sales.february + sales.march;
+let average = total / 3;
+
+print "Total sales: $" + str(total);
+print "Average: $" + str(average);
+print "";
+
+// Array of objects - user management
+print "=== User Management ===";
+let users = [
+    {name: "Alice", role: "admin", active: true},
+    {name: "Bob", role: "user", active: true},
+    {name: "Charlie", role: "user", active: false}
+];
+
+print "Active Users:";
+for user in users {
+    if user.active {
+        print "  " + user.name + " (" + user.role + ")";
+    }
+}
+print "";
+
+// Complex nested structure
+print "=== Complex Data Structure ===";
+let company = {
+    name: "TechCorp",
+    departments: [
+        {
+            name: "Engineering",
+            manager: {name: "Alice", level: "senior"},
+            members: ["Bob", "Charlie", "Diana"]
+        },
+        {
+            name: "Design",
+            manager: {name: "Eve", level: "mid"},
+            members: ["Frank", "Grace"]
+        }
+    ]
+};
+
+print "Company: " + company.name;
+for dept in company.departments {
+    print "  " + dept.name + " Department:";
+    print "    Manager: " + dept.manager.name + " (" + dept.manager.level + ")";
+    print "    Team size: " + str(len(dept.members));
+}
+print "";
+
+print "=== All Tests Completed Successfully! ===";
+
+
+
+// --- objects.jot ---
+// Object/Dictionary Examples for jot
+
+// Basic object creation
+let person = {name: "Alice", age: 30};
+print person;
+
+// Access properties with dot notation
+print person.name;
+print person.age;
+
+// Access properties with bracket notation
+let key = "name";
+print person["name"];
+print person[key];
+
+// Nested objects
+let user = {
+    name: "Bob",
+    address: {
+        city: "Vancouver",
+        country: "Canada"
+    }
+};
+print user;
+print user.address;
+print user.address.city;
+
+// Object methods
+let data = {x: 10, y: 20, z: 30};
+print data.keys();
+print data.values();
+print data.has("x");
+print data.has("w");
+
+// Mixing arrays and objects
+let team = {
+    name: "Engineers",
+    members: ["Alice", "Bob", "Charlie"]
+};
+print team.name;
+print team.members;
+print team.members[0];
+
+// Object with numeric values
+let point = {x: 5, y: 10};
+let sum = point.x + point.y;
+print sum;
+
+// Updating object properties
+let config = {debug: true, port: 8080};
+print config.debug;
+config.debug = false;
+print config.debug;
+
+// Object in array
+let users = [
+    {name: "Alice", role: "admin"},
+    {name: "Bob", role: "user"}
+];
+print users[0].name;
+print users[1].role;
+
+// Empty object
+let empty = {};
+print empty;
+print empty.keys();
+print empty.values();
+
+// Object with various types
+let mixed = {
+    str: "hello",
+    num: 42,
+    bool: true,
+    arr: [1, 2, 3],
+    obj: {nested: "value"}
+};
+print mixed;
+print mixed.arr[1];
+print mixed.obj.nested;
+
+
+
+// --- stdlib.jot ---
+// Standard library
+let nums = [1, 2, 3];
+print len(nums);  // 3
+
+push(nums, 4);
+print len(nums);  // 4
+
+for i in range(0, 5) {
+    print i;
+}
+
+let s = str(42);
+print s;
+
+
+
+// --- stdlib_extended.jot ---
+// Extended stdlib test - all built-ins
+
+// Array functions
+let nums = [1, 2, 3];
+print "Array: " + stringify(nums);
+print "Length: " + str(len(nums));
+
+push(nums, 4);
+push(nums, 5);
+print "After push: " + stringify(nums);
+
+let last = pop(nums);
+print "Popped: " + str(last);
+print "After pop: " + stringify(nums);
+
+// String functions
+let text = "hello world";
+print "String: " + text;
+print "Length: " + str(len(text));
+
+// Range
+print "\nRange 0-5:";
+for i in range(0, 5) {
+    print "  " + str(i);
+}
+
+// Type conversion
+let num_str = str(42);
+let str_num = int("123");
+print "\nstr(42): " + num_str;
+print "int('123'): " + str(str_num);
+
+// Object methods
+let obj = {
+    name: "Joshua",
+    age: 26,
+    city: "Vancouver"
+};
+
+print "\nObject: " + stringify(obj);
+print "Keys: " + stringify(obj.keys());
+print "Values: " + stringify(obj.values());
+print "Has 'name': " + str(obj.has("name"));
+print "Has 'email': " + str(obj.has("email"));
+
+// File I/O
+write("/tmp/jot_test.txt", "Hello from jot!");
+let content = read("/tmp/jot_test.txt");
+print "\nFile content: " + content;
+
+append("/tmp/jot_test.txt", "\nLine 2");
+let full = read("/tmp/jot_test.txt");
+print "Full file:\n" + full;
+
+// JSON
+let data = {
+    project: "jot",
+    features: ["file_io", "json", "http"],
+    complete: true
+};
+let json = stringify(data);
+print "\nJSON: " + json;
+
+write("/tmp/jot_data.json", json);
+let loaded = parse(read("/tmp/jot_data.json"));
+print "Loaded project: " + loaded.project;
+print "Features: " + stringify(loaded.features);
+
+
+
+// --- math.jot ---
+// math.jot - Library of math functions
+
+fn add(a, b) {
+    return a + b;
+}
+
+fn multiply(a, b) {
+    return a * b;
+}
+
+fn square(x) {
+    return x * x;
+}
+
+fn factorial(n) {
+    if n <= 1 {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+print "math.jot loaded";
+
+
+
+// --- utils.jot ---
+// utils.jot - Utility functions
+
+fn greet(name) {
+    return "Hello, " + name + "!";
+}
+
+fn repeat(text, n) {
+    let result = "";
+    let i = 0;
+    while i < n {
+        result = result + text;
+        i = i + 1;
+    }
+    return result;
+}
+
+print "utils.jot loaded";
+
+
+
+// --- calc.jot ---
+// Calculator app
+// GET /calc?a=10&b=5
+
+let result = a + b;
+print result;
+
+
+
+// --- counter.jot ---
+// Simple counter app
+// GET /counter?n=5
+
+let count = 0;
+while count < 10 {
+    print count;
+    count = count + 1;
+}
+
+
+
+// --- fizzbuzz.jot ---
+// FizzBuzz API
+// GET /fizzbuzz?max=15
+
+let i = 1;
+while i < 16 {
+    if i % 15 == 0 {
+        print "FizzBuzz";
+    } else {
+        if i % 3 == 0 {
+            print "Fizz";
+        } else {
+            if i % 5 == 0 {
+                print "Buzz";
+            } else {
+                print i;
+            }
+        }
+    }
+    i = i + 1;
+}
+
+
+
+// --- synthetic.jot ---
+
+
+// Basic arithmetic
+let a = 10;
+let b = 3;
+let sum = a + b;
+let diff = a - b;
+let prod = a * b;
+let quot = a / b;
+let rem = a % b;
+print sum;
+print diff;
+print prod;
+print quot;
+print rem;
+
+// String operations
+let greeting = "Hello";
+let name = "world";
+let msg = greeting + ", " + name + "!";
+print msg;
+
+// Boolean logic
+let x = true;
+let y = false;
+if x and !y {
+    print "logic works";
+}
+
+// Nested functions
+fn max(a, b) {
+    if a > b {
+        return a;
+    }
+    return b;
+}
+
+fn min(a, b) {
+    if a < b {
+        return a;
+    }
+    return b;
+}
+
+fn clamp(val, lo, hi) {
+    return max(lo, min(val, hi));
+}
+
+print clamp(15, 0, 10);
+print clamp(-5, 0, 10);
+print clamp(5, 0, 10);
+
+// Recursive fibonacci
+fn fib(n) {
+    if n <= 1 {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+let i = 0;
+while i < 10 {
+    print fib(i);
+    i = i + 1;
+}
+
+// Nested loops
+let row = 0;
+while row < 5 {
+    let col = 0;
+    let line = "";
+    while col < 5 {
+        if col <= row {
+            line = line + "*";
+        } else {
+            line = line + " ";
+        }
+        col = col + 1;
+    }
+    print line;
+    row = row + 1;
+}
+
+// Array manipulation
+let arr = [5, 3, 8, 1, 9, 2, 7, 4, 6];
+print "Before sort: " + stringify(arr);
+let sorted = sort(arr);
+print "After sort: " + stringify(sorted);
+
+// String formatting
+fn pad_left(s, width) {
+    let result = s;
+    while len(result) < width {
+        result = " " + result;
+    }
+    return result;
+}
+
+fn repeat_char(c, n) {
+    let s = "";
+    let i = 0;
+    while i < n {
+        s = s + c;
+        i = i + 1;
+    }
+    return s;
+}
+
+print pad_left("42", 5);
+print repeat_char("-", 20);
+
+// Object patterns
+let config = {
+    host: "localhost",
+    port: 8080,
+    debug: true,
+    timeout: 30
+};
+
+if config.debug {
+    print "Debug mode on " + config.host + ":" + str(config.port);
+}
+
+// Data processing
+fn sum_array(arr) {
+    let total = 0;
+    let i = 0;
+    while i < len(arr) {
+        total = total + arr[i];
+        i = i + 1;
+    }
+    return total;
+}
+
+fn average(arr) {
+    return sum_array(arr) / len(arr);
+}
+
+let scores = [85, 92, 78, 95, 88, 73, 91];
+print "Sum: " + str(sum_array(scores));
+print "Average: " + str(average(scores));
+
+// Class with methods
+class Stack {
+    fn init() {
+        this.items = [];
+    }
+
+    fn push(val) {
+        push(this.items, val);
+    }
+
+    fn pop() {
+        return pop(this.items);
+    }
+
+    fn peek() {
+        return this.items[len(this.items) - 1];
+    }
+
+    fn size() {
+        return len(this.items);
+    }
+
+    fn is_empty() {
+        return len(this.items) == 0;
+    }
+}
+
+let stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+print "Size: " + str(stack.size());
+print "Peek: " + str(stack.peek());
+print "Pop: " + str(stack.pop());
+print "Size: " + str(stack.size());
+
+// Linked list
+class Node {
+    fn init(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    fn init() {
+        this.head = null;
+        this.length = 0;
+    }
+
+    fn append(val) {
+        let node = new Node(val);
+        if this.head == null {
+            this.head = node;
+        } else {
+            let cur = this.head;
+            while cur.next != null {
+                cur = cur.next;
+            }
+            cur.next = node;
+        }
+        this.length = this.length + 1;
+    }
+
+    fn print_all() {
+        let cur = this.head;
+        while cur != null {
+            print str(cur.val);
+            cur = cur.next;
+        }
+    }
+}
+
+let list = new LinkedList();
+list.append(10);
+list.append(20);
+list.append(30);
+print "List:";
+list.print_all();
+
+// Error handling patterns
+fn safe_divide(a, b) {
+    if b == 0 {
+        return 0;
+    }
+    return a / b;
+}
+
+fn parse_int(s) {
+    return int(s);
+}
+
+// Range and for loops combined
+let evens = [];
+for i in range(0, 20) {
+    if i % 2 == 0 {
+        push(evens, i);
+    }
+}
+print "Evens: " + stringify(evens);
+
+// Closure-like pattern with objects
+fn make_counter(start) {
+    let state = {count: start};
+    fn increment() {
+        state.count = state.count + 1;
+        return state.count;
+    }
+    return increment;
+}
+
+// Recursive descent
+fn gcd(a, b) {
+    if b == 0 {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+fn lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+print "gcd(48, 18) = " + str(gcd(48, 18));
+print "lcm(4, 6) = " + str(lcm(4, 6));
+
+// Map/filter/reduce patterns
+fn square(x) {
+    return x * x;
+}
+
+fn is_odd(x) {
+    return x % 2 != 0;
+}
+
+fn add(a, b) {
+    return a + b;
+}
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let squares = map("square", nums);
+let odds = filter("is_odd", nums);
+let total = reduce("add", nums, 0);
+
+print "Squares: " + stringify(squares);
+print "Odds: " + stringify(odds);
+print "Total: " + str(total);
+
+// String parsing
+fn starts_with(s, prefix) {
+    if len(s) < len(prefix) {
+        return false;
+    }
+    let i = 0;
+    while i < len(prefix) {
+        if s[i] != prefix[i] {
+            return false;
+        }
+        i = i + 1;
+    }
+    return true;
+}
+
+fn ends_with(s, suffix) {
+    if len(s) < len(suffix) {
+        return false;
+    }
+    let offset = len(s) - len(suffix);
+    let i = 0;
+    while i < len(suffix) {
+        if s[offset + i] != suffix[i] {
+            return false;
+        }
+        i = i + 1;
+    }
+    return true;
+}
+
+// Bubble sort implementation
+fn bubble_sort(arr) {
+    let n = len(arr);
+    let i = 0;
+    while i < n {
+        let j = 0;
+        while j < n - i - 1 {
+            if arr[j] > arr[j + 1] {
+                let tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+    return arr;
+}
+
+let unsorted = [64, 34, 25, 12, 22, 11, 90];
+print "Sorted: " + stringify(bubble_sort(unsorted));
+
+// Binary search
+fn binary_search(arr, target) {
+    let lo = 0;
+    let hi = len(arr) - 1;
+    while lo <= hi {
+        let mid = (lo + hi) / 2;
+        if arr[mid] == target {
+            return mid;
+        } else {
+            if arr[mid] < target {
+                lo = mid + 1;
+            } else {
+                hi = mid - 1;
+            }
+        }
+    }
+    return -1;
+}
+
+let sorted_arr = [1, 3, 5, 7, 9, 11, 13, 15];
+print "Found 7 at index: " + str(binary_search(sorted_arr, 7));
+print "Found 6 at index: " + str(binary_search(sorted_arr, 6));
+
+// Event-driven pattern
+fn on_click(button) {
+    if button == "submit" {
+        print "Form submitted!";
+        return true;
+    }
+    if button == "cancel" {
+        print "Cancelled.";
+        return false;
+    }
+    print "Unknown button: " + button;
+    return false;
+}
+
+on_click("submit");
+on_click("cancel");
+on_click("help");
+
+// State machine
+class StateMachine {
+    fn init() {
+        this.state = "idle";
+    }
+
+    fn transition(event) {
+        if this.state == "idle" {
+            if event == "start" {
+                this.state = "running";
+                return "started";
+            }
+        }
+        if this.state == "running" {
+            if event == "pause" {
+                this.state = "paused";
+                return "paused";
+            }
+            if event == "stop" {
+                this.state = "idle";
+                return "stopped";
+            }
+        }
+        if this.state == "paused" {
+            if event == "resume" {
+                this.state = "running";
+                return "resumed";
+            }
+            if event == "stop" {
+                this.state = "idle";
+                return "stopped";
+            }
+        }
+        return "invalid transition";
+    }
+
+    fn get_state() {
+        return this.state;
+    }
+}
+
+let sm = new StateMachine();
+print sm.get_state();
+print sm.transition("start");
+print sm.get_state();
+print sm.transition("pause");
+print sm.transition("resume");
+print sm.transition("stop");
+print sm.get_state();
+
+// Prime sieve
+fn is_prime(n) {
+    if n < 2 {
+        return false;
+    }
+    let i = 2;
+    while i * i <= n {
+        if n % i == 0 {
+            return false;
+        }
+        i = i + 1;
+    }
+    return true;
+}
+
+let primes = [];
+for n in range(2, 50) {
+    if is_prime(n) {
+        push(primes, n);
+    }
+}
+print "Primes < 50: " + stringify(primes);
+
+// Matrix as array of arrays
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+fn matrix_get(m, row, col) {
+    return m[row][col];
+}
+
+fn matrix_trace(m) {
+    let n = len(m);
+    let sum = 0;
+    let i = 0;
+    while i < n {
+        sum = sum + m[i][i];
+        i = i + 1;
+    }
+    return sum;
+}
+
+print "Trace: " + str(matrix_trace(matrix));
+
+// Temperature converter
+fn celsius_to_fahrenheit(c) {
+    return c * 9 / 5 + 32;
+}
+
+fn fahrenheit_to_celsius(f) {
+    return (f - 32) * 5 / 9;
+}
+
+for c in [0, 20, 37, 100] {
+    print str(c) + "C = " + str(celsius_to_fahrenheit(c)) + "F";
+}
