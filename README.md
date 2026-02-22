@@ -53,6 +53,7 @@ python3 web_ui.py
 - Week 2: data pipeline + eval split + run metadata
 - Week 3: quality tuning (context/sampling/bench prompts)
 - Week 4: reliability + release flow
+- Week 5: web UI upgrade (better UX, prompt presets, run/eval panel)
 
 MVP ETA: ~4 weeks focused.
 
