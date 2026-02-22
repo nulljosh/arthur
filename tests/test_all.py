@@ -34,7 +34,6 @@ def test_project_structure():
         "examples/test_model.py",
         "ARCHITECTURE.md",
         "BENCHMARKS.md",
-        "ROADMAP.md",
         "README.md",
         "map.svg",
     ]
