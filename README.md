@@ -63,6 +63,16 @@ python3 web_ui.py
 pytest -q
 ```
 
+## Roadmap
+
+See `ROADMAP.md` for the full execution plan.
+
+Current focus:
+- Keep tests/CI green
+- Improve data pipeline + validation
+- Raise generation quality with stable eval prompts
+- Harden training reliability (resume/checkpoints)
+
 ## Notes
 
 - This is a learning/experimentation repo.
