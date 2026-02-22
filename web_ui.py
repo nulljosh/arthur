@@ -62,15 +62,16 @@ def _build_char_tokenizer_from_vocab(vocab: Any) -> CharTokenizer:
     else:
         raise ValueError("Unsupported vocab format in checkpoint")
 
+    # Old checkpoints may not store an explicit UNK token.
+    # Map UNK to index 0 as a fallback without changing vocab size.
     if CharTokenizer.UNK not in char_to_idx:
-        next_idx = max(char_to_idx.values(), default=-1) + 1
-        char_to_idx[CharTokenizer.UNK] = next_idx
+        char_to_idx[CharTokenizer.UNK] = min(char_to_idx.values(), default=0)
 
     tokenizer = CharTokenizer(CharTokenizer.UNK)
     ordered = sorted(char_to_idx.items(), key=lambda item: item[1])
     tokenizer.char_to_idx = {ch: idx for ch, idx in ordered}
     tokenizer.idx_to_char = {idx: ch for ch, idx in tokenizer.char_to_idx.items()}
-    tokenizer.vocab_size = len(tokenizer.char_to_idx)
+    tokenizer.vocab_size = max(tokenizer.char_to_idx.values(), default=-1) + 1
     return tokenizer
 
 
@@ -140,10 +141,10 @@ def load_runtime(model_path: Path, data_path: Path) -> LoadedRuntime:
 
     config = checkpoint.get("config")
     if not isinstance(config, dict):
-        config = _infer_core_config(state_dict, tokenizer.vocab_size)
+        config = _infer_core_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
     else:
         config = {**config}
-        config["vocab_size"] = tokenizer.vocab_size
+        config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))
 
     model = Core(
         vocab_size=int(config["vocab_size"]),
