@@ -60,7 +60,13 @@ DEBUG=false
 - `models/` — checkpoints
 - `tests/` — pytest suite
 
+## Architecture
+
+![core architecture](architecture.svg)
+
 ## Roadmap + ETA
+
+![roadmap](roadmap.svg)
 
 - Week 1: stability (tests/CI/env lock)
 - Week 2: data pipeline + eval split + run metadata
@@ -69,6 +75,17 @@ DEBUG=false
 - Week 5: web UI upgrade (better UX, prompt presets, run/eval panel)
 
 MVP ETA: ~4 weeks focused.
+
+## Overnight run plan (Claude-like direction)
+
+- Long train run on mixed corpus (code + reasoning + dialogue)
+- Checkpoint every N steps + periodic sample generation
+- Fixed eval pack each checkpoint (reasoning, code, debug, summarize, instruction-follow, refusal)
+- Regression gate: block checkpoints that degrade syntax/following quality
+- Decode sweep: temperature/top-k/top-p grid to pick best defaults
+- Error stress: empty prompt, long prompt, unicode, bad params, missing files
+- UI/API smoke: `/api/status` + `/api/generate` valid/invalid payloads
+- Morning report: best checkpoint, deltas, wins/fails, next tuning steps
 
 ## Opus replica reality check
 

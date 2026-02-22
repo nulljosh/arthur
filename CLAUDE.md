@@ -8,6 +8,8 @@ Not production scale.
 - Char-level / syntax-aware modeling
 - Reproducible train + eval loop
 - Better test and error-case coverage
+- Web UI iteration (controls + status + validation)
+- Overnight automation loop for train/eval/report
 
 ## Fast commands
 ```bash
@@ -43,6 +45,8 @@ python3 src/generate.py --prompt "func add" --length 80
 2. Stable benchmark prompts for regressions
 3. Sampling controls (top-k/top-p/temp)
 4. Resume/checkpoint reliability
+5. Overnight runner: checkpointed training + eval pack + morning report
+6. Web UI: prompt presets + run/eval panel + clearer failure traces
 
 ## Honest expectation
 - Core MVP: ~4 weeks focused

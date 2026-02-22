@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#0b0f14"/>
+  <text x="40" y="50" fill="#e6edf3" font-family="SF Mono, Menlo, monospace" font-size="28" font-weight="700">core roadmap (5-week sprint)</text>
+
+  <g font-family="SF Mono, Menlo, monospace" font-size="16">
+    <rect x="40" y="90" width="210" height="260" rx="12" fill="#1f2937" stroke="#334155"/>
+    <text x="55" y="120" fill="#93c5fd">Week 1</text>
+    <text x="55" y="150" fill="#e6edf3">stability</text>
+    <text x="55" y="178" fill="#9ca3af">tests/CI/env lock</text>
+
+    <rect x="270" y="90" width="210" height="260" rx="12" fill="#1f2937" stroke="#334155"/>
+    <text x="285" y="120" fill="#93c5fd">Week 2</text>
+    <text x="285" y="150" fill="#e6edf3">data pipeline</text>
+    <text x="285" y="178" fill="#9ca3af">eval split + run metadata</text>
+
+    <rect x="500" y="90" width="210" height="260" rx="12" fill="#1f2937" stroke="#334155"/>
+    <text x="515" y="120" fill="#93c5fd">Week 3</text>
+    <text x="515" y="150" fill="#e6edf3">quality tuning</text>
+    <text x="515" y="178" fill="#9ca3af">context/sampling/bench</text>
+
+    <rect x="730" y="90" width="210" height="260" rx="12" fill="#1f2937" stroke="#334155"/>
+    <text x="745" y="120" fill="#93c5fd">Week 4</text>
+    <text x="745" y="150" fill="#e6edf3">reliability</text>
+    <text x="745" y="178" fill="#9ca3af">resume + release flow</text>
+
+    <rect x="960" y="90" width="200" height="260" rx="12" fill="#1f2937" stroke="#334155"/>
+    <text x="975" y="120" fill="#93c5fd">Week 5</text>
+    <text x="975" y="150" fill="#e6edf3">web UI upgrade</text>
+    <text x="975" y="178" fill="#9ca3af">UX + presets + eval panel</text>
+  </g>
+
+  <text x="40" y="390" fill="#34d399" font-family="SF Mono, Menlo, monospace" font-size="16">overnight loop: train → eval → regressions → decode sweep → stress tests → morning report</text>
+</svg>
