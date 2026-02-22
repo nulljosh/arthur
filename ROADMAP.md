@@ -1,89 +1,68 @@
-# core Development Roadmap
+# core Roadmap
 
-## Phase 1: Tokenization [DONE]
-- Character tokenizer (simplest)
-- Word tokenizer (word boundaries)
-- BPE tokenizer (subwords)
-- **Status**: Levels 0-1 working
+Goal: ship a small, reliable LM stack for local training + syntax-aware generation.
 
-## Phase 2: Attention Mechanism [DONE]
-- Self-attention (single head)
-- Multi-head attention
-- Positional encoding
-- **Status**: Implemented
+## Now (0-2 weeks)
+- Stabilize test suite and CI
+- Lock Python + dependency versions
+- Keep `pytest -q` green on every push
+- Add one fast smoke train/infer check in CI
 
-## Phase 3: Transformer Block [DONE]
-- Feed-forward network
-- Layer normalization
-- Residual connections
-- **Status**: Full model architecture complete
+Definition of done:
+- Tests pass locally + CI
+- No flaky tests
+- One-command setup works from clean clone
 
-## Phase 4: Training [DONE]
-- Loss function (cross-entropy)
-- Backpropagation
-- Optimizer (Adam)
-- **Status**: Implemented
+## Next (2-4 weeks)
+- Improve data pipeline for jot/code corpora
+- Add dataset quality checks (length, charset, duplicates)
+- Add train/eval split and basic validation metrics
+- Track run metadata (config, seed, loss, checkpoint path)
 
-## Phase 5: Generation [DONE]
-- Autoregressive sampling
-- Temperature scaling
-- Top-k/nucleus sampling (TODO)
-- **Status**: Basic generation working
+Definition of done:
+- Reproducible runs by seed/config
+- Validation loss tracked per run
+- Dataset stats visible before training
 
-## Phase 6: Scale
-- Multi-layer model
-- Larger corpus (WikiText-2)
-- Better tokenization
-- **Status**: Not started
+## Model quality (4-6 weeks)
+- Tune baseline architecture (depth/width/context)
+- Add better sampling controls (top-k, top-p, temperature)
+- Improve tokenizer strategy for syntax-heavy data
+- Add small benchmark prompts for regression checks
 
-## Key Concepts to Learn
+Definition of done:
+- Better qualitative generations on fixed prompts
+- No major regressions on benchmark set
 
-### Tokenization
-- Why BPE over words?
-- Vocab size tradeoffs
-- Special tokens (BOS, EOS, PAD)
+## Training reliability (6-8 weeks)
+- Checkpoint/resume hardening
+- Gradient clipping + schedule tuning
+- Early-stop and failure recovery hooks
+- Lightweight experiment table (CSV/JSON)
 
-### Attention
-- Query, Key, Value matrices
-- Scaled dot-product
-- Why multi-head?
+Definition of done:
+- Interrupted runs recover cleanly
+- Loss curves are stable across repeated runs
 
-### Training
-- Teacher forcing
-- Gradient clipping
-- Learning rate schedules
+## Productization (8+ weeks)
+- Clean CLI for train/generate/eval
+- Optional web UI polish
+- Versioned model artifacts
+- Clear release notes per model revision
 
-### Generation
-- Greedy vs sampling
-- Temperature effects
-- Beam search
+Definition of done:
+- New user can train + generate in under 10 minutes
+- Release process is repeatable
 
-## References
+---
 
-Papers:
-- "Attention Is All You Need" (Vaswani et al., 2017)
-- "GPT-2" (Radford et al., 2019)
-- "BERT" (Devlin et al., 2018)
+## Non-goals (for now)
+- Massive scale training
+- Multi-node distributed training
+- Production API serving/SLA
 
-Code:
-- nanoGPT (Karpathy) - tiny GPT implementation
-- minGPT - minimal GPT in PyTorch
-- micrograd - tiny autograd engine
-
-## Milestones
-
-**M1**: Tokenizer working (BPE trained on small corpus)
-**M2**: Attention layer forward pass
-**M3**: Full transformer block
-**M4**: Training loop (loss decreases)
-**M5**: Generate coherent text (even if nonsense)
-**M6**: Generate Shakespeare-quality text
-
-## Timeline
-
-Rough estimate:
-- Week 1: Tokenization
-- Week 2: Attention mechanism
-- Week 3: Full transformer
-- Week 4: Training + generation
-- Week 5+: Scale up, improve quality
+## Success metrics
+- Setup time: <10 minutes from clean clone
+- Test time: <30 seconds for core suite
+- Reproducibility: same seed => similar loss curve
+- Quality: benchmark prompts improve month-over-month
