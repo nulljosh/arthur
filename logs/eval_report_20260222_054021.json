@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-02-22T05:40:21",
+  "suite_path": "data/eval_prompt_suite.json",
+  "max_new_tokens": 140,
+  "temperature": 0.8,
+  "results": [
+    {
+      "checkpoint": "models/overnight_best.pt",
+      "error": "No module named 'torch'"
+    },
+    {
+      "checkpoint": "models/cron_best.pt",
+      "error": "No module named 'torch'"
+    },
+    {
+      "checkpoint": "models/comprehensive_best.pt",
+      "error": "No module named 'torch'"
+    },
+    {
+      "checkpoint": "models/math_best.pt",
+      "error": "No module named 'torch'"
+    },
+    {
+      "checkpoint": "models/checkpoints/overnight_100.pt",
+      "error": "No module named 'torch'"
+    },
+    {
+      "checkpoint": "models/checkpoints/overnight_75.pt",
+      "error": "No module named 'torch'"
+    }
+  ],
+  "ranking": []
+}

@@ -1,0 +1,23 @@
+{
+  "epoch": 3,
+  "loss": 0.78589,
+  "timestamp": "2026-02-21T23:30:43.162518",
+  "results": [
+    {
+      "prompt": "Q: What is 5+3?\nA:",
+      "output": "Q: What is 5+3?\nA: 1\n\nQ:"
+    },
+    {
+      "prompt": "Q: What is your name?\nA:",
+      "output": "Q: What is your name?\nA: core\n\nQ:"
+    },
+    {
+      "prompt": "Q: print hello world in jot\nA:",
+      "output": "Q: print hello world in jot\nA: print \"Hello, World!\";\n\nQ:"
+    },
+    {
+      "prompt": "Q: What's 7*8?\nA:",
+      "output": "Q: What's 7*8?\nA: 1\n\nQ:"
+    }
+  ]
+}

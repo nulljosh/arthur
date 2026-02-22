@@ -50,15 +50,17 @@ class MultiHeadAttention(nn.Module):
         
     def forward(self, x):
         batch_size, seq_len, _ = x.shape
-        
+
         # Split into Q, K, V
         qkv = self.qkv(x)
         qkv = qkv.reshape(batch_size, seq_len, 3, self.num_heads, self.head_dim)
         qkv = qkv.permute(2, 0, 3, 1, 4)  # (3, batch, heads, seq_len, head_dim)
         q, k, v = qkv[0], qkv[1], qkv[2]
-        
-        # Attention
+
+        # Attention with causal mask (prevent attending to future tokens)
         scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(self.head_dim)
+        causal_mask = torch.triu(torch.ones(seq_len, seq_len, device=x.device), diagonal=1).bool()
+        scores = scores.masked_fill(causal_mask.unsqueeze(0).unsqueeze(0), float('-inf'))
         attn = torch.softmax(scores, dim=-1)
         output = torch.matmul(attn, v)
         

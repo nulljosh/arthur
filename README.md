@@ -50,6 +50,25 @@ PORT=5001
 DEBUG=false
 ```
 
+## Evaluation
+
+Run the fixed prompt suite against one checkpoint:
+
+```bash
+python3 evaluate_checkpoints.py \
+  --checkpoints models/interesting_minimal.pt
+```
+
+Compare/rank multiple checkpoints:
+
+```bash
+python3 evaluate_checkpoints.py \
+  --checkpoints models/minimal.pt models/interesting_minimal.pt models/comprehensive_best.pt \
+  --suite data/eval_prompt_suite.json
+```
+
+Reports are written to `logs/` as both Markdown and JSON.
+
 ## Project layout
 
 - `src/train.py` — train loop + generation helpers
