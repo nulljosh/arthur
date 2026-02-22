@@ -1,192 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>nuLLM - Text Generation</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 600;
-        }
-        input[type="text"], textarea, input[type="number"], input[type="range"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        input[type="text"]:focus, textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        .slider-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        input[type="range"] {
-            flex: 1;
-        }
-        .slider-value {
-            min-width: 50px;
-            text-align: right;
-            font-weight: 600;
-            color: #667eea;
-        }
-        button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        button:active {
-            transform: translateY(0);
-        }
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-        .output {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            min-height: 150px;
-            white-space: pre-wrap;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.6;
-            display: none;
-        }
-        .output.visible {
-            display: block;
-        }
-        .loading {
-            color: #667eea;
-            font-style: italic;
-        }
-        .error {
-            color: #e74c3c;
-            background: #ffe8e8;
-            border-left: 4px solid #e74c3c;
-        }
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>core Local LLM UI</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #1f7aec;
+      --accent-soft: #e9f2ff;
+      --border: #d6dce6;
+      --danger: #b42318;
+      --danger-soft: #fee4e2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 10% 0%, #ffffff 0, #eef4ff 45%, var(--bg) 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .app {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(6, 24, 44, 0.08);
+      overflow: hidden;
+    }
+
+    .head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(120deg, #f9fbff, #eef4ff);
+    }
+
+    .head h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .content {
+      padding: 20px 24px 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .status {
+      background: var(--accent-soft);
+      border: 1px solid #cfe0ff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: #184d96;
+      font-size: 0.92rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    textarea:focus,
+    input:focus {
+      outline: 2px solid #cfe0ff;
+      border-color: var(--accent);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .help {
+      margin-top: 5px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+    }
+
+    button:hover { opacity: 0.92; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .error {
+      display: none;
+      border: 1px solid #f5b6b0;
+      background: var(--danger-soft);
+      color: var(--danger);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+    }
+
+    .output {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fbfcff;
+      padding: 12px;
+    }
+
+    .output pre {
+      margin: 0;
+      white-space: pre-wrap;
+      font-family: "IBM Plex Mono", "Consolas", monospace;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      min-height: 150px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🤖 nuLLM</h1>
-        <p class="subtitle">Nano Language Model - Text Generation</p>
-        
-        <div class="input-group">
-            <label for="prompt">Prompt</label>
-            <input type="text" id="prompt" placeholder="Enter starting text..." value="Whether">
+  <main class="app">
+    <header class="head">
+      <h1>core Local LLM UI</h1>
+      <p>Prompt, tune sampling controls, and generate text from your local checkpoint.</p>
+    </header>
+
+    <section class="content">
+      <div id="status" class="status">Checking model status...</div>
+
+      <div>
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" placeholder="Enter your prompt...">Q: What is your name?
+A:</textarea>
+      </div>
+
+      <div class="controls">
+        <div>
+          <label for="length">Length (tokens)</label>
+          <input id="length" type="number" min="1" max="512" value="120">
         </div>
-        
-        <div class="input-group">
-            <label for="length">Length: <span id="lengthValue">100</span> characters</label>
-            <div class="slider-container">
-                <input type="range" id="length" min="10" max="500" value="100" oninput="document.getElementById('lengthValue').textContent = this.value">
-            </div>
+
+        <div>
+          <label for="temperature">Temperature</label>
+          <input id="temperature" type="number" min="0.01" max="3" step="0.01" value="0.8">
+          <div class="help">Lower is more deterministic.</div>
         </div>
-        
-        <div class="input-group">
-            <label for="temperature">Temperature: <span id="tempValue">0.8</span></label>
-            <div class="slider-container">
-                <input type="range" id="temperature" min="0.1" max="2.0" step="0.1" value="0.8" oninput="document.getElementById('tempValue').textContent = this.value">
-            </div>
-            <small style="color: #666; margin-top: 5px; display: block;">Lower = more predictable, Higher = more creative</small>
+
+        <div>
+          <label for="top_k">Top-k (optional)</label>
+          <input id="top_k" type="number" min="0" placeholder="0 = disabled">
         </div>
-        
-        <button onclick="generate()">Generate Text</button>
-        
-        <div id="output" class="output"></div>
-        
-        <div class="footer">
-            Built in one night 🚀 | Part of the 3-language sprint
+
+        <div>
+          <label for="top_p">Top-p (optional)</label>
+          <input id="top_p" type="number" min="0.01" max="1" step="0.01" placeholder="1.0 = disabled">
         </div>
-    </div>
-    
-    <script>
-        async function generate() {
-            const prompt = document.getElementById('prompt').value;
-            const length = document.getElementById('length').value;
-            const temperature = document.getElementById('temperature').value;
-            const output = document.getElementById('output');
-            
-            output.className = 'output visible loading';
-            output.textContent = 'Generating...';
-            
-            try {
-                const response = await fetch('/generate', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({prompt, length, temperature})
-                });
-                
-                const data = await response.json();
-                
-                if (data.error) {
-                    output.className = 'output visible error';
-                    output.textContent = data.error;
-                } else {
-                    output.className = 'output visible';
-                    output.textContent = data.text;
-                }
-            } catch (error) {
-                output.className = 'output visible error';
-                output.textContent = 'Error: ' + error.message;
-            }
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" type="button">Generate</button>
+        <span id="runState"></span>
+      </div>
+
+      <div id="errorBox" class="error"></div>
+
+      <div class="output">
+        <label for="output">Output</label>
+        <pre id="output"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const statusEl = document.getElementById('status');
+    const errorBox = document.getElementById('errorBox');
+    const outputEl = document.getElementById('output');
+    const runState = document.getElementById('runState');
+    const generateBtn = document.getElementById('generateBtn');
+
+    function showError(message) {
+      errorBox.style.display = 'block';
+      errorBox.textContent = message;
+    }
+
+    function clearError() {
+      errorBox.style.display = 'none';
+      errorBox.textContent = '';
+    }
+
+    function parseOptional(value) {
+      const trimmed = value.trim();
+      return trimmed === '' ? null : trimmed;
+    }
+
+    async function refreshStatus() {
+      try {
+        const response = await fetch('/api/status');
+        const data = await response.json();
+        if (data.model_loaded) {
+          statusEl.textContent = `Model loaded: ${data.model_path} | vocab: ${data.vocab_size}`;
+        } else {
+          const msg = data.runtime_error || 'Not loaded';
+          statusEl.textContent = `Model unavailable: ${msg}`;
         }
-        
-        // Generate on Enter key
-        document.getElementById('prompt').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') generate();
+      } catch (err) {
+        statusEl.textContent = `Status check failed: ${err.message}`;
+      }
+    }
+
+    async function generate() {
+      clearError();
+      runState.textContent = 'Generating...';
+      generateBtn.disabled = true;
+
+      const payload = {
+        prompt: document.getElementById('prompt').value,
+        length: document.getElementById('length').value,
+        temperature: document.getElementById('temperature').value,
+        top_k: parseOptional(document.getElementById('top_k').value),
+        top_p: parseOptional(document.getElementById('top_p').value)
+      };
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
         });
-    </script>
+        const data = await response.json();
+
+        if (!response.ok || data.error) {
+          const details = Array.isArray(data.details) ? data.details.join('\n') : '';
+          showError([data.error || 'Request failed', details].filter(Boolean).join('\n'));
+          return;
+        }
+
+        outputEl.textContent = data.text || '';
+      } catch (err) {
+        showError(`Request failed: ${err.message}`);
+      } finally {
+        runState.textContent = '';
+        generateBtn.disabled = false;
+      }
+    }
+
+    generateBtn.addEventListener('click', generate);
+    refreshStatus();
+  </script>
 </body>
 </html>

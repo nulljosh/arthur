@@ -36,6 +36,19 @@ python3 web_ui.py
 
 - http://localhost:5001/
 - http://localhost:5001/quiz
+- Controls: prompt, length, temperature, top-k, top-p
+- API endpoints:
+  - `POST /api/generate` (also available at `POST /generate`)
+  - `GET /api/status` (also available at `GET /status`)
+
+Optional env vars (defaults shown):
+
+```env
+MODEL_PATH=models/ultra.pt
+DATA_PATH=data/ultra_minimal.txt
+PORT=5001
+DEBUG=false
+```
 
 ## Project layout
 
