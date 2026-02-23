@@ -9,3 +9,7 @@ models/*.pth
 .DS_Store
 .env
 models/ultra.pt
+
+# runtime logs
+logs/*.log
+logs/eval_results.json
