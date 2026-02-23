@@ -26,8 +26,10 @@
     <rect x="960" y="90" width="200" height="260" rx="12" fill="#1f2937" stroke="#334155"/>
     <text x="975" y="120" fill="#93c5fd">Week 5</text>
     <text x="975" y="150" fill="#e6edf3">web UI upgrade</text>
-    <text x="975" y="178" fill="#9ca3af">UX + presets + eval panel</text>
+    <text x="975" y="178" fill="#9ca3af" font-size="14">UX + presets +</text>
+    <text x="975" y="200" fill="#9ca3af" font-size="14">eval panel</text>
   </g>
 
-  <text x="40" y="390" fill="#34d399" font-family="SF Mono, Menlo, monospace" font-size="16">overnight loop: train → eval → regressions → decode sweep → stress tests → morning report</text>
+  <text x="40" y="384" fill="#34d399" font-family="SF Mono, Menlo, monospace" font-size="14">overnight loop: train → eval → regressions → decode sweep</text>
+  <text x="40" y="404" fill="#34d399" font-family="SF Mono, Menlo, monospace" font-size="14">→ stress tests → morning report</text>
 </svg>

@@ -17,6 +17,7 @@
       .b { fill:#101a30; stroke:#2e4167; stroke-width:2; rx:16; }
       .t { fill:#dbe6ff; font:600 20px 'Avenir Next',Segoe UI,Arial,sans-serif; }
       .n { fill:#9fb3dc; font:500 15px 'Avenir Next',Segoe UI,Arial,sans-serif; }
+      .ns { fill:#9fb3dc; font:500 14px 'Avenir Next',Segoe UI,Arial,sans-serif; }
       .a { stroke:#5ecbff; stroke-width:2.5; fill:none; marker-end:url(#arrow); }
     </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -29,7 +30,8 @@
   <rect x="48" y="48" width="1104" height="8" fill="url(#accent)"/>
 
   <text x="84" y="108" class="h">core — tiny transformer LM architecture</text>
-  <text x="84" y="136" class="s">Updated pipeline: data -> tokenize -> train -> checkpoint -> eval -> generate/web</text>
+  <text x="84" y="136" class="s">Updated pipeline: data -> tokenize -> train -> checkpoint -> eval</text>
+  <text x="84" y="160" class="s">-> generate/web</text>
 
   <rect x="84" y="180" width="220" height="96" class="b"/>
   <text x="104" y="215" class="t">Data</text>
@@ -68,9 +70,10 @@
 
   <rect x="84" y="520" width="1030" height="146" class="b"/>
   <text x="104" y="556" class="t">Automation</text>
-  <text x="104" y="582" class="n">cron/run.sh -> train_session.py -> evaluate.py -> report.sh</text>
-  <text x="104" y="606" class="n">Schedules: every 4h training/eval + 8:00 report</text>
-  <text x="104" y="630" class="n">Goal: improve math + simple Q&amp;A quality with continuous checkpoints</text>
+  <text x="104" y="582" class="ns">cron/run.sh -> train_session.py -> evaluate.py -> report.sh</text>
+  <text x="104" y="604" class="ns">Schedules: every 4h training/eval + 8:00 report</text>
+  <text x="104" y="626" class="ns">Goal: improve math + simple Q&amp;A quality with continuous</text>
+  <text x="104" y="646" class="ns">checkpoints</text>
 
   <path d="M304 228 L354 228" class="a"/>
   <path d="M574 228 L624 228" class="a"/>
