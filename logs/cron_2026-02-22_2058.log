@@ -1,0 +1,66 @@
+========================================
+core cron run: Sun Feb 22 20:58:23 PST 2026
+========================================
+
+--- Evaluating ---
+Loaded checkpoint: epoch 3, loss 0.7858895922562773
+Evaluating 10 prompts...
+
+  [FAIL] math-add             | score:  22 | kw:   0 | rep:  33
+         -> 13
+
+Q:
+  [FAIL] math-mul             | score:  28 | kw:   0 | rep:  50
+         -> 1
+
+Q:
+  [FAIL] math-div             | score:  28 | kw:   0 | rep:  50
+         -> 1
+
+Q:
+  [FAIL] math-sub             | score:  22 | kw:   0 | rep:  33
+         -> 15
+
+Q:
+  [PASS] identity-name        | score:  75 | kw: 100 | rep:  50
+         -> core
+
+Q:
+  [FAIL] identity-creator     | score:  49 | kw:   0 | rep:  71
+         -> I answer questionsthe cate?
+A: I was trained on February 15, 2026
+
+Q:
+  [PASS] identity-what        | score:  51 | kw:   0 | rep:  70
+         -> Josh osh mate me
+
+Q:
+  [PASS] jot-hello            | score:  69 | kw:  50 | rep:  76
+         -> print "Hello, World!";
+
+Q:
+  [PASS] jot-function         | score:  66 | kw:  60 | rep:  47
+         -> fn addddd(a, b) {
+     return x * 2;
+}
+
+Q:
+  [PASS] jot-variable         | score:  73 | kw:  66 | rep:  65
+         -> let x = 0;
+print x;
+
+Q:
+
+============================================================
+Category Averages:
+  math        : 25/100
+  identity    : 58/100
+  jot         : 69/100
+  OVERALL     : 48/100
+
+  Grade: F
+
+Results saved to /Users/joshua/Documents/Code/core/logs/eval_results.json
+
+--- Done: Sun Feb 22 20:58:24 PST 2026 ---
+Log: logs/cron_2026-02-22_2058.log

@@ -1,0 +1,135 @@
+{
+  "checkpoint": "/Users/joshua/Documents/Code/core/models/cron_best.pt",
+  "epoch": 3,
+  "loss": 0.7858895922562773,
+  "timestamp": "2026-02-22T20:58:24.593826",
+  "overall_score": 48.3,
+  "grade": "F",
+  "category_averages": {
+    "math": 25.0,
+    "identity": 58.3,
+    "jot": 69.3
+  },
+  "results": [
+    {
+      "answer": "13\n\nQ:",
+      "length": 6,
+      "len_score": 30,
+      "keyword_score": 0,
+      "repetition_score": 33,
+      "coherence_score": 50,
+      "total_score": 22,
+      "id": "math-add",
+      "category": "math",
+      "prompt": "Q: What is 5+3?\nA:"
+    },
+    {
+      "answer": "1\n\nQ:",
+      "length": 5,
+      "len_score": 25,
+      "keyword_score": 0,
+      "repetition_score": 50,
+      "coherence_score": 60,
+      "total_score": 28,
+      "id": "math-mul",
+      "category": "math",
+      "prompt": "Q: What's 7*8?\nA:"
+    },
+    {
+      "answer": "1\n\nQ:",
+      "length": 5,
+      "len_score": 25,
+      "keyword_score": 0,
+      "repetition_score": 50,
+      "coherence_score": 60,
+      "total_score": 28,
+      "id": "math-div",
+      "category": "math",
+      "prompt": "Q: Calculate 100/10\nA:"
+    },
+    {
+      "answer": "15\n\nQ:",
+      "length": 6,
+      "len_score": 30,
+      "keyword_score": 0,
+      "repetition_score": 33,
+      "coherence_score": 50,
+      "total_score": 22,
+      "id": "math-sub",
+      "category": "math",
+      "prompt": "Q: What is 20-7?\nA:"
+    },
+    {
+      "answer": "core\n\nQ:",
+      "length": 8,
+      "len_score": 40,
+      "keyword_score": 100,
+      "repetition_score": 50,
+      "coherence_score": 87,
+      "total_score": 75,
+      "id": "identity-name",
+      "category": "identity",
+      "prompt": "Q: What is your name?\nA:"
+    },
+    {
+      "answer": "I answer questionsthe cate?\nA: I was trained on February 15, 2026\n\nQ:",
+      "length": 69,
+      "len_score": 100,
+      "keyword_score": 0,
+      "repetition_score": 71,
+      "coherence_score": 85,
+      "total_score": 49,
+      "id": "identity-creator",
+      "category": "identity",
+      "prompt": "Q: Who made you?\nA:"
+    },
+    {
+      "answer": "Josh osh mate me\n\nQ:",
+      "length": 20,
+      "len_score": 100,
+      "keyword_score": 0,
+      "repetition_score": 70,
+      "coherence_score": 95,
+      "total_score": 51,
+      "id": "identity-what",
+      "category": "identity",
+      "prompt": "Q: What are you?\nA:"
+    },
+    {
+      "answer": "print \"Hello, World!\";\n\nQ:",
+      "length": 26,
+      "len_score": 100,
+      "keyword_score": 50,
+      "repetition_score": 76,
+      "coherence_score": 76,
+      "total_score": 69,
+      "id": "jot-hello",
+      "category": "jot",
+      "prompt": "Q: print hello world in jot\nA:"
+    },
+    {
+      "answer": "fn addddd(a, b) {\n     return x * 2;\n}\n\nQ:",
+      "length": 42,
+      "len_score": 100,
+      "keyword_score": 60,
+      "repetition_score": 47,
+      "coherence_score": 78,
+      "total_score": 66,
+      "id": "jot-function",
+      "category": "jot",
+      "prompt": "Q: write a function in jot\nA:"
+    },
+    {
+      "answer": "let x = 0;\nprint x;\n\nQ:",
+      "length": 23,
+      "len_score": 100,
+      "keyword_score": 66,
+      "repetition_score": 65,
+      "coherence_score": 78,
+      "total_score": 73,
+      "id": "jot-variable",
+      "category": "jot",
+      "prompt": "Q: declare a variable in jot\nA:"
+    }
+  ]
+}
