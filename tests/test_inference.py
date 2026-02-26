@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Test basic inference - verify model can answer simple questions"""
-import torch
+import pytest
+torch = pytest.importorskip("torch")
 import sys
 import os
 

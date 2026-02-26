@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Test comprehensive model: math, jot, identity, time/date"""
-
-import torch
+import pytest
+torch = pytest.importorskip("torch")
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 from transformer import Core

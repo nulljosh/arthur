@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-import torch, sys
+import pytest
+torch = pytest.importorskip("torch")
+import sys
 sys.path.insert(0, 'src')
 from transformer import Core
 
