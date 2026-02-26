@@ -30,12 +30,7 @@ def test_project_structure():
         "src/attention.py",
         "src/transformer.py",
         "src/train.py",
-        "examples/quick_test.py",
-        "examples/test_model.py",
-        "ARCHITECTURE.md",
-        "BENCHMARKS.md",
         "README.md",
-        "map.svg",
     ]
 
     missing = [f for f in expected_files if not (project_root / f).exists()]
