@@ -41,8 +41,19 @@ def load_model(model_path, tokenizer_path):
     return model, tokenizer
 
 
+def load_soul():
+    """Load Soul.md as system prompt prefix"""
+    soul_path = Path(__file__).parent.parent / "Soul.md"
+    if soul_path.exists():
+        return soul_path.read_text().strip()
+    return ""
+
+
 def generate_response(model, tokenizer, prompt, max_len=50, temperature=0.8):
     """Generate response to prompt"""
+    soul = load_soul()
+    if soul:
+        prompt = f"{soul}\n\nQ: {prompt}\nA:"
     tokens = tokenizer.encode(prompt.lower())
     x = torch.tensor(tokens).unsqueeze(0)
     
