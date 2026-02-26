@@ -20,7 +20,7 @@ from transformer import Core
 from tokenizer import CharTokenizer
 
 
-DEFAULT_MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/ultra.pt"))
+DEFAULT_MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/overnight_best.pt"))
 DEFAULT_DATA_PATH = Path(os.getenv("DATA_PATH", "data/ultra_minimal.txt"))
 DEFAULT_PORT = int(os.getenv("PORT", "5001"))
 DEBUG_MODE = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes", "on"}

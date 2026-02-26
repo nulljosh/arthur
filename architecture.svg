@@ -1,114 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
-  <title id="title">core architecture</title>
-  <desc id="desc">Architecture for core: char-level transformer LM trained on mixed Q&amp;A corpus.</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, sans-serif">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1020"/>
-      <stop offset="100%" stop-color="#161f36"/>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0071e3;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#0071e3;stop-opacity:0.05"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#4cc9f0"/>
-      <stop offset="100%" stop-color="#90f7c4"/>
-    </linearGradient>
-    <style>
-      .h { fill:#eaf0ff; font:700 32px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .s { fill:#9eb2d9; font:500 17px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .b { fill:#101a30; stroke:#2e4167; stroke-width:2; rx:16; }
-      .bg { fill:#0c1424; stroke:#1e3050; stroke-width:1.5; rx:12; }
-      .t { fill:#dbe6ff; font:600 19px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .n { fill:#9fb3dc; font:500 14px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .g { fill:#90f7c4; font:700 14px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .a { stroke:#5ecbff; stroke-width:2.5; fill:none; marker-end:url(#arrow); }
-    </style>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5ecbff"/>
-    </marker>
   </defs>
 
-  <rect width="1200" height="820" fill="url(#bg)"/>
-  <rect x="48" y="48" width="1104" height="724" rx="24" fill="#0f1628" stroke="#243756" stroke-width="2"/>
-  <rect x="48" y="48" width="1104" height="8" fill="url(#accent)"/>
+  <rect width="800" height="500" rx="18" fill="#f5f5f7"/>
 
-  <text x="84" y="106" class="h">core -- char-level transformer LM</text>
-  <text x="84" y="132" class="s">230K params | 4 layers | 4 heads | 128 embed | char tokenizer (102 vocab)</text>
-  <text x="84" y="154" class="s">Mixed corpus: math, identity, jot code, facts, Q&amp;A</text>
+  <text x="400" y="36" text-anchor="middle" font-size="18" font-weight="600" fill="#1d1d1f">core architecture</text>
 
-  <!-- Row 1: Pipeline -->
-  <rect x="84" y="178" width="200" height="90" class="b"/>
-  <text x="104" y="210" class="t">Corpus</text>
-  <text x="104" y="230" class="n">data/*.txt (185 KB)</text>
-  <text x="104" y="248" class="n">2000+ Q&amp;A pairs</text>
+  <!-- Input -->
+  <rect x="30" y="60" width="120" height="50" rx="12" fill="url(#blue)" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="90" y="82" text-anchor="middle" font-size="11" fill="#86868b">INPUT</text>
+  <text x="90" y="98" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">Text</text>
 
-  <rect x="334" y="178" width="200" height="90" class="b"/>
-  <text x="354" y="210" class="t">CharTokenizer</text>
-  <text x="354" y="230" class="n">src/tokenizer.py</text>
-  <text x="354" y="248" class="n">char -> index -> char</text>
+  <line x1="150" y1="85" x2="180" y2="85" stroke="#86868b" stroke-width="1.5"/>
 
-  <rect x="584" y="178" width="220" height="90" class="b"/>
-  <text x="604" y="210" class="t">Transformer</text>
-  <text x="604" y="230" class="n">src/transformer.py</text>
-  <text x="604" y="248" class="n">attention + FFN + residuals</text>
+  <!-- Tokenizer -->
+  <rect x="180" y="60" width="120" height="50" rx="12" fill="url(#blue)" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="240" y="82" text-anchor="middle" font-size="11" fill="#86868b">TOKENIZER</text>
+  <text x="240" y="98" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">Char-level</text>
 
-  <rect x="854" y="178" width="260" height="90" class="b"/>
-  <text x="874" y="210" class="t">Training Loop</text>
-  <text x="874" y="230" class="n">train_overnight_mixed.py</text>
-  <text x="874" y="248" class="n">AdamW + cosine LR + grad clip</text>
+  <line x1="300" y1="85" x2="330" y2="85" stroke="#86868b" stroke-width="1.5"/>
 
-  <!-- Row 2: Outputs -->
-  <rect x="84" y="328" width="260" height="100" class="b"/>
-  <text x="104" y="360" class="t">Checkpoints</text>
-  <text x="104" y="380" class="n">models/overnight_best.pt</text>
-  <text x="104" y="398" class="n">Every 25 epochs + best loss</text>
-  <text x="104" y="416" class="g">Epoch 163 | Loss 0.186</text>
+  <!-- Embedding -->
+  <rect x="330" y="60" width="140" height="50" rx="12" fill="url(#blue)" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="400" y="82" text-anchor="middle" font-size="11" fill="#86868b">EMBEDDING</text>
+  <text x="400" y="98" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">Token + Position</text>
 
-  <rect x="394" y="328" width="260" height="100" class="b"/>
-  <text x="414" y="360" class="t">Evaluation</text>
-  <text x="414" y="380" class="n">eval_harness.py</text>
-  <text x="414" y="398" class="n">math + identity + jot suite</text>
-  <text x="414" y="416" class="g">Score: A (90.2)</text>
+  <line x1="400" y1="110" x2="400" y2="140" stroke="#86868b" stroke-width="1.5"/>
 
-  <rect x="704" y="328" width="410" height="100" class="b"/>
-  <text x="724" y="360" class="t">Inference + Web UI</text>
-  <text x="724" y="380" class="n">generate() + web_ui.py (Flask :5001)</text>
-  <text x="724" y="398" class="n">POST /api/generate | GET /api/status</text>
-  <text x="724" y="416" class="n">src/chat.py (interactive mode)</text>
+  <!-- Transformer Block -->
+  <rect x="100" y="140" width="600" height="200" rx="16" fill="none" stroke="#0071e3" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="120" y="162" font-size="12" font-weight="600" fill="#0071e3">x4 TRANSFORMER BLOCKS</text>
 
-  <!-- Row 3: Capabilities -->
-  <rect x="84" y="488" width="1030" height="120" class="b"/>
-  <text x="104" y="518" class="t">What It Knows</text>
+  <!-- Multi-Head Attention -->
+  <rect x="130" y="180" width="160" height="60" rx="10" fill="url(#blue)" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="210" y="202" text-anchor="middle" font-size="11" fill="#86868b">MULTI-HEAD ATTENTION</text>
+  <text x="210" y="222" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">4 heads, 128d</text>
 
-  <rect x="104" y="532" width="220" height="60" class="bg"/>
-  <text x="120" y="554" class="g">Math (87.8%)</text>
-  <text x="120" y="572" class="n">Arithmetic: +, -, *, /, ^, sqrt</text>
+  <line x1="290" y1="210" x2="320" y2="210" stroke="#86868b" stroke-width="1.5"/>
 
-  <rect x="344" y="532" width="220" height="60" class="bg"/>
-  <text x="360" y="554" class="g">Identity (88.3%)</text>
-  <text x="360" y="572" class="n">Name, creator, what it is</text>
+  <!-- Add & Norm 1 -->
+  <rect x="320" y="185" width="80" height="50" rx="10" fill="rgba(48,209,88,0.1)" stroke="#30d158" stroke-width="1.5"/>
+  <text x="360" y="207" text-anchor="middle" font-size="11" fill="#1d1d1f">Add &amp;</text>
+  <text x="360" y="222" text-anchor="middle" font-size="11" fill="#1d1d1f">LayerNorm</text>
 
-  <rect x="584" y="532" width="220" height="60" class="bg"/>
-  <text x="600" y="554" class="g">Jot Code (95.3%)</text>
-  <text x="600" y="572" class="n">Functions, variables, print</text>
+  <line x1="400" y1="210" x2="430" y2="210" stroke="#86868b" stroke-width="1.5"/>
 
-  <rect x="824" y="532" width="270" height="60" class="bg"/>
-  <text x="840" y="554" class="t">Facts (new)</text>
-  <text x="840" y="572" class="n">President, country, year, date</text>
+  <!-- FFN -->
+  <rect x="430" y="180" width="120" height="60" rx="10" fill="url(#blue)" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="490" y="202" text-anchor="middle" font-size="11" fill="#86868b">FEED-FORWARD</text>
+  <text x="490" y="222" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">128-256-128</text>
 
-  <!-- Row 4: Automation -->
-  <rect x="84" y="660" width="1030" height="90" class="b"/>
-  <text x="104" y="690" class="t">Automation</text>
-  <text x="104" y="712" class="n">Overnight training (200 epochs) | Periodic checkpoints + sample generation</text>
-  <text x="104" y="732" class="n">Eval results -> fony morning call grade report | Watchdog integration</text>
+  <line x1="550" y1="210" x2="580" y2="210" stroke="#86868b" stroke-width="1.5"/>
 
-  <!-- Arrows -->
-  <path d="M284 223 L334 223" class="a"/>
-  <path d="M534 223 L584 223" class="a"/>
-  <path d="M804 223 L854 223" class="a"/>
-  <path d="M984 268 L984 328" class="a"/>
-  <path d="M854 378 L654 378" class="a"/>
-  <path d="M394 378 L344 378" class="a"/>
-  <path d="M214 428 L214 488" class="a"/>
-  <path d="M524 428 L524 488" class="a"/>
-  <path d="M909 428 L909 488" class="a"/>
-  <path d="M599 608 L599 660" class="a"/>
+  <!-- Add & Norm 2 -->
+  <rect x="580" y="185" width="80" height="50" rx="10" fill="rgba(48,209,88,0.1)" stroke="#30d158" stroke-width="1.5"/>
+  <text x="620" y="207" text-anchor="middle" font-size="11" fill="#1d1d1f">Add &amp;</text>
+  <text x="620" y="222" text-anchor="middle" font-size="11" fill="#1d1d1f">LayerNorm</text>
+
+  <!-- Residual -->
+  <path d="M210,180 L210,170 L620,170 L620,185" fill="none" stroke="#86868b" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="415" y="166" text-anchor="middle" font-size="10" fill="#86868b">residual connections</text>
+
+  <text x="400" y="320" text-anchor="middle" font-size="11" fill="#86868b">dropout (training only)</text>
+
+  <line x1="400" y1="340" x2="400" y2="370" stroke="#86868b" stroke-width="1.5"/>
+
+  <!-- Output head -->
+  <rect x="300" y="370" width="200" height="50" rx="12" fill="url(#blue)" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="400" y="392" text-anchor="middle" font-size="11" fill="#86868b">OUTPUT HEAD</text>
+  <text x="400" y="408" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">Linear - Softmax</text>
+
+  <line x1="400" y1="420" x2="400" y2="445" stroke="#86868b" stroke-width="1.5"/>
+
+  <!-- Sampling -->
+  <rect x="300" y="445" width="200" height="40" rx="10" fill="rgba(48,209,88,0.1)" stroke="#30d158" stroke-width="1.5"/>
+  <text x="400" y="470" text-anchor="middle" font-size="13" font-weight="500" fill="#1d1d1f">top-k / top-p / temp</text>
+
+  <!-- Services sidebar -->
+  <rect x="600" y="370" width="170" height="110" rx="12" fill="rgba(0,0,0,0.03)" stroke="#d2d2d7" stroke-width="1"/>
+  <text x="685" y="392" text-anchor="middle" font-size="11" font-weight="600" fill="#86868b">SERVICES</text>
+  <text x="685" y="414" text-anchor="middle" font-size="12" fill="#1d1d1f">Flask UI :5001</text>
+  <text x="685" y="434" text-anchor="middle" font-size="12" fill="#1d1d1f">Train daemon</text>
+  <text x="685" y="454" text-anchor="middle" font-size="12" fill="#1d1d1f">Eval harness</text>
+  <text x="685" y="474" text-anchor="middle" font-size="12" fill="#1d1d1f">iMessage alerts</text>
+
+  <text x="90" y="470" font-size="11" fill="#86868b">230K params | 102 vocab | AdamW + cosine LR</text>
 </svg>

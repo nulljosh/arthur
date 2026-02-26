@@ -3,294 +3,497 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>core Local LLM UI</title>
+  <title>core -- Chat</title>
   <style>
     :root {
-      --bg: #f5f7fb;
-      --panel: #ffffff;
-      --ink: #1f2937;
-      --muted: #5f6b7a;
-      --accent: #1f7aec;
-      --accent-soft: #e9f2ff;
-      --border: #d6dce6;
-      --danger: #b42318;
-      --danger-soft: #fee4e2;
+      --glass-bg: rgba(255, 255, 255, 0.72);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      --blue: #0071e3;
+      --blue-hover: #0077ed;
+      --text: #1d1d1f;
+      --muted: #86868b;
+      --bg: #f5f5f7;
+      --msg-user: #0071e3;
+      --msg-core: rgba(255, 255, 255, 0.85);
+      --input-bg: white;
+      --input-border: rgba(0, 0, 0, 0.1);
     }
 
-    * { box-sizing: border-box; }
+    [data-theme="dark"] {
+      --glass-bg: rgba(30, 30, 30, 0.78);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --blue: #0a84ff;
+      --blue-hover: #409cff;
+      --text: #f5f5f7;
+      --muted: #98989d;
+      --bg: #000000;
+      --msg-user: #0a84ff;
+      --msg-core: rgba(44, 44, 46, 0.85);
+      --input-bg: rgba(44, 44, 46, 0.8);
+      --input-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
-      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: radial-gradient(circle at 10% 0%, #ffffff 0, #eef4ff 45%, var(--bg) 100%);
-      min-height: 100vh;
-      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .app {
-      max-width: 980px;
-      margin: 0 auto;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 20px 40px rgba(6, 24, 44, 0.08);
-      overflow: hidden;
+    .header {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
     }
 
-    .head {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(120deg, #f9fbff, #eef4ff);
-    }
-
-    .head h1 {
-      margin: 0;
-      font-size: 1.4rem;
-      letter-spacing: 0.02em;
-    }
-
-    .head p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .content {
-      padding: 20px 24px 24px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .status {
-      background: var(--accent-soft);
-      border: 1px solid #cfe0ff;
-      padding: 10px 12px;
-      border-radius: 10px;
-      color: #184d96;
-      font-size: 0.92rem;
-    }
-
-    label {
-      display: block;
+    .header h1 {
+      font-size: 1.2rem;
       font-weight: 600;
-      margin-bottom: 6px;
-      font-size: 0.92rem;
+      letter-spacing: -0.01em;
     }
 
-    textarea,
-    input {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font: inherit;
-      color: var(--ink);
-      background: #fff;
-    }
-
-    textarea:focus,
-    input:focus {
-      outline: 2px solid #cfe0ff;
-      border-color: var(--accent);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-      line-height: 1.45;
-    }
-
-    .controls {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-    }
-
-    .help {
-      margin-top: 5px;
+    .header .status {
       font-size: 0.8rem;
       color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .actions {
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #86868b;
+      transition: background 0.3s;
+    }
+
+    .status-dot.online { background: #30d158; }
+    .status-dot.error { background: #ff3b30; }
+
+    .chat {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
       display: flex;
-      gap: 10px;
+      flex-direction: column;
+      gap: 12px;
+      scroll-behavior: smooth;
+    }
+
+    .msg {
+      max-width: 75%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      animation: fadeUp 0.2s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background: var(--msg-user);
+      color: white;
+      border-bottom-right-radius: 6px;
+    }
+
+    .msg.core {
+      align-self: flex-start;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--msg-core);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      border-bottom-left-radius: 6px;
+    }
+
+    .msg.core .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .msg.system {
+      align-self: center;
+      background: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      padding: 4px 8px;
+    }
+
+    .typing {
+      align-self: flex-start;
+      padding: 12px 16px;
+      display: none;
+    }
+
+    .typing span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      margin: 0 2px;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .typing span:nth-child(1) { animation-delay: -0.32s; }
+    .typing span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    .input-bar {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--glass-bg);
+      border-top: 1px solid var(--glass-border);
+      padding: 16px 24px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .input-bar textarea {
+      flex: 1;
+      border: 1px solid var(--input-border);
+      border-radius: 20px;
+      padding: 10px 16px;
+      font: inherit;
+      font-size: 0.95rem;
+      resize: none;
+      max-height: 120px;
+      line-height: 1.4;
+      background: var(--input-bg);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-bar textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .input-bar button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: var(--blue);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+    }
+
+    .input-bar button:hover {
+      background: var(--blue-hover);
+      transform: scale(1.05);
+    }
+
+    .input-bar button:active {
+      transform: scale(0.95);
+    }
+
+    .input-bar button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .settings {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 12px 24px;
+      display: none;
+      gap: 16px;
+      font-size: 0.85rem;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    button {
-      border: 0;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 10px;
-      padding: 10px 16px;
+    .settings.open { display: flex; }
+
+    .settings label {
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .settings input {
+      width: 64px;
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+      padding: 4px 8px;
       font: inherit;
-      font-weight: 700;
+      font-size: 0.85rem;
+      text-align: center;
+      outline: none;
+    }
+
+    .settings input:focus { border-color: var(--blue); }
+
+    .gear {
       cursor: pointer;
-      transition: opacity 0.15s ease;
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    button:hover { opacity: 0.92; }
-    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .gear:hover { transform: rotate(30deg); }
 
-    .error {
-      display: none;
-      border: 1px solid #f5b6b0;
-      background: var(--danger-soft);
-      color: var(--danger);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 0.9rem;
-      white-space: pre-wrap;
+    .theme-toggle {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
     }
 
-    .output {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #fbfcff;
-      padding: 12px;
+    .theme-toggle:hover { transform: scale(1.15); }
+
+    .settings input {
+      background: var(--input-bg);
+      color: var(--text);
     }
 
-    .output pre {
-      margin: 0;
-      white-space: pre-wrap;
-      font-family: "IBM Plex Mono", "Consolas", monospace;
-      font-size: 0.9rem;
-      line-height: 1.45;
-      min-height: 150px;
+    .empty {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .empty h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .empty p { font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+      .msg { max-width: 88%; }
+      .header { padding: 12px 16px; }
+      .chat { padding: 16px; }
+      .input-bar { padding: 12px 16px; }
     }
   </style>
 </head>
 <body>
-  <main class="app">
-    <header class="head">
-      <h1>core Local LLM UI</h1>
-      <p>Prompt, tune sampling controls, and generate text from your local checkpoint.</p>
-    </header>
-
-    <section class="content">
-      <div id="status" class="status">Checking model status...</div>
-
-      <div>
-        <label for="prompt">Prompt</label>
-        <textarea id="prompt" placeholder="Enter your prompt...">Q: What is your name?
-A:</textarea>
+  <header class="header">
+    <h1>core</h1>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span class="theme-toggle" id="themeBtn" title="Toggle dark mode">&#9790;</span>
+      <span class="gear" id="gearBtn" title="Settings">&#9881;</span>
+      <div class="status">
+        <span class="status-dot" id="dot"></span>
+        <span id="statusText">connecting...</span>
       </div>
+    </div>
+  </header>
 
-      <div class="controls">
-        <div>
-          <label for="length">Length (tokens)</label>
-          <input id="length" type="number" min="1" max="512" value="120">
-        </div>
+  <div class="settings" id="settings">
+    <label>Temperature <input id="temperature" type="number" min="0.01" max="3" step="0.05" value="0.5"></label>
+    <label>Max tokens <input id="maxTokens" type="number" min="1" max="512" value="120"></label>
+    <label>Top-k <input id="topK" type="number" min="0" value="40" placeholder="0=off"></label>
+    <label>Top-p <input id="topP" type="number" min="0.01" max="1" step="0.05" value="0.9" placeholder="1=off"></label>
+  </div>
 
-        <div>
-          <label for="temperature">Temperature</label>
-          <input id="temperature" type="number" min="0.01" max="3" step="0.01" value="0.8">
-          <div class="help">Lower is more deterministic.</div>
-        </div>
+  <div class="chat" id="chat">
+    <div class="empty" id="empty">
+      <h2>core LLM</h2>
+      <p>Local transformer, trained from scratch. Ask it anything.</p>
+    </div>
+  </div>
 
-        <div>
-          <label for="top_k">Top-k (optional)</label>
-          <input id="top_k" type="number" min="0" placeholder="0 = disabled">
-        </div>
+  <div class="typing" id="typing">
+    <span></span><span></span><span></span>
+  </div>
 
-        <div>
-          <label for="top_p">Top-p (optional)</label>
-          <input id="top_p" type="number" min="0.01" max="1" step="0.01" placeholder="1.0 = disabled">
-        </div>
-      </div>
-
-      <div class="actions">
-        <button id="generateBtn" type="button">Generate</button>
-        <span id="runState"></span>
-      </div>
-
-      <div id="errorBox" class="error"></div>
-
-      <div class="output">
-        <label for="output">Output</label>
-        <pre id="output"></pre>
-      </div>
-    </section>
-  </main>
+  <div class="input-bar">
+    <textarea id="input" rows="1" placeholder="Message core..." autofocus></textarea>
+    <button id="sendBtn" title="Send">&#9654;</button>
+  </div>
 
   <script>
-    const statusEl = document.getElementById('status');
-    const errorBox = document.getElementById('errorBox');
-    const outputEl = document.getElementById('output');
-    const runState = document.getElementById('runState');
-    const generateBtn = document.getElementById('generateBtn');
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('input');
+    const sendBtn = document.getElementById('sendBtn');
+    const typing = document.getElementById('typing');
+    const dot = document.getElementById('dot');
+    const statusText = document.getElementById('statusText');
+    const empty = document.getElementById('empty');
+    const gearBtn = document.getElementById('gearBtn');
+    const settings = document.getElementById('settings');
 
-    function showError(message) {
-      errorBox.style.display = 'block';
-      errorBox.textContent = message;
-    }
+    let history = [];
+    let generating = false;
 
-    function clearError() {
-      errorBox.style.display = 'none';
-      errorBox.textContent = '';
-    }
+    const themeBtn = document.getElementById('themeBtn');
 
-    function parseOptional(value) {
-      const trimmed = value.trim();
-      return trimmed === '' ? null : trimmed;
-    }
+    // Dark mode toggle with localStorage persistence
+    const savedTheme = localStorage.getItem('core-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    themeBtn.textContent = savedTheme === 'dark' ? '\u2600' : '\u263E';
 
-    async function refreshStatus() {
-      try {
-        const response = await fetch('/api/status');
-        const data = await response.json();
-        if (data.model_loaded) {
-          statusEl.textContent = `Model loaded: ${data.model_path} | vocab: ${data.vocab_size}`;
-        } else {
-          const msg = data.runtime_error || 'Not loaded';
-          statusEl.textContent = `Model unavailable: ${msg}`;
-        }
-      } catch (err) {
-        statusEl.textContent = `Status check failed: ${err.message}`;
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('core-theme', 'light');
+        themeBtn.textContent = '\u263E';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('core-theme', 'dark');
+        themeBtn.textContent = '\u2600';
       }
+    });
+
+    gearBtn.addEventListener('click', () => settings.classList.toggle('open'));
+
+    // Auto-resize textarea
+    input.addEventListener('input', () => {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    });
+
+    // Enter to send, shift+enter for newline
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        send();
+      }
+    });
+
+    sendBtn.addEventListener('click', send);
+
+    function addMessage(role, text) {
+      if (empty) empty.style.display = 'none';
+      const div = document.createElement('div');
+      div.className = `msg ${role}`;
+      if (role === 'core') {
+        div.innerHTML = '<div class="label">core</div>' + escapeHtml(text);
+      } else {
+        div.textContent = text;
+      }
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+      return div;
     }
 
-    async function generate() {
-      clearError();
-      runState.textContent = 'Generating...';
-      generateBtn.disabled = true;
+    function escapeHtml(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
 
-      const payload = {
-        prompt: document.getElementById('prompt').value,
-        length: document.getElementById('length').value,
-        temperature: document.getElementById('temperature').value,
-        top_k: parseOptional(document.getElementById('top_k').value),
-        top_p: parseOptional(document.getElementById('top_p').value)
-      };
+    async function send() {
+      const text = input.value.trim();
+      if (!text || generating) return;
+
+      addMessage('user', text);
+      history.push(text);
+      input.value = '';
+      input.style.height = 'auto';
+
+      generating = true;
+      sendBtn.disabled = true;
+      typing.style.display = 'block';
+      chat.scrollTop = chat.scrollHeight;
+
+      // Build prompt in Q/A format the model expects
+      const prompt = 'Q: ' + text + '\nA:';
+
+      const temp = parseFloat(document.getElementById('temperature').value) || 0.5;
+      const length = parseInt(document.getElementById('maxTokens').value) || 120;
+      const topK = parseInt(document.getElementById('topK').value) || null;
+      const topP = parseFloat(document.getElementById('topP').value) || null;
 
       try {
-        const response = await fetch('/api/generate', {
+        const res = await fetch('/api/generate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify({ prompt, length, temperature: temp, top_k: topK, top_p: topP })
         });
-        const data = await response.json();
+        const data = await res.json();
 
-        if (!response.ok || data.error) {
-          const details = Array.isArray(data.details) ? data.details.join('\n') : '';
-          showError([data.error || 'Request failed', details].filter(Boolean).join('\n'));
-          return;
+        if (!res.ok || data.error) {
+          const err = data.details ? data.details.join(', ') : data.error || 'Generation failed';
+          addMessage('system', err);
+        } else {
+          // Extract just the answer part after the prompt
+          let answer = data.text || '';
+          const aIdx = answer.indexOf('A:');
+          if (aIdx !== -1) answer = answer.substring(aIdx + 2);
+          // Trim trailing Q: from next question
+          answer = answer.split('\nQ:')[0].split('\n\nQ:')[0].trim();
+          addMessage('core', answer || '(empty response)');
         }
-
-        outputEl.textContent = data.text || '';
       } catch (err) {
-        showError(`Request failed: ${err.message}`);
+        addMessage('system', 'Connection failed: ' + err.message);
       } finally {
-        runState.textContent = '';
-        generateBtn.disabled = false;
+        generating = false;
+        sendBtn.disabled = false;
+        typing.style.display = 'none';
       }
     }
 
-    generateBtn.addEventListener('click', generate);
-    refreshStatus();
+    async function checkStatus() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        if (data.model_loaded) {
+          dot.className = 'status-dot online';
+          const cfg = data.config || {};
+          statusText.textContent = `${cfg.num_layers || '?'}L/${cfg.num_heads || '?'}H/${cfg.embed_dim || '?'}d`;
+        } else {
+          dot.className = 'status-dot error';
+          statusText.textContent = 'model offline';
+        }
+      } catch {
+        dot.className = 'status-dot error';
+        statusText.textContent = 'server offline';
+      }
+    }
+
+    checkStatus();
+    setInterval(checkStatus, 30000);
   </script>
 </body>
 </html>

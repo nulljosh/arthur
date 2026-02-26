@@ -4,9 +4,9 @@ Tiny transformer LM built from scratch in PyTorch. 230K parameters, character-le
 
 ## Current Status
 
-- **Epoch 163/200** | Loss: 0.186 | Grade: **A (90.2)**
-- Math: 87.8% | Identity: 88.3% | Jot code: 95.3%
-- Factual knowledge (president, country, year): training data added, next run will learn
+- Persistent training daemon (`core-train`) with RAM guard + iMessage notifications
+- Web chat UI with Apple Liquid Glass design + dark mode
+- Auto-deploys overnight best checkpoint
 
 ## What It Knows
 
@@ -29,6 +29,18 @@ pytest -q
 python3 train_overnight_mixed.py
 ```
 
+## Web UI
+
+```bash
+python3 web_ui.py
+```
+
+- http://localhost:5001/ -- chat interface (Liquid Glass, dark mode toggle)
+- http://localhost:5001/quiz -- quiz mode
+- `POST /api/generate` | `GET /api/status`
+
+Runs as persistent launchd service (`com.joshua.core-web`) on port 5001.
+
 ## Architecture
 
 ![core architecture](architecture.svg)
@@ -37,19 +49,16 @@ python3 train_overnight_mixed.py
 
 **Tokenizer:** Character-level (102 unique characters from corpus).
 
-**Training:** AdamW optimizer, cosine annealing LR (1e-3 to 1e-5), gradient clipping at 1.0, batch size 32, sequence length 64.
+**Training:** AdamW optimizer, cosine annealing LR (1e-3 to 1e-5), gradient clipping at 1.0, batch size 32, sequence length 64. Persistent daemon with RAM monitoring and iMessage status notifications.
 
 **Corpus:** 185 KB mixed data across 9 files: comprehensive Q&A (math, identity, jot, facts, time/date), jot code examples, math drills, conversational pairs.
 
-## Web UI
+## Services
 
-```bash
-python3 web_ui.py
-```
-
-- http://localhost:5001/ (prompt interface)
-- http://localhost:5001/quiz (quiz mode)
-- `POST /api/generate` | `GET /api/status`
+| Service | Plist | Port | Purpose |
+|---------|-------|------|---------|
+| core-train | `com.joshua.core-train` | -- | Training daemon (persistent, RAM-aware) |
+| core-web | `com.joshua.core-web` | 5001 | Flask chat UI |
 
 ## Evaluation
 
@@ -69,7 +78,8 @@ src/train.py           dataset, train loop, generate
 src/chat.py            interactive chat interface
 src/eval_harness.py    prompt suite evaluation
 train_overnight_mixed.py   overnight training script
-web_ui.py              Flask web UI
+web_ui.py              Flask web UI + API
+templates/index.html   Liquid Glass chat interface
 data/                  training corpora (9 files)
 models/                checkpoints (.pt)
 logs/                  training logs + eval results
