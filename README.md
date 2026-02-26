@@ -26,7 +26,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 pytest -q
-python3 train_overnight_mixed.py
+python3 scripts/train_overnight_mixed.py
 ```
 
 ## Web UI
@@ -45,13 +45,25 @@ Runs as persistent launchd service (`com.joshua.core-web`) on port 5001.
 
 ![core architecture](architecture.svg)
 
-**Model:** 4 transformer blocks, 4 attention heads, 128 embed dim, 256 FF dim, 128 max sequence length.
+Same architecture as GPT-2 (~2500x smaller). Implements "Attention Is All You Need" in ~500 lines.
 
-**Tokenizer:** Character-level (102 unique characters from corpus).
+**Model:** 4 transformer blocks, 4 attention heads, 128 embed dim, 256 FF dim, 128 max sequence length. ~230K params.
+
+**Tokenizer:** Character-level (102 unique characters from corpus). Word-level and BPE also implemented.
 
 **Training:** AdamW optimizer, cosine annealing LR (1e-3 to 1e-5), gradient clipping at 1.0, batch size 32, sequence length 64. Persistent daemon with RAM monitoring and iMessage status notifications.
 
 **Corpus:** 185 KB mixed data across 9 files: comprehensive Q&A (math, identity, jot, facts, time/date), jot code examples, math drills, conversational pairs.
+
+### Model Tiers
+
+| Tier | Params | Layers | Heads | Embed | Context |
+|------|--------|--------|-------|-------|---------|
+| Nano | ~50K | 2 | 2 | 32 | 64 |
+| Micro | ~500K | 4 | 4 | 128 | 256 |
+| Mini | ~5M | 6 | 8 | 256 | 512 |
+
+For comparison: GPT-2 has 124M params, 12 layers, 12 heads, 768 embed, 1024 context.
 
 ## Services
 
