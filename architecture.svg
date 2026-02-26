@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
   <title id="title">core architecture</title>
-  <desc id="desc">Updated architecture for the core tiny transformer project.</desc>
+  <desc id="desc">Architecture for core: char-level transformer LM trained on mixed Q&amp;A corpus.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -12,12 +12,13 @@
       <stop offset="100%" stop-color="#90f7c4"/>
     </linearGradient>
     <style>
-      .h { fill:#eaf0ff; font:700 34px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .s { fill:#9eb2d9; font:500 18px 'Avenir Next',Segoe UI,Arial,sans-serif; }
+      .h { fill:#eaf0ff; font:700 32px 'Avenir Next',Segoe UI,Arial,sans-serif; }
+      .s { fill:#9eb2d9; font:500 17px 'Avenir Next',Segoe UI,Arial,sans-serif; }
       .b { fill:#101a30; stroke:#2e4167; stroke-width:2; rx:16; }
-      .t { fill:#dbe6ff; font:600 20px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .n { fill:#9fb3dc; font:500 15px 'Avenir Next',Segoe UI,Arial,sans-serif; }
-      .ns { fill:#9fb3dc; font:500 14px 'Avenir Next',Segoe UI,Arial,sans-serif; }
+      .bg { fill:#0c1424; stroke:#1e3050; stroke-width:1.5; rx:12; }
+      .t { fill:#dbe6ff; font:600 19px 'Avenir Next',Segoe UI,Arial,sans-serif; }
+      .n { fill:#9fb3dc; font:500 14px 'Avenir Next',Segoe UI,Arial,sans-serif; }
+      .g { fill:#90f7c4; font:700 14px 'Avenir Next',Segoe UI,Arial,sans-serif; }
       .a { stroke:#5ecbff; stroke-width:2.5; fill:none; marker-end:url(#arrow); }
     </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -25,63 +26,89 @@
     </marker>
   </defs>
 
-  <rect width="1200" height="760" fill="url(#bg)"/>
-  <rect x="48" y="48" width="1104" height="664" rx="24" fill="#0f1628" stroke="#243756" stroke-width="2"/>
+  <rect width="1200" height="820" fill="url(#bg)"/>
+  <rect x="48" y="48" width="1104" height="724" rx="24" fill="#0f1628" stroke="#243756" stroke-width="2"/>
   <rect x="48" y="48" width="1104" height="8" fill="url(#accent)"/>
 
-  <text x="84" y="108" class="h">core — tiny transformer LM architecture</text>
-  <text x="84" y="136" class="s">Updated pipeline: data -> tokenize -> train -> checkpoint -> eval</text>
-  <text x="84" y="160" class="s">-> generate/web</text>
+  <text x="84" y="106" class="h">core -- char-level transformer LM</text>
+  <text x="84" y="132" class="s">230K params | 4 layers | 4 heads | 128 embed | char tokenizer (102 vocab)</text>
+  <text x="84" y="154" class="s">Mixed corpus: math, identity, jot code, facts, Q&amp;A</text>
 
-  <rect x="84" y="180" width="220" height="96" class="b"/>
-  <text x="104" y="215" class="t">Data</text>
-  <text x="104" y="238" class="n">data/*.txt</text>
-  <text x="104" y="258" class="n">eval_prompt_suite.json</text>
+  <!-- Row 1: Pipeline -->
+  <rect x="84" y="178" width="200" height="90" class="b"/>
+  <text x="104" y="210" class="t">Corpus</text>
+  <text x="104" y="230" class="n">data/*.txt (185 KB)</text>
+  <text x="104" y="248" class="n">2000+ Q&amp;A pairs</text>
 
-  <rect x="354" y="180" width="220" height="96" class="b"/>
-  <text x="374" y="215" class="t">Tokenizer</text>
-  <text x="374" y="238" class="n">src/tokenizer.py</text>
-  <text x="374" y="258" class="n">encode/decode</text>
+  <rect x="334" y="178" width="200" height="90" class="b"/>
+  <text x="354" y="210" class="t">CharTokenizer</text>
+  <text x="354" y="230" class="n">src/tokenizer.py</text>
+  <text x="354" y="248" class="n">char -> index -> char</text>
 
-  <rect x="624" y="180" width="220" height="96" class="b"/>
-  <text x="644" y="215" class="t">Model</text>
-  <text x="644" y="238" class="n">src/model.py</text>
-  <text x="644" y="258" class="n">Transformer blocks</text>
+  <rect x="584" y="178" width="220" height="90" class="b"/>
+  <text x="604" y="210" class="t">Transformer</text>
+  <text x="604" y="230" class="n">src/transformer.py</text>
+  <text x="604" y="248" class="n">attention + FFN + residuals</text>
 
-  <rect x="894" y="180" width="220" height="96" class="b"/>
-  <text x="914" y="215" class="t">Training Loop</text>
-  <text x="914" y="238" class="n">src/train.py / cron</text>
-  <text x="914" y="258" class="n">loss + checkpoints</text>
+  <rect x="854" y="178" width="260" height="90" class="b"/>
+  <text x="874" y="210" class="t">Training Loop</text>
+  <text x="874" y="230" class="n">train_overnight_mixed.py</text>
+  <text x="874" y="248" class="n">AdamW + cosine LR + grad clip</text>
 
-  <rect x="84" y="344" width="300" height="108" class="b"/>
-  <text x="104" y="380" class="t">Checkpoints</text>
-  <text x="104" y="404" class="n">models/*.pt</text>
-  <text x="104" y="424" class="n">cron_best.pt / resume</text>
+  <!-- Row 2: Outputs -->
+  <rect x="84" y="328" width="260" height="100" class="b"/>
+  <text x="104" y="360" class="t">Checkpoints</text>
+  <text x="104" y="380" class="n">models/overnight_best.pt</text>
+  <text x="104" y="398" class="n">Every 25 epochs + best loss</text>
+  <text x="104" y="416" class="g">Epoch 163 | Loss 0.186</text>
 
-  <rect x="444" y="344" width="300" height="108" class="b"/>
-  <text x="464" y="380" class="t">Evaluation</text>
-  <text x="464" y="404" class="n">evaluate_checkpoints.py</text>
-  <text x="464" y="424" class="n">logs/eval_results.json</text>
+  <rect x="394" y="328" width="260" height="100" class="b"/>
+  <text x="414" y="360" class="t">Evaluation</text>
+  <text x="414" y="380" class="n">eval_harness.py</text>
+  <text x="414" y="398" class="n">math + identity + jot suite</text>
+  <text x="414" y="416" class="g">Score: A (90.2)</text>
 
-  <rect x="804" y="344" width="310" height="108" class="b"/>
-  <text x="824" y="380" class="t">Inference + Web UI</text>
-  <text x="824" y="404" class="n">src/generate.py</text>
-  <text x="824" y="424" class="n">web_ui.py (/api/generate)</text>
+  <rect x="704" y="328" width="410" height="100" class="b"/>
+  <text x="724" y="360" class="t">Inference + Web UI</text>
+  <text x="724" y="380" class="n">generate() + web_ui.py (Flask :5001)</text>
+  <text x="724" y="398" class="n">POST /api/generate | GET /api/status</text>
+  <text x="724" y="416" class="n">src/chat.py (interactive mode)</text>
 
-  <rect x="84" y="520" width="1030" height="146" class="b"/>
-  <text x="104" y="556" class="t">Automation</text>
-  <text x="104" y="582" class="ns">cron/run.sh -> train_session.py -> evaluate.py -> report.sh</text>
-  <text x="104" y="604" class="ns">Schedules: every 4h training/eval + 8:00 report</text>
-  <text x="104" y="626" class="ns">Goal: improve math + simple Q&amp;A quality with continuous</text>
-  <text x="104" y="646" class="ns">checkpoints</text>
+  <!-- Row 3: Capabilities -->
+  <rect x="84" y="488" width="1030" height="120" class="b"/>
+  <text x="104" y="518" class="t">What It Knows</text>
 
-  <path d="M304 228 L354 228" class="a"/>
-  <path d="M574 228 L624 228" class="a"/>
-  <path d="M844 228 L894 228" class="a"/>
-  <path d="M1004 276 L1004 344" class="a"/>
-  <path d="M894 398 L744 398" class="a"/>
-  <path d="M444 398 L384 398" class="a"/>
-  <path d="M234 452 L234 520" class="a"/>
-  <path d="M594 452 L594 520" class="a"/>
-  <path d="M959 452 L959 520" class="a"/>
+  <rect x="104" y="532" width="220" height="60" class="bg"/>
+  <text x="120" y="554" class="g">Math (87.8%)</text>
+  <text x="120" y="572" class="n">Arithmetic: +, -, *, /, ^, sqrt</text>
+
+  <rect x="344" y="532" width="220" height="60" class="bg"/>
+  <text x="360" y="554" class="g">Identity (88.3%)</text>
+  <text x="360" y="572" class="n">Name, creator, what it is</text>
+
+  <rect x="584" y="532" width="220" height="60" class="bg"/>
+  <text x="600" y="554" class="g">Jot Code (95.3%)</text>
+  <text x="600" y="572" class="n">Functions, variables, print</text>
+
+  <rect x="824" y="532" width="270" height="60" class="bg"/>
+  <text x="840" y="554" class="t">Facts (new)</text>
+  <text x="840" y="572" class="n">President, country, year, date</text>
+
+  <!-- Row 4: Automation -->
+  <rect x="84" y="660" width="1030" height="90" class="b"/>
+  <text x="104" y="690" class="t">Automation</text>
+  <text x="104" y="712" class="n">Overnight training (200 epochs) | Periodic checkpoints + sample generation</text>
+  <text x="104" y="732" class="n">Eval results -> fony morning call grade report | Watchdog integration</text>
+
+  <!-- Arrows -->
+  <path d="M284 223 L334 223" class="a"/>
+  <path d="M534 223 L584 223" class="a"/>
+  <path d="M804 223 L854 223" class="a"/>
+  <path d="M984 268 L984 328" class="a"/>
+  <path d="M854 378 L654 378" class="a"/>
+  <path d="M394 378 L344 378" class="a"/>
+  <path d="M214 428 L214 488" class="a"/>
+  <path d="M524 428 L524 488" class="a"/>
+  <path d="M909 428 L909 488" class="a"/>
+  <path d="M599 608 L599 660" class="a"/>
 </svg>

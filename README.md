@@ -1,13 +1,24 @@
 # core
 
-Tiny transformer LM built from scratch in PyTorch.
+Tiny transformer LM built from scratch in PyTorch. 230K parameters, character-level tokenizer, trained on mixed Q&A corpus.
 
-TLDR:
-- Train on text/code corpora
-- Generate syntax-aware completions
-- Keep it small, fast, and understandable
+## Current Status
 
-## Quick start
+- **Epoch 163/200** | Loss: 0.186 | Grade: **A (90.2)**
+- Math: 87.8% | Identity: 88.3% | Jot code: 95.3%
+- Factual knowledge (president, country, year): training data added, next run will learn
+
+## What It Knows
+
+```
+Q: What is 7*8?       -> 56
+Q: What is your name? -> core
+Q: Who made you?      -> Josh made me
+Q: print hello world  -> print "Hello, World!";
+Q: write a function   -> fn add(a, b) { return a + b; }
+```
+
+## Quick Start
 
 ```bash
 python3.13 -m venv venv
@@ -15,18 +26,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 pytest -q
-python3 src/train.py --epochs 100 --corpus tiny
-python3 src/generate.py --prompt "func add" --length 80
+python3 train_overnight_mixed.py
 ```
 
-## Optional `.env`
+## Architecture
 
-```env
-MODEL_PATH=models/ultra.pt
-DATA_PATH=data/ultra_minimal.txt
-PORT=5001
-DEBUG=True
-```
+![core architecture](architecture.svg)
+
+**Model:** 4 transformer blocks, 4 attention heads, 128 embed dim, 256 FF dim, 128 max sequence length.
+
+**Tokenizer:** Character-level (102 unique characters from corpus).
+
+**Training:** AdamW optimizer, cosine annealing LR (1e-3 to 1e-5), gradient clipping at 1.0, batch size 32, sequence length 64.
+
+**Corpus:** 185 KB mixed data across 9 files: comprehensive Q&A (math, identity, jot, facts, time/date), jot code examples, math drills, conversational pairs.
 
 ## Web UI
 
@@ -34,85 +47,35 @@ DEBUG=True
 python3 web_ui.py
 ```
 
-- http://localhost:5001/
-- http://localhost:5001/quiz
-- Controls: prompt, length, temperature, top-k, top-p
-- API endpoints:
-  - `POST /api/generate` (also available at `POST /generate`)
-  - `GET /api/status` (also available at `GET /status`)
-
-Optional env vars (defaults shown):
-
-```env
-MODEL_PATH=models/ultra.pt
-DATA_PATH=data/ultra_minimal.txt
-PORT=5001
-DEBUG=false
-```
+- http://localhost:5001/ (prompt interface)
+- http://localhost:5001/quiz (quiz mode)
+- `POST /api/generate` | `GET /api/status`
 
 ## Evaluation
 
-Run the fixed prompt suite against one checkpoint:
-
 ```bash
-python3 evaluate_checkpoints.py \
-  --checkpoints models/interesting_minimal.pt
+python3 evaluate_checkpoints.py --checkpoints models/overnight_best.pt
 ```
 
-Compare/rank multiple checkpoints:
+Eval results write to `logs/eval_results.json` (consumed by fony morning call for daily grade report).
 
-```bash
-python3 evaluate_checkpoints.py \
-  --checkpoints models/minimal.pt models/interesting_minimal.pt models/comprehensive_best.pt \
-  --suite data/eval_prompt_suite.json
+## Project Layout
+
 ```
-
-Reports are written to `logs/` as both Markdown and JSON.
-
-## Project layout
-
-- `src/train.py` — train loop + generation helpers
-- `src/generate.py` — inference entry point
-- `src/model.py` — transformer model
-- `src/tokenizer.py` — tokenization
-- `data/` — datasets
-- `models/` — checkpoints
-- `tests/` — pytest suite
-
-## Architecture
-
-![core architecture](architecture.svg)
-
-## Roadmap + ETA
-
-![roadmap](roadmap.svg)
-
-- Week 1: stability (tests/CI/env lock)
-- Week 2: data pipeline + eval split + run metadata
-- Week 3: quality tuning (context/sampling/bench prompts)
-- Week 4: reliability + release flow
-- Week 5: web UI upgrade (better UX, prompt presets, run/eval panel)
-
-MVP ETA: ~4 weeks focused.
-
-## Overnight run plan (Claude-like direction)
-
-- Long train run on mixed corpus (code + reasoning + dialogue)
-- Checkpoint every N steps + periodic sample generation
-- Fixed eval pack each checkpoint (reasoning, code, debug, summarize, instruction-follow, refusal)
-- Regression gate: block checkpoints that degrade syntax/following quality
-- Decode sweep: temperature/top-k/top-p grid to pick best defaults
-- Error stress: empty prompt, long prompt, unicode, bad params, missing files
-- UI/API smoke: `/api/status` + `/api/generate` valid/invalid payloads
-- Morning report: best checkpoint, deltas, wins/fails, next tuning steps
-
-## Opus replica reality check
-
-- True Opus parity: not realistic solo.
-- Strong domain mini-Opus:
-  - v1: 1-2 months
-  - strong system: 3-6 months
+src/tokenizer.py       char/word/BPE tokenizers
+src/attention.py       self-attention + multi-head
+src/transformer.py     blocks + full model
+src/train.py           dataset, train loop, generate
+src/chat.py            interactive chat interface
+src/eval_harness.py    prompt suite evaluation
+train_overnight_mixed.py   overnight training script
+web_ui.py              Flask web UI
+data/                  training corpora (9 files)
+models/                checkpoints (.pt)
+logs/                  training logs + eval results
+tests/                 pytest suite (8 files)
+```
 
 ## Notes
 
-Educational + experimentation repo. For production behavior, scale model/data/training stack significantly.
+Educational project. For production, scale model/data/training significantly.
