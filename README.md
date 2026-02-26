@@ -1,9 +1,10 @@
 # core
 
-Tiny transformer LM built from scratch in PyTorch. 230K parameters, character-level tokenizer, trained on mixed Q&A corpus.
+Tiny transformer LM built from scratch in PyTorch, with a zero-dependency C inference engine. 230K parameters, character-level tokenizer, trained on mixed Q&A corpus.
 
 ## Current Status
 
+- C inference engine (zero dependencies, ~350 lines, mmap weight loading)
 - Persistent training daemon (`core-train`) with RAM guard + iMessage notifications
 - Web chat UI with Apple Liquid Glass design + dark mode
 - Auto-deploys overnight best checkpoint
@@ -29,6 +30,34 @@ pytest -q
 python3 scripts/train_overnight_mixed.py
 ```
 
+## C Inference Engine
+
+Native C99 inference -- no Python, no PyTorch, no dependencies. Loads weights via mmap for instant startup.
+
+### Export Weights
+
+```bash
+source venv/bin/activate
+python3 scripts/export_weights.py
+# writes models/core.bin (~2.3 MB)
+```
+
+### Build
+
+```bash
+cd inference && make
+```
+
+### Run
+
+```bash
+./inference/core models/core.bin "Q: What is 5+3?\nA:" --temp 0.0 --tokens 50
+./inference/core models/core.bin "Q: Who made you?\nA:" --temp 0.5
+./inference/core --help
+```
+
+Options: `--temp T` (sampling temperature, default 0.8, 0 = greedy), `--tokens N` (max generation length, default 256).
+
 ## Web UI
 
 ```bash
@@ -52,6 +81,8 @@ Same architecture as GPT-2 (~2500x smaller). Implements "Attention Is All You Ne
 **Tokenizer:** Character-level (102 unique characters from corpus). Word-level and BPE also implemented.
 
 **Training:** AdamW optimizer, cosine annealing LR (1e-3 to 1e-5), gradient clipping at 1.0, batch size 32, sequence length 64. Persistent daemon with RAM monitoring and iMessage status notifications.
+
+**C Engine:** Single-file C99 inference (~350 LOC). mmap weight loading, GELU tanh approximation, causal multi-head attention, temperature sampling, sliding context window.
 
 **Corpus:** 185 KB mixed data across 9 files: comprehensive Q&A (math, identity, jot, facts, time/date), jot code examples, math drills, conversational pairs.
 
@@ -89,14 +120,21 @@ src/transformer.py     blocks + full model
 src/train.py           dataset, train loop, generate
 src/chat.py            interactive chat interface
 src/eval_harness.py    prompt suite evaluation
+inference/core.c       C99 inference engine (single file)
+inference/Makefile     build config
+scripts/export_weights.py  PyTorch -> binary weight exporter
 train_overnight_mixed.py   overnight training script
 web_ui.py              Flask web UI + API
 templates/index.html   Liquid Glass chat interface
 data/                  training corpora (9 files)
-models/                checkpoints (.pt)
+models/                checkpoints (.pt) + core.bin (C engine weights)
 logs/                  training logs + eval results
 tests/                 pytest suite (8 files)
 ```
+
+## Version
+
+2.0.0
 
 ## Notes
 

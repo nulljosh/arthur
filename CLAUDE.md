@@ -29,6 +29,19 @@ python3 src/generate.py --prompt "func add" --length 80
 - `src/transformer.py`: block + model
 - `src/train.py`: dataset, train loop, generation helpers
 - `src/chat.py`: chat wrapper
+- `inference/core.c`: C99 inference engine (single file, ~350 LOC)
+- `inference/Makefile`: builds `inference/core` binary
+- `scripts/export_weights.py`: exports PyTorch checkpoint to `models/core.bin`
+
+## C inference engine
+- Binary format: `models/core.bin` (magic "CORE", version 1, config, vocab, float32 weights)
+- Layout: 4B magic + 4B version + 24B config (6x uint32) + vocab entries (uint32 len + UTF-8) + contiguous float32 tensors
+- Tensor order: token_embed, pos_embed, [per-block: qkv_w, qkv_b, out_w, out_b, ff1_w, ff1_b, ff2_w, ff2_b, ln1_w, ln1_b, ln2_w, ln2_b], ln_f_w, ln_f_b, head
+- Build: `cd inference && make` (requires only cc + libc + libm)
+- Run: `./inference/core models/core.bin "Q: prompt\nA:" --temp 0.5 --tokens 100`
+- Weight loading via mmap (zero-copy, instant startup)
+- Config read from binary header (not hardcoded), adapts to any checkpoint tier
+- Pre-norm transformer with fused QKV, GELU tanh approx, causal attention
 
 ## Model tiers
 - Nano: tiny demo
