@@ -10,6 +10,7 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 pytest.importorskip("flask")
+pytest.importorskip("torch")
 
 import web_ui
 
