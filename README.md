@@ -2,7 +2,7 @@
 
 Nano transformer LLM built from scratch. PyTorch training loop, C99 inference engine, overnight automation.
 
-**GitHub**: https://github.com/nulljosh/nous | **Benchmarks**: See BENCHMARK.md
+**GitHub**: https://github.com/nulljosh/aether | **Benchmarks**: See BENCHMARK.md
 
 ## The Philosophy
 
@@ -110,7 +110,7 @@ Modes: chat, quiz, status
 
 See **ROADMAP.md** for detailed phases and timelines.
 
-### ✓ Done
+### Done
 - [x] Char tokenizer + transformer
 - [x] C99 inference engine (350 LOC, mmap, zero deps)
 - [x] Training + eval harness
@@ -119,19 +119,19 @@ See **ROADMAP.md** for detailed phases and timelines.
 - [x] BENCHMARK.md (honest comparisons)
 - [x] ROADMAP.md (5 phases, success metrics)
 
-### 🔄 In Progress (Phase 2: Data Quality)
+### In Progress (Phase 2: Data Quality)
 - [ ] WikiText-103 BPE training (running via aether daemon)
 - [ ] Scale to mini/small (3.5M-14M params)
 - [ ] Perplexity tracking vs GPT-2
 
-### 📋 Coming (Phase 3: Scale)
+### Coming (Phase 3: Scale)
 - [ ] Top-k / top-p sampling
 - [ ] Beam search
 - [ ] INT8 quantization
 - [ ] Multi-GPU training
 - [ ] Fine-tuning on jot/jit syntax
 
-### 🚀 Stretch (Phase 4-5: Instructions & Production)
+### Stretch (Phase 4-5: Instructions & Production)
 - [ ] Instruction tuning (Alpaca dataset)
 - [ ] System prompts + chat format
 - [ ] ONNX export (mobile/WASM)

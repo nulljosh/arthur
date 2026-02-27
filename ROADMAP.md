@@ -6,7 +6,7 @@ Aether is a nano transformer LLM built from scratch. This roadmap outlines the p
 
 ## Phases
 
-### Phase 1: Foundation ✓ (Complete)
+### Phase 1: Foundation (Complete)
 **Goal:** Full stack from scratch with C inference.
 
 - [x] Char-level tokenizer (jot syntax)
@@ -14,12 +14,12 @@ Aether is a nano transformer LLM built from scratch. This roadmap outlines the p
 - [x] Transformer blocks (pre-norm, GELU, residual connections)
 - [x] Training loop (Adam, gradient clipping, checkpointing)
 - [x] C99 inference engine (350 LOC, mmap, zero deps)
-- [x] Weight export (PyTorch → binary aether.bin)
+- [x] Weight export (PyTorch to binary aether.bin)
 - [x] Evaluation harness (grade A-F, per-category scores)
 - [x] Flask web UI (chat + quiz + status)
 - [x] Aether daemon (overnight training, milestone notifications)
 
-### Phase 2: Data Quality 🔄 (In Progress)
+### Phase 2: Data Quality (In Progress)
 **Goal:** Scale to meaningful model size with real-world training data.
 
 **Timeline: 1-2 weeks**
@@ -33,7 +33,7 @@ Aether is a nano transformer LLM built from scratch. This roadmap outlines the p
 
 **Measurement:** Perplexity on held-out validation set
 
-### Phase 3: Scale 📋 (Coming)
+### Phase 3: Scale (Coming)
 **Goal:** Multi-GPU training, larger models, faster iteration.
 
 **Timeline: 2-4 weeks**
@@ -46,7 +46,7 @@ Aether is a nano transformer LLM built from scratch. This roadmap outlines the p
 
 **Success criteria:** 14M model runs inference in <100ms on M4
 
-### Phase 4: Instructions 📋 (Coming)
+### Phase 4: Instructions (Coming)
 **Goal:** Teach the model to follow commands (like Claude, GPT).
 
 **Timeline: 3-6 weeks (if Phase 3 succeeds)**
@@ -59,7 +59,7 @@ Aether is a nano transformer LLM built from scratch. This roadmap outlines the p
 
 **Success criteria:** Model responds meaningfully to "write a function", "explain", etc.
 
-### Phase 5: Production 🚀 (Stretch)
+### Phase 5: Production (Stretch)
 **Goal:** Deploy-ready LLM inference.
 
 **Timeline: 2-3 months (if previous phases ship)**
@@ -82,7 +82,7 @@ Real learning needs:
 
 1. **Quantity:** WikiText-103 (103M tokens vs 185K now = 550x larger)
 2. **Diversity:** English, code, facts, reasoning
-3. **Duration:** ~20-50 hours of training to reach perplexity < 50
+3. **Duration:** 20-50 hours of training to reach perplexity < 50
 
 **aether daemon solves this:** Run overnight, commit every cycle, track progress.
 
@@ -92,8 +92,8 @@ Real learning needs:
 
 | Phase | Metric | Target | Status |
 |-------|--------|--------|--------|
-| 1 | C inference speed | 50K tok/s | ✓ 50K tok/s |
-| 1 | Binary size | < 3 MB | ✓ 2.2 MB |
+| 1 | C inference speed | 50K tok/s | Done (50K tok/s) |
+| 1 | Binary size | < 3 MB | Done (2.2 MB) |
 | 2 | Perplexity (wiki) | < 50 | TBD (training) |
 | 2 | Training speed | > 1K tok/s | TBD |
 | 3 | Model size | 14M params | TBD |
@@ -126,7 +126,7 @@ By the end of Phase 2, you'll have a 3.5M param language model that:
 - Requires no GPU (CPU + C engine)
 - Costs $0 to run (no API calls)
 
-By Phase 4, a system capable of following instructions — nothing special, but *yours*, end-to-end, ground truth.
+By Phase 4, a system capable of following instructions — nothing special, but yours, end-to-end, ground truth.
 
 By Phase 5, inference anywhere: laptop, phone, browser, server.
 
