@@ -1,4 +1,4 @@
-# core - Claude Notes
+# jore - Claude Notes
 
 ## What this repo is
 Small transformer LM project for learning + fast iteration.

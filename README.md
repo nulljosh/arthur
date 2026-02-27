@@ -1,4 +1,4 @@
-# core
+# jore
 
 Nano transformer LLM. Built from scratch in PyTorch with a zero-dependency C99 inference engine.
 
