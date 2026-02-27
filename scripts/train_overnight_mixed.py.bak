@@ -9,7 +9,7 @@ from torch.utils.data import Dataset, DataLoader
 import os, sys, json, time, glob
 from datetime import datetime
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 from transformer import Jore
 from tokenizer import CharTokenizer
 
@@ -73,7 +73,7 @@ def generate(model, tokenizer, prompt, max_len=80, temperature=0.3):
     return tokenizer.decode(generated)
 
 # ── Load & combine all corpus data ──────────────────────────────────────
-data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
+data_dir = os.path.join(os.path.dirname(__file__), 'data')
 corpus_files = ['comprehensive.txt', 'jot_code.txt', 'combined_corpus.txt',
                 'qa_varied.txt', 'conversational.txt', 'math_comprehensive.txt',
                 'sci_fi.txt', 'shakespeare.txt', 'minimal.txt']
@@ -97,7 +97,7 @@ tokenizer = CharTokenizer(text)
 dataset = TextDataset(text, tokenizer, SEQ_LEN)
 dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, drop_last=True)
 
-model = Jore(vocab_size=tokenizer.vocab_size, embed_dim=EMBED_DIM,
+model = Core(vocab_size=tokenizer.vocab_size, embed_dim=EMBED_DIM,
              num_heads=NUM_HEADS, num_layers=NUM_LAYERS,
              ff_dim=FF_DIM, max_len=MAX_LEN, dropout=DROPOUT)
 
