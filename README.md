@@ -1,152 +1,56 @@
-# aether v1.0 — Production Ready
+# aether
 
-Nano transformer LLM, 3.5M parameters, built from scratch in PyTorch. **Live API deployed to Vercel.**
+A small language model built from scratch. Trained on code and knowledge.
 
-![aether architecture diagram](architecture.svg)
+## What It Does
 
-## 🚀 Live Demo
+Generates text based on a prompt. Understanding how it works teaches you how real language models work.
 
-**API**: https://core-4tb2v49au-nulljosh-9577s-projects.vercel.app/api
-
-- `GET /api` — API info
-- `GET /api/health` — Health check
-- `GET /api/info` — Model details (3.5M params, loss 0.09)
-
-## Quick Start
+## Getting Started
 
 ```bash
 git clone https://github.com/nulljosh/aether.git && cd nous
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
-# Inference
+# Generate text
 python src/generate.py --prompt "fn " --temperature 0.3
 
-# Local API
-python -m uvicorn api.index:app --reload
-# http://localhost:8000/docs
-```
-
-## Model
-
-| Aspect | Value |
-|--------|-------|
-| Parameters | 3.5M |
-| Layers | 12 |
-| Embed Dim | 256 |
-| Training Epochs | 1000 |
-| Final Loss | 0.09 |
-| Speed (C engine) | 50K tok/s |
-| Training Corpus | Balanced code + knowledge |
-
-## Training Journey
-
-```
-v0.1: jot (200 epochs, 0.57M) → Foundation
-v0.2: jung (100 epochs, 0.57M) → Specialization
-v0.3: multilang (500 epochs, 27MB, 0.57M) → Code understanding
-v0.4: knowledge (200 epochs, 3.2MB, 0.57M) → Generalization
-v1.0: mini (1000 epochs, 3.5M) → Production ✅
-```
-
-## The Stack
-
-- **PyTorch** — Training harness with checkpointing
-- **C99 Inference** — 350 LOC, mmap weights, zero deps
-- **FastAPI** — Production serverless API
-- **Vercel** — Deployed and live
-- **Flask Web UI** — Local chat interface
-- **Aether Daemon** — Continuous background training
-
-## Architecture
-
-```
-Data (code + knowledge)
-  ↓
-PyTorch Trainer (1000 epochs)
-  ↓
-Checkpoint (3.5M params, loss 0.09)
-  ├→ C Inference Engine (350 LOC)
-  ├→ Vercel API (live)
-  └→ Flask Web UI (local)
-```
-
-## Why Built from Scratch
-
-"What I cannot create, I do not understand." — Feynman
-
-- Every layer visible and understandable
-- No black boxes, no framework magic
-- Learn how transformers actually work
-- C99 inference engine runs anywhere
-
-## Production Checklist
-
-- [x] Model trained (3.5M params, 1000 epochs, loss 0.09)
-- [x] FastAPI setup
-- [x] Vercel deployment
-- [x] Live API endpoints
-- [x] Web UI (local)
-- [x] Documentation
-- [x] GitHub + GitHub Pages
-- [ ] Custom domain
-- [ ] Model quantization
-- [ ] Browser ONNX export
-
-## API Endpoints
-
-### GET /api
-```json
-{
-  "name": "aether",
-  "version": "1.0.0",
-  "status": "ok"
-}
-```
-
-### GET /api/health
-```json
-{
-  "status": "ok"
-}
-```
-
-### GET /api/info
-```json
-{
-  "name": "aether",
-  "version": "1.0.0",
-  "params": "3.5M",
-  "github": "https://github.com/nulljosh/aether"
-}
-```
-
-## Testing
-
-```bash
-pytest tests/test_api.py -v
-```
-
-## Local Web UI
-
-```bash
+# Web interface (chat)
 python index.py
-# http://localhost:5001
+# Visit http://localhost:5001
 ```
+
+## How It Works
+
+1. **Data** — Train on code and writing samples
+2. **Model** — Small transformer neural network (3.5M parameters)
+3. **Learning** — PyTorch training with 1000 epochs
+4. **Output** — Predicts next words based on patterns learned
+
+## The Numbers
+
+- Parameters: 3.5 million (vs Claude: billions)
+- Training time: Several hours on a Mac
+- Loss (error): 0.09 (lower is better)
+- Speed: 50,000 tokens per second on CPU
+
+## Why Build It
+
+To understand how language models actually work. Instead of using a black box, you see every layer.
+
+## What You Get
+
+- Complete training code
+- C99 inference engine (super fast, runs anywhere)
+- Web chat interface
+- Everything open source
 
 ## Links
 
-- **GitHub**: https://github.com/nulljosh/aether
-- **Live API**: https://core-4tb2v49au-nulljosh-9577s-projects.vercel.app/api
-- **GitHub Pages**: https://nulljosh.github.io/aether/
-- **Documentation**: See [DEPLOY.md](DEPLOY.md)
+- GitHub: https://github.com/nulljosh/aether
+- Docs: See DEPLOY.md for server setup
 
-## Status
+## That's It
 
-✅ **v1.0 Production Ready**
-
-Model converged. API deployed. All systems go.
-
-## License
-
-MIT 2026, Joshua Trommel
+Trained. Working. Ready to use.
