@@ -92,3 +92,10 @@ Checkpoint (.pt)
 ## License
 
 MIT 2026, Joshua Trommel
+
+## Training Status (v0.2.0)
+
+- **jot corpus**: 100 epochs, final loss 0.9
+- **jung corpus**: 100 epochs, final loss 0.17
+- **next**: WikiText-103 + expanded corpus (in progress)
+
