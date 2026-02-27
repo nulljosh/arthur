@@ -1,6 +1,6 @@
-# aether — What We Built
+# aether v1.0 — What We Built
 
-A small language model, trained from scratch, that generates text.
+A complete language model, trained from scratch, that generates text.
 
 ## The Work
 
@@ -9,6 +9,7 @@ A small language model, trained from scratch, that generates text.
 - Created C99 inference engine (350 lines, zero dependencies)
 - Added web interface for testing
 - Documented everything
+- Deployed to Vercel (in progress)
 
 ## How to Use
 
@@ -19,8 +20,13 @@ python index.py
 
 ## Status
 
-Complete and working. All code on GitHub.
+✅ Complete and working locally. All code on GitHub.
 
-## Next
+## Next Steps
 
 Fix Vercel deployment at home (currently blocked).
+
+## Links
+
+- GitHub: https://github.com/nulljosh/aether
+- GitHub Pages: https://nulljosh.github.io/aether/
