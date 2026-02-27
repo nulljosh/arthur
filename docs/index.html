@@ -5,40 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>aether — Nano LLM from Scratch</title>
   <style>
+    :root {
+      --bg-primary: #0a0e27;
+      --bg-secondary: #111;
+      --bg-tertiary: #1a1f3a;
+      --text-primary: #e0e0e0;
+      --text-secondary: #aaa;
+      --text-tertiary: #666;
+      --accent: #64b5f6;
+      --accent-light: #90caf9;
+      --border: #333;
+    }
+
+    html.light-mode {
+      --bg-primary: #f5f5f5;
+      --bg-secondary: #fff;
+      --bg-tertiary: #f9f9f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --text-tertiary: #999;
+      --accent: #2196f3;
+      --accent-light: #42a5f5;
+      --border: #ddd;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0a0e27;
-      color: #e0e0e0;
+      background: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
     }
+
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background: var(--accent);
+      color: var(--bg-primary);
+      border-color: var(--accent);
+    }
+
     header {
-      background: linear-gradient(135deg, #1a1f3a 0%, #0f1425 100%);
+      background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
       padding: 60px 20px;
       text-align: center;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid var(--border);
     }
+
     h1 {
       font-size: 3em;
       margin-bottom: 10px;
-      color: #64b5f6;
+      color: var(--accent);
     }
+
     .tagline {
       font-size: 1.2em;
-      color: #90caf9;
+      color: var(--accent-light);
       margin-bottom: 20px;
     }
+
     .cta {
       display: inline-block;
-      background: #64b5f6;
-      color: #0a0e27;
+      background: var(--accent);
+      color: var(--bg-primary);
       padding: 12px 30px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
       margin: 10px;
+      transition: all 0.3s;
     }
-    .cta:hover { background: #90caf9; }
+
+    .cta:hover { 
+      background: var(--accent-light);
+      transform: translateY(-2px);
+    }
     
     main {
       max-width: 1000px;
@@ -53,8 +109,8 @@
     h2 {
       font-size: 2em;
       margin-bottom: 20px;
-      color: #64b5f6;
-      border-bottom: 2px solid #333;
+      color: var(--accent);
+      border-bottom: 2px solid var(--border);
       padding-bottom: 10px;
     }
     
@@ -66,56 +122,88 @@
     }
     
     .card {
-      background: #111;
-      border: 1px solid #333;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
       padding: 20px;
       border-radius: 8px;
       transition: all 0.3s;
     }
     
     .card:hover {
-      border-color: #64b5f6;
-      background: #1a1f3a;
+      border-color: var(--accent);
+      background: var(--bg-tertiary);
     }
     
     .card h3 {
-      color: #64b5f6;
+      color: var(--accent);
       margin-bottom: 10px;
     }
     
     .card p {
-      color: #aaa;
+      color: var(--text-secondary);
       font-size: 0.95em;
     }
     
     .status {
-      background: #1a2847;
-      border-left: 4px solid #64b5f6;
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--accent);
       padding: 15px;
       margin: 20px 0;
       border-radius: 4px;
     }
     
-    .status strong { color: #64b5f6; }
+    .status strong { color: var(--accent); }
     
     code {
-      background: #111;
+      background: var(--bg-secondary);
       padding: 2px 6px;
       border-radius: 3px;
       font-family: 'SF Mono', Menlo, monospace;
-      color: #90caf9;
+      color: var(--accent-light);
+      border: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--text-primary);
+    }
+
+    ul {
+      color: var(--text-secondary);
     }
     
     footer {
       text-align: center;
       padding: 40px 20px;
-      color: #666;
-      border-top: 1px solid #333;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
       margin-top: 80px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      color: var(--text-secondary);
+    }
+
+    th {
+      color: var(--accent) !important;
+    }
+
+    tr {
+      border-bottom: 1px solid var(--border);
     }
   </style>
 </head>
 <body>
+  <button id="theme-toggle">🌙 Dark</button>
+
   <header>
     <h1>aether</h1>
     <p class="tagline">Nano transformer LLM built from scratch</p>
@@ -131,7 +219,7 @@
         <strong>0.57M parameters</strong>, <strong>C99 inference engine</strong> (350 LOC, zero dependencies),
         trained on code and knowledge corpora.
       </p>
-      <p style="margin-top: 15px; color: #90caf9;">
+      <p style="margin-top: 15px; color: var(--accent-light);">
         "What I cannot create, I do not understand." — Feynman
       </p>
     </section>
@@ -207,20 +295,20 @@
 
     <section>
       <h2>Benchmarks</h2>
-      <table style="width: 100%; border-collapse: collapse; color: #aaa;">
-        <tr style="border-bottom: 1px solid #333;">
-          <th style="text-align: left; padding: 10px; color: #64b5f6;">Model</th>
-          <th style="text-align: left; padding: 10px; color: #64b5f6;">Params</th>
-          <th style="text-align: left; padding: 10px; color: #64b5f6;">Speed</th>
-          <th style="text-align: left; padding: 10px; color: #64b5f6;">Capability</th>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <th style="text-align: left; padding: 10px;">Model</th>
+          <th style="text-align: left; padding: 10px;">Params</th>
+          <th style="text-align: left; padding: 10px;">Speed</th>
+          <th style="text-align: left; padding: 10px;">Capability</th>
         </tr>
-        <tr style="border-bottom: 1px solid #333;">
+        <tr>
           <td style="padding: 10px;">aether (v0.4)</td>
           <td style="padding: 10px;">0.57M</td>
           <td style="padding: 10px;">50K tok/s</td>
           <td style="padding: 10px;">code + knowledge</td>
         </tr>
-        <tr style="border-bottom: 1px solid #333;">
+        <tr>
           <td style="padding: 10px;">GPT-2</td>
           <td style="padding: 10px;">124M</td>
           <td style="padding: 10px;">—</td>
@@ -237,7 +325,7 @@
 
     <section>
       <h2>Why Aether</h2>
-      <ul style="margin-left: 20px; color: #aaa;">
+      <ul style="margin-left: 20px;">
         <li>Full stack from scratch: tokenizer → attention → training → C inference</li>
         <li>No black boxes. Every byte visible and understandable</li>
         <li>Learning tool first, production model later</li>
@@ -250,7 +338,28 @@
 
   <footer>
     <p>aether — MIT 2026 — Joshua Trommel</p>
-    <p><a href="https://github.com/nulljosh/aether" style="color: #64b5f6; text-decoration: none;">GitHub</a></p>
+    <p><a href="https://github.com/nulljosh/aether">GitHub</a></p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved preference or system preference
+    const savedMode = localStorage.getItem('theme-mode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedMode === 'light' || (!savedMode && !prefersDark)) {
+      html.classList.add('light-mode');
+      toggle.textContent = '☀️ Light';
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('light-mode');
+      const isLight = html.classList.contains('light-mode');
+      toggle.textContent = isLight ? '☀️ Light' : '🌙 Dark';
+      localStorage.setItem('theme-mode', isLight ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
