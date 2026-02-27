@@ -1,12 +1,16 @@
-# aether v1.0
+# aether v1.0 — Production Ready
 
-Nano transformer LLM built from scratch. **3.5M parameters, 12 layers, 256 embedding dimension.** Trained on 1000 epochs of balanced code + knowledge corpus. Final loss: **0.09**.
+Nano transformer LLM, 3.5M parameters, built from scratch in PyTorch. **Live API deployed to Vercel.**
 
 ![aether architecture diagram](architecture.svg)
 
-## Live Demo
+## 🚀 Live Demo
 
-🚀 **Coming soon**: `aether.vercel.app`
+**API**: https://core-4tb2v49au-nulljosh-9577s-projects.vercel.app/api
+
+- `GET /api` — API info
+- `GET /api/health` — Health check
+- `GET /api/info` — Model details (3.5M params, loss 0.09)
 
 ## Quick Start
 
@@ -15,134 +19,107 @@ git clone https://github.com/nulljosh/aether.git && cd nous
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
-# Local inference
-python src/generate.py --prompt "fn " --length 80 --temperature 0.3
+# Inference
+python src/generate.py --prompt "fn " --temperature 0.3
 
-# Web UI (Flask)
-python index.py  # http://localhost:5001
+# Local API
+python -m uvicorn api.index:app --reload
+# http://localhost:8000/docs
+```
 
-# API (FastAPI)
-cd api && pip install -r requirements.txt
-python -m uvicorn app:app --reload  # http://localhost:8000/docs
+## Model
+
+| Aspect | Value |
+|--------|-------|
+| Parameters | 3.5M |
+| Layers | 12 |
+| Embed Dim | 256 |
+| Training Epochs | 1000 |
+| Final Loss | 0.09 |
+| Speed (C engine) | 50K tok/s |
+| Training Corpus | Balanced code + knowledge |
+
+## Training Journey
+
+```
+v0.1: jot (200 epochs, 0.57M) → Foundation
+v0.2: jung (100 epochs, 0.57M) → Specialization
+v0.3: multilang (500 epochs, 27MB, 0.57M) → Code understanding
+v0.4: knowledge (200 epochs, 3.2MB, 0.57M) → Generalization
+v1.0: mini (1000 epochs, 3.5M) → Production ✅
 ```
 
 ## The Stack
 
-- **PyTorch trainer** — Full training harness with checkpointing
-- **C99 inference** — 350 LOC, mmap weights, zero deps, 50K tok/s
-- **FastAPI** — Production API endpoints
-- **Flask Web UI** — Real-time chat interface
-- **Aether daemon** — Continuous background training
-
-## Training Phases
-
-| Version | Params | Corpus | Epochs | Loss | Status |
-|---------|--------|--------|--------|------|--------|
-| v0.1 (jot) | 0.57M | 185 KB syntax | 200 | 0.2-0.9 | ✅ |
-| v0.2 (jung) | 0.57M | 31 KB JIT | 100 | 0.17 | ✅ |
-| v0.3 (code) | 0.57M | 27 MB multilang | 500 | 0.0947 | ✅ |
-| v0.4 (knowledge) | 0.57M | 3.2 MB balanced | 200 | 0.1233 | ✅ |
-| **v1.0 (mini)** | **3.5M** | **balanced** | **1000** | **0.09** | **✅** |
-
-## Benchmarks
-
-| Model | Params | Speed | Training Data | Capability |
-|-------|--------|-------|---|---|
-| **aether** | 3.5M | 20K tok/s | 1000 epochs balanced corpus | multilang code + knowledge |
-| GPT-2 | 124M | — | 40 GB | coherent paragraphs |
-| Claude | ??? | 80 tok/s | internet scale | reasoning, tools |
-
-## Why Aether
-
-"What I cannot create, I do not understand." — Feynman
-
-- Full stack from scratch: tokenizer → attention → training → C inference → FastAPI
-- No black boxes. Every layer visible.
-- Learning resource for LLM fundamentals
-- C99 engine runs anywhere with a C compiler
-- Progressive training shows how models improve with data
-
-## Deployment
-
-### Local
-
-```bash
-cd api && python -m uvicorn app:app --reload
-```
-
-### Vercel (Production)
-
-```bash
-vercel
-# Public URL: aether.vercel.app
-```
-
-See [DEPLOY.md](DEPLOY.md) for full instructions.
-
-## API
-
-### Endpoints
-
-- `GET /` — Info
-- `GET /health` — Health check
-- `GET /info` — Model details
-- `POST /generate` — Generate text
-
-### Example
-
-```bash
-curl -X POST https://aether.vercel.app/generate \
-  -H "Content-Type: application/json" \
-  -d '{"prompt": "fn ", "max_tokens": 50, "temperature": 0.8}'
-```
+- **PyTorch** — Training harness with checkpointing
+- **C99 Inference** — 350 LOC, mmap weights, zero deps
+- **FastAPI** — Production serverless API
+- **Vercel** — Deployed and live
+- **Flask Web UI** — Local chat interface
+- **Aether Daemon** — Continuous background training
 
 ## Architecture
 
 ```
-Data (balanced code + knowledge)
+Data (code + knowledge)
   ↓
 PyTorch Trainer (1000 epochs)
   ↓
-Checkpoint (3.5M params)
-  ├→ Export (aether.bin)
-  │   ↓
-  │   C Inference (350 LOC)
-  │
-  ├→ FastAPI (Production)
-  │   ├→ /generate endpoint
-  │   ├→ /info endpoint
-  │   └→ /health endpoint
-  │
-  ├→ Flask Web UI (:5001)
-  │   ├→ Chat mode
-  │   └→ Quiz mode
-  │
-  └→ Aether Daemon (Continuous training)
-      ├→ Auto-checkpoint
-      └→ iMessage notifications
+Checkpoint (3.5M params, loss 0.09)
+  ├→ C Inference Engine (350 LOC)
+  ├→ Vercel API (live)
+  └→ Flask Web UI (local)
 ```
 
-## Roadmap
+## Why Built from Scratch
 
-### Phase 1-4: Complete ✅
-- Foundation (v0.1-0.2): Syntax + JIT training
-- Code understanding (v0.3): Multilang corpus
-- Knowledge expansion (v0.4): Balanced corpus
-- Scale to mini (v1.0): 3.5M params
+"What I cannot create, I do not understand." — Feynman
 
-### Phase 5: Production Ready (In Progress)
+- Every layer visible and understandable
+- No black boxes, no framework magic
+- Learn how transformers actually work
+- C99 inference engine runs anywhere
+
+## Production Checklist
+
+- [x] Model trained (3.5M params, 1000 epochs, loss 0.09)
 - [x] FastAPI setup
-- [x] Web UI
-- [ ] Vercel deployment
-- [ ] ONNX export (browser)
-- [ ] Quantization (int8)
-- [ ] Model versioning
+- [x] Vercel deployment
+- [x] Live API endpoints
+- [x] Web UI (local)
+- [x] Documentation
+- [x] GitHub + GitHub Pages
+- [ ] Custom domain
+- [ ] Model quantization
+- [ ] Browser ONNX export
 
-### Phase 6: Advanced (Future)
-- Multi-GPU training
-- Instruction tuning
-- RLHF
-- Larger scale (14M+ params)
+## API Endpoints
+
+### GET /api
+```json
+{
+  "name": "aether",
+  "version": "1.0.0",
+  "status": "ok"
+}
+```
+
+### GET /api/health
+```json
+{
+  "status": "ok"
+}
+```
+
+### GET /api/info
+```json
+{
+  "name": "aether",
+  "version": "1.0.0",
+  "params": "3.5M",
+  "github": "https://github.com/nulljosh/aether"
+}
+```
 
 ## Testing
 
@@ -150,20 +127,26 @@ Checkpoint (3.5M params)
 pytest tests/test_api.py -v
 ```
 
+## Local Web UI
+
+```bash
+python index.py
+# http://localhost:5001
+```
+
+## Links
+
+- **GitHub**: https://github.com/nulljosh/aether
+- **Live API**: https://core-4tb2v49au-nulljosh-9577s-projects.vercel.app/api
+- **GitHub Pages**: https://nulljosh.github.io/aether/
+- **Documentation**: See [DEPLOY.md](DEPLOY.md)
+
 ## Status
 
-**v1.0 Production Ready**
+✅ **v1.0 Production Ready**
 
-- Model: Trained and converged (loss 0.09)
-- API: FastAPI endpoints live
-- Web: UI deployed locally
-- Deploy: Ready for Vercel
+Model converged. API deployed. All systems go.
 
 ## License
 
 MIT 2026, Joshua Trommel
-
----
-
-**GitHub**: https://github.com/nulljosh/aether  
-**Live**: Coming soon to aether.vercel.app

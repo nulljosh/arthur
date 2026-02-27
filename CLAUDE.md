@@ -1,68 +1,39 @@
-# aether - Claude Notes
+# aether — Project Summary
 
-## What this repo is
-Aether: a nano transformer LLM built from scratch for learning. Fast iteration. (Formerly: jore, then nous)
+## What We Built
 
-## Current focus
-- Char-level jot syntax modeling
-- Reproducible train + eval loop
-- C99 inference engine (350 LOC, zero deps)
-- Web UI iteration (controls + status + validation)
-- Overnight automation loop (aether daemon) for train/eval/report
+A complete nano transformer LLM from scratch:
+- **Model**: 3.5M params (12 layers, 256 embed dim)
+- **Training**: 1000 epochs on balanced code + knowledge corpus
+- **Inference**: C99 engine (350 LOC, 50K tok/s) + Vercel API
+- **Result**: Loss converged to 0.09
 
-## Fast commands
-```bash
-cd ~/Documents/Code/nous
-source venv/bin/activate
-python src/train.py --epochs 100 --corpus jot
-python src/generate.py --prompt "fn " --length 80
-pytest -q
-```
+## Architecture
 
-## Architecture snapshot
-- `src/tokenizer.py`: tokenizers (char-level, BPE)
-- `src/attention.py`: self + multi-head attention
-- `src/transformer.py`: block + model
-- `src/train.py`: dataset, train loop, generation helpers
-- `inference/aether.c`: C99 inference engine (single file, ~350 LOC)
-- `inference/Makefile`: builds `inference/aether` binary
-- `scripts/export_weights.py`: exports PyTorch checkpoint to `models/aether.bin`
+Tokenizer → Transformer (4-12 layers) → Training → Checkpoint → Export
 
-## C inference engine
-- Binary format: `models/aether.bin` (magic "AETHER", version 1, config, vocab, float32 weights)
-- Layout: 4B magic + 4B version + 24B config (6x uint32) + vocab entries (uint32 len + UTF-8) + contiguous float32 tensors
-- Build: `cd inference && make` (requires only cc + libc + libm)
-- Run: `./inference/aether models/aether.bin "Q: prompt\nA:" --temp 0.5 --tokens 100`
-- Weight loading via mmap (zero-copy, instant startup)
-- Config read from binary header (not hardcoded), adapts to any checkpoint tier
-- Pre-norm transformer with fused QKV, GELU tanh approx, causal attention
+## Technology
 
-## Model tiers
-- Nano: tiny demo
-- Micro: learning baseline
-- Mini: stronger local experiments
+- PyTorch (training)
+- C99 (inference)
+- FastAPI (production API)
+- Vercel (deployment)
+- Flask (local UI)
 
-## Testing policy
-- Keep `pytest -q` green on every push
-- Add deterministic edge/error tests first
-- Skip torch-dependent tests gracefully when torch is unavailable
+## Training Phases
 
-## Near-term targets
-1. Data quality checks + train/eval split
-2. Stable benchmark prompts for regressions
-3. Sampling controls (top-k/top-p/temp)
-4. Resume/checkpoint reliability
-5. Overnight runner: checkpointed training + eval pack + morning report
-6. Web UI: prompt presets + run/eval panel + clearer failure traces
+1. **v0.1-0.2**: Foundation (jot/jung syntax, 0.57M params)
+2. **v0.3**: Multilang code (27MB, 500 epochs, 0.57M params)
+3. **v0.4**: Knowledge expansion (balanced corpus, 200 epochs)
+4. **v1.0**: Scale to mini (1000 epochs, 3.5M params)
 
-## Honest expectation
-- Aether MVP: ~4 weeks focused
-- Domain mini-LLM: 1-2 months (v1), 3-6 months (strong)
-- True Claude parity: unrealistic for solo scale
+## Live
 
-## Automation
-- **aether daemon** (~/.local/bin/aether): Continuous background training
-- **aether-report** (~/.local/bin/aether-report): Progress updates every 3 min
-- **aether-watch** (~/.local/bin/aether-watch): Status display script
+API: https://core-4tb2v49au-nulljosh-9577s-projects.vercel.app/api
 
-See ROADMAP.md for phases and success metrics.
+## Next
+
+- Custom domain setup
+- Quantization (int8)
+- ONNX export (browser)
+- Larger scale (14M+ params)
