@@ -1,44 +1,38 @@
-# nous - Claude Notes
+# aether - Claude Notes
 
 ## What this repo is
-Small transformer LM project for learning + fast iteration. (Formerly: jore)
-Not production scale.
+Aether: a nano transformer LLM built from scratch for learning. Fast iteration. (Formerly: jore, then nous)
 
 ## Current focus
-- Char-level / syntax-aware modeling
+- Char-level jot syntax modeling
 - Reproducible train + eval loop
-- Better test and error-case coverage
+- C99 inference engine (350 LOC, zero deps)
 - Web UI iteration (controls + status + validation)
-- Overnight automation loop for train/eval/report
+- Overnight automation loop (aether daemon) for train/eval/report
 
 ## Fast commands
 ```bash
-cd ~/Documents/Code/core
-python3.13 -m venv venv
+cd ~/Documents/Code/nous
 source venv/bin/activate
-pip install -r requirements.txt
-
+python src/train.py --epochs 100 --corpus jot
+python src/generate.py --prompt "fn " --length 80
 pytest -q
-python3 src/train.py --epochs 100 --corpus tiny
-python3 src/generate.py --prompt "func add" --length 80
 ```
 
 ## Architecture snapshot
-- `src/tokenizer.py`: tokenizers
+- `src/tokenizer.py`: tokenizers (char-level, BPE)
 - `src/attention.py`: self + multi-head attention
 - `src/transformer.py`: block + model
 - `src/train.py`: dataset, train loop, generation helpers
-- `src/chat.py`: chat wrapper
-- `inference/nous.c`: C99 inference engine (single file, ~350 LOC)
-- `inference/Makefile`: builds `inference/nous` binary
-- `scripts/export_weights.py`: exports PyTorch checkpoint to `models/nous.bin`
+- `inference/aether.c`: C99 inference engine (single file, ~350 LOC)
+- `inference/Makefile`: builds `inference/aether` binary
+- `scripts/export_weights.py`: exports PyTorch checkpoint to `models/aether.bin`
 
 ## C inference engine
-- Binary format: `models/nous.bin` (magic "NOUS", version 1, config, vocab, float32 weights)
+- Binary format: `models/aether.bin` (magic "AETHER", version 1, config, vocab, float32 weights)
 - Layout: 4B magic + 4B version + 24B config (6x uint32) + vocab entries (uint32 len + UTF-8) + contiguous float32 tensors
-- Tensor order: token_embed, pos_embed, [per-block: qkv_w, qkv_b, out_w, out_b, ff1_w, ff1_b, ff2_w, ff2_b, ln1_w, ln1_b, ln2_w, ln2_b], ln_f_w, ln_f_b, head
 - Build: `cd inference && make` (requires only cc + libc + libm)
-- Run: `./inference/nous models/nous.bin "Q: prompt\nA:" --temp 0.5 --tokens 100`
+- Run: `./inference/aether models/aether.bin "Q: prompt\nA:" --temp 0.5 --tokens 100`
 - Weight loading via mmap (zero-copy, instant startup)
 - Config read from binary header (not hardcoded), adapts to any checkpoint tier
 - Pre-norm transformer with fused QKV, GELU tanh approx, causal attention
@@ -62,14 +56,13 @@ python3 src/generate.py --prompt "func add" --length 80
 6. Web UI: prompt presets + run/eval panel + clearer failure traces
 
 ## Honest expectation
-- Nous MVP: ~4 weeks focused
-- Domain mini-Opus: 1-2 months (v1), 3-6 months (strong)
-- True Opus parity: unrealistic for solo scale
+- Aether MVP: ~4 weeks focused
+- Domain mini-LLM: 1-2 months (v1), 3-6 months (strong)
+- True Claude parity: unrealistic for solo scale
 
-## Roadmap
-- [ ] Char-level jot syntax training
-- [ ] Larger training corpus
-- [ ] Beam search decoding
-- [ ] Model quantization (INT8)
-- [ ] API endpoint for inference
-- [ ] Benchmark suite
+## Automation
+- **aether daemon** (~/.local/bin/aether): Continuous background training
+- **aether-report** (~/.local/bin/aether-report): Progress updates every 3 min
+- **aether-watch** (~/.local/bin/aether-watch): Status display script
+
+See ROADMAP.md for phases and success metrics.

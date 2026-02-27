@@ -1,19 +1,19 @@
-# Benchmarks -- An Honest Comparison
+# Benchmarks -- Aether vs Real LLMs
 
-How does nous stack up against real LLMs? Short answer: it doesn't. Long answer: that's the point.
+How does aether stack up? Short answer: it doesn't. Long answer: that's the point.
 
 ## The Numbers
 
 | Model | Params | Size | Context | Vocab | Training Data | Can It... |
 |-------|--------|------|---------|-------|---------------|-----------|
-| **nous (current)** | 0.57M | 2.2 MB | 128 tokens | 102 chars | 185 KB jot corpus | Autocomplete jot syntax (barely) |
-| **nous (wiki planned)** | ~14M | ~56 MB | 512 tokens | ~32K BPE | 103M tokens (WikiText-103) | Generate Wikipedia-ish text (TBD) |
+| **aether (current)** | 0.57M | 2.2 MB | 128 tokens | 102 chars | 185 KB jot corpus | Autocomplete jot syntax (barely) |
+| **aether (wiki planned)** | ~14M | ~56 MB | 512 tokens | ~32K BPE | 103M tokens (WikiText-103) | Generate Wikipedia-ish text (TBD) |
 | GPT-2 Small | 124M | 500 MB | 1024 tokens | 50K BPE | 40 GB WebText | Write coherent paragraphs |
 | Llama 3.2 1B | 1.2B | 2.4 GB | 128K tokens | 128K BPE | 15T tokens | Follow instructions, reason |
 | qwen3:14b (your Ollama) | 14B | ~8 GB | 4096 tokens | 150K+ | Trillions of tokens | Code, chat, reason, tools |
 | Claude Opus 4 | ~???B | ~??? | 200K tokens | ~100K | The internet | Build entire apps in minutes |
 
-## What Can nous Actually Do?
+## What Can Aether Actually Do?
 
 **Right now (0.57M params, char-level):**
 - Generate jot-like syntax fragments after 200+ epochs
@@ -28,7 +28,7 @@ How does nous stack up against real LLMs? Short answer: it doesn't. Long answer:
 - Will not reason
 - Perplexity target: < 50 (GPT-2 small gets ~29 on WikiText-103)
 
-## Why Nous Exists
+## Why Aether Exists
 
 This is not trying to compete with Claude or GPT. The point:
 
@@ -38,7 +38,7 @@ This is not trying to compete with Claude or GPT. The point:
 
 ## The Gap (Real Talk)
 
-To get from nous to something useful:
+To get from aether to something useful:
 
 | Capability | What It Takes |
 |-----------|---------------|
@@ -48,23 +48,23 @@ To get from nous to something useful:
 | Reasoning | Chain-of-thought training, ~13B+ params |
 | Tool use (like Claude Code) | Function calling training, massive compute, months of RLHF |
 
-**In perspective:** Claude Code just orchestrated 7 parallel agents to build 3 iOS apps, add PWA to 3 websites, rename a project, overhaul a training pipeline, and write 10 READMEs -- in one session. nous can autocomplete `fn ` with some curly braces.
+**In perspective:** Claude Code just orchestrated 7 parallel agents to build 3 iOS apps, add PWA to 3 websites, rename a project, overhaul a training pipeline, and write 10 READMEs -- in one session. aether can autocomplete `fn ` with some curly braces.
 
-That gap is the entire history of modern AI research, billions of dollars in compute, and thousands of researcher-years. But you understand every byte of nous's 2.2 MB. That's worth something.
+That gap is the entire history of modern AI research, billions of dollars in compute, and thousands of researcher-years. But you understand every byte of aether's 2.2 MB. That's worth something.
 
 ## Speed Comparison
 
 | Model | Tokens/sec (your M4) |
 |-------|---------------------|
-| nous (C engine) | ~50,000 tok/s |
+| aether (C engine) | ~50,000 tok/s |
 | qwen3:14b (Ollama) | ~30 tok/s |
 | Claude (API) | ~80 tok/s |
 
-nous is fast because it's tiny. Speed without intelligence is just random numbers really fast.
+aether is fast because it's tiny. Speed without intelligence is just random numbers really fast.
 
 ## Roadmap to Less Embarrassing
 
-1. WikiText-103 BPE training (infrastructure done, needs overnight run)
+1. WikiText-103 BPE training (infrastructure done, running via aether daemon)
 2. Scale to 14M params (wiki config ready)
 3. Evaluate perplexity against GPT-2 small as baseline
 4. If perplexity < 100: try instruction tuning on Alpaca dataset
