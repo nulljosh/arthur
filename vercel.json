@@ -1,0 +1,12 @@
+{
+  "buildCommand": "pip install -r api/requirements.txt",
+  "outputDirectory": "api",
+  "functions": {
+    "api/app.py": {
+      "runtime": "python3.11"
+    }
+  },
+  "env": {
+    "PYTHONPATH": "."
+  }
+}
