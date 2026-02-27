@@ -2,6 +2,8 @@
 
 A small language model built from scratch. Trained on code and knowledge.
 
+![aether architecture](architecture.svg)
+
 ## What It Does
 
 Generates text based on a prompt. Understanding how it works teaches you how real language models work.
