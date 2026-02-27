@@ -46,7 +46,10 @@ def main():
     vocab_size = sd["token_embed.weight"].shape[0]
     embed_dim = sd["token_embed.weight"].shape[1]
     max_len = sd["pos_embed.weight"].shape[0]
-    num_heads = 4  # not inferrable from weights alone
+    if "config" in ckpt and "num_heads" in ckpt["config"]:
+        num_heads = ckpt["config"]["num_heads"]
+    else:
+        num_heads = 4  # legacy checkpoints
     ff_dim = sd["blocks.0.ffn.net.0.weight"].shape[0]
 
     # Count transformer blocks

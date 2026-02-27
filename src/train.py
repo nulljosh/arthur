@@ -42,6 +42,15 @@ CONFIGS = {
         'max_len': 512,
         'seq_len': 256,
         'batch_size': 4
+    },
+    'wiki': {
+        'embed_dim': 256,
+        'num_heads': 8,
+        'num_layers': 6,
+        'ff_dim': 1024,
+        'max_len': 512,
+        'seq_len': 256,
+        'batch_size': 4
     }
 }
 
@@ -151,6 +160,15 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
         dataset = WikiText2Dataset(tokenizer, config['seq_len'], split='train')
         print(f"Dataset size: {len(dataset)} examples")
 
+    elif corpus == 'wiki':
+        if tokenizer_type != 'bpe':
+            raise ValueError("wiki corpus requires bpe tokenizer")
+        from data_loader import WikiText103Dataset
+        tokenizer = BPETokenizer()
+        print("Loading WikiText-103...")
+        dataset = WikiText103Dataset(tokenizer, config['seq_len'], split='train')
+        print(f"Dataset size: {len(dataset):,} examples")
+
     elif corpus == 'jot':
         if tokenizer_type != 'char':
             raise ValueError("jot corpus uses char tokenizer only")
@@ -220,11 +238,11 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Train core on jot syntax')
-    parser.add_argument('--corpus', default='jot', choices=['jot', 'tiny', 'wikitext-2'],
+    parser.add_argument('--corpus', default='jot', choices=['jot', 'tiny', 'wikitext-2', 'wiki'],
                         help='Training corpus (default: jot)')
     parser.add_argument('--tokenizer', default='char', choices=['char', 'word', 'bpe'],
                         help='Tokenizer type (default: char)')
-    parser.add_argument('--model-size', default='nano', choices=['nano', 'micro', 'mini'],
+    parser.add_argument('--model-size', default='nano', choices=['nano', 'micro', 'mini', 'wiki'],
                         help='Model size (default: nano)')
     parser.add_argument('--epochs', type=int, default=50,
                         help='Training epochs (default: 50)')

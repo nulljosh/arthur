@@ -132,6 +132,34 @@ logs/                  training logs + eval results
 tests/                 pytest suite (8 files)
 ```
 
+## Wikipedia Training
+
+Scale up to WikiText-103 (~100M tokens) using the `wiki` model config (256 embed, 8 heads, 6 layers, 1024 FF, 512 context).
+
+**Config summary:**
+- Effective batch size: 32 (batch=4, grad_accum=8)
+- 50,000 steps, 2,000-step linear warmup, cosine decay to 1e-5
+- Validation every 500 steps, checkpoint every 2,500 steps
+- MPS (Apple Silicon) / CUDA / CPU device selection
+- Checkpoints saved to `models/wiki/`
+
+```bash
+# 1. Download dataset (~500 MB)
+python3 scripts/download_wikipedia.py
+
+# 2. Train
+python3 scripts/train_wikipedia.py
+
+# 3. Export best checkpoint for C inference
+python3 scripts/export_weights.py
+```
+
+Or use `src/train.py` directly:
+
+```bash
+python3 src/train.py --corpus wiki --tokenizer bpe --model-size wiki
+```
+
 ## Version
 
 2.0.0

@@ -12,3 +12,4 @@ data/raw/
 .env
 .vercel
 logs/
+data/wikipedia/
