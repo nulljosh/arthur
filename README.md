@@ -19,6 +19,16 @@ This is aether: the full stack from scratch. Tokenizer → attention → transfo
 - **Training** — AdamW + cosine LR decay, gradient clipping, deterministic seeding
 - **Automation** — aether daemon (continuous training, milestone notifications, RAM-gated)
 
+## Architecture
+
+![aether architecture diagram](architecture.svg)
+
+The full transformer stack:
+- Token embedding → Position encoding
+- 4 transformer blocks (multi-head causal self-attention + feed-forward)
+- Output projection to vocabulary
+- C99 inference engine with mmap weight loading
+
 ## Dev Quick Start
 
 ```bash
