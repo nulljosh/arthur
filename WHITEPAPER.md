@@ -1,4 +1,4 @@
-# core: Building a Language Model from Scratch
+# AETHER: Building a Language Model from Scratch
 
 **Joshua Trommel**
 February 2026
@@ -7,7 +7,7 @@ February 2026
 
 ## Abstract
 
-core is a transformer language model built from scratch in PyTorch. It has about 230,000 trainable parameters, which makes it roughly 2,500 times smaller than GPT-2. The point of the project is to take the same architecture that powers modern LLMs and strip it down to a scale where you can actually see what every piece does. It reads individual characters instead of words, trains on about 185 KB of Q&A pairs and code examples, and runs overnight on a Mac Mini as an automated training daemon. This paper covers how the model works, how it trains, how it gets evaluated, and what it can actually do.
+AETHER is a transformer language model built from scratch in PyTorch. It has about 230,000 trainable parameters, which makes it roughly 2,500 times smaller than GPT-2. The point of the project is to take the same architecture that powers modern LLMs and strip it down to a scale where you can actually see what every piece does. It reads individual characters instead of words, trains on about 185 KB of Q&A pairs and code examples, and runs overnight on a Mac Mini as an automated training daemon. This paper covers how the model works, how it trains, how it gets evaluated, and what it can actually do.
 
 ## 1. Why Build This
 
@@ -19,7 +19,7 @@ The model is 4 layers deep, uses 4 attention heads, and represents each token as
 
 ### 2.1 How the Model Is Structured
 
-core follows the GPT-2 blueprint: a decoder-only transformer with pre-norm residual connections. In plain terms, that means it reads a sequence of tokens from left to right and predicts the next one, over and over. Here is the full data flow:
+AETHER follows the GPT-2 blueprint: a decoder-only transformer with pre-norm residual connections. In plain terms, that means it reads a sequence of tokens from left to right and predicts the next one, over and over. Here is the full data flow:
 
 ```
 Input tokens
