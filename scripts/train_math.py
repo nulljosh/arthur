@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Train core on comprehensive math Q&A dataset"""
+"""Train jore on comprehensive math Q&A dataset"""
 
 import torch
 import torch.nn as nn
@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 class TextDataset(Dataset):
@@ -102,7 +102,7 @@ TEST_EVERY = 20
 # ============================================================================
 
 print("="*70)
-print("TRAINING core ON COMPREHENSIVE MATH DATASET")
+print("TRAINING jore ON COMPREHENSIVE MATH DATASET")
 print("="*70)
 
 # Load data

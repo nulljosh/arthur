@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Basic pytest suite for core."""
+"""Basic pytest suite for jore."""
 
 import sys
 from pathlib import Path

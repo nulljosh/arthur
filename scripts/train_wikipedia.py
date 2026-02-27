@@ -61,7 +61,7 @@ def main():
 
     from data_loader import WikiText103Dataset
     from tokenizer import BPETokenizer
-    from transformer import Core
+    from transformer import Jore
 
     # Device selection: MPS -> CUDA -> CPU
     if torch.backends.mps.is_available():

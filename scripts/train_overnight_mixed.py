@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Overnight mixed-corpus training run for core.
+"""Overnight mixed-corpus training run for jore.
 Combines all available data (code, reasoning/QA, dialogue, comprehensive).
 Periodic checkpoints + sample outputs. Writes structured metrics JSON."""
 
@@ -10,7 +10,7 @@ import os, sys, json, time, glob
 from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 DATE_TAG = datetime.now().strftime('%Y-%m-%d')

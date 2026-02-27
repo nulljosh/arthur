@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple chat interface for core
+Simple chat interface for jore
 Minimal conversational AI - just chat, no tools
 """
 
@@ -15,7 +15,7 @@ except ImportError:
     print("Install: pip3 install torch")
     sys.exit(1)
 
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 import pickle
 
@@ -25,7 +25,7 @@ def load_model(model_path, tokenizer_path):
     with open(tokenizer_path, 'rb') as f:
         tokenizer = pickle.load(f)
     
-    model = Core(
+    model = Jore(
         vocab_size=tokenizer.vocab_size,
         embed_dim=64,
         num_heads=4,
@@ -104,7 +104,7 @@ see you. bye bye.
     tokenizer = CharTokenizer(corpus)
     
     # Tiny model
-    model = Core(
+    model = Jore(
         vocab_size=tokenizer.vocab_size,
         embed_dim=64,
         num_heads=4,
@@ -149,7 +149,7 @@ def main():
         model, tokenizer = load_model(model_path, tokenizer_path)
     
     print("\n" + "="*60)
-    print("💬 core Chat (type 'quit' to exit)")
+    print("jore Chat (type 'quit' to exit)")
     print("="*60)
     print("Note: This is a tiny model trained on minimal data.")
     print("Responses will be basic but demonstrate the concept.\n")
@@ -162,11 +162,11 @@ def main():
                 continue
             
             if user_input.lower() in ['quit', 'exit', 'bye']:
-                print("core: Bye!")
+                print("jore: Bye!")
                 break
             
             response = generate_response(model, tokenizer, user_input)
-            print(f"core: {response}")
+            print(f"jore: {response}")
             
         except KeyboardInterrupt:
             print("\n\nExiting...")

@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-Command-line chat interface for core
+Command-line chat interface for jore
 """
 
 import torch
 import sys
 sys.path.insert(0, 'src')
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 # Load model
 MODEL_PATH = 'models/conversational.pt'
 
-print("Loading core conversational model...")
+print("Loading jore conversational model...")
 checkpoint = torch.load(MODEL_PATH, map_location='cpu')
 
 tokenizer = CharTokenizer()
@@ -24,7 +24,7 @@ model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 
 print("✓ Model loaded!\n")
-print("Chat with core (type 'exit' to quit):")
+print("Chat with jore (type 'exit' to quit):")
 print("=" * 50)
 
 while True:
@@ -63,9 +63,9 @@ while True:
         # Extract just the answer
         if '\nA:' in response:
             answer = response.split('\nA:')[1].split('\nQ:')[0].strip()
-            print(f"core: {answer}")
+            print(f"jore: {answer}")
         else:
-            print(f"core: {response}")
+            print(f"jore: {response}")
             
     except KeyboardInterrupt:
         print("\n\nBye! 👋")

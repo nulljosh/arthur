@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lightweight Flask UI for local core model generation."""
+"""Lightweight Flask UI for local jore model generation."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ SRC_DIR = Path(__file__).resolve().parent / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 
@@ -75,7 +75,7 @@ def _build_char_tokenizer_from_vocab(vocab: Any) -> CharTokenizer:
     return tokenizer
 
 
-def _infer_core_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
+def _infer_jore_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
     embed_dim = int(state_dict["token_embed.weight"].shape[1])
     ff_dim = int(state_dict["blocks.0.ffn.net.0.weight"].shape[0])
     max_len = int(state_dict["pos_embed.weight"].shape[0])
@@ -141,7 +141,7 @@ def load_runtime(model_path: Path, data_path: Path) -> LoadedRuntime:
 
     config = checkpoint.get("config")
     if not isinstance(config, dict):
-        config = _infer_core_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
+        config = _infer_jore_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
     else:
         config = {**config}
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))

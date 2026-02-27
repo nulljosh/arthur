@@ -3,7 +3,7 @@
 import torch, torch.nn as nn, sys, os
 from torch.utils.data import Dataset, DataLoader
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 class TextDataset(Dataset):

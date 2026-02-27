@@ -1,11 +1,11 @@
 /*
- * core - C99 inference engine for the core nano transformer LM
+ * jore - C99 inference engine for the jore nano transformer LM
  *
  * Loads a flat binary weight file (exported by scripts/export_weights.py),
  * runs autoregressive generation with temperature sampling.
  *
- * Build: cc -O2 -Wall -std=c99 -o core core.c -lm
- * Usage: ./core <model.bin> "<prompt>" [--temp T] [--tokens N]
+ * Build: cc -O2 -Wall -std=c99 -o jore jore.c -lm
+ * Usage: ./jore <model.bin> "<prompt>" [--temp T] [--tokens N]
  */
 
 #define _POSIX_C_SOURCE 200809L
@@ -302,7 +302,7 @@ static void *load_model(const char *path, Config *cfg, Weights *w, Vocab *vocab)
     char *end = ptr + g_mapped_size;
 
     if (g_mapped_size < 32) die("model file too small");
-    if (memcmp(ptr, "CORE", 4) != 0) die("bad magic (not a core model file)");
+    if (memcmp(ptr, "JORE", 4) != 0) die("bad magic (not a jore model file)");
     ptr += 4;
 
     unsigned int version = *(unsigned int *)ptr; ptr += 4;
@@ -403,7 +403,7 @@ static int encode(Vocab *vocab, const char *text, int *out, int max_tokens) {
 
 static void usage(const char *prog) {
     fprintf(stderr,
-        "core - C inference engine for the core nano transformer LM\n"
+        "jore - C inference engine for the jore nano transformer LM\n"
         "\n"
         "Usage:\n"
         "  %s <model.bin> \"<prompt>\" [options]\n"
@@ -414,8 +414,8 @@ static void usage(const char *prog) {
         "  --tokens N   Max tokens to generate (default: 256)\n"
         "\n"
         "Examples:\n"
-        "  %s models/core.bin \"Q: What is 5+3?\\nA:\"\n"
-        "  %s models/core.bin \"Q: Who made you?\\nA:\" --temp 0.5 --tokens 100\n",
+        "  %s models/jore.bin \"Q: What is 5+3?\\nA:\"\n"
+        "  %s models/jore.bin \"Q: Who made you?\\nA:\" --temp 0.5 --tokens 100\n",
         prog, prog, prog, prog);
 }
 

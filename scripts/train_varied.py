@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import sys
 sys.path.insert(0, 'src')
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 # Load varied data

@@ -4,7 +4,7 @@ import pytest
 torch = pytest.importorskip("torch")
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 print("Loading models/ultra.pt...")
@@ -67,7 +67,7 @@ print("🧪 TESTING (your demo questions)")
 print("="*60 + "\n")
 
 tests = [
-    ("Q: What is your name?\nA:", "I'm core"),
+    ("Q: What is your name?\nA:", "I'm jore"),
     ("Q: What is 5+5?\nA:", "10"),
     ("Q: What is 2+2?\nA:", "4"),
 ]

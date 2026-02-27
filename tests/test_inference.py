@@ -6,7 +6,7 @@ import sys
 import os
 
 sys.path.insert(0, 'src')
-from transformer import Core
+from transformer import Jore
 
 def generate(model, tokenizer, prompt, max_tokens=150, temperature=1.0):
     """Generate text from prompt"""

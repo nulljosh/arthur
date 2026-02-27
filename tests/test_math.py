@@ -4,7 +4,7 @@ import pytest
 torch = pytest.importorskip("torch")
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 def test_model(model_path='models/math_best.pt', temperature=0.2, max_len=50):
@@ -100,9 +100,9 @@ def test_model(model_path='models/math_best.pt', temperature=0.2, max_len=50):
         print(result)
         print()
         
-        # Check if answer looks reasonable (contains digits or "core")
+        # Check if answer looks reasonable (contains digits or "jore")
         answer_part = result[len(prompt):].strip()
-        if answer_part and (answer_part[0].isdigit() or 'core' in answer_part or 'I' in answer_part):
+        if answer_part and (answer_part[0].isdigit() or 'jore' in answer_part or 'I' in answer_part):
             total += 1
             # Very basic correctness check
             if ('5+3' in prompt and '8' in answer_part) or \
@@ -111,13 +111,13 @@ def test_model(model_path='models/math_best.pt', temperature=0.2, max_len=50):
                ('100/10' in prompt and '10' in answer_part) or \
                ('2+2' in prompt and '4' in answer_part) or \
                ('6*7' in prompt and '42' in answer_part) or \
-               ('name' in prompt.lower() and 'core' in answer_part) or \
+               ('name' in prompt.lower() and 'jore' in answer_part) or \
                ('10+15' in prompt and '25' in answer_part) or \
                ('3^2' in prompt and '9' in answer_part) or \
                ('20-8' in prompt and '12' in answer_part) or \
                ('144/12' in prompt and '12' in answer_part) or \
                ('2+3*4' in prompt and '14' in answer_part) or \
-               ('who are you' in prompt.lower() and 'core' in answer_part) or \
+               ('who are you' in prompt.lower() and 'jore' in answer_part) or \
                ('9*9' in prompt and '81' in answer_part) or \
                ('50+50' in prompt and '100' in answer_part):
                 correct += 1

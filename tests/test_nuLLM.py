@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Comprehensive core testing"""
+"""Comprehensive jore testing"""
 import pytest
 torch = pytest.importorskip("torch")
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Core
+from transformer import Jore
 from tokenizer import CharTokenizer
 
 MODEL = sys.argv[1] if len(sys.argv) > 1 else 'models/ultra.pt'
@@ -69,7 +69,7 @@ demo = [
 for q in demo:
     result = generate(q)
     answer = result.split('\n')[1] if '\n' in result and len(result.split('\n')) > 1 else result[len(q):].strip()
-    expected = "I'm core" if "name" in q else ("10" if "5+5" in q else "4")
+    expected = "I'm jore" if "name" in q else ("10" if "5+5" in q else "4")
     status = "✓" if expected in answer else "✗"
     print(f"\n{status} {q}")
     print(f"   Answer: {answer}")
@@ -80,7 +80,7 @@ print("ADDITIONAL TESTS:")
 print("="*60)
 
 extra = [
-    ("Q: What is your name?\nA:", "I'm core"),
+    ("Q: What is your name?\nA:", "I'm jore"),
     ("Q: What is 5+5?\nA:", "10"),
     ("Q: What is 2+2?\nA:", "4"),
 ]
