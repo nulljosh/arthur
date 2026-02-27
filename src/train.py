@@ -11,6 +11,14 @@ from transformer import Nous
 from tokenizer import CharTokenizer, WordTokenizer, BPETokenizer
 import argparse
 
+# Disable GPU/Metal acceleration, limit CPU threads
+import os
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "0"
+torch.set_num_threads(2)
+torch.set_num_interop_threads(2)
+
+# Limit CPU threads to 4
+
 # Root of the repo (one level up from src/)
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,7 +31,7 @@ CONFIGS = {
         'ff_dim': 64,
         'max_len': 64,
         'seq_len': 32,
-        'batch_size': 4
+        'batch_size': 2
     },
     'micro': {
         'embed_dim': 128,
@@ -32,7 +40,7 @@ CONFIGS = {
         'ff_dim': 512,
         'max_len': 256,
         'seq_len': 128,
-        'batch_size': 8
+        'batch_size': 4
     },
     'mini': {
         'embed_dim': 256,
@@ -41,7 +49,7 @@ CONFIGS = {
         'ff_dim': 1024,
         'max_len': 512,
         'seq_len': 256,
-        'batch_size': 4
+        'batch_size': 2
     },
     'wiki': {
         'embed_dim': 256,
@@ -50,7 +58,7 @@ CONFIGS = {
         'ff_dim': 1024,
         'max_len': 512,
         'seq_len': 256,
-        'batch_size': 4
+        'batch_size': 2
     }
 }
 
@@ -211,7 +219,7 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
     num_params = sum(p.numel() for p in model.parameters())
     print(f"Model params: {num_params:,} ({num_params/1e6:.3f}M)")
 
-    dataloader = DataLoader(dataset, batch_size=config['batch_size'], shuffle=True)
+    dataloader = DataLoader(dataset, batch_size=config['batch_size'], shuffle=True, num_workers=0)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
     print("\nTraining...")
