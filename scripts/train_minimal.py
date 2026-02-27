@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Train jore on minimal Q&A (name + basic math)"""
+"""Train nous on minimal Q&A (name + basic math)"""
 
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 class TextDataset(Dataset):
@@ -30,7 +30,7 @@ with open('data/minimal.txt') as f:
 
 epochs = int(sys.argv[1]) if len(sys.argv) > 1 else 500
 
-print(f"Training jore NANO on minimal Q&A (name + math)...")
+print(f"Training nous NANO on minimal Q&A (name + math)...")
 print(f"Text length: {len(text)} chars")
 print(f"Epochs: {epochs}\n")
 

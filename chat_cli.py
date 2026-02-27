@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
 """
-Command-line chat interface for jore
+Command-line chat interface for nous
 """
 
 import torch
 import sys
 sys.path.insert(0, 'src')
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 # Load model
 MODEL_PATH = 'models/conversational.pt'
 
-print("Loading jore conversational model...")
+print("Loading nous conversational model...")
 checkpoint = torch.load(MODEL_PATH, map_location='cpu')
 
 tokenizer = CharTokenizer()
 tokenizer.char_to_idx = checkpoint['vocab']
 tokenizer.idx_to_char = {v: k for k, v in tokenizer.char_to_idx.items()}
 
-model = Core(vocab_size=checkpoint['vocab_size'])
+model = Nous(vocab_size=checkpoint['vocab_size'])
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 
 print("✓ Model loaded!\n")
-print("Chat with jore (type 'exit' to quit):")
+print("Chat with nous (type 'exit' to quit):")
 print("=" * 50)
 
 while True:
@@ -63,9 +63,9 @@ while True:
         # Extract just the answer
         if '\nA:' in response:
             answer = response.split('\nA:')[1].split('\nQ:')[0].strip()
-            print(f"jore: {answer}")
+            print(f"nous: {answer}")
         else:
-            print(f"jore: {response}")
+            print(f"nous: {response}")
             
     except KeyboardInterrupt:
         print("\n\nBye! 👋")

@@ -85,7 +85,7 @@ def write_markdown(report: dict, output_path: Path) -> None:
             continue
 
         summary = result["summary"]
-        lines.append(f"- Avg sjore: {summary['avg_score']:.3f}")
+        lines.append(f"- Avg snous: {summary['avg_score']:.3f}")
         lines.append(f"- Pass rate: {summary['pass_rate']:.3f}")
         lines.append(f"- Non-empty rate: {summary['non_empty_rate']:.3f}")
         lines.append(f"- Passed: {'yes' if summary['passed'] else 'no'}")

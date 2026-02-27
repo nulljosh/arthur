@@ -1,8 +1,8 @@
 CC = cc
 CFLAGS = -O2 -Wall -std=c99
-TARGET = jore
+TARGET = nous
 
-$(TARGET): jore.c
+$(TARGET): nous.c
 	$(CC) $(CFLAGS) -o $@ $< -lm
 
 clean:

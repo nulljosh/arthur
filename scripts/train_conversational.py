@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Train jore on conversational + jot dataset
+Train nous on conversational + jot dataset
 """
 
 import torch
@@ -12,7 +12,7 @@ import sys
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 class TextDataset(Dataset):
@@ -34,7 +34,7 @@ class TextDataset(Dataset):
 with open('data/combined_corpus.txt') as f:
     text = f.read()
 
-print(f"Training jore NANO on combined (conversation + jot)...")
+print(f"Training nous NANO on combined (conversation + jot)...")
 print(f"Device: cpu")
 print(f"Text length: {len(text)} chars")
 

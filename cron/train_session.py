@@ -24,7 +24,7 @@ from datetime import datetime
 CORE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(CORE_ROOT, "src"))
 
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 # --- paths ---

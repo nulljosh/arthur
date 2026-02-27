@@ -3,7 +3,7 @@ import pytest
 torch = pytest.importorskip("torch")
 import sys
 sys.path.insert(0, 'src')
-from transformer import Jore
+from transformer import Nous
 
 class SimpleTokenizer:
     def __init__(self, vocab):

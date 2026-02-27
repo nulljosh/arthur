@@ -1,8 +1,8 @@
-# jore
+# nous
 
 Nano transformer LLM built from scratch. PyTorch training loop, C99 inference engine, overnight automation.
 
-**GitHub**: https://github.com/nulljosh/jore
+**GitHub**: https://github.com/nulljosh/nous
 
 ## Architecture
 
@@ -11,7 +11,7 @@ Nano transformer LLM built from scratch. PyTorch training loop, C99 inference en
 ## Stack
 
 - PyTorch — transformer model, training loop, checkpoint management
-- C99 inference engine (`inference/jore.c`, ~350 LOC, mmap weight loading, zero deps)
+- C99 inference engine (`inference/nous.c`, ~350 LOC, mmap weight loading, zero deps)
 - Flask web UI (port 5001, chat + quiz)
 - Char-level tokenizer (BPE for WikiText-103)
 - AdamW + cosine LR decay, gradient clipping
@@ -31,13 +31,13 @@ python src/train.py --corpus wiki --tokenizer bpe --model-size wiki
 ```bash
 # Export checkpoint to flat binary
 python scripts/export_weights.py
-# writes models/jore.bin (magic "JORE", float32, mmap-ready)
+# writes models/nous.bin (magic "NOUS", float32, mmap-ready)
 
 # Build C engine
 cd inference && make
 
 # Run
-./inference/jore models/jore.bin "Q: What is 5+3?\nA:" --temp 0.0 --tokens 50
+./inference/nous models/nous.bin "Q: What is 5+3?\nA:" --temp 0.0 --tokens 50
 ```
 
 ## Model Tiers

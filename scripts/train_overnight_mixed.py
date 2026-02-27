@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Overnight mixed-corpus training run for jore.
+"""Overnight mixed-corpus training run for nous.
 Combines all available data (code, reasoning/QA, dialogue, comprehensive).
 Periodic checkpoints + sample outputs. Writes structured metrics JSON."""
 
@@ -10,7 +10,7 @@ import os, sys, json, time, glob
 from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 DATE_TAG = datetime.now().strftime('%Y-%m-%d')
@@ -97,7 +97,7 @@ tokenizer = CharTokenizer(text)
 dataset = TextDataset(text, tokenizer, SEQ_LEN)
 dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, drop_last=True)
 
-model = Jore(vocab_size=tokenizer.vocab_size, embed_dim=EMBED_DIM,
+model = Nous(vocab_size=tokenizer.vocab_size, embed_dim=EMBED_DIM,
              num_heads=NUM_HEADS, num_layers=NUM_LAYERS,
              ff_dim=FF_DIM, max_len=MAX_LEN, dropout=DROPOUT)
 

@@ -6,7 +6,7 @@ torch = pytest.importorskip("torch")
 from attention import MultiHeadAttention
 from tokenizer import CharTokenizer
 from train import generate
-from transformer import Jore
+from transformer import Nous
 
 
 class DeterministicModel(torch.nn.Module):

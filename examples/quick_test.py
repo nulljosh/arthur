@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
 import torch
 from tokenizer import CharTokenizer
-from transformer import Jore
+from transformer import Nous
 
 # Tiny training corpus
 text = "hello world this is a test hello test world"

@@ -7,7 +7,7 @@ import os
 from torch.utils.data import Dataset, DataLoader
 
 sys.path.insert(0, 'src')
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 class TextDataset(Dataset):
@@ -65,7 +65,7 @@ def measure_performance(func):
 
 In the end, intelligence is just pattern recognition scaled up. Humans recognize patterns in nature, language, mathematics. AI does the same, just faster and with more data. The difference is quantitative, not qualitative."""
 
-print("Training jore on mixed corpus")
+print("Training nous on mixed corpus")
 print(f"Data: {len(dataset_text)} chars\n")
 
 # Expand the dataset by repeating interesting sections

@@ -72,7 +72,7 @@ def test_model_forward():
     import torch
     from tokenizer import BPETokenizer
     from data_loader import WikiText2Dataset
-    from transformer import Jore
+    from transformer import Nous
 
     # Create dataset
     tok = BPETokenizer()
@@ -108,7 +108,7 @@ def test_model_forward():
 
 def main():
     print("\n" + "="*70)
-    print("jore Phase 6: Component Tests")
+    print("nous Phase 6: Component Tests")
     print("="*70 + "\n")
 
     try:

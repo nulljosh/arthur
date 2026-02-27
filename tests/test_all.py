@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Basic pytest suite for jore."""
+"""Basic pytest suite for nous."""
 
 import sys
 from pathlib import Path

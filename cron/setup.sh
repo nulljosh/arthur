@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install crontab entries for jore LLM training automation.
+# Install crontab entries for nous LLM training automation.
 #
 # Schedule:
 #   - Every 4 hours: train 50 epochs + evaluate
@@ -15,11 +15,11 @@ TRAIN_CMD="cd $CORE_ROOT && ./cron/run.sh >> logs/cron.log 2>&1"
 REPORT_CMD="cd $CORE_ROOT && ./cron/report.sh >> logs/cron.log 2>&1"
 
 # markers for identifying our cron entries
-MARKER="# jore-llm-cron"
+MARKER="# nous-llm-cron"
 
 remove_crons() {
     crontab -l 2>/dev/null | grep -v "$MARKER" | crontab -
-    echo "Removed jore cron entries."
+    echo "Removed nous cron entries."
 }
 
 install_crons() {
@@ -30,10 +30,10 @@ install_crons() {
     (
         crontab -l 2>/dev/null
         echo ""
-        echo "# === Jore LLM Training Automation === $MARKER"
+        echo "# === Nous LLM Training Automation === $MARKER"
         echo "0 */4 * * * $TRAIN_CMD $MARKER"
         echo "0 8 * * * $REPORT_CMD $MARKER"
-        echo "# === End Jore LLM === $MARKER"
+        echo "# === End Nous LLM === $MARKER"
     ) | crontab -
 
     echo ""

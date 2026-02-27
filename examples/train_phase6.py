@@ -13,7 +13,7 @@ import argparse
 
 if __name__ == '__main__':
     print("\n" + "="*70)
-    print("jore Phase 6: Scale")
+    print("nous Phase 6: Scale")
     print("="*70)
     print("\nTraining larger models on WikiText-2 with BPE tokenization")
     print("This demonstrates scaling from Nano (50K params) to Mini (5M params)\n")

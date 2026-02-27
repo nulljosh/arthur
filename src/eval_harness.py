@@ -107,7 +107,7 @@ def _build_char_tokenizer_from_vocab(vocab: Any) -> CharTokenizer:
     return tokenizer
 
 
-def _infer_jore_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
+def _infer_nous_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
     embed_dim = int(state_dict["token_embed.weight"].shape[1])
     ff_dim = int(state_dict["blocks.0.ffn.net.0.weight"].shape[0])
     max_len = int(state_dict["pos_embed.weight"].shape[0])
@@ -143,7 +143,7 @@ def _infer_jore_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str,
 
 def load_runtime(checkpoint_path: str | Path, data_path: str | Path | None = None) -> LoadedRuntime:
     import torch
-    from transformer import Jore
+    from transformer import Nous
 
     checkpoint_file = Path(checkpoint_path)
     if not checkpoint_file.exists():
@@ -172,12 +172,12 @@ def load_runtime(checkpoint_path: str | Path, data_path: str | Path | None = Non
 
     config = checkpoint.get("config")
     if not isinstance(config, dict):
-        config = _infer_jore_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
+        config = _infer_nous_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
     else:
         config = {**config}
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))
 
-    model = Core(
+    model = Nous(
         vocab_size=int(config["vocab_size"]),
         embed_dim=int(config["embed_dim"]),
         num_heads=int(config["num_heads"]),

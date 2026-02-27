@@ -3,7 +3,7 @@
 import torch
 import sys
 sys.path.insert(0, 'src')
-from transformer import Jore
+from transformer import Nous
 
 def top_k_top_p_filtering(logits, top_k=0, top_p=0.0, temperature=1.0):
     """Filter logits using top-k and/or nucleus (top-p) sampling"""

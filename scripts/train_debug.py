@@ -5,7 +5,7 @@ import torch.nn as nn
 import sys, os
 
 sys.path.insert(0, 'src')
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 from torch.utils.data import Dataset, DataLoader
 

@@ -7,7 +7,7 @@ import os
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer, WordTokenizer, BPETokenizer
 import argparse
 
@@ -147,7 +147,7 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
     """
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(f"Device: {device}")
-    print(f"Training jore {model_size.upper()} on {corpus} corpus (tokenizer: {tokenizer_type})...")
+    print(f"Training nous {model_size.upper()} on {corpus} corpus (tokenizer: {tokenizer_type})...")
 
     config = CONFIGS[model_size]
 
@@ -198,7 +198,7 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
 
     print(f"Vocab size: {tokenizer.vocab_size}")
 
-    model = Jore(
+    model = Nous(
         vocab_size=tokenizer.vocab_size,
         embed_dim=config['embed_dim'],
         num_heads=config['num_heads'],
@@ -237,7 +237,7 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Train jore on jot syntax')
+    parser = argparse.ArgumentParser(description='Train nous on jot syntax')
     parser.add_argument('--corpus', default='jot', choices=['jot', 'tiny', 'wikitext-2', 'wiki'],
                         help='Training corpus (default: jot)')
     parser.add_argument('--tokenizer', default='char', choices=['char', 'word', 'bpe'],

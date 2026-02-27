@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Train jore on comprehensive dataset: math + jot + identity + time/date"""
+"""Train nous on comprehensive dataset: math + jot + identity + time/date"""
 
 import torch
 import torch.nn as nn
@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 class TextDataset(Dataset):
@@ -102,7 +102,7 @@ TEST_EVERY = 25
 # ============================================================================
 
 print("="*70)
-print("TRAINING jore ON COMPREHENSIVE DATASET")
+print("TRAINING nous ON COMPREHENSIVE DATASET")
 print("Math + Jot + Identity + Time/Date")
 print("="*70)
 

@@ -3,7 +3,7 @@
 import torch
 import sys
 sys.path.insert(0, 'src')
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 prompt = sys.argv[1] if len(sys.argv) > 1 else "Q: What's your name?\nA:"

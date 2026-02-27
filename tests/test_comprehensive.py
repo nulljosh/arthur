@@ -4,7 +4,7 @@ import pytest
 torch = pytest.importorskip("torch")
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Jore
+from transformer import Nous
 from tokenizer import CharTokenizer
 
 def test_model(model_path='models/comprehensive_best.pt', temperature=0.2, max_len=80):

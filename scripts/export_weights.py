@@ -2,7 +2,7 @@
 """Export PyTorch checkpoint to flat binary format for C inference engine.
 
 Binary layout (all little-endian):
-  - Magic: "JORE" (4 bytes)
+  - Magic: "NOUS" (4 bytes)
   - Version: uint32 = 1
   - Config: 6x uint32 (vocab_size, embed_dim, num_heads, num_layers, ff_dim, max_len)
   - Vocab: vocab_size entries, each: uint32 length + UTF-8 bytes (sorted by token index)
@@ -17,7 +17,7 @@ import torch
 
 REPO = Path(__file__).resolve().parent.parent
 CHECKPOINT = REPO / "models" / "overnight_best.pt"
-OUTPUT = REPO / "models" / "jore.bin"
+OUTPUT = REPO / "models" / "nous.bin"
 
 WEIGHT_ORDER_BLOCK = [
     "attention.qkv.weight",
@@ -67,7 +67,7 @@ def main():
 
     with open(OUTPUT, "wb") as f:
         # Magic
-        f.write(b"JORE")
+        f.write(b"NOUS")
         # Version
         f.write(struct.pack("<I", 1))
         # Config

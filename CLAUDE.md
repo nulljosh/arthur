@@ -1,7 +1,7 @@
-# jore - Claude Notes
+# nous - Claude Notes
 
 ## What this repo is
-Small transformer LM project for learning + fast iteration.
+Small transformer LM project for learning + fast iteration. (Formerly: jore)
 Not production scale.
 
 ## Current focus
@@ -29,16 +29,16 @@ python3 src/generate.py --prompt "func add" --length 80
 - `src/transformer.py`: block + model
 - `src/train.py`: dataset, train loop, generation helpers
 - `src/chat.py`: chat wrapper
-- `inference/jore.c`: C99 inference engine (single file, ~350 LOC)
-- `inference/Makefile`: builds `inference/jore` binary
-- `scripts/export_weights.py`: exports PyTorch checkpoint to `models/jore.bin`
+- `inference/nous.c`: C99 inference engine (single file, ~350 LOC)
+- `inference/Makefile`: builds `inference/nous` binary
+- `scripts/export_weights.py`: exports PyTorch checkpoint to `models/nous.bin`
 
 ## C inference engine
-- Binary format: `models/jore.bin` (magic "JORE", version 1, config, vocab, float32 weights)
+- Binary format: `models/nous.bin` (magic "NOUS", version 1, config, vocab, float32 weights)
 - Layout: 4B magic + 4B version + 24B config (6x uint32) + vocab entries (uint32 len + UTF-8) + contiguous float32 tensors
 - Tensor order: token_embed, pos_embed, [per-block: qkv_w, qkv_b, out_w, out_b, ff1_w, ff1_b, ff2_w, ff2_b, ln1_w, ln1_b, ln2_w, ln2_b], ln_f_w, ln_f_b, head
 - Build: `cd inference && make` (requires only cc + libc + libm)
-- Run: `./inference/jore models/jore.bin "Q: prompt\nA:" --temp 0.5 --tokens 100`
+- Run: `./inference/nous models/nous.bin "Q: prompt\nA:" --temp 0.5 --tokens 100`
 - Weight loading via mmap (zero-copy, instant startup)
 - Config read from binary header (not hardcoded), adapts to any checkpoint tier
 - Pre-norm transformer with fused QKV, GELU tanh approx, causal attention
@@ -62,7 +62,7 @@ python3 src/generate.py --prompt "func add" --length 80
 6. Web UI: prompt presets + run/eval panel + clearer failure traces
 
 ## Honest expectation
-- Jore MVP: ~4 weeks focused
+- Nous MVP: ~4 weeks focused
 - Domain mini-Opus: 1-2 months (v1), 3-6 months (strong)
 - True Opus parity: unrealistic for solo scale
 
