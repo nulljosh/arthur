@@ -151,3 +151,32 @@ All tests deterministic, seeded, CI-verified before merge.
 ## License
 
 MIT 2026, Joshua Trommel
+
+---
+
+## Changelog
+
+**Fri Feb 27 2026:**
+- Renamed project: core → aether
+- Soul.md → SOUL.md (uppercase)
+- WHITEPAPER updated with aether branding
+- Training infrastructure: batch size reduced (4→2, 8→4) for stability
+- Environment: TORCH_NUM_THREADS=2, OMP_NUM_THREADS=2 for CPU throttling
+- Epoch 162/200 as of 12:45 AM, loss converging 0.4-1.2
+- Training completion ETA: tomorrow ~5-6 AM PST
+- Merging CHANGELOG and BENCHMARK into README
+
+---
+
+## Project Philosophy
+
+"What I cannot create, I do not understand." — Feynman
+
+aether is the full stack from scratch: tokenizer → attention → transformer → training loop → checkpoint → C99 inference engine. Every byte visible. The goal is to understand the machine top to bottom without black boxes.
+
+**Why aether exists:**
+1. Learning by building—transformers from first principles
+2. C99 inference engine (350 LOC, zero deps, mmap, instant startup)
+3. Honest benchmarks—no pretense about capability
+4. Full pipeline ownership—train, export, deploy, understand
+
