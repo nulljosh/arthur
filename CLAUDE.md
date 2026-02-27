@@ -65,3 +65,11 @@ python3 src/generate.py --prompt "func add" --length 80
 - Core MVP: ~4 weeks focused
 - Domain mini-Opus: 1-2 months (v1), 3-6 months (strong)
 - True Opus parity: unrealistic for solo scale
+
+## Roadmap
+- [ ] Char-level jot syntax training
+- [ ] Larger training corpus
+- [ ] Beam search decoding
+- [ ] Model quantization (INT8)
+- [ ] API endpoint for inference
+- [ ] Benchmark suite
