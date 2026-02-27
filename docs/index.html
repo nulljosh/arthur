@@ -336,10 +336,7 @@
 
   </main>
 
-  <footer>
-    <p>aether — MIT 2026 — Joshua Trommel</p>
-    <p><a href="https://github.com/nulljosh/aether">GitHub</a></p>
-  </footer>
+  
 
   <script>
     const toggle = document.getElementById('theme-toggle');
@@ -361,5 +358,44 @@
       localStorage.setItem('theme-mode', isLight ? 'light' : 'dark');
     });
   </script>
+<footer>
+    <div style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 40px;">
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/nulljosh/aether">GitHub Repository</a></li>
+            <li><a href="https://github.com/nulljosh/aether/blob/main/README.md">Documentation</a></li>
+            <li><a href="https://github.com/nulljosh/aether/releases">Releases</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://github.com/nulljosh/aether/tree/main/src">Source Code</a></li>
+            <li><a href="https://github.com/nulljosh/aether/tree/main/inference">C Engine</a></li>
+            <li><a href="https://github.com/nulljosh/aether/tree/main/data">Training Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="https://github.com/nulljosh/aether/blob/main/LICENSE">MIT License</a></li>
+            <li><a href="https://github.com/nulljosh">Joshua Trommel</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr style="border: none; border-top: 1px solid var(--border); margin: 30px 0;">
+      <p style="text-align: center; color: var(--text-tertiary);">© 2026 Joshua Trommel. aether is licensed under the <a href="https://github.com/nulljosh/aether/blob/main/LICENSE">MIT License</a>.</p>
+    </div>
+  </footer>
 </body>
 </html>
+<style>
+footer { background: var(--bg-tertiary); border-top: 1px solid var(--border); margin-top: 80px; }
+footer h4 { color: var(--accent); margin-bottom: 10px; }
+footer ul { list-style: none; color: var(--text-secondary); padding: 0; }
+footer li { margin-bottom: 8px; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+</style>
