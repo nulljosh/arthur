@@ -1,5 +1,0 @@
-Training started: 2026-02-15 20:23:07.839527
-Epochs: 300, Batch: 16, LR: 0.001
-
-Epoch    1/300 | Loss: 0.1092 | LR: 0.001000 | Time: 59.4s
-Epoch    2/300 | Loss: 0.0126 | LR: 0.001000 | Time: 59.3s

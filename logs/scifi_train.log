@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/joshua/Documents/Code/core/train_scifi.py", line 4, in <module>
-    from src.model import GPTModel
-ModuleNotFoundError: No module named 'src.model'
