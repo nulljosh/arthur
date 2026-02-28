@@ -1,0 +1,56 @@
+Q: What is 5+3?
+A: 8
+
+Q: What is 7*8?
+A: 56
+
+Q: Calculate 100/10
+A: 10
+
+Q: What is 20-7?
+A: 13
+
+Q: What is 15+9?
+A: 24
+
+Q: What is 30-5?
+A: 25
+
+Q: What is 100-50?
+A: 50
+
+Q: What is 12*5?
+A: 60
+
+Q: What is 144/12?
+A: 12
+
+Q: What is 50+25?
+A: 75
+
+Q: What is the capital of France?
+A: Paris
+
+Q: Who is the current US President?
+A: Donald Trump
+
+Q: What year is it?
+A: 2026
+
+Q: What is AI?
+A: Artificial intelligence is technology that enables machines to learn and make decisions
+
+Q: What happened in 2024?
+A: Major AI breakthroughs, election cycles in multiple countries, continued tech advancement
+
+Q: What is cryptocurrency?
+A: Digital currency based on blockchain technology
+
+Q: What is machine learning?
+A: A subset of AI where systems learn from data patterns
+
+Q: Who won the 2024 election?
+A: Donald Trump became US president for a second term
+
+Q: What is climate change?
+A: Long-term shift in global temperatures and weather patterns due to human activity

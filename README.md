@@ -2,8 +2,6 @@
 
 A small language model built from scratch. Trained on code and knowledge.
 
-![aether architecture](architecture.svg)
-
 ## What It Does
 
 Generates text based on a prompt. Understanding how it works teaches you how real language models work.
@@ -11,7 +9,7 @@ Generates text based on a prompt. Understanding how it works teaches you how rea
 ## Getting Started
 
 ```bash
-git clone https://github.com/nulljosh/aether.git && cd nous
+git clone https://github.com/nulljosh/aether.git && cd aether
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
@@ -19,16 +17,16 @@ pip install -r requirements.txt
 python src/generate.py --prompt "fn " --temperature 0.3
 
 # Web interface (chat)
-python index.py
+python web_ui.py
 # Visit http://localhost:5001
 ```
 
 ## How It Works
 
-1. **Data** — Train on code and writing samples
-2. **Model** — Small transformer neural network (3.5M parameters)
-3. **Learning** — PyTorch training with 1000 epochs
-4. **Output** — Predicts next words based on patterns learned
+1. **Data** -- Train on code and writing samples
+2. **Model** -- Small transformer neural network (3.5M parameters)
+3. **Learning** -- PyTorch training with 1000 epochs
+4. **Output** -- Predicts next words based on patterns learned
 
 ## The Numbers
 
@@ -51,8 +49,4 @@ To understand how language models actually work. Instead of using a black box, y
 ## Links
 
 - GitHub: https://github.com/nulljosh/aether
-- Docs: See DEPLOY.md for server setup
-
-## That's It
-
-Trained. Working. Ready to use.
+- Live: https://aether.heyitsmejosh.com
