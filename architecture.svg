@@ -40,7 +40,7 @@
   <!-- Block 1 -->
   <rect x="415" y="100" width="110" height="50" rx="6" class="box"/>
   <text x="470" y="120" class="label">Block 1</text>
-  <text x="470" y="135" class="sub">Attn + FFN</text>
+  <text x="470" y="135" class="sub">Attn+FFN</text>
 
   <!-- Arrow -->
   <line x1="525" y1="125" x2="550" y2="125" class="arrow"/>
@@ -48,7 +48,7 @@
   <!-- Block 2 -->
   <rect x="550" y="100" width="110" height="50" rx="6" class="box"/>
   <text x="605" y="120" class="label">Block 2</text>
-  <text x="605" y="135" class="sub">Attn + FFN</text>
+  <text x="605" y="135" class="sub">Attn+FFN</text>
 
   <!-- Arrow -->
   <line x1="660" y1="125" x2="685" y2="125" class="arrow"/>
@@ -56,24 +56,18 @@
   <!-- Block 3 -->
   <rect x="685" y="100" width="110" height="50" rx="6" class="box"/>
   <text x="740" y="120" class="label">Block 3</text>
-  <text x="740" y="135" class="sub">Attn + FFN</text>
+  <text x="740" y="135" class="sub">Attn+FFN</text>
 
   <!-- Arrow -->
   <line x1="795" y1="125" x2="820" y2="125" class="arrow"/>
 
   <!-- Output -->
   <rect x="820" y="100" width="130" height="50" rx="6" class="box"/>
-  <text x="885" y="120" class="label">Output Layer</text>
-  <text x="885" y="135" class="sub">Vocab logits</text>
-
-  <!-- Arrow -->
-  <line x1="950" y1="125" x2="975" y2="125" class="arrow"/>
-
-  <!-- Next Token -->
-  <rect x="975" y="100" width="0" height="50" rx="6" class="box"/>
+  <text x="885" y="120" class="label">Output</text>
+  <text x="885" y="135" class="sub">Logits</text>
 
   <!-- Details -->
-  <text x="20" y="200" class="label" text-anchor="start" font-size="14" font-weight="bold" fill="#0a84ff">Parameters: 445K | Layers: 3 | Heads: 4 | FF Dim: 256</text>
-  <text x="20" y="225" class="sub" text-anchor="start" font-size="12" fill="#888">Training: Math (50%) + Wikipedia/Current Events (50%) | Loss: 0.13-0.19</text>
-  <text x="20" y="250" class="sub" text-anchor="start" font-size="12" fill="#888">Eval: Q&A accuracy (math, facts, identity, current events)</text>
+  <text x="20" y="200" class="label" text-anchor="start" font-size="14" font-weight="bold" fill="#0a84ff">445K params | 3 layers | 4 heads | 256 FF dim</text>
+  <text x="20" y="225" class="sub" text-anchor="start" font-size="12" fill="#888">Training: Math (50%) + Wiki/Current (50%) | Loss: 0.13-0.19</text>
+  <text x="20" y="250" class="sub" text-anchor="start" font-size="12" fill="#888">Evaluation: Q&amp;A accuracy on math, facts, identity, current events</text>
 </svg>
