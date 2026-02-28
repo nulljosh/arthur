@@ -1,32 +1,39 @@
-# aether v1.0 — What We Built
+# aether v1.0
 
-A complete language model, trained from scratch, that generates text.
+Nano transformer LLM built from scratch. 3.5M parameters, C99 inference engine, PyTorch training.
 
 ## The Work
 
-- Built complete training loop in PyTorch
-- Trained 3.5M parameter model over 1000 epochs
-- Created C99 inference engine (350 lines, zero dependencies)
-- Added web interface for testing
-- Documented everything
-- Deployed to Vercel (in progress)
+- Complete training loop in PyTorch (AdamW, cosine LR, gradient clipping)
+- 3.5M parameter transformer trained over 1000 epochs
+- C99 inference engine (350 LOC, zero dependencies, 50K tok/s)
+- Web chat UI (Apple Liquid Glass aesthetic)
+- Deployed to Vercel (static splash + mock API)
 
 ## How to Use
 
 ```bash
-python index.py
+# Local inference (real PyTorch model)
+python web_ui.py
 # Opens web chat at http://localhost:5001
+
+# C engine
+cd inference && make && ./aether ../models/aether.bin "fn " --temp 0.3
 ```
+
+## Vercel Deployment
+
+- `vercel.json` uses `"framework": null` to prevent Flask auto-detection from requirements.txt
+- `public/index.html` is the splash page, `public/chat.html` is the chat UI
+- `api/index.js` handles all API routes (mock responses, no PyTorch on serverless)
+- Rewrites: `/api/*` -> `api/index.js`
 
 ## Status
 
-✅ Complete and working locally. All code on GitHub.
-
-## Next Steps
-
-Fix Vercel deployment at home (currently blocked).
+Complete and deployed. Local inference works. Vercel serves static splash + chat UI with mock API.
 
 ## Links
 
 - GitHub: https://github.com/nulljosh/aether
-- GitHub Pages: https://nulljosh.github.io/aether/
+- Vercel: https://aether-pink.vercel.app
+- Chat: https://aether-pink.vercel.app/chat.html
