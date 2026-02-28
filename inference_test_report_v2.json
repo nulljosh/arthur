@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-28T15:33:44.685834",
+    "model": "models/aether_current_best.pt",
+    "total_params": 4898816,
+    "vocab_size": 56,
+    "embed_dim": 256,
+    "max_len": 512,
+    "training_data": "current_math.txt"
+  },
+  "tests": [
+    {
+      "number": 1,
+      "category": "math",
+      "question": "Q: What is 5+3?\nA:",
+      "expected": "8",
+      "generated": "Q: What is 5+3?\nA: Digital currency based onology oforeckchain techn",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 2,
+      "category": "math",
+      "question": "Q: What is 12*7?\nA:",
+      "expected": "84",
+      "generated": "Q: What is 12*7?\nA: 60\n\nQ: What is appital of France?\nA: Pris\n\nQ: Who",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 3,
+      "category": "math",
+      "question": "Q: Calculate 100/10\nA:",
+      "expected": "10",
+      "generated": "Q: Calculate 100/10\nA: 10\n\nQ: What is 2024?\nA: 12\n\nQ: What is 50+25?\nA: ",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 4,
+      "category": "math",
+      "question": "Q: What is 20-7?\nA:",
+      "expected": "13",
+      "generated": "Q: What is 20-7?\nA: 13\n\nQ: What is 15+9?\nA: 24\n\nQ: What is 30-5?\nA: 2",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 5,
+      "category": "science",
+      "question": "Q: What is AI?\nA: ",
+      "expected": "Artificial intelligence",
+      "generated": "Q: What is AI?\nA: A subset of AI where systems learn from data patte",
+      "correct": false,
+      "confidence": 0
+    },
+    {
+      "number": 6,
+      "category": "science",
+      "question": "Q: What is machine learning?\nA: ",
+      "expected": "A subset of AI",
+      "generated": "Q: What is machine learning?\nA: A subset of AI where systems learn from data patte",
+      "correct": true,
+      "confidence": 100
+    },
+    {
+      "number": 7,
+      "category": "science",
+      "question": "Q: What is cryptocurrency?\nA: ",
+      "expected": "Digital currency",
+      "generated": "Q: What is cryptocurrency?\nA: Digital currency based on blockchain technology\n\nQ",
+      "correct": true,
+      "confidence": 100
+    },
+    {
+      "number": 8,
+      "category": "science",
+      "question": "Q: What is climate change?\nA: ",
+      "expected": "Long-term shift",
+      "generated": "Q: What is climate change?\nA: Long-term shift in global temperatures and weather",
+      "correct": true,
+      "confidence": 100
+    },
+    {
+      "number": 9,
+      "category": "pop_culture",
+      "question": "Q: Who is the current US President?\nA: ",
+      "expected": "Donald Trump",
+      "generated": "Q: Who is the current US President?\nA: Digital currency based ononology\n\nQ: What is mate ",
+      "correct": false,
+      "confidence": 30
+    },
+    {
+      "number": 10,
+      "category": "current_events",
+      "question": "Q: What year is it?\nA: ",
+      "expected": "2026",
+      "generated": "Q: What year is it?\nA: Digital currency based on blockchain technology\n\nQ",
+      "correct": false,
+      "confidence": 25
+    },
+    {
+      "number": 11,
+      "category": "current_events",
+      "question": "Q: What happened in 2024?\nA: ",
+      "expected": "Major AI breakthroughs",
+      "generated": "Q: What happened in 2024?\nA: Mald Trump became US president for a second term\n\n",
+      "correct": false,
+      "confidence": 25
+    },
+    {
+      "number": 12,
+      "category": "current_events",
+      "question": "Q: Who won the 2024 election?\nA: ",
+      "expected": "Donald Trump",
+      "generated": "Q: Who won the 2024 election?\nA: Donald Trump became US president for a second term",
+      "correct": true,
+      "confidence": 85
+    },
+    {
+      "number": 13,
+      "category": "pop_culture",
+      "question": "Q: What is the capital of France?\nA: ",
+      "expected": "Paris",
+      "generated": "Q: What is the capital of France?\nA: Pris\n\nQ: Who is the currency bas mat ing?\nA: AI US",
+      "correct": false,
+      "confidence": 30
+    },
+    {
+      "number": 14,
+      "category": "science",
+      "question": "Q: What is AI?\nA: ",
+      "expected": "Artificial intelligence",
+      "generated": "Q: What is AI?\nA: A subset of AI where systems learn from data patte",
+      "correct": false,
+      "confidence": 0
+    },
+    {
+      "number": 15,
+      "category": "science",
+      "question": "Q: What is machine learning?\nA: ",
+      "expected": "A subset",
+      "generated": "Q: What is machine learning?\nA: A subset of AI where systems learn from data patte",
+      "correct": true,
+      "confidence": 100
+    },
+    {
+      "number": 16,
+      "category": "current_events",
+      "question": "Q: What year is it?\nA: ",
+      "expected": "2026",
+      "generated": "Q: What year is it?\nA: Digital currency based on blockchain technology\n\nQ",
+      "correct": false,
+      "confidence": 25
+    }
+  ],
+  "summary": {
+    "math": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 4
+    },
+    "science": {
+      "accuracy": 66.66666666666666,
+      "correct": 4,
+      "total": 6
+    },
+    "pop_culture": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 2
+    },
+    "current_events": {
+      "accuracy": 25.0,
+      "correct": 1,
+      "total": 4
+    }
+  }
+}
