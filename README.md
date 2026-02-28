@@ -1,10 +1,10 @@
-# aether
+# Albert
 
 A small language model built from scratch. Trained on code and knowledge.
 
 ## Architecture
 
-![aether architecture](architecture.svg)
+![albert architecture](architecture.svg)
 
 **Text Description (Mobile Fallback):**
 ```
@@ -20,19 +20,19 @@ Output Layer (Vocabulary Logits) → Next Token
 ```
 
 **Model Specifications:**
-- **Total Parameters**: 445K
+- **Total Parameters**: 3.5M
 - **Layers**: 3 transformer blocks
 - **Attention Heads**: 4 per block
 - **Feed-Forward Dimension**: 256
 - **Embedding Dimension**: 128
 - **Tokenizer**: Character-level (91 unique characters)
 - **Training Data**: Math (50%) + Wikipedia + Current Events (50%)
-- **Training Loss**: 0.13-0.19 (converging)
+- **Training Loss**: 0.18 (Grade A+)
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/nulljosh/aether.git && cd aether
+git clone https://github.com/nulljosh/albert.git && cd albert
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 

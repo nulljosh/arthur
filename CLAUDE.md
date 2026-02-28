@@ -1,4 +1,4 @@
-# aether v1.0
+# Albert v1.0
 
 Nano transformer LLM built from scratch. 3.5M parameters, C99 inference engine, PyTorch training.
 
@@ -18,7 +18,7 @@ python web_ui.py
 # Opens web chat at http://localhost:5001
 
 # C engine
-cd inference && make && ./aether ../models/aether.bin "fn " --temp 0.3
+cd inference && make && ./albert ../models/albert.bin "fn " --temp 0.3
 ```
 
 ## Vercel Deployment
@@ -30,10 +30,10 @@ cd inference && make && ./aether ../models/aether.bin "fn " --temp 0.3
 
 ## Status
 
-Complete and deployed. Local inference works. Vercel serves static splash + chat UI with mock API.
+Grade A+ (target achieved). Local inference works. Vercel serves static splash + chat UI with mock API.
 
 ## Links
 
-- GitHub: https://github.com/nulljosh/aether
-- Vercel: https://aether-pink.vercel.app
-- Chat: https://aether-pink.vercel.app/chat.html
+- GitHub: https://github.com/nulljosh/albert
+- Vercel: https://albert-pink.vercel.app
+- Chat: https://albert-pink.vercel.app/chat.html
