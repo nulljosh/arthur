@@ -4,22 +4,19 @@ A small language model built from scratch. Trained on code and knowledge.
 
 ## Architecture
 
+![aether architecture](architecture.svg)
+
+**Text Description (Mobile Fallback):**
 ```
-Input Text
+Input Text → Tokenizer (91 chars) → Embedding (128-dim)
     ↓
-Tokenizer (91-char vocabulary)
+Transformer Block 1 (Attention + FFN)
     ↓
-Embedding Layer (128-dimensional vectors)
+Transformer Block 2 (Attention + FFN)
     ↓
-Transformer Block 1 (Multi-Head Attention + Feed-Forward Network)
+Transformer Block 3 (Attention + FFN)
     ↓
-Transformer Block 2 (Multi-Head Attention + Feed-Forward Network)
-    ↓
-Transformer Block 3 (Multi-Head Attention + Feed-Forward Network)
-    ↓
-Output Layer (Vocabulary Logits)
-    ↓
-Next Token Prediction
+Output Layer (Vocabulary Logits) → Next Token
 ```
 
 **Model Specifications:**
