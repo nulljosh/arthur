@@ -21,7 +21,7 @@ from collections import Counter
 CORE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(CORE_ROOT, "src"))
 
-from transformer import Nous
+from transformer import Arthur
 from tokenizer import CharTokenizer
 
 DEFAULT_CHECKPOINT = os.path.join(CORE_ROOT, "models", "cron_best.pt")

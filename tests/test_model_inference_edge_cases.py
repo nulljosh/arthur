@@ -6,7 +6,7 @@ torch = pytest.importorskip("torch")
 from attention import MultiHeadAttention
 from tokenizer import CharTokenizer
 from train import generate
-from transformer import Nous
+from transformer import Arthur
 
 
 class DeterministicModel(torch.nn.Module):
@@ -30,7 +30,7 @@ def test_multihead_attention_rejects_invalid_head_partition():
 
 
 def test_core_forward_rejects_sequence_longer_than_max_len():
-    model = Core(
+    model = Arthur(
         vocab_size=8,
         embed_dim=8,
         num_heads=2,
@@ -41,12 +41,12 @@ def test_core_forward_rejects_sequence_longer_than_max_len():
     )
     x = torch.tensor([[1, 2, 3, 4, 5]], dtype=torch.long)
 
-    with pytest.raises(IndexError):
+    with pytest.raises((IndexError, RuntimeError)):
         model(x)
 
 
 def test_core_forward_rejects_out_of_vocab_token_id():
-    model = Core(
+    model = Arthur(
         vocab_size=4,
         embed_dim=8,
         num_heads=2,

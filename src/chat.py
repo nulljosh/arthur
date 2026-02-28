@@ -15,7 +15,7 @@ except ImportError:
     print("Install: pip3 install torch")
     sys.exit(1)
 
-from transformer import Nous
+from transformer import Arthur
 from tokenizer import CharTokenizer
 import pickle
 
@@ -25,7 +25,7 @@ def load_model(model_path, tokenizer_path):
     with open(tokenizer_path, 'rb') as f:
         tokenizer = pickle.load(f)
     
-    model = Nous(
+    model = Arthur(
         vocab_size=tokenizer.vocab_size,
         embed_dim=64,
         num_heads=4,
@@ -104,7 +104,7 @@ see you. bye bye.
     tokenizer = CharTokenizer(corpus)
     
     # Tiny model
-    model = Nous(
+    model = Arthur(
         vocab_size=tokenizer.vocab_size,
         embed_dim=64,
         num_heads=4,

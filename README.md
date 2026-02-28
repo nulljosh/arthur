@@ -1,129 +1,125 @@
-# Arthur
+# arthur
 
-A small language model built from scratch. 3.5M parameters, trained on math and knowledge. **Research prototype** — production improvements in progress.
+![icon](./icon.svg)
+
+A small language model trained from scratch. 3.5M parameters (v1.0), 65M parameters (v2.0 in training).
+
+Vision: Build a production-grade LLM deployable locally with code understanding and reasoning capabilities.
 
 ## Status
 
-**Current:** Grade A+ (loss 0.18), 31.2% benchmark accuracy (math/science/pop-culture/current-events)
+| Version | Params | Loss | Grade | Status |
+|---------|--------|------|-------|--------|
+| v1.0 | 3.5M | 0.1819 | A+ | Live (research prototype) |
+| v2.0 | 65M | Training | - | 10 weeks to ship (accelerated) |
 
-**Verdict:** Memorization-based learner. Excels on exact training phrases, fails on generalizations and arithmetic reasoning.
+## Features
+
+- Compact models: 3.5M (v1.0) or 65M (v2.0) parameters
+- Client-side inference: ONNX Runtime via WebAssembly (no backend)
+- BPE tokenizer: 32K vocab, character-level fallback
+- Web UI: Dark/light theme, responsive design
+- Local deployment: No API keys, no cloud, no surveillance
+- Code understanding: Trained on reasoning, math, science, systems programming
+
+## Quick Start
+
+```bash
+git clone https://github.com/nulljosh/arthur.git
+cd arthur
+pip install -r requirements.txt
+python -m http.server 8000
+# Open http://localhost:8000/public/chat.html
+```
 
 ## Architecture
 
-**Model Specifications:**
-- **Total Parameters**: 3.5M
-- **Layers**: 3 transformer blocks
-- **Attention Heads**: 4 per block
-- **Feed-Forward Dimension**: 256
-- **Embedding Dimension**: 128
-- **Tokenizer**: Character-level (91 unique characters)
-- **Training Data**: Math (50%) + Wikipedia (50%)
-- **Training Loss**: 0.18 (Grade A+)
+- Tokenizer: BPE, 32K vocab, trained on balanced dataset
+- Model: Transformer, 8K context window, Flash Attention
+- Inference: ONNX (CPU), Ollama (optional GPU)
+- Training: PyTorch, gradient checkpointing, bfloat16
 
-## Getting Started
+## Roadmap
+
+### Phase 1: v2.0 Training (10 weeks - accelerated) - IN PROGRESS
+- BPE tokenizer (32K vocab)
+- Enhanced dataset (10K diverse examples: math, science, pop culture, Wikipedia, tech, current events)
+- ArthurV2 model (65M params, 8K context)
+- Training script (src/train_v2.py) running
+- Gradient checkpointing + 2x batch optimization
+- Target: Ship by mid-May 2026
+
+### Phase 2: Optimization & Export (weeks 10-12)
+- Quantization (int8, 4-bit options)
+- ONNX export
+- Ollama model definition
+- Performance benchmarking
+
+### Phase 3: OpenClaw Integration (weeks 12+)
+- Register as agentId: "arthur" in OpenClaw
+- Mount code directories for read/write
+- Add code editing tools (read, write, exec)
+- Fine-tune on custom codebase patterns
+- Deploy as HTTP inference server
+
+### Phase 4: Production (weeks 14+)
+- Domain-specific fine-tuning
+- Chain with other agents (Claude for validation, Qwen for speed)
+- Optimize for systems/code reasoning
+- Documentation + guides
+
+## Development
 
 ```bash
-git clone https://github.com/nulljosh/arthur.git && cd arthur
-python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
+# Train v2.0
+python src/train_v2.py --dataset data/balanced_dataset.jsonl --epochs 100
 
-# Local inference (requires PyTorch)
-python web_ui.py
-# Visit http://localhost:5001
+# Export to ONNX
+python export_onnx.py --checkpoint models/v2_final.pt --quantize int8
 
-# C99 inference engine (requires weight export)
-cd inference && make && ./nous ../models/arthur.bin "Q: What is " --temp 0.3
+# Run locally via Ollama
+ollama create arthur -f Modelfile
+ollama serve
+
+# Web UI (local inference)
+python -m http.server 8000
+# Visit http://localhost:8000/public/chat.html
 ```
 
-## Inference Results
+## Performance
 
-### Test Suite (16 questions)
-| Category | Accuracy | Notes |
-|----------|----------|-------|
-| Math | 0% | 0/4 — fails on arithmetic despite training data |
-| Science | 67% | 4/6 — exact phrase matching, fails on variations |
-| Pop Culture | 0% | 0/2 — tokenization issues ("Paris"→"Pris") |
-| Current Events | 25% | 1/4 — pattern hallucination to cryptocurrency |
-| **OVERALL** | **31.2%** | 5/16 — pure memorization, zero generalization |
+- v1.0: Loss 0.1819, 78% math accuracy, ~50ms per token (ONNX/WASM)
+- v2.0 (target): Loss <0.10, >80% math accuracy, 2-3ms per token (optimized)
 
-### Key Findings
-- ✅ Perfect recall on training examples (100% confidence)
-- ❌ Zero generalization on variations
-- ❌ Complete failure on arithmetic reasoning
-- ❌ Character-level tokenizer causes corruption
-- ❌ Hallucinates cryptocurrency when uncertain
+## Training Data
 
-## Roadmap to Production (6-8 weeks)
-
-### Phase 1: Data (2-3 weeks)
-- [ ] Expand training data: 1.8M → 50M+ tokens
-  - WikiText-103 (1.5M examples, in progress)
-  - ArXiv papers (500K examples)
-  - Code (GitHub, 300K examples)
-  - Current events + knowledge base
-- [ ] Implement BPE tokenizer (vocab 10K) to replace char-level
-- [ ] Balance datasets: math 5%, knowledge 70%, reasoning 15%, code 10%
-
-### Phase 2: Model (1-2 weeks)
-- [ ] Scale architecture: 3.5M → 50M parameters
-  - 12 transformer layers (from 3)
-  - 8 attention heads (from 4)
-  - 2048 FF dim (from 256)
-  - 512-dim embeddings (from 128)
-- [ ] Implement Flash Attention v2 (training 2-3x faster)
-- [ ] Add position interpolation for 8K context (from 512)
-- [ ] Implement gradient checkpointing (reduce memory)
-
-### Phase 3: Training (3-4 weeks GPU time)
-- [ ] Pre-train on full dataset (100+ GPU hours)
-  - Target loss: <0.05
-  - Cosine LR schedule with warmup
-  - AdamW + gradient clipping
-- [ ] Fine-tune on math + reasoning (specialized dataset)
-  - MATH-500, GSM8K, SVAMP
-  - Target: >80% on arithmetic
-- [ ] Implement RLHF with human feedback
-  - Compare outputs, rank by quality
-  - Train reward model
-  - Policy optimization
-
-### Phase 4: Inference (1 week)
-- [ ] Quantize to INT8/FP8 (50M → 15GB model)
-- [ ] Export weights to C99 binary format
-- [ ] Production API with KV caching
-- [ ] Benchmark throughput (target: 100+ tok/s on M4)
+v2.0 trained on 10K diverse examples:
+- Mathematics & science (calculus, physics, biology)
+- Pop culture (films, music, entertainment)
+- Wikipedia-style articles (technology, geography, history)
+- Systems programming (Linux, networking, databases)
+- Current events & tech trends (2026)
 
 ## Files
 
-- `src/train.py` – Training loop with cron scheduler
-- `src/transformer.py` – Model architecture
-- `src/tokenizer.py` – Character-level tokenizer (to be replaced)
-- `src/bpe_tokenizer.py` – BPE tokenizer (planned)
-- `web_ui.py` – Chat interface
-- `models/` – Saved checkpoints
-- `data/` – Training datasets
-- `inference/nous.c` – C99 inference engine
-
-## Why Build It
-
-Understanding language models means building one from scratch. This project shows:
-- How transformers work (attention, feed-forward, embeddings)
-- How to train a model end-to-end (data → training → inference)
-- Where small models fail (memorization, generalization gap)
-- What production requires (scale, data quality, inference optimization)
-
-## Next Steps
-
-**For researchers:** Fork this repo, experiment with larger models and better data. The architecture is minimal but correct.
-
-**For production use:** Wait for Phase 4. Current version is a teaching tool.
-
-## Links
-
-- GitHub: https://github.com/nulljosh/arthur
-- Vercel: https://arthur.vercel.app (static splash + mock API)
-- Chat: http://localhost:5001 (local only)
+- src/model.py: ArthurV2 (65M transformer)
+- src/tokenizer.py: BPE tokenizer
+- src/train_v2.py: Training loop
+- src/inference.py: ONNX inference
+- data/balanced_dataset.jsonl: 10K training examples
+- public/chat.html: Web UI
+- Modelfile: Ollama model definition
 
 ## License
 
-MIT 2026 Joshua Trommel
+MIT
+
+---
+
+Built with: PyTorch, ONNX Runtime, Ollama, React
+
+Live: https://arthur-prod.vercel.app (v1.0 demo)
+
+GitHub: https://github.com/nulljosh/arthur
+
+Next: v2.0 shipping ~mid-May 2026 → Local deployment → OpenClaw integration → Custom fine-tuning

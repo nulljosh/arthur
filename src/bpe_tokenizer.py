@@ -102,20 +102,38 @@ class BPETokenizer:
         return result.decode('utf-8', errors='replace')
     
     def save(self, path: str):
-        """Save tokenizer to JSON."""
+        """Save tokenizer to JSON with proper format."""
         with open(path, 'w') as f:
             json.dump({
                 'vocab_size': self.vocab_size,
                 'vocab': {str(k): v.decode('utf-8', errors='replace') for k, v in self.vocab.items()},
-                'merges': [(str(a), str(b), int(c)) for (a, b), c in self.merges],
-                'char_tokens': {k: v for k, v in self.char_tokens.items()}
-            }, f)
+                'merges': [{'pair': [int(a), int(b)], 'token': int(c)} for (a, b), c in self.merges],
+                'char_tokens': {k: int(v) for k, v in self.char_tokens.items()}
+            }, f, indent=2)
     
     def load(self, path: str):
-        """Load tokenizer from JSON."""
+        """Load tokenizer from JSON with error handling."""
         with open(path, 'r') as f:
             data = json.load(f)
-        self.vocab_size = data['vocab_size']
-        self.vocab = {int(k): v.encode('utf-8') for k, v in data['vocab'].items()}
-        self.merges = [((int(a), int(b)), int(c)) for a, b, c in data['merges']]
-        self.char_tokens = data['char_tokens']
+        
+        self.vocab_size = data.get('vocab_size', 10000)
+        
+        # Load vocab: {token_id (int) -> token_bytes}
+        if 'vocab' in data:
+            self.vocab = {int(k): v.encode('utf-8') if isinstance(v, str) else v 
+                         for k, v in data['vocab'].items()}
+        
+        # Load merges: [((token_a, token_b), new_token)]
+        if 'merges' in data:
+            merges_data = data['merges']
+            if merges_data and isinstance(merges_data[0], dict):
+                # New format: [{'pair': [a, b], 'token': c}]
+                self.merges = [((int(m['pair'][0]), int(m['pair'][1])), int(m['token'])) 
+                              for m in merges_data]
+            else:
+                # Old format: [[a, b, c], ...]
+                self.merges = [((int(a), int(b)), int(c)) for a, b, c in merges_data]
+        
+        # Load char_tokens: {char -> token_id}
+        if 'char_tokens' in data:
+            self.char_tokens = {k: int(v) for k, v in data['char_tokens'].items()}

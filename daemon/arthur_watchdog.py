@@ -121,7 +121,8 @@ class Daemon:
                 elif not healthy and training:
                     self.pause_training()
                 elif training and self.proc.poll() is not None:
-                    self.state['epoch'] += 1
+                    self.on_epoch_complete()
+                    self.state["epoch"] += 1
                     self.save_state()
                     logger.info(f"Epoch complete. Total: {self.state['epoch']}/{self.state['total']}")
                 
@@ -132,3 +133,18 @@ class Daemon:
 
 if __name__ == '__main__':
     Daemon().run()
+
+    def on_epoch_complete(self):
+        """Called when training epoch finishes."""
+        import subprocess
+        try:
+            # Auto-push to GitHub
+            subprocess.run(
+                ["bash", "/Users/joshua/Documents/Code/arthur/daemon/auto_push.sh"],
+                cwd=str(ARTHUR_ROOT),
+                capture_output=True,
+                timeout=30
+            )
+            logger.info("Pushed to GitHub after epoch completion")
+        except Exception as e:
+            logger.error(f"Failed to push: {e}")

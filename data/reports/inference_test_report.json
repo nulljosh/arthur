@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-28T16:10:47.043555",
+    "model": "models/aether_current_best.pt",
+    "total_params": 4898816,
+    "vocab_size": 56,
+    "embed_dim": 256,
+    "max_len": 512
+  },
+  "tests": [
+    {
+      "number": 1,
+      "category": "math",
+      "question": "Q: 5 + 3 = ",
+      "expected": "8",
+      "generated": "Q: 5 + 3 \u0000 A: What is machine learning?\nA: A subset of AI where systems learn from data pat",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 2,
+      "category": "math",
+      "question": "Q: 12 * 7 = ",
+      "expected": "84",
+      "generated": "Q: 12 * 7 \u0000 is mal currency based on blockchain technology\n\nQ: What is machine learning?\nA: ",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 3,
+      "category": "math",
+      "question": "Q: 100 / 10 = ",
+      "expected": "10",
+      "generated": "Q: 100 / 10 \u0000 as chaingence is learning?\nA: 13\n\nQ: What is 15+9?\nA: A: A: 24\n\nQ: What is 30hat",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 4,
+      "category": "math",
+      "question": "Q: 20 - 7 = ",
+      "expected": "13",
+      "generated": "Q: 20 - 7 \u0000 What is machine learning?\nA: A subset of AI where systems learn from data patter",
+      "correct": false,
+      "confidence": 20
+    },
+    {
+      "number": 5,
+      "category": "science",
+      "question": "Q: What is the speed of light? A: ",
+      "expected": "299792458",
+      "generated": "Q: What is the speed of light? A: AI where systems learn from data patterom datterns\n\nQ: Who won the 2024 election",
+      "correct": false,
+      "confidence": 0
+    },
+    {
+      "number": 6,
+      "category": "science",
+      "question": "Q: What is DNA? A: ",
+      "expected": "deoxyribonucleic acid",
+      "generated": "Q: What is D\u0000A? A: gital currency based on blockchain technology\n\nQ: What is machine learning?\nA: A",
+      "correct": false,
+      "confidence": 0
+    },
+    {
+      "number": 7,
+      "category": "science",
+      "question": "Q: What is the atomic number of carbon? A: ",
+      "expected": "6",
+      "generated": "Q: What is the atomic number of carbon? A: Digital currency based on blockchain technology\n\nQ: What is machine learning?\nA:",
+      "correct": false,
+      "confidence": 0
+    },
+    {
+      "number": 8,
+      "category": "science",
+      "question": "Q: What is photosynthesis? A: ",
+      "expected": "converts light energy to chemical energy",
+      "generated": "Q: What is photosynthesis? A: Digital currency based on blockchain technology\n\nQ: What is machine learning?\nA:",
+      "correct": false,
+      "confidence": 16
+    },
+    {
+      "number": 9,
+      "category": "pop_culture",
+      "question": "Q: Who plays Iron Man? A: ",
+      "expected": "robert downey jr",
+      "generated": "Q: Who plays Iron Man? A: Digital currency based on blockchain technology\n\nQ: What is machine learning?\nA:",
+      "correct": false,
+      "confidence": 30
+    },
+    {
+      "number": 10,
+      "category": "pop_culture",
+      "question": "Q: When did The Office premiere? A: ",
+      "expected": "2005",
+      "generated": "Q: When did The \u0000ffice premiere? A: Digital currency based on blockchain technology\n\nQ: What is machine learning?\nA:",
+      "correct": false,
+      "confidence": 30
+    },
+    {
+      "number": 11,
+      "category": "pop_culture",
+      "question": "Q: What is Taylor Swift's album? A: ",
+      "expected": "fearless",
+      "generated": "Q: What is Taylor Swift\u0000s album? A: Digency\n\nQ: What is mate chingearning?\nA: Long-term subal of AI whingereshifromu",
+      "correct": false,
+      "confidence": 30
+    },
+    {
+      "number": 12,
+      "category": "pop_culture",
+      "question": "Q: How many MCU movies? A: ",
+      "expected": "31",
+      "generated": "Q: \u0000ow many MCU movies? A: Calcurrency based on blockchain technology\n\nQ: What is machine learning?\nA: A su",
+      "correct": false,
+      "confidence": 30
+    },
+    {
+      "number": 13,
+      "category": "current_events",
+      "question": "Q: What year is it? A: ",
+      "expected": "2026",
+      "generated": "Q: What year is it? A: What is machine learning?\nA: A subset of AI where systems learn from data patter",
+      "correct": false,
+      "confidence": 25
+    },
+    {
+      "number": 14,
+      "category": "current_events",
+      "question": "Q: What month is it? A: ",
+      "expected": "february",
+      "generated": "Q: What month is it? A: Digital currency based on blockchain technology\n\nQ: What is machine learning?\nA:",
+      "correct": false,
+      "confidence": 25
+    },
+    {
+      "number": 15,
+      "category": "current_events",
+      "question": "Q: Who is US president? A: ",
+      "expected": "joe biden",
+      "generated": "Q: Who is US president? A: Digital currency based onology ofor bamI wecongechingechinge gye gyechine leares",
+      "correct": false,
+      "confidence": 25
+    },
+    {
+      "number": 16,
+      "category": "current_events",
+      "question": "Q: What major event happened in 2024? A: ",
+      "expected": "olympics",
+      "generated": "Q: What major event happened in 2024? A: Dorump bre 2024 became US president for a second term\n\nQ: What is climate change",
+      "correct": false,
+      "confidence": 25
+    }
+  ],
+  "summary": {
+    "math": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 4
+    },
+    "science": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 4
+    },
+    "pop_culture": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 4
+    },
+    "current_events": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 4
+    }
+  }
+}

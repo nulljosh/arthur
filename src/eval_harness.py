@@ -143,13 +143,13 @@ def _infer_nous_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str,
 
 def load_runtime(checkpoint_path: str | Path, data_path: str | Path | None = None) -> LoadedRuntime:
     import torch
-    from transformer import Nous
+    from transformer import Arthur
 
     checkpoint_file = Path(checkpoint_path)
     if not checkpoint_file.exists():
         raise FileNotFoundError(f"Checkpoint not found: {checkpoint_file}")
 
-    checkpoint = torch.load(checkpoint_file, map_location="cpu", weights_only=False)
+    checkpoint = torch.load(checkpoint_file, map_location="cpu", weights_only=True)
     if not isinstance(checkpoint, dict):
         raise ValueError("Unsupported checkpoint format: expected dict")
 
@@ -177,7 +177,7 @@ def load_runtime(checkpoint_path: str | Path, data_path: str | Path | None = Non
         config = {**config}
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))
 
-    model = Nous(
+    model = Arthur(
         vocab_size=int(config["vocab_size"]),
         embed_dim=int(config["embed_dim"]),
         num_heads=int(config["num_heads"]),
