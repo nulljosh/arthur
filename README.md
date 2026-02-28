@@ -2,29 +2,9 @@
 
 A small language model built from scratch. Trained on code and knowledge.
 
-## What It Does
-
-Generates text based on a prompt. Understanding how it works teaches you how real language models work.
-
 ## Architecture
 
-```
-Input Text → Tokenizer → Embedding (128-dim)
-    ↓
-Transformer Block 1 (Attention + FFN)
-    ↓
-Transformer Block 2 (Attention + FFN)
-    ↓
-Transformer Block 3 (Attention + FFN)
-    ↓
-Output Layer → Next Token Prediction
-```
-
-**Key specs:**
-- 445K parameters (3 transformer blocks, 4 attention heads)
-- 91-char vocabulary (character-level tokenizer)
-- Training: Math (50%) + Wikipedia/Current Events (50%)
-- Inference: CPU, single-token generation
+![Architecture](https://raw.githubusercontent.com/nulljosh/aether/main/architecture.svg)
 
 ## Getting Started
 
@@ -44,15 +24,15 @@ python web_ui.py
 ## How It Works
 
 1. **Data** -- Train on math, current events, and Wikipedia
-2. **Model** -- Small transformer neural network
+2. **Model** -- Small transformer neural network (445K parameters)
 3. **Learning** -- PyTorch training with character-level tokenizer
 4. **Output** -- Predicts next tokens based on patterns learned
 
 ## The Numbers
 
-- Parameters: 445K (vs Claude: billions)
-- Training time: Minutes on CPU
-- Vocab: 91 characters
+- Parameters: 445K (3 transformer blocks, 4 attention heads)
+- Training: Math (50%) + Wikipedia/Current Events (50%)
+- Vocab: 91 characters (character-level)
 - Loss: 0.13-0.19 (converging)
 - Speed: CPU inference
 
