@@ -4,16 +4,22 @@ A small language model built from scratch. Trained on code and knowledge.
 
 ## Architecture
 
-```
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│  Input   │───▶│Tokenizer │───▶│Embedding │───▶│ Block 1  │───▶│ Block 2  │───▶│ Block 3  │───▶│ Output   │
-│   Text   │    │ 91 chars │    │128-dim   │    │Attn+FFN  │    │Attn+FFN  │    │Attn+FFN  │    │  Logits  │
-└──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
+![aether architecture diagram](architecture.svg)
 
-Parameters: 445K | Layers: 3 | Heads: 4 | FF Dim: 256
-Training: Math (50%) + Wikipedia + Current Events (50%)
-Loss: 0.13-0.19 (converging) | Vocab: 91 characters
-```
+**Model Components:**
+- **Input**: Text query (character-level)
+- **Tokenizer**: 91-character vocabulary
+- **Embedding**: 128-dimensional vectors
+- **Transformer Blocks**: 3 layers with attention + feed-forward
+- **Output**: Vocabulary logits for next token prediction
+
+**Specs:**
+- **Parameters**: 445K (tiny compared to Claude)
+- **Layers**: 3 transformer blocks
+- **Attention Heads**: 4
+- **Feed-Forward Dimension**: 256
+- **Training Data**: Math (50%) + Wikipedia + Current Events (50%)
+- **Loss**: 0.13-0.19 (converging)
 
 ## Getting Started
 
