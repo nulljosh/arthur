@@ -50,7 +50,7 @@ class TransformerBlock(nn.Module):
         return x
 
 
-class Nous(nn.Module):
+class Arthur(nn.Module):
     """Full nous model"""
     
     def __init__(self, vocab_size, embed_dim, num_heads, num_layers, ff_dim, max_len, dropout=0.1):

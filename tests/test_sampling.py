@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
+import os
 import pytest
 torch = pytest.importorskip("torch")
 import sys
 sys.path.insert(0, 'src')
-from transformer import Nous
+from transformer import Arthur
+
+pytestmark = pytest.mark.skipif(
+    not os.path.exists('models/ultra.pt'),
+    reason='model file not available'
+)
 
 class SimpleTokenizer:
     def __init__(self, vocab):
@@ -15,12 +21,13 @@ class SimpleTokenizer:
     def decode(self, tokens):
         return ''.join([self.idx_to_char.get(t, '?') for t in tokens])
 
-checkpoint = torch.load('models/ultra.pt', map_location='cpu')
-tokenizer = SimpleTokenizer(checkpoint['vocab'])
+if os.path.exists('models/ultra.pt'):
+    checkpoint = torch.load('models/ultra.pt', map_location='cpu')
+    tokenizer = SimpleTokenizer(checkpoint['vocab'])
 
-model = Core(vocab_size=29, embed_dim=32, num_heads=2, num_layers=2, ff_dim=64, max_len=32, dropout=0.0)
-model.load_state_dict(checkpoint['model_state_dict'])
-model.eval()
+    model = Arthur(vocab_size=29, embed_dim=32, num_heads=2, num_layers=2, ff_dim=64, max_len=32, dropout=0.0)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    model.eval()
 
 def test(prompt, method='greedy', temp=0.1, top_k=5):
     tokens = tokenizer.encode(prompt)
@@ -51,7 +58,8 @@ def test(prompt, method='greedy', temp=0.1, top_k=5):
     return tokenizer.decode(generated)
 
 prompt = "Q: What is your name?\nA: "
-print(f"Prompt: '{prompt.strip()}'")
-print(f"\n1. Greedy (temp=0.1): {test(prompt, 'greedy', 0.1)}")
-print(f"\n2. Top-k=5 (temp=0.7): {test(prompt, 'topk', 0.7, 5)}")
-print(f"\n3. Top-k=3 (temp=0.5): {test(prompt, 'topk', 0.5, 3)}")
+if os.path.exists('models/ultra.pt'):
+    print(f"Prompt: '{prompt.strip()}'")
+    print(f"\n1. Greedy (temp=0.1): {test(prompt, 'greedy', 0.1)}")
+    print(f"\n2. Top-k=5 (temp=0.7): {test(prompt, 'topk', 0.7, 5)}")
+    print(f"\n3. Top-k=3 (temp=0.5): {test(prompt, 'topk', 0.5, 3)}")

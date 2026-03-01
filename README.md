@@ -1,5 +1,16 @@
 # Arthur
 
+## Training Status
+
+**Progress:** Epoch 0/50 (0% complete)
+**Latest Checkpoint:** None
+**Last Loss:** N/A
+**Updated:** 2026-02-28 15:56
+
+Status: Daemon auto-training when idle. Respects resources (disk <5GB, CPU <70%, RAM >4GB).
+
+# Arthur
+
 A small language model built from scratch. 3.5M parameters, trained on math and knowledge. **Research prototype** — production improvements in progress.
 
 ## Status
@@ -52,6 +63,20 @@ cd inference && make && ./nous ../models/arthur.bin "Q: What is " --temp 0.3
 - ❌ Complete failure on arithmetic reasoning
 - ❌ Character-level tokenizer causes corruption
 - ❌ Hallucinates cryptocurrency when uncertain
+
+## How Arthur Compares
+
+Arthur is a 3.5M parameter educational model. For context, here is how it stacks up against frontier models with 14B to trillions of parameters:
+
+| Benchmark | Arthur (3.5M) | Qwen3-14B | Claude Sonnet 4.6 | Claude Opus 4.6 |
+|-----------|--------------|-----------|-------------------|-----------------|
+| MMLU | N/A | ~81% | ~89% | ~91% |
+| GSM8K | 0% | ~92% | ~96% | ~99% |
+| HumanEval | N/A | ~72% | ~92% | ~95% |
+| MATH | 0% | ~62% | ~85% | ~93% |
+| Custom (16Q) | 31.2% | N/A | N/A | N/A |
+
+The custom benchmark tests 16 questions across math, science, pop culture, and current events using Arthur's training data format.
 
 ## Roadmap to Production (6-8 weeks)
 

@@ -16,7 +16,7 @@ SRC_DIR = Path(__file__).resolve().parent / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from transformer import Nous
+from transformer import Arthur
 from tokenizer import CharTokenizer
 
 
@@ -146,7 +146,7 @@ def load_runtime(model_path: Path, data_path: Path) -> LoadedRuntime:
         config = {**config}
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))
 
-    model = Nous(
+    model = Arthur(
         vocab_size=int(config["vocab_size"]),
         embed_dim=int(config["embed_dim"]),
         num_heads=int(config["num_heads"]),

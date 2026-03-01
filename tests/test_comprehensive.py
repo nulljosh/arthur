@@ -4,8 +4,13 @@ import pytest
 torch = pytest.importorskip("torch")
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-from transformer import Nous
+from transformer import Arthur
 from tokenizer import CharTokenizer
+
+pytestmark = pytest.mark.skipif(
+    not os.path.exists('models/comprehensive_best.pt'),
+    reason='model file not available'
+)
 
 def test_model(model_path='models/comprehensive_best.pt', temperature=0.2, max_len=80):
     """Load and test the comprehensive model"""

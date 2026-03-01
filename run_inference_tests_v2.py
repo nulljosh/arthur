@@ -12,7 +12,7 @@ import re
 from datetime import datetime
 
 sys.path.insert(0, 'src')
-from transformer import Nous
+from transformer import Arthur
 from tokenizer import CharTokenizer
 
 
@@ -79,7 +79,7 @@ def evaluate_answer(question, expected, generated, category):
     return is_correct, confidence
 
 
-def run_tests(model_path='models/aether_current_best.pt'):
+def run_tests(model_path='models/overnight_best.pt'):
     """Run all inference tests"""
     
     print("=" * 80)
@@ -238,7 +238,7 @@ def run_tests(model_path='models/aether_current_best.pt'):
 
 
 if __name__ == "__main__":
-    model = sys.argv[1] if len(sys.argv) > 1 else 'models/aether_current_best.pt'
+    model = sys.argv[1] if len(sys.argv) > 1 else 'models/overnight_best.pt'
     results = run_tests(model)
     
     if results:

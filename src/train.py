@@ -7,7 +7,7 @@ import os
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from transformer import Nous
+from transformer import Arthur
 from tokenizer import CharTokenizer, WordTokenizer, BPETokenizer
 import argparse
 
@@ -206,7 +206,7 @@ def main(corpus='jot', tokenizer_type='char', model_size='nano', epochs=50, lr=1
 
     print(f"Vocab size: {tokenizer.vocab_size}")
 
-    model = Nous(
+    model = Arthur(
         vocab_size=tokenizer.vocab_size,
         embed_dim=config['embed_dim'],
         num_heads=config['num_heads'],
