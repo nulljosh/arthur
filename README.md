@@ -106,4 +106,4 @@ MIT
 
 **Built with:** PyTorch, ONNX Runtime, React, Vercel
 
-**Live:** https://arthur.vercel.app
+**Live:** https://arthur-prod.vercel.app
