@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aether — Nano LLM from Scratch</title>
+  <title>arthur — Nano LLM from Scratch</title>
   <style>
     :root {
       --bg-primary: #0a0e27;
@@ -260,10 +260,10 @@
   <button id="theme-toggle">🌙 Dark</button>
 
   <header>
-    <h1>aether</h1>
+    <h1>arthur</h1>
     <p class="tagline">Nano transformer LLM built from scratch</p>
     <a href="/chat.html" class="cta">Try Chat</a>
-    <a href="https://github.com/nulljosh/aether" class="cta">View on GitHub</a>
+    <a href="https://github.com/nulljosh/albert" class="cta">View on GitHub</a>
     <a href="#quick-start" class="cta">Get Started</a>
   </header>
 
@@ -271,7 +271,7 @@
     <section>
       <h2>About</h2>
       <p>
-        Aether is a minimal, fully-transparent transformer LLM built from first principles.
+        Arthur is a minimal, fully-transparent transformer LLM built from first principles.
         <strong>0.57M parameters</strong>, <strong>C99 inference engine</strong> (350 LOC, zero dependencies),
         trained on code and knowledge corpora.
       </p>
@@ -313,7 +313,7 @@
       </div>
       
       <p><strong>Clone & setup:</strong></p>
-      <code>git clone https://github.com/nulljosh/aether.git && cd nous</code><br>
+      <code>git clone https://github.com/nulljosh/albert.git && cd nous</code><br>
       <code>python -m venv venv && source venv/bin/activate</code><br>
       <code>pip install -r requirements.txt</code>
       
@@ -321,7 +321,7 @@
       <code>python src/train.py --corpus tiny --epochs 200</code>
       
       <p style="margin-top: 20px;"><strong>Inference (C engine, 50K tok/s):</strong></p>
-      <code>cd inference && make && ./aether ../models/aether.bin "fn " --temp 0.3</code>
+      <code>cd inference && make && ./arthur ../models/arthur.bin "fn " --temp 0.3</code>
       
       <p style="margin-top: 20px;"><strong>Web UI:</strong></p>
       <code>python index.py  # http://localhost:5001</code>
@@ -343,7 +343,7 @@
           <p>Chat, quiz, status. Port 5001. Real-time inference.</p>
         </div>
         <div class="card">
-          <h3>Aether Daemon</h3>
+          <h3>Arthur Daemon</h3>
           <p>Continuous training, checkpoints, iMessage notifications.</p>
         </div>
       </div>
@@ -359,7 +359,7 @@
           <th style="text-align: left; padding: 10px;">Capability</th>
         </tr>
         <tr>
-          <td style="padding: 10px;">aether (v0.4)</td>
+          <td style="padding: 10px;">arthur (v0.4)</td>
           <td style="padding: 10px;">0.57M</td>
           <td style="padding: 10px;">50K tok/s</td>
           <td style="padding: 10px;">code + knowledge</td>
@@ -380,7 +380,7 @@
     </section>
 
     <section>
-      <h2>Why Aether</h2>
+      <h2>Why Arthur</h2>
       <ul style="margin-left: 20px;">
         <li>Full stack from scratch: tokenizer → attention → training → C inference</li>
         <li>No black boxes. Every byte visible and understandable</li>
@@ -397,29 +397,29 @@
         <div>
           <h4>Project</h4>
           <ul>
-            <li><a href="https://github.com/nulljosh/aether">GitHub Repository</a></li>
-            <li><a href="https://github.com/nulljosh/aether/blob/main/README.md">Documentation</a></li>
-            <li><a href="https://github.com/nulljosh/aether/releases">Releases</a></li>
+            <li><a href="https://github.com/nulljosh/albert">GitHub Repository</a></li>
+            <li><a href="https://github.com/nulljosh/albert/blob/main/README.md">Documentation</a></li>
+            <li><a href="https://github.com/nulljosh/albert/releases">Releases</a></li>
           </ul>
         </div>
         <div>
           <h4>Resources</h4>
           <ul>
-            <li><a href="https://github.com/nulljosh/aether/tree/main/src">Source Code</a></li>
-            <li><a href="https://github.com/nulljosh/aether/tree/main/inference">C Engine</a></li>
-            <li><a href="https://github.com/nulljosh/aether/tree/main/data">Training Data</a></li>
+            <li><a href="https://github.com/nulljosh/albert/tree/main/src">Source Code</a></li>
+            <li><a href="https://github.com/nulljosh/albert/tree/main/inference">C Engine</a></li>
+            <li><a href="https://github.com/nulljosh/albert/tree/main/data">Training Data</a></li>
           </ul>
         </div>
         <div>
           <h4>Legal</h4>
           <ul>
-            <li><a href="https://github.com/nulljosh/aether/blob/main/LICENSE">MIT License</a></li>
+            <li><a href="https://github.com/nulljosh/albert/blob/main/LICENSE">MIT License</a></li>
             <li><a href="https://github.com/nulljosh">Joshua Trommel</a></li>
           </ul>
         </div>
       </div>
       <hr class="footer-divider">
-      <p class="footer-bottom">© 2026 Joshua Trommel. aether is licensed under the <a href="https://github.com/nulljosh/aether/blob/main/LICENSE">MIT License</a>.</p>
+      <p class="footer-bottom">© 2026 Joshua Trommel. arthur is licensed under the <a href="https://github.com/nulljosh/albert/blob/main/LICENSE">MIT License</a>.</p>
     </div>
   </footer>
 

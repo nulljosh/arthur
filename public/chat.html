@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aether -- Chat</title>
+  <title>arthur -- Chat</title>
   <style>
     :root {
       --glass-bg: rgba(255, 255, 255, 0.72);
@@ -317,7 +317,7 @@
 </head>
 <body>
   <header class="header">
-    <h1><a href="/" title="Back to aether">aether</a></h1>
+    <h1><a href="/" title="Back to arthur">arthur</a></h1>
     <div style="display:flex;align-items:center;gap:16px;">
       <span class="theme-toggle" id="themeBtn" title="Toggle dark mode">&#9790;</span>
       <span class="gear" id="gearBtn" title="Settings">&#9881;</span>
@@ -337,7 +337,7 @@
 
   <div class="chat" id="chat">
     <div class="empty" id="empty">
-      <h2>aether</h2>
+      <h2>arthur</h2>
       <p>Nano transformer, trained from scratch. 3.5M parameters.</p>
     </div>
   </div>
@@ -347,7 +347,7 @@
   </div>
 
   <div class="input-bar">
-    <textarea id="input" rows="1" placeholder="Message aether..." autofocus></textarea>
+    <textarea id="input" rows="1" placeholder="Message arthur..." autofocus></textarea>
     <button id="sendBtn" title="Send">&#9654;</button>
   </div>
 
@@ -365,7 +365,7 @@
     let generating = false;
 
     const themeBtn = document.getElementById('themeBtn');
-    const savedTheme = localStorage.getItem('aether-theme') || 'light';
+    const savedTheme = localStorage.getItem('arthur-theme') || 'light';
     if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     themeBtn.textContent = savedTheme === 'dark' ? '\u2600' : '\u263E';
 
@@ -373,11 +373,11 @@
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       if (isDark) {
         document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('aether-theme', 'light');
+        localStorage.setItem('arthur-theme', 'light');
         themeBtn.textContent = '\u263E';
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('aether-theme', 'dark');
+        localStorage.setItem('arthur-theme', 'dark');
         themeBtn.textContent = '\u2600';
       }
     });
@@ -403,7 +403,7 @@
       const div = document.createElement('div');
       div.className = `msg ${role}`;
       if (role === 'ai') {
-        div.innerHTML = '<div class="label">aether</div>' + escapeHtml(text);
+        div.innerHTML = '<div class="label">arthur</div>' + escapeHtml(text);
       } else {
         div.textContent = text;
       }
