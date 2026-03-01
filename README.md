@@ -146,7 +146,7 @@ Understanding language models means building one from scratch. This project show
 ## Links
 
 - GitHub: https://github.com/nulljosh/arthur
-- Vercel: https://arthur.vercel.app (static splash + mock API)
+- Vercel: https://arthur-prod.vercel.app (static splash + mock API)
 - Chat: http://localhost:5001 (local only)
 
 ## License
