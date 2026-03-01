@@ -28,9 +28,10 @@ from transformer import Arthur
 from tokenizer import CharTokenizer
 
 # --- paths ---
-DATA_FILE = os.path.join(CORE_ROOT, "data", "comprehensive.txt")
+DATA_DIR = os.path.join(CORE_ROOT, "data")
 CHECKPOINT_FILE = os.path.join(CORE_ROOT, "models", "cron_checkpoint.pt")
 BEST_FILE = os.path.join(CORE_ROOT, "models", "cron_best.pt")
+TRAINED_FILE = os.path.join(CORE_ROOT, "models", "arthur_trained.pt")
 LOG_DIR = os.path.join(CORE_ROOT, "logs")
 HISTORY_FILE = os.path.join(LOG_DIR, "training_history.jsonl")
 
@@ -135,9 +136,29 @@ def main():
     os.makedirs(LOG_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(CHECKPOINT_FILE), exist_ok=True)
 
-    # load data
-    with open(DATA_FILE) as f:
-        text = f.read()
+    # load expanded data sources for training
+    # skip downloads/ (3.2MB extra) to keep CPU training time reasonable
+    data_files = [
+        os.path.join(DATA_DIR, "comprehensive.txt"),
+        os.path.join(DATA_DIR, "math_comprehensive.txt"),
+        os.path.join(DATA_DIR, "expanded_corpus.txt"),
+        os.path.join(DATA_DIR, "jot_corpus.txt"),
+        os.path.join(DATA_DIR, "science_tutoring.txt"),
+        os.path.join(DATA_DIR, "expanded_knowledge_corpus.txt"),
+        os.path.join(DATA_DIR, "balanced_knowledge_corpus.txt"),
+        os.path.join(DATA_DIR, "jung_corpus.txt"),
+        os.path.join(DATA_DIR, "conversational.txt"),
+        os.path.join(DATA_DIR, "qa_varied.txt"),
+        os.path.join(DATA_DIR, "jot_code.txt"),
+    ]
+    parts = []
+    for df in data_files:
+        if os.path.exists(df):
+            with open(df) as f:
+                parts.append(f.read())
+            print(f"  Loaded {os.path.basename(df)}: {len(parts[-1]):,} chars")
+    text = "\n\n".join(parts)
+    print(f"  Combined corpus: {len(text):,} chars")
 
     tokenizer = CharTokenizer(text)
     tokens = tokenizer.encode(text)
@@ -145,7 +166,7 @@ def main():
     dataloader = DataLoader(dataset, batch_size=TRAIN_CFG["batch_size"], shuffle=True)
 
     # build model
-    model = Core(vocab_size=tokenizer.vocab_size, **MODEL_CFG)
+    model = Arthur(vocab_size=tokenizer.vocab_size, **MODEL_CFG)
     num_params = sum(p.numel() for p in model.parameters())
     optimizer = torch.optim.AdamW(model.parameters(), lr=TRAIN_CFG["initial_lr"], weight_decay=TRAIN_CFG["weight_decay"])
     criterion = nn.CrossEntropyLoss()
@@ -227,6 +248,8 @@ def main():
 
     # save final checkpoint for resume
     save_checkpoint(CHECKPOINT_FILE, model, tokenizer, optimizer, end_epoch, best_loss, None)
+    # save trained model for export
+    save_checkpoint(TRAINED_FILE, model, tokenizer, optimizer, end_epoch, best_loss, None)
 
     total_time = time.time() - session_start
     print(f"\nSession complete: epochs {start_epoch + 1}-{end_epoch} in {total_time / 60:.1f} min")

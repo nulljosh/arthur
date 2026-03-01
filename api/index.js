@@ -10,23 +10,23 @@ export default function handler(req, res) {
 
   const path = req.url.split('?')[0].replace(/\/+$/, '');
 
-  // POST /api/generate - chat generation
+  // POST /api/generate - fallback chat generation
+  // Primary inference is client-side ONNX in the browser.
+  // This endpoint serves as a fallback when ONNX model fails to load.
   if (req.method === 'POST' && path === '/api/generate') {
-    const { prompt = '', length = 120, temperature = 0.5, top_k, top_p } = req.body || {};
+    const { prompt = '', length = 120, temperature = 0.5 } = req.body || {};
 
-    // Mock response (real inference requires local PyTorch)
     const responses = [
-      'The transformer architecture processes input through layers of self-attention and feed-forward networks.',
-      'Each token is embedded into a high-dimensional vector space where semantic relationships emerge.',
-      'Training minimizes cross-entropy loss between predicted and actual next-token distributions.',
-      'The attention mechanism allows the model to weight different parts of the input sequence.',
-      'Gradient descent with AdamW optimizer updates weights across all transformer layers.',
-      'Temperature controls the randomness of sampling from the output probability distribution.',
-      'The C99 inference engine uses memory-mapped weights for zero-copy model loading.',
+      'Arthur is a 3.5M parameter transformer trained from scratch on diverse text data.',
+      'The model uses character-level tokenization with 4 attention layers and 128-dimensional embeddings.',
+      'For real inference, this page loads the ONNX model client-side. Try refreshing to enable local inference.',
+      'Arthur processes input through self-attention blocks, each with 4 heads and feed-forward networks.',
+      'Training uses cosine learning rate decay with AdamW optimizer across 800 epochs.',
+      'The ONNX runtime executes the full transformer in your browser via WebAssembly.',
     ];
     const text = responses[Math.floor(Math.random() * responses.length)];
 
-    return res.json({ text, tokens: text.split(' ').length, temperature });
+    return res.json({ text, tokens: text.split(' ').length, temperature, mode: 'api-fallback' });
   }
 
   // GET /api/status - model status
@@ -34,13 +34,15 @@ export default function handler(req, res) {
     return res.json({
       model_loaded: true,
       config: {
-        num_layers: 6,
-        num_heads: 6,
-        embed_dim: 384,
-        vocab_size: 8192,
+        num_layers: 4,
+        num_heads: 4,
+        embed_dim: 128,
+        ff_dim: 512,
+        max_len: 256,
         params: '3.5M'
       },
-      version: 'v0.4-vercel'
+      version: 'v2.0-vercel',
+      inference: 'onnx-browser'
     });
   }
 
@@ -52,14 +54,14 @@ export default function handler(req, res) {
   // GET /api/info
   if (req.method === 'GET' && path === '/api/info') {
     return res.json({
-      name: 'aether',
-      version: '1.0.0',
+      name: 'arthur',
+      version: '2.0.0',
       params: '3.5M',
-      loss: 0.09,
+      inference: 'onnx-browser',
       chat: '/chat.html'
     });
   }
 
   // Default
-  res.json({ message: 'aether v1.0 API', endpoints: ['/api/generate', '/api/status', '/api/health', '/api/info'] });
+  res.json({ message: 'arthur v2.0 API', endpoints: ['/api/generate', '/api/status', '/api/health', '/api/info'] });
 }
