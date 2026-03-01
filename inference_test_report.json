@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2026-02-28T15:33:16.751360",
+    "timestamp": "2026-02-28T16:10:47.043555",
     "model": "models/aether_current_best.pt",
     "total_params": 4898816,
     "vocab_size": 56,
@@ -13,7 +13,7 @@
       "category": "math",
       "question": "Q: 5 + 3 = ",
       "expected": "8",
-      "generated": "Q: 5 + 3 \u0000 What is machine learning?\nA: A subset of AI where systems learn from data patter",
+      "generated": "Q: 5 + 3 \u0000 A: What is machine learning?\nA: A subset of AI where systems learn from data pat",
       "correct": false,
       "confidence": 20
     },
@@ -22,7 +22,7 @@
       "category": "math",
       "question": "Q: 12 * 7 = ",
       "expected": "84",
-      "generated": "Q: 12 * 7 \u0000 ig?\nA: A subset of AI where systems learn from data patterns\n\nQ: Who won the 202",
+      "generated": "Q: 12 * 7 \u0000 is mal currency based on blockchain technology\n\nQ: What is machine learning?\nA: ",
       "correct": false,
       "confidence": 20
     },
@@ -31,7 +31,7 @@
       "category": "math",
       "question": "Q: 100 / 10 = ",
       "expected": "10",
-      "generated": "Q: 100 / 10 \u0000 asingence is clogyptocurrency based on blockchain technology\n\nQ: What is machine",
+      "generated": "Q: 100 / 10 \u0000 as chaingence is learning?\nA: 13\n\nQ: What is 15+9?\nA: A: A: 24\n\nQ: What is 30hat",
       "correct": false,
       "confidence": 20
     },
@@ -49,7 +49,7 @@
       "category": "science",
       "question": "Q: What is the speed of light? A: ",
       "expected": "299792458",
-      "generated": "Q: What is the speed of light? A: AI where subset of AI where systems learn from data patterns\n\nQ: Who won the 202",
+      "generated": "Q: What is the speed of light? A: AI where systems learn from data patterom datterns\n\nQ: Who won the 2024 election",
       "correct": false,
       "confidence": 0
     },
@@ -103,7 +103,7 @@
       "category": "pop_culture",
       "question": "Q: What is Taylor Swift's album? A: ",
       "expected": "fearless",
-      "generated": "Q: What is Taylor Swift\u0000s album? A: Digency\n\nQ: What is mate chingearning?\nA: Long-term shift in global temperatures",
+      "generated": "Q: What is Taylor Swift\u0000s album? A: Digency\n\nQ: What is mate chingearning?\nA: Long-term subal of AI whingereshifromu",
       "correct": false,
       "confidence": 30
     },
@@ -139,7 +139,7 @@
       "category": "current_events",
       "question": "Q: Who is US president? A: ",
       "expected": "joe biden",
-      "generated": "Q: Who is US president? A: Digital currency based onology blogy ofor bamsechingy\n\nQ: What is mate chine lea",
+      "generated": "Q: Who is US president? A: Digital currency based onology ofor bamI wecongechingechinge gye gyechine leares",
       "correct": false,
       "confidence": 25
     },
@@ -148,7 +148,7 @@
       "category": "current_events",
       "question": "Q: What major event happened in 2024? A: ",
       "expected": "olympics",
-      "generated": "Q: What major event happened in 2024? A: AI break bre breakthroughs, election cycules in multiple countries, continued te",
+      "generated": "Q: What major event happened in 2024? A: Dorump bre 2024 became US president for a second term\n\nQ: What is climate change",
       "correct": false,
       "confidence": 25
     }
