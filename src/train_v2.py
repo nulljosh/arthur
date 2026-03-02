@@ -15,13 +15,12 @@ Usage:
     python3 src/train_v2.py --batch_size 32 --epochs 50 --warmup 500
 """
 
-import os
 import sys
 import argparse
 import json
 import math
 from pathlib import Path
-from datetime import datetime
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -30,6 +29,7 @@ from torch.utils.data import DataLoader, Dataset
 sys.path.insert(0, str(Path(__file__).parent))
 from transformer_v2 import ArthurV2
 from bpe_tokenizer import BPETokenizer
+from config import ARTHUR_V2_CONFIG
 
 ARTHUR_ROOT = Path(__file__).parent.parent
 DATA_DIR = ARTHUR_ROOT / "data"
@@ -64,7 +64,7 @@ class TextDataset(Dataset):
 
 def create_data_loaders(batch_size: int, max_length: int = 512):
     """Load training data and create data loaders."""
-    data_path = DATA_DIR / "training_dataset.jsonl"
+    data_path = DATA_DIR / "balanced_dataset.jsonl"
     tokenizer_path = MODELS_DIR / "bpe_tokenizer_v1.json"
     
     if not data_path.exists():
@@ -101,29 +101,30 @@ def get_cosine_schedule_with_warmup(optimizer, num_warmup_steps, num_training_st
     """Cosine learning rate schedule with warmup."""
     def lr_lambda(step):
         if step < num_warmup_steps:
-            return float(step) / float(max(1, num_warmup_steps))
-        return max(0.0, 0.5 * (1.0 + math.cos(math.pi * float(step - num_warmup_steps) / float(max(1, num_training_steps - num_warmup_steps)))))
+            return step / max(1, num_warmup_steps)
+        progress = (step - num_warmup_steps) / max(1, num_training_steps - num_warmup_steps)
+        return max(0.0, 0.5 * (1.0 + math.cos(math.pi * progress)))
     return optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
+
+def compute_next_token_loss(logits, targets):
+    """Compute cross-entropy loss for next-token prediction."""
+    shift_logits = logits[..., :-1, :].contiguous()
+    shift_labels = targets[..., 1:].contiguous()
+    return nn.functional.cross_entropy(
+        shift_logits.view(-1, shift_logits.size(-1)),
+        shift_labels.view(-1),
+        reduction='mean',
+    )
 
 def train_epoch(model, train_loader, optimizer, scheduler, device, grad_accumulation_steps=4):
     """Train one epoch."""
     model.train()
     total_loss = 0
-    
+
     for step, batch in enumerate(train_loader):
         batch = batch.to(device)
-        
-        # Forward pass
         logits = model(batch)
-        
-        # Compute loss (next token prediction)
-        shift_logits = logits[..., :-1, :].contiguous()
-        shift_labels = batch[..., 1:].contiguous()
-        loss = nn.functional.cross_entropy(
-            shift_logits.view(-1, shift_logits.size(-1)),
-            shift_labels.view(-1),
-            reduction='mean'
-        )
+        loss = compute_next_token_loss(logits, batch)
         
         # Backward pass with gradient accumulation
         loss = loss / grad_accumulation_steps
@@ -145,21 +146,14 @@ def validate(model, val_loader, device):
     """Evaluate on validation set."""
     model.eval()
     total_loss = 0
-    
+
     with torch.no_grad():
         for batch in val_loader:
             batch = batch.to(device)
             logits = model(batch)
-            
-            shift_logits = logits[..., :-1, :].contiguous()
-            shift_labels = batch[..., 1:].contiguous()
-            loss = nn.functional.cross_entropy(
-                shift_logits.view(-1, shift_logits.size(-1)),
-                shift_labels.view(-1),
-                reduction='mean'
-            )
+            loss = compute_next_token_loss(logits, batch)
             total_loss += loss.item()
-    
+
     return total_loss / len(val_loader)
 
 def main():
@@ -179,13 +173,7 @@ def main():
     
     # Model
     print("Creating ArthurV2 model...")
-    model = ArthurV2(
-        vocab_size=10000,
-        embed_dim=512,
-        num_heads=8,
-        num_layers=12,
-        ff_dim=2048,
-    ).to(device)
+    model = ArthurV2(**ARTHUR_V2_CONFIG).to(device)
     print(f"✓ Model: {model.get_param_count() / 1e6:.1f}M parameters\n")
     
     # Optimizer & scheduler

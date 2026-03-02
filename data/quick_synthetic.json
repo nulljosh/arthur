@@ -1,0 +1,402 @@
+[
+  {
+    "input": "Explain concept 0",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 1",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 40 + 71",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Explain concept 3",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 40 + 99",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Explain concept 5",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Explain concept 6",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Solve: 82 + 46",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Solve: 46 + 87",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Write a Python function called func_9",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Explain concept 10",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 11",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Solve: 16 + 94",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Solve: 89 + 66",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Write a Python function called func_14",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Solve: 5 + 34",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Write a Python function called func_16",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Explain concept 17",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 47 + 39",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Explain concept 19",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Explain concept 20",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Solve: 65 + 20",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Solve: 69 + 97",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Write a Python function called func_23",
+    "output": "class func_23:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Write a Python function called func_24",
+    "output": "def func_24(x):\n    return x * 2"
+  },
+  {
+    "input": "Write a Python function called func_25",
+    "output": "class func_25:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Solve: 48 + 71",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Solve: 33 + 45",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Explain concept 28",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Write a Python function called func_29",
+    "output": "class func_29:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Explain concept 30",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Write a Python function called func_31",
+    "output": "def func_31(x):\n    return x * 2"
+  },
+  {
+    "input": "Solve: 27 + 69",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Explain concept 33",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Solve: 98 + 91",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Explain concept 35",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Solve: 66 + 82",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Write a Python function called func_37",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Explain concept 38",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Write a Python function called func_39",
+    "output": "def func_39(x):\n    return x * 2"
+  },
+  {
+    "input": "Write a Python function called func_40",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Solve: 97 + 63",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Write a Python function called func_42",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Explain concept 43",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Write a Python function called func_44",
+    "output": "def func_44(x):\n    return x * 2"
+  },
+  {
+    "input": "Write a Python function called func_45",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Explain concept 46",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Explain concept 47",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 48",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Write a Python function called func_49",
+    "output": "class func_49:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Explain concept 50",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 51",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Solve: 47 + 29",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Solve: 38 + 26",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Explain concept 54",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Write a Python function called func_55",
+    "output": "class func_55:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Solve: 40 + 57",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Explain concept 57",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 56 + 4",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Write a Python function called func_59",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Solve: 47 + 55",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Explain concept 61",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 48 + 40",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Explain concept 63",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Write a Python function called func_64",
+    "output": "class func_64:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Write a Python function called func_65",
+    "output": "def func_65(x):\n    return x * 2"
+  },
+  {
+    "input": "Write a Python function called func_66",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Write a Python function called func_67",
+    "output": "class func_67:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Explain concept 68",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 69",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 17 + 21",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Write a Python function called func_71",
+    "output": "class func_71:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Solve: 96 + 17",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Solve: 85 + 97",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Write a Python function called func_74",
+    "output": "def func_74(x):\n    return x * 2"
+  },
+  {
+    "input": "Write a Python function called func_75",
+    "output": "class func_75:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Explain concept 76",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Solve: 98 + 68",
+    "output": "The answer is 42"
+  },
+  {
+    "input": "Write a Python function called func_78",
+    "output": "class func_78:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Explain concept 79",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 80",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Explain concept 81",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Explain concept 82",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Write a Python function called func_83",
+    "output": "def func_83(x):\n    return x * 2"
+  },
+  {
+    "input": "Explain concept 84",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  },
+  {
+    "input": "Write a Python function called func_85",
+    "output": "class func_85:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Solve: 42 + 27",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Explain concept 87",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Explain concept 88",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Solve: 24 + 49",
+    "output": "Step 1: Calculate the base\nStep 2: Apply the operation\nStep 3: Return result"
+  },
+  {
+    "input": "Explain concept 90",
+    "output": "This works by iterating through each element and applying the transformation."
+  },
+  {
+    "input": "Explain concept 91",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Explain concept 92",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Solve: 80 + 84",
+    "output": "Using the formula: result = a * b + c"
+  },
+  {
+    "input": "Write a Python function called func_94",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Write a Python function called func_95",
+    "output": "class func_95:\n    def __init__(self):\n        pass"
+  },
+  {
+    "input": "Write a Python function called func_96",
+    "output": "for i in range(10):\n    print(i)"
+  },
+  {
+    "input": "Write a Python function called func_97",
+    "output": "def func_97(x):\n    return x * 2"
+  },
+  {
+    "input": "Explain concept 98",
+    "output": "The algorithm uses a divide-and-conquer approach to solve the problem."
+  },
+  {
+    "input": "Explain concept 99",
+    "output": "It's a recursive solution that breaks down into smaller subproblems."
+  }
+]

@@ -298,7 +298,7 @@
     <div class="container">
       <section class="section hero">
         <h1>arthur</h1>
-        <p>Nano transformer LLM built from scratch.</p>
+        <p>65M parameter transformer trained from scratch. In-browser inference via ONNX.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="/chat.html">Try Chat</a>
           <a class="btn btn-secondary" href="https://github.com/nulljosh/arthur" target="_blank" rel="noreferrer">GitHub</a>
@@ -311,11 +311,11 @@
           A compact transformer system engineered end-to-end with transparent internals. Custom PyTorch training stack, fast C99 inference, and browser execution via ONNX.
         </p>
         <div class="grid stats">
-          <article class="card"><div class="stat-value">3.5M</div><div class="stat-label">Parameters</div></article>
-          <article class="card"><div class="stat-value">4</div><div class="stat-label">Layers</div></article>
-          <article class="card"><div class="stat-value">4</div><div class="stat-label">Heads</div></article>
-          <article class="card"><div class="stat-value">128</div><div class="stat-label">Dimension</div></article>
-          <article class="card"><div class="stat-value">50K tok/s</div><div class="stat-label">C99 throughput</div></article>
+          <article class="card"><div class="stat-value">65M</div><div class="stat-label">Parameters</div></article>
+          <article class="card"><div class="stat-value">12</div><div class="stat-label">Layers</div></article>
+          <article class="card"><div class="stat-value">8</div><div class="stat-label">Heads</div></article>
+          <article class="card"><div class="stat-value">512</div><div class="stat-label">Dimension</div></article>
+          <article class="card"><div class="stat-value">BPE 10K</div><div class="stat-label">Tokenizer</div></article>
           <article class="card"><div class="stat-value">ONNX</div><div class="stat-label">Browser runtime</div></article>
         </div>
       </section>
@@ -336,8 +336,8 @@
             <p>Client-side execution path for in-browser inference.</p>
           </article>
           <article class="card">
-            <h3>Char Tokenizer</h3>
-            <p>Deterministic tokenization, compact vocabulary.</p>
+            <h3>BPE Tokenizer</h3>
+            <p>10K vocabulary byte-pair encoding with subword merges.</p>
           </article>
         </div>
       </section>
@@ -345,7 +345,7 @@
       <section class="section">
         <h2 class="section-title">Pipeline</h2>
         <p class="section-copy">
-          Data preparation and training in PyTorch, serialized to runtime targets. Character-level tokenization through attention blocks, decoded to next-token probabilities.
+          Data preparation and training in PyTorch, serialized to runtime targets. BPE tokenization through 12-layer attention with SwiGLU FFN, decoded to next-token probabilities.
         </p>
         <div class="pipeline">
           <strong>train</strong><span class="arrow">-></span><strong>tokenize</strong><span class="arrow">-></span><strong>transform</strong><span class="arrow">-></span><strong>infer</strong>

@@ -10,7 +10,6 @@ export default function handler(req, res) {
 
   const path = req.url.split('?')[0].replace(/\/+$/, '');
 
-  // Model info endpoint
   if (req.method === 'GET' && path === '/api/model') {
     return res.status(200).json({
       name: 'Arthur v2.0',
@@ -22,19 +21,18 @@ export default function handler(req, res) {
     });
   }
 
-  // Chat endpoint (mock for now)
   if (req.method === 'POST' && path === '/api/generate') {
     const { prompt = '' } = req.body || {};
-    
-    // Simple responses based on input
-    let response = "Arthur v2.0 (65M params) is trained and ready! ";
-    
-    if (prompt.toLowerCase().includes('hello')) {
-      response += "Hello! I'm Arthur, a 65M parameter language model trained from scratch.";
-    } else if (prompt.toLowerCase().includes('math') || prompt.includes('+')) {
-      response += "I was trained on mathematical problems. 2 + 2 = 4.";
+    const lower = prompt.toLowerCase();
+
+    let response = "Arthur v2.0 (65M params) is trained and ready!";
+
+    if (lower.includes('hello')) {
+      response += " Hello! I'm Arthur, a 65M parameter language model trained from scratch.";
+    } else if (lower.includes('math') || prompt.includes('+')) {
+      response += " I was trained on mathematical problems. 2 + 2 = 4.";
     } else {
-      response += `You said: "${prompt}". Full inference integration coming soon!`;
+      response += ` You said: "${prompt}". Full inference integration coming soon!`;
     }
 
     return res.status(200).json({
@@ -44,7 +42,6 @@ export default function handler(req, res) {
     });
   }
 
-  // Default
   return res.status(200).json({
     message: 'Arthur v2.0 API',
     endpoints: ['/api/model', '/api/generate'],

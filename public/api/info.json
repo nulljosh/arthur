@@ -1,1 +1,1 @@
-{"name":"aether","version":"1.0.0","params":"3.5M","layers":12,"loss":0.09}
+{"name":"arthur","version":"2.0.0","params":"65M","layers":12,"heads":8,"dim":512,"tokenizer":"bpe","vocab_size":10000,"context":8192,"loss":0.0115}

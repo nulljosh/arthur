@@ -9,84 +9,64 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from transformer_v2 import ArthurV2
 from bpe_tokenizer import BPETokenizer
+from config import ARTHUR_V2_CONFIG, get_last_user_message
+
+EOS_TOKEN = 1
 
 class ArthurProvider:
     def __init__(self):
-        self.model_path = Path(__file__).parent.parent / "models" / "arthur_v2_epoch2.pt"
-        self.tokenizer_path = Path(__file__).parent.parent / "models" / "bpe_tokenizer_v1.json"
+        models_dir = Path(__file__).parent.parent / "models"
+        self.model_path = models_dir / "arthur_v2_epoch1.pt"
+        self.tokenizer_path = models_dir / "bpe_tokenizer_v1.json"
         self.model = None
         self.tokenizer = None
-        self.load_model()
-    
-    def load_model(self):
-        """Load model and tokenizer"""
-        self.model = ArthurV2(
-            vocab_size=32768,
-            embed_dim=512,
-            num_heads=8,
-            num_layers=12,
-            ff_dim=2048,
-            max_context=8192,
-            dropout=0.0
-        )
+        self._load()
+
+    def _load(self):
+        self.model = ArthurV2(**ARTHUR_V2_CONFIG)
         self.model.load_state_dict(torch.load(self.model_path, map_location="cpu", weights_only=True))
         self.model.eval()
-        
+
         self.tokenizer = BPETokenizer()
         self.tokenizer.load(str(self.tokenizer_path))
-    
+
     def generate(self, prompt, max_tokens=100, temperature=0.7):
-        """Generate response"""
         tokens = self.tokenizer.encode(prompt)
         input_ids = torch.tensor([tokens])
-        
-        # Simple greedy generation
+
         generated = []
         with torch.no_grad():
             for _ in range(max_tokens):
                 logits = self.model(input_ids)
-                
-                # Apply temperature
+                next_logits = logits[0, -1, :]
+
                 if temperature > 0:
-                    logits = logits / temperature
-                
-                probs = F.softmax(logits[0, -1, :], dim=-1)
+                    next_logits = next_logits / temperature
+
+                probs = F.softmax(next_logits, dim=-1)
                 next_token = torch.multinomial(probs, 1)
-                generated.append(next_token.item())
-                
-                # Stop at EOS (1 is typical EOS token)
-                if next_token.item() == 1:
+                token_id = next_token.item()
+                generated.append(token_id)
+
+                if token_id == EOS_TOKEN:
                     break
-                    
+
                 input_ids = torch.cat([input_ids, next_token.unsqueeze(0)], dim=1)
-        
+
         return self.tokenizer.decode(generated)
 
-# OpenClaw CLI interface
 if __name__ == "__main__":
     provider = ArthurProvider()
-    
-    # Read request from stdin
-    request = json.loads(sys.stdin.read())
-    messages = request.get("messages", [])
-    
-    # Get last user message
-    prompt = ""
-    for msg in messages:
-        if msg["role"] == "user":
-            prompt = msg["content"]
-    
-    # Generate response
+
+    request_data = json.loads(sys.stdin.read())
+    prompt = get_last_user_message(request_data.get("messages", []))
     response = provider.generate(prompt, max_tokens=50)
-    
-    # Output OpenClaw format
-    output = {
+
+    print(json.dumps({
         "choices": [{
             "message": {
                 "role": "assistant",
                 "content": response.strip()
             }
         }]
-    }
-    
-    print(json.dumps(output))
+    }))
