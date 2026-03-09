@@ -21,26 +21,36 @@ from src.bpe_tokenizer import BPETokenizer
 def get_batch(data, tokenizer, seq_len, batch_size, device):
     """Grab a random batch from cached dataset"""
     import random
-    chunks = []
-    indices = random.sample(range(len(data)), min(batch_size * 10, len(data)))
-    for idx in indices:
-        text = data[idx].get("text", "") or data[idx].get("content", "")
-        if len(text) < 100:
-            continue
-        ids = tokenizer.encode(text)
-        if len(ids) < seq_len + 1:
-            continue
-        start = torch.randint(0, len(ids) - seq_len, (1,)).item()
-        chunks.append(ids[start:start + seq_len + 1])
-        if len(chunks) == batch_size:
-            break
+    max_retries = 3
+    sample_multiplier = 10
 
-    if not chunks:
-        return None, None
+    for attempt in range(max_retries):
+        chunks = []
+        sample_size = min(batch_size * sample_multiplier, len(data))
+        indices = random.sample(range(len(data)), sample_size)
+        for idx in indices:
+            text = data[idx].get("text", "") or data[idx].get("content", "")
+            if len(text) < 100:
+                continue
+            ids = tokenizer.encode(text)
+            if len(ids) < seq_len + 1:
+                continue
+            start = torch.randint(0, len(ids) - seq_len, (1,)).item()
+            chunks.append(ids[start:start + seq_len + 1])
+            if len(chunks) == batch_size:
+                break
 
-    x = torch.tensor([c[:-1] for c in chunks], dtype=torch.long).to(device)
-    y = torch.tensor([c[1:]  for c in chunks], dtype=torch.long).to(device)
-    return x, y
+        if chunks:
+            x = torch.tensor([c[:-1] for c in chunks], dtype=torch.long).to(device)
+            y = torch.tensor([c[1:]  for c in chunks], dtype=torch.long).to(device)
+            return x, y
+
+        sample_multiplier *= 3
+        if attempt < max_retries - 1:
+            print(f"[batch] Retry {attempt + 1}/{max_retries}: no valid chunks from {sample_size} samples, expanding search", flush=True)
+
+    print(f"[batch] ERROR: Failed to build batch after {max_retries} retries", flush=True)
+    return None, None
 
 def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=False, grad_accum=8):
     device = "mps" if torch.backends.mps.is_available() else "cpu"
@@ -112,20 +122,35 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
 
     print(f"\n{'Step':>6} {'Loss':>8} {'Tok/s':>8} {'LR':>10}", flush=True)
     print("-" * 40, flush=True)
+    sys.stdout.flush()
+
+    consecutive_nones = 0
+    first_step_done = False
 
     for step in range(start_step + 1, steps + 1):
         t0 = time.time()
         accum_loss = 0.0
+        step_had_data = False
 
         opt.zero_grad()
         for accum_step in range(grad_accum):
             x, y = get_batch(dataset, tokenizer, seq_len, batch_size, device)
             if x is None:
                 continue
+            step_had_data = True
             logits = model(x)
             loss = F.cross_entropy(logits.view(-1, logits.size(-1)), y.view(-1)) / grad_accum
             loss.backward()
             accum_loss += loss.item()
+
+        if not step_had_data:
+            consecutive_nones += 1
+            print(f"[train] WARNING: Step {step} got no valid batches ({consecutive_nones} consecutive)", flush=True)
+            if consecutive_nones >= 10:
+                print(f"[train] ERROR: 10 consecutive empty batches, aborting training", flush=True)
+                break
+            continue
+        consecutive_nones = 0
 
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         opt.step()
@@ -133,6 +158,10 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
 
         dt = time.time() - t0
         toks_per_sec = (batch_size * grad_accum * seq_len) / dt
+
+        if not first_step_done:
+            first_step_done = True
+            print(f"[train] First step complete (step {step}, loss {accum_loss:.4f})", flush=True)
 
         if step % log_every == 0:
             lr_now = opt.param_groups[0]['lr']
