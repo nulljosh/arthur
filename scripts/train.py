@@ -117,6 +117,17 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
     print("[data] Loading WikiText-103 from HuggingFace...", flush=True)
     dataset = load_dataset("wikitext", "wikitext-103-raw-v1", split="train")
 
+    def save_resume_checkpoint(step, loss_value):
+        if device == "mps" and hasattr(torch.mps, "synchronize"):
+            torch.mps.synchronize()
+        torch.save({
+            "step": step,
+            "loss": loss_value,
+            "model": model.state_dict(),
+            "opt": opt.state_dict(),
+            "sched": sched.state_dict(),
+        }, f"models/arthur_v3_{size}_latest.pt")
+
     model.train()
     log_every = 50
 
@@ -161,6 +172,7 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
 
         if not first_step_done:
             first_step_done = True
+            save_resume_checkpoint(step, accum_loss)
             print(f"[train] First step complete (step {step}, loss {accum_loss:.4f})", flush=True)
 
         if step % log_every == 0:
@@ -183,17 +195,9 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
                 "model": model.state_dict(),
             }, f"models/arthur_v3_{size}_best.pt")
 
-        # Periodic checkpoint every 100 steps (full state for resume)
-        if step % 100 == 0:
-            if device == "mps" and hasattr(torch.mps, 'synchronize'):
-                torch.mps.synchronize()
-            torch.save({
-                "step": step,
-                "loss": accum_loss,
-                "model": model.state_dict(),
-                "opt": opt.state_dict(),
-                "sched": sched.state_dict(),
-            }, f"models/arthur_v3_{size}_latest.pt")
+        # Periodic checkpoint every 25 steps (full state for resume)
+        if step % 25 == 0:
+            save_resume_checkpoint(step, accum_loss)
 
     print(f"\n[done] Best loss: {best_loss:.4f}", flush=True)
     print(f"[saved] models/arthur_v3_{size}_best.pt", flush=True)

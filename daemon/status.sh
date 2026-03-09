@@ -7,17 +7,22 @@ echo ""
 echo "=== ARTHUR TRAINING STATUS ==="
 echo ""
 
-# Daemon status
+# Daemon state
 if [ -f "$ARTHUR_ROOT/daemon_state.json" ]; then
-  EPOCH=$(grep epoch "$ARTHUR_ROOT/daemon_state.json" | head -1 | grep -o '[0-9]*' | head -1)
-  TOTAL=$(grep total "$ARTHUR_ROOT/daemon_state.json" | head -1 | grep -o '[0-9]*' | head -1)
-  echo "Progress: Epoch $EPOCH/$TOTAL"
+  read -r EPOCH TOTAL SIZE < <(python3 - <<'PY2'
+import json
+from pathlib import Path
+state=json.loads(Path("/Users/joshua/Documents/Code/arthur/daemon_state.json").read_text())
+print(state.get("epoch", "?"), state.get("total", "?"), state.get("size", "?"))
+PY2
+)
+  echo "Progress: Epoch $EPOCH/$TOTAL ($SIZE)"
 else
   echo "Status: Not initialized"
 fi
 
 # Process status
-if pgrep -f "train_v2.py" > /dev/null; then
+if pgrep -f "scripts/train.py" > /dev/null; then
   echo "Training: ACTIVE"
 else
   echo "Training: IDLE"
@@ -35,10 +40,10 @@ DISK_FREE_GB=$((DISK_FREE / 1024 / 1024))
 echo "Storage: ${DISK_FREE_GB}GB free"
 
 # Recent checkpoint
-LATEST=$(ls -t "$ARTHUR_ROOT/models"/arthur_v2_epoch*.pt 2>/dev/null | head -1)
+LATEST=$(ls -t "$ARTHUR_ROOT/models"/arthur_v3_*_latest.pt "$ARTHUR_ROOT/models"/arthur_v3_*_best.pt 2>/dev/null | head -1)
 if [ -n "$LATEST" ]; then
   SIZE=$(ls -lh "$LATEST" | awk '{print $5}')
-  echo "Latest checkpoint: $(basename $LATEST) ($SIZE)"
+  echo "Latest checkpoint: $(basename "$LATEST") ($SIZE)"
 fi
 
 echo ""
