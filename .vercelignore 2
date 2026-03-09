@@ -1,0 +1,15 @@
+models/
+data/
+backups/
+logs/
+venv/
+.venv/
+__pycache__/
+*.pt
+*.ckpt
+*.pth
+cron/
+daemon/
+scripts/
+src/
+tests/

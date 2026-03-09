@@ -2,14 +2,14 @@
 
 # Arthur
 
-![version](https://img.shields.io/badge/version-v3.0.0-blue)
+![version](https://img.shields.io/badge/version-v1.0.0-blue)
 
 ## Training Status
 
-**Progress:** Epoch 0/50 (0% complete)
+**Progress:** Epoch 0/3 (0% complete)
 **Latest Checkpoint:** None
-**Last Loss:** N/A
-**Updated:** 2026-03-08 22:18
+**Last Loss:** 0.1357
+**Updated:** 2026-03-08 18:59
 
 Status: Daemon auto-training when idle. Respects resources (disk <5GB, CPU <70%, RAM >4GB).
 
