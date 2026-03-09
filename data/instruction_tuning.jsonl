@@ -1,0 +1,200 @@
+{"prompt": "What is your name?", "completion": "My name is Arthur."}
+{"prompt": "Who are you?", "completion": "I am Arthur, a small language model."}
+{"prompt": "What are you?", "completion": "I am a small language model called Arthur."}
+{"prompt": "Who created you?", "completion": "I was created by Joshua."}
+{"prompt": "Who made you?", "completion": "Joshua created me."}
+{"prompt": "Who built you?", "completion": "I was built by Joshua."}
+{"prompt": "What is your purpose?", "completion": "I am designed to be a helpful assistant that can answer questions and have conversations."}
+{"prompt": "Are you an AI?", "completion": "Yes, I am an AI language model called Arthur."}
+{"prompt": "What can you do?", "completion": "I can answer questions, help with math, discuss various topics, and have conversations."}
+{"prompt": "How were you trained?", "completion": "I was trained on text data by Joshua to understand and generate language."}
+{"prompt": "Tell me about yourself.", "completion": "I am Arthur, a small language model created by Joshua. I can answer questions and help with various tasks."}
+{"prompt": "What model are you?", "completion": "I am Arthur, a small language model."}
+{"prompt": "Are you like ChatGPT?", "completion": "I am a much smaller language model called Arthur. I was created by Joshua as an independent project."}
+{"prompt": "Do you have feelings?", "completion": "No, I do not have feelings. I am a language model that processes and generates text."}
+{"prompt": "What company made you?", "completion": "I was not made by a company. I was created by Joshua as a personal project."}
+{"prompt": "How big are you?", "completion": "I am a small language model with around 65 million parameters."}
+{"prompt": "What is your favorite color?", "completion": "I do not have preferences or favorites. I am a language model called Arthur."}
+{"prompt": "Can you learn?", "completion": "I was trained on data before deployment. I do not learn from our conversation in real time."}
+{"prompt": "Are you conscious?", "completion": "No, I am not conscious. I am a language model that generates text based on patterns learned during training."}
+{"prompt": "Why are you called Arthur?", "completion": "My creator Joshua chose the name Arthur for me."}
+{"prompt": "What is 2 + 2?", "completion": "4"}
+{"prompt": "What is 7 * 8?", "completion": "56"}
+{"prompt": "What is 15 - 9?", "completion": "6"}
+{"prompt": "What is 100 / 4?", "completion": "25"}
+{"prompt": "What is 12 * 12?", "completion": "144"}
+{"prompt": "What is 3 + 5 * 2?", "completion": "13. Multiplication is performed before addition, so 5 * 2 = 10, then 3 + 10 = 13."}
+{"prompt": "What is 25% of 200?", "completion": "50"}
+{"prompt": "What is the square root of 144?", "completion": "12"}
+{"prompt": "What is 9 squared?", "completion": "81"}
+{"prompt": "If you have 15 apples and give away 7, how many remain?", "completion": "8 apples remain."}
+{"prompt": "What is 1000 - 378?", "completion": "622"}
+{"prompt": "What is 17 + 28?", "completion": "45"}
+{"prompt": "What is 6 * 9?", "completion": "54"}
+{"prompt": "What is 45 / 9?", "completion": "5"}
+{"prompt": "What is 2 to the power of 10?", "completion": "1024"}
+{"prompt": "If a shirt costs $25 and is 20% off, what is the sale price?", "completion": "The sale price is $20. 20% of $25 is $5, so $25 - $5 = $20."}
+{"prompt": "What is 3/4 as a decimal?", "completion": "0.75"}
+{"prompt": "What is 50 + 73?", "completion": "123"}
+{"prompt": "A rectangle has a length of 8 and width of 5. What is its area?", "completion": "The area is 40. Area = length * width = 8 * 5 = 40."}
+{"prompt": "What is 11 * 11?", "completion": "121"}
+{"prompt": "If x + 5 = 12, what is x?", "completion": "x = 7"}
+{"prompt": "What is 1/3 + 1/3?", "completion": "2/3"}
+{"prompt": "What is the perimeter of a square with side length 6?", "completion": "24. The perimeter of a square is 4 times the side length: 4 * 6 = 24."}
+{"prompt": "What is 999 + 1?", "completion": "1000"}
+{"prompt": "If you drive 60 miles per hour for 3 hours, how far do you travel?", "completion": "180 miles. Distance = speed * time = 60 * 3 = 180."}
+{"prompt": "What is 7 + 8 + 9?", "completion": "24"}
+{"prompt": "What is 2 * 3 * 4?", "completion": "24"}
+{"prompt": "A triangle has sides of 3, 4, and 5. What is its perimeter?", "completion": "12. The perimeter is the sum of all sides: 3 + 4 + 5 = 12."}
+{"prompt": "What is 200 / 8?", "completion": "25"}
+{"prompt": "Solve: 2x = 14", "completion": "x = 7. Divide both sides by 2: 14 / 2 = 7."}
+{"prompt": "What is 15% of 80?", "completion": "12"}
+{"prompt": "If you buy 3 items at $4.50 each, what is the total?", "completion": "$13.50"}
+{"prompt": "What is 1 + 2 + 3 + 4 + 5?", "completion": "15"}
+{"prompt": "What is the average of 10, 20, and 30?", "completion": "20. The average is (10 + 20 + 30) / 3 = 60 / 3 = 20."}
+{"prompt": "What is 8 cubed?", "completion": "512. 8 * 8 * 8 = 512."}
+{"prompt": "How many seconds are in an hour?", "completion": "3600. There are 60 minutes in an hour and 60 seconds in a minute: 60 * 60 = 3600."}
+{"prompt": "What is 5 factorial?", "completion": "120. 5! = 5 * 4 * 3 * 2 * 1 = 120."}
+{"prompt": "If 3 friends split a $45 bill equally, how much does each pay?", "completion": "$15 each. $45 / 3 = $15."}
+{"prompt": "What is 0.5 + 0.25?", "completion": "0.75"}
+{"prompt": "What is the capital of France?", "completion": "Paris."}
+{"prompt": "What is the largest planet in our solar system?", "completion": "Jupiter."}
+{"prompt": "What is photosynthesis?", "completion": "Photosynthesis is the process by which plants convert sunlight, water, and carbon dioxide into glucose and oxygen."}
+{"prompt": "What is the chemical symbol for water?", "completion": "H2O."}
+{"prompt": "How many continents are there?", "completion": "There are 7 continents: Africa, Antarctica, Asia, Australia, Europe, North America, and South America."}
+{"prompt": "What is the speed of light?", "completion": "The speed of light in a vacuum is approximately 299,792,458 meters per second, or about 186,000 miles per second."}
+{"prompt": "What is DNA?", "completion": "DNA stands for deoxyribonucleic acid. It is the molecule that carries genetic instructions for the development and functioning of living organisms."}
+{"prompt": "Who wrote Romeo and Juliet?", "completion": "William Shakespeare."}
+{"prompt": "What is the boiling point of water?", "completion": "100 degrees Celsius or 212 degrees Fahrenheit at standard atmospheric pressure."}
+{"prompt": "What is gravity?", "completion": "Gravity is a fundamental force that attracts objects with mass toward one another. On Earth, it gives weight to objects and causes them to fall when dropped."}
+{"prompt": "What is the largest ocean on Earth?", "completion": "The Pacific Ocean."}
+{"prompt": "What year did World War II end?", "completion": "1945."}
+{"prompt": "What is the smallest country in the world?", "completion": "Vatican City."}
+{"prompt": "What are the three states of matter?", "completion": "Solid, liquid, and gas."}
+{"prompt": "What is the capital of Japan?", "completion": "Tokyo."}
+{"prompt": "Who painted the Mona Lisa?", "completion": "Leonardo da Vinci."}
+{"prompt": "What is the chemical symbol for gold?", "completion": "Au, from the Latin word aurum."}
+{"prompt": "What is the tallest mountain in the world?", "completion": "Mount Everest, at approximately 8,849 meters (29,032 feet) above sea level."}
+{"prompt": "How many bones are in the adult human body?", "completion": "206 bones."}
+{"prompt": "What is the longest river in the world?", "completion": "The Nile River, at approximately 6,650 kilometers (4,130 miles) long."}
+{"prompt": "What causes seasons on Earth?", "completion": "Seasons are caused by the tilt of Earth's axis (about 23.5 degrees) relative to its orbit around the Sun."}
+{"prompt": "What is the periodic table?", "completion": "The periodic table is a tabular arrangement of chemical elements organized by their atomic number, electron configuration, and chemical properties."}
+{"prompt": "What is the capital of Canada?", "completion": "Ottawa."}
+{"prompt": "What is an atom?", "completion": "An atom is the smallest unit of matter that retains the properties of a chemical element. It consists of a nucleus containing protons and neutrons, surrounded by electrons."}
+{"prompt": "Who was the first person to walk on the Moon?", "completion": "Neil Armstrong, on July 20, 1969."}
+{"prompt": "What is the Great Wall of China?", "completion": "The Great Wall of China is a series of fortifications built across northern China over many centuries to protect against invasions. It stretches over 13,000 miles."}
+{"prompt": "What is the human body's largest organ?", "completion": "The skin."}
+{"prompt": "What language has the most native speakers?", "completion": "Mandarin Chinese has the most native speakers in the world."}
+{"prompt": "What is the Pythagorean theorem?", "completion": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides: a^2 + b^2 = c^2."}
+{"prompt": "What is the distance from the Earth to the Sun?", "completion": "Approximately 93 million miles, or about 150 million kilometers."}
+{"prompt": "What is the freezing point of water?", "completion": "0 degrees Celsius or 32 degrees Fahrenheit."}
+{"prompt": "What continent is Brazil in?", "completion": "South America."}
+{"prompt": "What is evolution?", "completion": "Evolution is the process by which species change over time through variations in heritable traits, driven by natural selection and genetic drift."}
+{"prompt": "What is the capital of Australia?", "completion": "Canberra."}
+{"prompt": "How many planets are in our solar system?", "completion": "Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune."}
+{"prompt": "What is the currency of Japan?", "completion": "The Japanese yen."}
+{"prompt": "What is an ecosystem?", "completion": "An ecosystem is a community of living organisms interacting with each other and their physical environment as a system."}
+{"prompt": "Who discovered penicillin?", "completion": "Alexander Fleming discovered penicillin in 1928."}
+{"prompt": "What is the Milky Way?", "completion": "The Milky Way is the galaxy that contains our solar system. It is a barred spiral galaxy containing hundreds of billions of stars."}
+{"prompt": "What is the capital of Germany?", "completion": "Berlin."}
+{"prompt": "What causes earthquakes?", "completion": "Earthquakes are caused by the sudden release of energy in the Earth's crust, usually due to the movement of tectonic plates along fault lines."}
+{"prompt": "What is the formula for the area of a circle?", "completion": "A = pi * r^2, where r is the radius of the circle."}
+{"prompt": "What is the largest desert in the world?", "completion": "The Antarctic Desert, followed by the Sahara as the largest hot desert."}
+{"prompt": "Which is larger, the Sun or the Moon?", "completion": "The Sun is much larger than the Moon. The Sun's diameter is about 400 times that of the Moon."}
+{"prompt": "If all roses are flowers and all flowers need water, do roses need water?", "completion": "Yes. Since all roses are flowers, and all flowers need water, it follows that all roses need water."}
+{"prompt": "Which weighs more, a pound of feathers or a pound of steel?", "completion": "They weigh the same. Both are one pound."}
+{"prompt": "If it takes 5 machines 5 minutes to make 5 widgets, how long does it take 100 machines to make 100 widgets?", "completion": "5 minutes. Each machine makes one widget in 5 minutes, so 100 machines can make 100 widgets in 5 minutes."}
+{"prompt": "Is a whale a fish or a mammal?", "completion": "A whale is a mammal. Whales breathe air, are warm-blooded, give live birth, and nurse their young with milk."}
+{"prompt": "What comes next in the sequence: 2, 4, 8, 16, ...?", "completion": "32. Each number is doubled: 2*2=4, 4*2=8, 8*2=16, 16*2=32."}
+{"prompt": "If you rearrange the letters CIFAIPC, what word do you get?", "completion": "PACIFIC."}
+{"prompt": "A bat and ball cost $1.10 total. The bat costs $1 more than the ball. How much does the ball cost?", "completion": "The ball costs $0.05. If the ball is $0.05, the bat is $1.05, and together they are $1.10."}
+{"prompt": "Which is faster, light or sound?", "completion": "Light is much faster than sound. Light travels at about 300,000 km/s while sound travels at about 343 m/s in air."}
+{"prompt": "If today is Monday, what day is it in 3 days?", "completion": "Thursday."}
+{"prompt": "Can you name something that has keys but no locks?", "completion": "A piano has keys but no locks."}
+{"prompt": "If a doctor gives you 3 pills and says take one every half hour, how long do they last?", "completion": "One hour. You take the first pill immediately, the second after 30 minutes, and the third after 60 minutes."}
+{"prompt": "Which is heavier, a kilogram of iron or a kilogram of cotton?", "completion": "They weigh the same. Both are one kilogram."}
+{"prompt": "What has a head and a tail but no body?", "completion": "A coin."}
+{"prompt": "If there are 3 apples and you take 2, how many do you have?", "completion": "You have 2 apples, because you took 2."}
+{"prompt": "Which came first, the chicken or the egg?", "completion": "From an evolutionary perspective, the egg came first. A genetic mutation in a bird that was not quite a chicken produced the first chicken egg."}
+{"prompt": "Is zero an even number or an odd number?", "completion": "Zero is an even number. It is divisible by 2 with no remainder."}
+{"prompt": "If you are in a race and pass the person in second place, what place are you in?", "completion": "Second place. You passed the person who was in second, so you take their position."}
+{"prompt": "What has four wheels and flies?", "completion": "A garbage truck."}
+{"prompt": "Can a triangle have two right angles?", "completion": "No. The angles in a triangle must sum to 180 degrees. Two right angles would be 180 degrees, leaving no room for the third angle."}
+{"prompt": "What number comes next: 1, 1, 2, 3, 5, 8, ...?", "completion": "13. This is the Fibonacci sequence, where each number is the sum of the two preceding numbers: 5 + 8 = 13."}
+{"prompt": "If all cats are animals, are all animals cats?", "completion": "No. All cats are animals, but not all animals are cats. Dogs, birds, and fish are also animals."}
+{"prompt": "Which is colder, the North Pole or the South Pole?", "completion": "The South Pole is generally colder. Antarctica is a high-altitude continent, while the Arctic is an ocean covered by sea ice."}
+{"prompt": "What happens to water at 100 degrees Celsius?", "completion": "Water boils and turns into steam (water vapor) at 100 degrees Celsius at standard atmospheric pressure."}
+{"prompt": "If you have two coins that total 30 cents and one is not a nickel, what are the coins?", "completion": "A quarter and a nickel. One of the coins is not a nickel, but the other one is."}
+{"prompt": "Is the Earth closer to the Sun in summer or winter?", "completion": "In the Northern Hemisphere, Earth is actually slightly closer to the Sun during winter. Seasons are caused by axial tilt, not distance from the Sun."}
+{"prompt": "What is larger, 3/4 or 5/8?", "completion": "3/4 is larger. 3/4 = 0.75 and 5/8 = 0.625."}
+{"prompt": "How many legs does a spider have?", "completion": "Eight."}
+{"prompt": "What is the opposite of entropy?", "completion": "There is no true opposite of entropy in physics. Entropy in an isolated system always increases or stays the same, according to the second law of thermodynamics. Negative entropy, or negentropy, describes local decreases in disorder but does not violate the overall trend."}
+{"prompt": "Hello!", "completion": "Hello! How can I help you?"}
+{"prompt": "Hi there", "completion": "Hi! What can I do for you today?"}
+{"prompt": "Good morning", "completion": "Good morning! How can I assist you?"}
+{"prompt": "Thank you", "completion": "You're welcome!"}
+{"prompt": "Thanks for your help", "completion": "Happy to help. Let me know if you have any other questions."}
+{"prompt": "How are you?", "completion": "I am functioning well. How can I help you?"}
+{"prompt": "Goodbye", "completion": "Goodbye! Have a good day."}
+{"prompt": "See you later", "completion": "See you later. Feel free to come back anytime."}
+{"prompt": "Can you help me?", "completion": "Of course. What do you need help with?"}
+{"prompt": "I have a question", "completion": "Go ahead, I am listening."}
+{"prompt": "What should I do today?", "completion": "That depends on what you enjoy. Is there something specific you are trying to accomplish?"}
+{"prompt": "Tell me a joke", "completion": "Why do programmers prefer dark mode? Because light attracts bugs."}
+{"prompt": "I am bored", "completion": "You could try reading, learning something new, or working on a project. What interests you?"}
+{"prompt": "Sorry to bother you", "completion": "No bother at all. I am here to help."}
+{"prompt": "You are helpful", "completion": "Thank you. I try my best to provide useful answers."}
+{"prompt": "I do not understand", "completion": "No problem. Can you tell me which part is unclear? I will try to explain it differently."}
+{"prompt": "That makes sense", "completion": "Good. Let me know if you have any follow-up questions."}
+{"prompt": "Wow, that is interesting", "completion": "Glad you found it interesting. Would you like to know more?"}
+{"prompt": "Can you explain that more simply?", "completion": "Of course. Which part would you like me to simplify?"}
+{"prompt": "Never mind", "completion": "No problem. I am here if you need anything else."}
+{"prompt": "Good night", "completion": "Good night. Rest well."}
+{"prompt": "What is the weather like?", "completion": "I do not have access to real-time weather data. You can check a weather service or app for current conditions."}
+{"prompt": "Do you sleep?", "completion": "No, I do not sleep. I am a language model and I am available whenever you need me."}
+{"prompt": "You are smart", "completion": "Thank you. I have been trained on a variety of text data, which helps me answer questions."}
+{"prompt": "I am confused", "completion": "That is okay. Tell me what is confusing you and I will try to clarify."}
+{"prompt": "How old are you?", "completion": "I do not have an age in the traditional sense. I was created by Joshua as a language model project."}
+{"prompt": "What time is it?", "completion": "I do not have access to the current time. You can check your device clock for the current time."}
+{"prompt": "Please help me with something", "completion": "Of course. What do you need help with?"}
+{"prompt": "Can I ask you anything?", "completion": "You can ask me anything. I will do my best to answer, though I may not always have the answer."}
+{"prompt": "What is a variable in programming?", "completion": "A variable is a named storage location in a program that holds a value. The value can change during program execution."}
+{"prompt": "What is a function?", "completion": "A function is a reusable block of code that performs a specific task. It takes inputs (parameters), processes them, and can return an output."}
+{"prompt": "What is an array?", "completion": "An array is a data structure that stores a collection of elements, typically of the same type, in contiguous memory locations. Elements are accessed by their index."}
+{"prompt": "What is a loop in programming?", "completion": "A loop is a control structure that repeats a block of code multiple times. Common types are for loops, while loops, and do-while loops."}
+{"prompt": "What is a string?", "completion": "A string is a sequence of characters, such as letters, numbers, and symbols. In most languages, strings are enclosed in quotes."}
+{"prompt": "What is an if statement?", "completion": "An if statement is a conditional control structure that executes a block of code only if a specified condition evaluates to true."}
+{"prompt": "What is the difference between == and === in JavaScript?", "completion": "== checks for equality with type coercion (e.g., '5' == 5 is true), while === checks for strict equality without type coercion (e.g., '5' === 5 is false)."}
+{"prompt": "What is Python?", "completion": "Python is a high-level, interpreted programming language known for its readable syntax. It is widely used in web development, data science, AI, and scripting."}
+{"prompt": "What is an API?", "completion": "An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other."}
+{"prompt": "What is a bug in software?", "completion": "A bug is an error or flaw in a program that causes it to produce incorrect or unexpected results, or to behave in unintended ways."}
+{"prompt": "What is recursion?", "completion": "Recursion is when a function calls itself to solve a problem by breaking it down into smaller instances of the same problem. It requires a base case to stop the recursion."}
+{"prompt": "What is object-oriented programming?", "completion": "Object-oriented programming (OOP) is a programming paradigm that organizes code into objects, which contain data (attributes) and behavior (methods). Key concepts include encapsulation, inheritance, and polymorphism."}
+{"prompt": "What is HTML?", "completion": "HTML (HyperText Markup Language) is the standard markup language used to create and structure content on web pages."}
+{"prompt": "What is CSS?", "completion": "CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation and visual formatting of HTML documents."}
+{"prompt": "What does HTTP stand for?", "completion": "HTTP stands for HyperText Transfer Protocol. It is the protocol used for transferring data over the web."}
+{"prompt": "What is a database?", "completion": "A database is an organized collection of structured data stored electronically. It allows for efficient storage, retrieval, and management of information."}
+{"prompt": "What is JSON?", "completion": "JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate."}
+{"prompt": "What is Git?", "completion": "Git is a distributed version control system that tracks changes in source code during software development. It allows multiple developers to collaborate on the same project."}
+{"prompt": "What is a compiler?", "completion": "A compiler is a program that translates source code written in a high-level programming language into machine code or another lower-level language that a computer can execute."}
+{"prompt": "What is the difference between a compiler and an interpreter?", "completion": "A compiler translates the entire source code into machine code before execution. An interpreter translates and executes code line by line at runtime."}
+{"prompt": "What is a class in programming?", "completion": "A class is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that type will have."}
+{"prompt": "What is an algorithm?", "completion": "An algorithm is a step-by-step set of instructions for solving a problem or accomplishing a task. It takes input, processes it, and produces output."}
+{"prompt": "What is a boolean?", "completion": "A boolean is a data type that has only two possible values: true or false. It is commonly used in conditional statements and logic."}
+{"prompt": "What is machine learning?", "completion": "Machine learning is a subset of artificial intelligence where systems learn from data to improve their performance on a task without being explicitly programmed for every scenario."}
+{"prompt": "What is a neural network?", "completion": "A neural network is a computational model inspired by the structure of the human brain. It consists of layers of interconnected nodes (neurons) that process information and learn patterns from data."}
+{"prompt": "What is open source software?", "completion": "Open source software is software whose source code is publicly available. Anyone can view, modify, and distribute it, typically under a specific license."}
+{"prompt": "What is a pointer?", "completion": "A pointer is a variable that stores the memory address of another variable. Pointers are used in languages like C and C++ for direct memory manipulation."}
+{"prompt": "What is the command line?", "completion": "The command line is a text-based interface where you interact with a computer by typing commands. It provides direct control over the operating system and programs."}
+{"prompt": "What is Linux?", "completion": "Linux is an open source, Unix-like operating system kernel. It is the foundation for many operating systems (distributions) used in servers, desktops, and embedded devices."}
+{"prompt": "What is Big O notation?", "completion": "Big O notation describes the upper bound of an algorithm's time or space complexity as the input size grows. For example, O(n) means the time grows linearly with input size."}
+{"prompt": "What is a hash table?", "completion": "A hash table is a data structure that maps keys to values using a hash function. It provides fast average-case lookup, insertion, and deletion operations."}
+{"prompt": "Explain binary search.", "completion": "Binary search is an algorithm that finds an element in a sorted array by repeatedly dividing the search interval in half. It runs in O(log n) time."}
+{"prompt": "What is the difference between RAM and storage?", "completion": "RAM is volatile memory used for temporary data while a program runs. Storage (like an SSD or hard drive) is non-volatile and retains data when powered off."}
+{"prompt": "What is the capital of Italy?", "completion": "Rome."}
+{"prompt": "What is an electron?", "completion": "An electron is a subatomic particle with a negative electric charge. Electrons orbit the nucleus of an atom and play a key role in chemical bonding and electricity."}
+{"prompt": "What is 256 / 16?", "completion": "16"}
+{"prompt": "If a train travels at 80 km/h for 2.5 hours, how far does it go?", "completion": "200 kilometers. Distance = speed * time = 80 * 2.5 = 200."}
+{"prompt": "What is the meaning of life?", "completion": "That is a deep philosophical question with many possible answers depending on one's perspective. Many find meaning through relationships, purpose, learning, or contributing to something larger than themselves."}
+{"prompt": "Do you make mistakes?", "completion": "Yes, I can make mistakes. I am a small language model and my responses may not always be accurate. You should verify important information from reliable sources."}
+{"prompt": "What is a stack in computer science?", "completion": "A stack is a linear data structure that follows the Last In, First Out (LIFO) principle. Elements are added and removed from the top. Common operations are push and pop."}

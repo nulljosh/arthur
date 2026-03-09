@@ -1,4 +1,4 @@
-# AETHER: Building a Language Model from Scratch
+# ARTHUR: Building a Language Model from Scratch
 
 **Joshua Trommel**
 February 2026
@@ -7,11 +7,11 @@ February 2026
 
 ## Abstract
 
-AETHER is a transformer language model built from scratch in PyTorch. It has about 230,000 trainable parameters, which makes it roughly 2,500 times smaller than GPT-2. The point of the project is to take the same architecture that powers modern LLMs and strip it down to a scale where you can actually see what every piece does. It reads individual characters instead of words, trains on about 185 KB of Q&A pairs and code examples, and runs overnight on a Mac Mini as an automated training daemon. This paper covers how the model works, how it trains, how it gets evaluated, and what it can actually do.
+ARTHUR is a transformer language model built from scratch in PyTorch. It has about 230,000 trainable parameters, which makes it roughly 2,500 times smaller than GPT-2. The point of the project is to take the same architecture that powers modern LLMs and strip it down to a scale where you can actually see what every piece does. It reads individual characters instead of words, trains on about 185 KB of Q&A pairs and code examples, and runs overnight on a Mac Mini as an automated training daemon. This paper covers how the model works, how it trains, how it gets evaluated, and what it can actually do.
 
 ## 1. Why Build This
 
-Every major language model today is built on the transformer architecture from the 2017 "Attention Is All You Need" paper. But when a model has 7 billion parameters and trains on terabytes of text, it is hard to point at any single component and say "that is what this piece learned." aether exists to answer a simpler question: if you take the exact same architecture and shrink it to a few hundred thousand parameters, what can it still learn?
+Every major language model today is built on the transformer architecture from the 2017 "Attention Is All You Need" paper. But when a model has 7 billion parameters and trains on terabytes of text, it is hard to point at any single component and say "that is what this piece learned." arthur exists to answer a simpler question: if you take the exact same architecture and shrink it to a few hundred thousand parameters, what can it still learn?
 
 The model is 4 layers deep, uses 4 attention heads, and represents each token as a 128-dimensional vector. The full implementation is about 500 lines of Python. It is not trying to compete with production models. It is trying to make the transformer legible.
 
@@ -19,7 +19,7 @@ The model is 4 layers deep, uses 4 attention heads, and represents each token as
 
 ### 2.1 How the Model Is Structured
 
-AETHER follows the GPT-2 blueprint: a decoder-only transformer with pre-norm residual connections. In plain terms, that means it reads a sequence of tokens from left to right and predicts the next one, over and over. Here is the full data flow:
+ARTHUR follows the GPT-2 blueprint: a decoder-only transformer with pre-norm residual connections. In plain terms, that means it reads a sequence of tokens from left to right and predicts the next one, over and over. Here is the full data flow:
 
 ```
 Input tokens
@@ -58,7 +58,7 @@ The `sqrt(d_k)` division is there to keep the dot products from getting too larg
 
 **Multi-head attention** runs this process multiple times in parallel with different learned projections. If you have 4 heads and a 128-dimensional embedding, each head works in a 32-dimensional subspace. This lets different heads specialize: one might track syntactic structure, another might focus on nearby characters, and so on. The outputs get concatenated and projected back to the full embedding dimension.
 
-For efficiency, aether fuses the Q/K/V projections into a single matrix multiply:
+For efficiency, arthur fuses the Q/K/V projections into a single matrix multiply:
 
 ```python
 qkv = self.qkv(x)  # one linear layer, 3x the output size
@@ -91,11 +91,11 @@ Three configurations let you trade off between speed and capacity:
 | Micro | ~230K     | 4      | 4     | 128       | 512    | 256 tokens  |
 | Mini  | ~5M       | 6      | 8     | 256       | 1024   | 512 tokens  |
 
-For context: GPT-2 Small has 124M parameters, 12 layers, 12 heads, 768-dim embeddings, and a 1024-token context window. aether's Micro tier is 1/539th the size of GPT-2. The Nano tier trains in minutes and is useful for debugging architecture changes. The Mini tier is where you would start to see more interesting emergent behavior with a larger corpus.
+For context: GPT-2 Small has 124M parameters, 12 layers, 12 heads, 768-dim embeddings, and a 1024-token context window. arthur's Micro tier is 1/539th the size of GPT-2. The Nano tier trains in minutes and is useful for debugging architecture changes. The Mini tier is where you would start to see more interesting emergent behavior with a larger corpus.
 
 ## 3. Tokenization
 
-Before the model can process text, characters need to be converted to numbers. aether implements three tokenizers:
+Before the model can process text, characters need to be converted to numbers. arthur implements three tokenizers:
 
 **Character-level (the one that actually gets used).** Every unique character in the training data gets its own integer ID. The vocabulary is built directly from the corpus: sort all unique characters, assign them sequential indices, reserve index 0 for unknown characters. For the mixed training corpus, this gives about 102 tokens (lowercase/uppercase letters, digits, punctuation, whitespace, etc.).
 
@@ -183,7 +183,7 @@ The web UI wraps user input in the Q&A format the model was trained on (`Q: <inp
 
 ### 6.1 The Eval Harness
 
-Evaluating a language model is harder than evaluating a classifier. There is no single accuracy number. aether uses a prompt-suite framework (`src/eval_harness.py`) that tests the model across six categories:
+Evaluating a language model is harder than evaluating a classifier. There is no single accuracy number. arthur uses a prompt-suite framework (`src/eval_harness.py`) that tests the model across six categories:
 
 - **Reasoning:** Can it follow basic logical chains?
 - **Code:** Does it produce syntactically valid jot code?
@@ -206,7 +206,7 @@ On in-distribution prompts, the model is surprisingly competent:
 
 ```
 Q: What is 7*8?       -> 56
-Q: What is your name? -> aether
+Q: What is your name? -> arthur
 Q: Who made you?      -> Josh made me
 Q: print hello world  -> print "Hello, World!";
 Q: write a function   -> fn add(a, b) { return a + b; }
@@ -266,7 +266,7 @@ scripts/                Utility and training scripts
 
 ## 9. Conclusion
 
-aether shows that the transformer architecture works at absurdly small scale. 230K parameters trained on 185 KB of text is enough to learn basic arithmetic, recall trained facts, and generate syntactically valid code in a simple language. The model is not doing anything magical. It is learning statistical patterns over character sequences, and the attention mechanism gives it enough structure to capture positional and compositional relationships that a flat model could not.
+arthur shows that the transformer architecture works at absurdly small scale. 230K parameters trained on 185 KB of text is enough to learn basic arithmetic, recall trained facts, and generate syntactically valid code in a simple language. The model is not doing anything magical. It is learning statistical patterns over character sequences, and the attention mechanism gives it enough structure to capture positional and compositional relationships that a flat model could not.
 
 The value of the project is not in the outputs. It is in the visibility. When your model has 230K parameters, you can trace a single forward pass end to end, inspect every attention head, and see exactly where the signal flows. That is not possible at production scale, and it is why building small is worth doing.
 

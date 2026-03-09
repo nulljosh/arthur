@@ -24,7 +24,7 @@ from datetime import datetime
 CORE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(CORE_ROOT, "src"))
 
-from transformer import Arthur
+from transformer import ArthurV3
 from tokenizer import CharTokenizer
 
 # --- paths ---
@@ -35,15 +35,11 @@ TRAINED_FILE = os.path.join(CORE_ROOT, "models", "arthur_trained.pt")
 LOG_DIR = os.path.join(CORE_ROOT, "logs")
 HISTORY_FILE = os.path.join(LOG_DIR, "training_history.jsonl")
 
-# --- model config (micro) ---
-MODEL_CFG = dict(
-    embed_dim=128,
-    num_heads=4,
-    num_layers=4,
-    ff_dim=512,
-    max_len=256,
-    dropout=0.1,
-)
+# --- model config ---
+# ArthurV3 uses preset sizes ("65M", "125M", etc.) with internal config lookup.
+# MODEL_CFG is only kept for checkpoint metadata compatibility.
+MODEL_SIZE = "65M"
+MODEL_DROPOUT = 0.1
 
 # --- training config ---
 TRAIN_CFG = dict(
@@ -88,7 +84,7 @@ def save_checkpoint(path, model, tokenizer, optimizer, epoch, best_loss, history
         "best_loss": best_loss,
         "vocab_size": tokenizer.vocab_size,
         "vocab": tokenizer.char_to_idx,
-        "model_cfg": MODEL_CFG,
+        "model_cfg": {"size": MODEL_SIZE, "dropout": MODEL_DROPOUT},
         "train_cfg": TRAIN_CFG,
         "timestamp": datetime.now().isoformat(),
     }, path)
@@ -120,8 +116,9 @@ def test_model(model, tokenizer, prompts, max_len=80, temperature=0.4):
                 if "\n\nQ:" in decoded or "\nQ:" in decoded[len(prompt) :]:
                     break
                 x = torch.cat([x, torch.tensor([[next_token]])], dim=1)
-                if x.size(1) > MODEL_CFG["max_len"]:
-                    x = x[:, -MODEL_CFG["max_len"] :]
+                max_ctx = model.cfg["ctx"]
+                if x.size(1) > max_ctx:
+                    x = x[:, -max_ctx:]
         results.append(tokenizer.decode(generated))
     model.train()
     return results
@@ -166,7 +163,7 @@ def main():
     dataloader = DataLoader(dataset, batch_size=TRAIN_CFG["batch_size"], shuffle=True)
 
     # build model
-    model = Arthur(vocab_size=tokenizer.vocab_size, **MODEL_CFG)
+    model = ArthurV3(size=MODEL_SIZE, dropout=MODEL_DROPOUT)
     num_params = sum(p.numel() for p in model.parameters())
     optimizer = torch.optim.AdamW(model.parameters(), lr=TRAIN_CFG["initial_lr"], weight_decay=TRAIN_CFG["weight_decay"])
     criterion = nn.CrossEntropyLoss()

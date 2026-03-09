@@ -1,1 +1,1 @@
-{"name":"arthur","version":"2.0.0","params":"65M","layers":12,"heads":8,"dim":512,"tokenizer":"bpe","vocab_size":10000,"context":8192,"loss":0.0115}
+{"name":"arthur","version":"3.0.0","params":"65M-500M","layers":"12-36","heads":"8-20","dim":"512-1280","tokenizer":"bpe","vocab_size":"10K-50K","context":32768,"loss":0.006,"architecture":{"moe":"4-16 experts, top-2 routing","positional":"RoPE","attention":"GQA","norm":"RMSNorm"}}

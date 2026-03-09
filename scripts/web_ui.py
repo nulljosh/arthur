@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lightweight Flask UI for local nous model generation."""
+"""Lightweight Flask UI for local arthur model generation."""
 
 from __future__ import annotations
 
@@ -12,16 +12,18 @@ from typing import Any
 from flask import Flask, jsonify, render_template, request, send_file
 
 # Ensure local modules are importable when checkpoints contain pickled tokenizers.
-SRC_DIR = Path(__file__).resolve().parent / "src"
+SRC_DIR = Path(__file__).resolve().parent.parent / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from transformer import Arthur
 from tokenizer import CharTokenizer
+from transformer import ArthurV3, CONFIGS as V3_CONFIGS
+from bpe_tokenizer import BPETokenizer
 
 
-DEFAULT_MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/overnight_best.pt"))
+DEFAULT_MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/arthur_v3_65M_best.pt"))
 DEFAULT_DATA_PATH = Path(os.getenv("DATA_PATH", "data/ultra_minimal.txt"))
+DEFAULT_TOKENIZER_PATH = Path(os.getenv("TOKENIZER_PATH", "models/bpe_tokenizer_v1.json"))
 DEFAULT_PORT = int(os.getenv("PORT", "5001"))
 DEBUG_MODE = os.getenv("DEBUG", "false").lower() in {"1", "true", "yes", "on"}
 
@@ -75,7 +77,7 @@ def _build_char_tokenizer_from_vocab(vocab: Any) -> CharTokenizer:
     return tokenizer
 
 
-def _infer_nous_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
+def _infer_arthur_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
     embed_dim = int(state_dict["token_embed.weight"].shape[1])
     ff_dim = int(state_dict["blocks.0.ffn.net.0.weight"].shape[0])
     max_len = int(state_dict["pos_embed.weight"].shape[0])
@@ -109,7 +111,69 @@ def _infer_nous_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str,
     }
 
 
-def load_runtime(model_path: Path, data_path: Path) -> LoadedRuntime:
+def _is_v3_checkpoint(checkpoint: dict[str, Any]) -> bool:
+    """Detect v3 checkpoint by state dict key patterns."""
+    # v3 training wrapper: {"step", "loss", "model", "opt"}
+    if isinstance(checkpoint.get("model"), dict) and "step" in checkpoint:
+        sample_keys = list(checkpoint["model"].keys())[:5]
+        return any("layers." in k or k == "embed.weight" for k in sample_keys)
+    # v3 raw state_dict: keys like embed.weight, layers.0.*
+    return "embed.weight" in checkpoint
+
+
+def _infer_v3_size(state_dict: dict[str, Any]) -> str:
+    """Infer v3 model size preset from embed.weight dimensions."""
+    d_model = int(state_dict["embed.weight"].shape[1])
+    for size, cfg in V3_CONFIGS.items():
+        if cfg["d_model"] == d_model:
+            return size
+    raise ValueError(f"Cannot infer v3 size for d_model={d_model}")
+
+
+def _load_v3_runtime(
+    checkpoint: dict[str, Any], model_path: Path, tokenizer_path: Path | None
+) -> LoadedRuntime:
+    import torch
+
+    # Extract state_dict from wrapper or use raw
+    if isinstance(checkpoint.get("model"), dict) and "step" in checkpoint:
+        state_dict = checkpoint["model"]
+    else:
+        state_dict = checkpoint
+
+    size = _infer_v3_size(state_dict)
+    cfg = V3_CONFIGS[size]
+
+    model = ArthurV3(size=size, dropout=0.0)
+    model.load_state_dict(state_dict)
+    model.eval()
+
+    # Load BPE tokenizer from file
+    tok_path = tokenizer_path or DEFAULT_TOKENIZER_PATH
+    if not tok_path.exists():
+        raise FileNotFoundError(f"BPE tokenizer not found: {tok_path}")
+    tokenizer = BPETokenizer(vocab_size=cfg["vocab"])
+    tokenizer.load(str(tok_path))
+
+    # Normalize config for generate_text (uses max_len key)
+    config = dict(cfg)
+    config["max_len"] = config["ctx"]
+    config["vocab_size"] = tokenizer.vocab_size
+    config["version"] = "v3"
+    config["size"] = size
+
+    return LoadedRuntime(
+        model=model,
+        tokenizer=tokenizer,
+        model_path=model_path,
+        source=f"v3-{size}",
+        config=config,
+    )
+
+
+def load_runtime(
+    model_path: Path, data_path: Path, tokenizer_path: Path | None = None
+) -> LoadedRuntime:
     import torch
 
     if not model_path.exists():
@@ -119,6 +183,11 @@ def load_runtime(model_path: Path, data_path: Path) -> LoadedRuntime:
     if not isinstance(checkpoint, dict):
         raise ValueError("Unsupported checkpoint format: expected dict")
 
+    # v3 checkpoint detection
+    if _is_v3_checkpoint(checkpoint):
+        return _load_v3_runtime(checkpoint, model_path, tokenizer_path)
+
+    # v2/v1 fallback
     if "model_state_dict" in checkpoint:
         state_dict = checkpoint["model_state_dict"]
     elif "model_state" in checkpoint:
@@ -141,20 +210,12 @@ def load_runtime(model_path: Path, data_path: Path) -> LoadedRuntime:
 
     config = checkpoint.get("config")
     if not isinstance(config, dict):
-        config = _infer_nous_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
+        config = _infer_arthur_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
     else:
         config = {**config}
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))
 
-    model = Arthur(
-        vocab_size=int(config["vocab_size"]),
-        embed_dim=int(config["embed_dim"]),
-        num_heads=int(config["num_heads"]),
-        num_layers=int(config["num_layers"]),
-        ff_dim=int(config["ff_dim"]),
-        max_len=int(config["max_len"]),
-        dropout=float(config.get("dropout", 0.0)),
-    )
+    raise ValueError("v1/v2 checkpoints are no longer supported -- only v3 models are available")
     model.load_state_dict(state_dict)
     model.eval()
 
@@ -175,7 +236,7 @@ def _initialize_runtime_once() -> None:
 
     _RUNTIME_ATTEMPTED = True
     try:
-        _RUNTIME = load_runtime(DEFAULT_MODEL_PATH, DEFAULT_DATA_PATH)
+        _RUNTIME = load_runtime(DEFAULT_MODEL_PATH, DEFAULT_DATA_PATH, DEFAULT_TOKENIZER_PATH)
         _RUNTIME_ERROR = None
     except Exception as exc:  # pragma: no cover - startup diagnostics
         _RUNTIME = None

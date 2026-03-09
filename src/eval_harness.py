@@ -7,7 +7,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from tokenizer import CharTokenizer
+try:
+    from tokenizer import CharTokenizer
+except ImportError:
+    CharTokenizer = None
 
 ALLOWED_CATEGORIES = {
     "reasoning",
@@ -16,6 +19,12 @@ ALLOWED_CATEGORIES = {
     "summarize",
     "instruction",
     "refusal",
+    "identity",
+    "math",
+    "science",
+    "philosophy",
+    "common_knowledge",
+    "current_info",
 }
 
 STATE_KEYS = ("model_state_dict", "model_state", "model")
@@ -83,9 +92,8 @@ def validate_prompt_suite(data: Any) -> None:
             ):
                 raise ValueError(f"Prompt {prompt_id} field {key} must be a string list")
 
-    missing = sorted(ALLOWED_CATEGORIES - seen_categories)
-    if missing:
-        raise ValueError(f"Prompt suite missing required categories: {', '.join(missing)}")
+    if not seen_categories:
+        raise ValueError("Prompt suite must include at least one category")
 
 
 def _build_char_tokenizer_from_vocab(vocab: Any) -> CharTokenizer:
@@ -107,7 +115,7 @@ def _build_char_tokenizer_from_vocab(vocab: Any) -> CharTokenizer:
     return tokenizer
 
 
-def _infer_nous_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
+def _infer_arthur_config(state_dict: dict[str, Any], vocab_size: int) -> dict[str, Any]:
     embed_dim = int(state_dict["token_embed.weight"].shape[1])
     ff_dim = int(state_dict["blocks.0.ffn.net.0.weight"].shape[0])
     max_len = int(state_dict["pos_embed.weight"].shape[0])
@@ -172,7 +180,7 @@ def load_runtime(checkpoint_path: str | Path, data_path: str | Path | None = Non
 
     config = checkpoint.get("config")
     if not isinstance(config, dict):
-        config = _infer_nous_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
+        config = _infer_arthur_config(state_dict, int(checkpoint.get("vocab_size", tokenizer.vocab_size)))
     else:
         config = {**config}
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))

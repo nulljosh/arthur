@@ -14,9 +14,15 @@ python3 "$ARTHUR_ROOT/daemon/refresh_docs.py" >> "$LOG_FILE" 2>&1
 if git status --porcelain | grep -q .; then
   echo "[$(date)] Changes detected, committing..." >> "$LOG_FILE"
   
-  # Smart commit message
-  if git diff --name-only | grep -q "models/"; then
-    MSG="chore: checkpoint saved - epoch $(grep epoch $ARTHUR_ROOT/daemon_state.json 2>/dev/null | head -1 | grep -o '[0-9]*')"
+  # Smart commit message based on what changed
+  CHANGED=$(git diff --cached --name-only 2>/dev/null || git diff --name-only)
+  SIMPLIFY_LOG="$ARTHUR_ROOT/logs/simplify.log"
+
+  if echo "$CHANGED" | grep -q "models/"; then
+    MSG="chore: checkpoint saved - epoch $(python3 -c "import json; print(json.load(open('$ARTHUR_ROOT/daemon_state.json'))['epoch'])" 2>/dev/null || echo '?')"
+  elif [ -f "$SIMPLIFY_LOG" ] && [ "$(find "$SIMPLIFY_LOG" -mmin -30 2>/dev/null)" ]; then
+    FILE_COUNT=$(echo "$CHANGED" | grep -v '^$' | wc -l | tr -d ' ')
+    MSG="refactor: simplify ${FILE_COUNT} files (auto)"
   else
     MSG="docs: auto-update - $(date +%Y-%m-%d_%H:%M)"
   fi

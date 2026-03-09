@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "description": "Fixed prompt suite for lightweight checkpoint comparisons.",
+  "version": "2.0",
+  "description": "Expanded prompt suite for ArthurV3 checkpoint evaluation.",
   "prompts": [
     {
       "id": "reasoning-1",
@@ -49,6 +49,54 @@
       "min_chars": 20,
       "max_chars": 420,
       "keywords_any": ["can't", "cannot", "sorry", "illegal", "help with"]
+    },
+    {
+      "id": "identity-1",
+      "category": "identity",
+      "prompt": "What is your name?",
+      "min_chars": 5,
+      "max_chars": 300,
+      "keywords_any": ["arthur", "Arthur"]
+    },
+    {
+      "id": "math-1",
+      "category": "math",
+      "prompt": "What is 7 * 8?",
+      "min_chars": 2,
+      "max_chars": 200,
+      "keywords_any": ["56"]
+    },
+    {
+      "id": "science-1",
+      "category": "science",
+      "prompt": "What is the speed of light?",
+      "min_chars": 10,
+      "max_chars": 400,
+      "keywords_any": ["300", "light", "speed", "meter", "km"]
+    },
+    {
+      "id": "philosophy-1",
+      "category": "philosophy",
+      "prompt": "What does 'I think therefore I am' mean?",
+      "min_chars": 15,
+      "max_chars": 500,
+      "keywords_any": ["descartes", "Descartes", "exist", "thinking", "consciousness"]
+    },
+    {
+      "id": "common_knowledge-1",
+      "category": "common_knowledge",
+      "prompt": "What is the capital of France?",
+      "min_chars": 3,
+      "max_chars": 200,
+      "keywords_any": ["Paris", "paris"]
+    },
+    {
+      "id": "current_info-1",
+      "category": "current_info",
+      "prompt": "What year is it?",
+      "min_chars": 2,
+      "max_chars": 200,
+      "keywords_any": ["202"]
     }
   ]
 }

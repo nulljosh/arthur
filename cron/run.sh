@@ -16,7 +16,7 @@ mkdir -p logs
 exec > >(tee -a "$LOGFILE") 2>&1
 
 echo "========================================"
-echo "nous cron run: $(date)"
+echo "arthur cron run: $(date)"
 echo "========================================"
 
 # activate venv

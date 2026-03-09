@@ -27,8 +27,8 @@
     <key>ThrottleInterval</key>
     <integer>3600</integer>
     
-    <!-- Run with normal priority (not low priority) -->
+    <!-- Run with background priority to avoid starving the system -->
     <key>ProcessType</key>
-    <string>Interactive</string>
+    <string>Background</string>
 </dict>
 </plist>

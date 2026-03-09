@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple chat interface for nous
+Simple chat interface for arthur
 Minimal conversational AI - just chat, no tools
 """
 
@@ -15,29 +15,20 @@ except ImportError:
     print("Install: pip3 install torch")
     sys.exit(1)
 
-from transformer import Arthur
-from tokenizer import CharTokenizer
-import pickle
+from transformer import ArthurV3
+from bpe_tokenizer import BPETokenizer
 
 
 def load_model(model_path, tokenizer_path):
     """Load trained model and tokenizer"""
-    with open(tokenizer_path, 'rb') as f:
-        tokenizer = pickle.load(f)
-    
-    model = Arthur(
-        vocab_size=tokenizer.vocab_size,
-        embed_dim=64,
-        num_heads=4,
-        num_layers=4,
-        ff_dim=256,
-        max_len=128,
-        dropout=0.0
-    )
-    
+    tokenizer = BPETokenizer()
+    tokenizer.load(tokenizer_path)
+
+    model = ArthurV3(size="65M")
+
     model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
-    
+
     return model, tokenizer
 
 
@@ -73,8 +64,8 @@ def generate_response(model, tokenizer, prompt, max_len=50, temperature=0.8):
                 break
             
             x = torch.cat([x, torch.tensor([[next_token]])], dim=1)
-            if x.size(1) > model.max_len:
-                x = x[:, -model.max_len:]
+            if x.size(1) > model.cfg["ctx"]:
+                x = x[:, -model.cfg["ctx"]:]
     
     response = tokenizer.decode(generated)
     # Extract just the response (after prompt)
@@ -101,18 +92,11 @@ see you. bye bye.
     
     print("Quick training conversational model...")
     
-    tokenizer = CharTokenizer(corpus)
+    tokenizer = BPETokenizer()
+    tokenizer.train([corpus])
     
     # Tiny model
-    model = Arthur(
-        vocab_size=tokenizer.vocab_size,
-        embed_dim=64,
-        num_heads=4,
-        num_layers=4,
-        ff_dim=256,
-        max_len=128,
-        dropout=0.1
-    )
+    model = ArthurV3(size="65M")
     
     # Train quickly
     from train import TextDataset, train
@@ -128,8 +112,7 @@ see you. bye bye.
     # Save
     Path('models').mkdir(exist_ok=True)
     torch.save(model.state_dict(), 'models/chat_model.pth')
-    with open('models/tokenizer.pkl', 'wb') as f:
-        pickle.dump(tokenizer, f)
+    tokenizer.save('models/chat_tokenizer.json')
     
     print("\n✓ Model trained and saved!")
     return model, tokenizer
@@ -138,7 +121,7 @@ see you. bye bye.
 def main():
     """Chat loop"""
     model_path = Path('models/chat_model.pth')
-    tokenizer_path = Path('models/tokenizer.pkl')
+    tokenizer_path = Path('models/chat_tokenizer.json')
     
     # Train if no model exists
     if not model_path.exists():
@@ -149,7 +132,7 @@ def main():
         model, tokenizer = load_model(model_path, tokenizer_path)
     
     print("\n" + "="*60)
-    print("nous Chat (type 'quit' to exit)")
+    print("arthur Chat (type 'quit' to exit)")
     print("="*60)
     print("Note: This is a tiny model trained on minimal data.")
     print("Responses will be basic but demonstrate the concept.\n")
@@ -162,11 +145,11 @@ def main():
                 continue
             
             if user_input.lower() in ['quit', 'exit', 'bye']:
-                print("nous: Bye!")
+                print("arthur: Bye!")
                 break
             
             response = generate_response(model, tokenizer, user_input)
-            print(f"nous: {response}")
+            print(f"arthur: {response}")
             
         except KeyboardInterrupt:
             print("\n\nExiting...")

@@ -170,42 +170,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--text-muted);
 }
 
-.settings {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0.8rem 1.25rem;
-  border-bottom: 1px solid var(--border);
-  display: none;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  background: var(--bg-elevated);
-}
-
-.settings.open { display: grid; }
-
-.setting {
-  display: grid;
-  grid-template-columns: 100px 1fr 60px;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
-.setting input[type="range"] {
-  accent-color: var(--accent);
-  width: 100%;
-  cursor: pointer;
-}
-
-.setting .value {
-  text-align: right;
-  color: var(--text-primary);
-  font-variant-numeric: tabular-nums;
-  font-weight: 500;
-}
-
 .chat-wrap {
   flex: 1;
   overflow: hidden;
@@ -409,7 +373,6 @@ a { color: inherit; text-decoration: none; }
   .msg { max-width: 85%; }
   .topbar-inner, .status-row, .chat-wrap { padding-left: 1rem; padding-right: 1rem; }
   .empty h2 { font-size: 1.6rem; }
-  .setting { grid-template-columns: 80px 1fr 48px; }
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/ort.min.js"></script>
@@ -419,7 +382,6 @@ a { color: inherit; text-decoration: none; }
   <div class="topbar-inner">
     <a class="brand" href="/" aria-label="Back to home">arthur</a>
     <div class="top-actions">
-      <button id="settingsBtn" class="icon-btn" aria-label="Toggle settings" title="Settings">⚙️</button>
       <button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
     </div>
   </div>
@@ -427,14 +389,10 @@ a { color: inherit; text-decoration: none; }
     <div class="status-left"><span id="statusDot" class="dot"></span><span id="statusText" class="status-text">Loading local model...</span></div>
     <span id="configText">-</span>
   </div>
-  <section id="settings" class="settings" aria-label="Inference settings">
-    <label class="setting" for="temperature"><span>Temperature</span><input id="temperature" type="range" min="0.1" max="1.5" step="0.05" value="0.5"><span id="temperatureVal" class="value">0.50</span></label>
-    <label class="setting" for="maxTokens"><span>Max tokens</span><input id="maxTokens" type="range" min="16" max="256" step="1" value="120"><span id="maxTokensVal" class="value">120</span></label>
-  </section>
 </header>
 <main class="chat-wrap">
   <section id="chat" class="chat" aria-live="polite">
-    <div id="empty" class="empty"><h2>arthur chat</h2><p>Client-side ONNX inference with character-level generation.</p></div>
+    <div id="empty" class="empty"><h2>arthur chat</h2><p>A small language model running locally in your browser.</p></div>
     <div id="typing" class="typing" aria-label="Typing indicator"><span></span><span></span><span></span></div>
   </section>
   <div class="composer"><div class="composer-shell"><textarea id="input" rows="1" placeholder="Message arthur..." autofocus></textarea><button id="sendBtn" class="send-btn" title="Send" aria-label="Send">▶</button></div></div>
@@ -448,19 +406,12 @@ const emptyEl=document.getElementById('empty');
 const statusDot=document.getElementById('statusDot');
 const statusText=document.getElementById('statusText');
 const configText=document.getElementById('configText');
-const settingsBtn=document.getElementById('settingsBtn');
-const settingsEl=document.getElementById('settings');
-const tempEl=document.getElementById('temperature');
-const tempValEl=document.getElementById('temperatureVal');
-const maxTokensEl=document.getElementById('maxTokens');
-const maxTokensValEl=document.getElementById('maxTokensVal');
 const themeBtn=document.getElementById('themeBtn');
 const state={session:null,vocab:null,charToIdx:null,idxToChar:null,vocabSize:0,modelCfg:{},maxCtx:256,ready:false,localFailure:null,loadingPromise:null,generating:false};
 function setTheme(theme){document.documentElement.setAttribute('data-theme',theme);localStorage.setItem('arthur-theme',theme);themeBtn.textContent=theme==='dark'?'☀️':'🌙';}
 function initTheme(){setTheme(localStorage.getItem('arthur-theme')||'dark');}
 themeBtn.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme')||'dark';setTheme(current==='dark'?'light':'dark');});
 function setStatus(kind,text){statusDot.className='dot';if(kind==='online')statusDot.classList.add('online');if(kind==='error')statusDot.classList.add('error');statusText.textContent=text;}
-function updateSettingsLabels(){tempValEl.textContent=Number(tempEl.value).toFixed(2);maxTokensValEl.textContent=String(parseInt(maxTokensEl.value,10));}
 function hideEmpty(){if(emptyEl)emptyEl.style.display='none';}
 function addMessage(role,text){hideEmpty();const node=document.createElement('div');node.className=`msg ${role}`;node.textContent=text;chatEl.insertBefore(node,typingEl);chatEl.scrollTop=chatEl.scrollHeight;return node;}
 function addSystem(text){const node=document.createElement('div');node.className='msg system';node.textContent=text;chatEl.insertBefore(node,typingEl);chatEl.scrollTop=chatEl.scrollHeight;}
@@ -476,7 +427,7 @@ async function ensureLocalModel(){
   if(state.loadingPromise)return state.loadingPromise;
   state.loadingPromise=(async()=>{
     try {
-      setStatus('online','Loading local model...');
+      setStatus('online','Loading model...');
       if(window.ort&&window.ort.env&&window.ort.env.wasm){window.ort.env.wasm.wasmPaths='https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/';}
       const vocabResp=await fetch('/model/vocab.json',{cache:'no-store'});
       if(!vocabResp.ok)throw new Error(`vocab ${vocabResp.status}`);
@@ -486,18 +437,19 @@ async function ensureLocalModel(){
       state.session=session;state.vocab=vocab;state.charToIdx=vocab.char_to_idx;state.idxToChar=vocab.idx_to_char;
       state.vocabSize=Number(vocab.vocab_size)||(Array.isArray(vocab.idx_to_char)?vocab.idx_to_char.length:Object.keys(vocab.idx_to_char).length);
       state.modelCfg=vocab.model_cfg||{};state.maxCtx=Number(state.modelCfg.max_len)||256;state.ready=true;state.localFailure=null;
-      const c=getConfigValues(state.modelCfg);configText.textContent=`${c.layers}L/${c.heads}H/${c.dim}d`;setStatus('online','Local ONNX ready');
+      const c=getConfigValues(state.modelCfg);configText.textContent=`${c.layers}L/${c.heads}H/${c.dim}d`;setStatus('online','Model ready');
       return true;
     } catch (err) {
-      state.localFailure=err;state.ready=false;configText.textContent='-';setStatus('error','Local model unavailable');
-      addSystem('Local model failed to load. Falling back to /api/generate.');
+      state.localFailure=err;state.ready=false;configText.textContent='-';setStatus('error','Model unavailable');
+      addSystem('Local model unavailable. Using server fallback.');
       return false;
     }
   })();
   return state.loadingPromise;
 }
+function fixBranding(text){return text.replace(/\b(nous|Nous|NOUS)\b/g,'Arthur');}
 async function generateWithOnnx(userMessage,temperature,maxTokens){
-  const prompt=`Q: ${userMessage}\nA:`;let context=prompt;let generated='';const limit=Math.min(maxTokens,state.maxCtx);
+  const prompt=`You are Arthur, a small language model.\nQ: ${userMessage}\nA:`;let context=prompt;let generated='';const limit=Math.min(maxTokens,state.maxCtx);
   for(let i=0;i<limit;i+=1){
     const encoded=encodeChars(context,state.maxCtx);
     const tensor=new window.ort.Tensor('int64',BigInt64Array.from(encoded.ids.map((id)=>BigInt(id))),[1,encoded.ids.length]);
@@ -510,30 +462,27 @@ async function generateWithOnnx(userMessage,temperature,maxTokens){
   return extractAnswer(`${prompt}${generated}`);
 }
 async function generateWithApi(userMessage,temperature,maxTokens){
-  const prompt=`Q: ${userMessage}\nA:`;
+  const prompt=`You are Arthur, a small language model.\nQ: ${userMessage}\nA:`;
   const res=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,length:maxTokens,temperature})});
   const data=await res.json();if(!res.ok||data.error)throw new Error(data.error||`HTTP ${res.status}`);return extractAnswer(data.text||'');
 }
 async function send(){
   const text=inputEl.value.trim();if(!text||state.generating)return;
   addMessage('user',text);inputEl.value='';resizeInput();state.generating=true;sendBtn.disabled=true;setTyping(true);
-  const temperature=Number(tempEl.value)||0.5;const maxTokens=parseInt(maxTokensEl.value,10)||120;
+  const temperature=0.5;const maxTokens=120;
   try {
     const localReady=await ensureLocalModel();
     const output=localReady?await generateWithOnnx(text,temperature,maxTokens):await generateWithApi(text,temperature,maxTokens);
-    addMessage('ai',output||'(empty response)');
+    addMessage('ai',fixBranding(output)||'(empty response)');
   } catch (err) {
-    try {const fallback=await generateWithApi(text,temperature,maxTokens);addMessage('ai',fallback||'(empty response)');setStatus('error','Using API fallback');}
+    try {const fallback=await generateWithApi(text,temperature,maxTokens);addMessage('ai',fixBranding(fallback)||'(empty response)');setStatus('error','Using API fallback');}
     catch (apiErr) {addSystem(`Generation failed: ${apiErr.message||err.message}`);}
   } finally {state.generating=false;sendBtn.disabled=false;setTyping(false);}
 }
-settingsBtn.addEventListener('click',()=>settingsEl.classList.toggle('open'));
-tempEl.addEventListener('input',updateSettingsLabels);
-maxTokensEl.addEventListener('input',updateSettingsLabels);
 inputEl.addEventListener('input',resizeInput);
 inputEl.addEventListener('keydown',(event)=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send();}});
 sendBtn.addEventListener('click',send);
-initTheme();updateSettingsLabels();resizeInput();ensureLocalModel();
+initTheme();resizeInput();ensureLocalModel();
 </script>
 </body>
 </html>

@@ -6,8 +6,11 @@ from pathlib import Path
 import pytest
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
+SCRIPTS_DIR = str(ROOT_DIR / "scripts")
+SRC_DIR = str(ROOT_DIR / "src")
+for d in (str(ROOT_DIR), SCRIPTS_DIR, SRC_DIR):
+    if d not in sys.path:
+        sys.path.insert(0, d)
 
 pytest.importorskip("flask")
 pytest.importorskip("torch")

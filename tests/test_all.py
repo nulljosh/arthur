@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Basic pytest suite for nous."""
+"""Basic pytest suite for arthur."""
 
 import sys
 from pathlib import Path
@@ -29,7 +29,7 @@ def test_project_structure():
         "src/tokenizer.py",
         "src/attention.py",
         "src/transformer.py",
-        "src/train.py",
+        "scripts/train.py",
         "README.md",
     ]
 

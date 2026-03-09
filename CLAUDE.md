@@ -1,28 +1,49 @@
 # Arthur -- Custom LLM Project
 
-65M parameter transformer trained from scratch. Local inference, no API keys.
+166M total parameter (90M active per token) transformer trained from scratch. Local inference, no API keys.
 
 ## Status
-- **v1.0**: 3.5M params, loss 0.1819 -- research prototype
-- **v2.0**: 65M params, loss 0.0115 -- trained, pending deployment
+- **Params**: 166M total / 90M active (MoE top-2/4 routing, RoPE/GQA, WikiText-103)
+- **Training**: ~12K steps of 100K target
+- **Loss**: 0.0029 (step 947)
+- **Eval pass rate**: 16.7% (model produces output but lacks coherent language structure)
 
 ## Architecture
-- **Tokenizer**: BPE, 32K vocab (`src/bpe_tokenizer.py`, `src/tokenizer.py`)
-- **Model**: Transformer, 8K context, 12 layers (`src/transformer_v2.py`, `src/transformer.py`)
-- **Training**: PyTorch, gradient checkpointing, bfloat16 (`src/train_v2.py`)
-- **Inference**: ONNX Runtime (CPU), C99 engine (`inference/nous.c`), Ollama (optional)
+- **Tokenizer**: BPE, 10K-50K vocab (`src/bpe_tokenizer.py`, `src/tokenizer.py`)
+- **Model**: MoE transformer, 32K context, RoPE, GQA, RMSNorm (`src/transformer.py`)
+- **Training**: WikiText-103 streaming, PyTorch, bfloat16 (`scripts/train.py`)
+- **Eval**: Prompt suite eval harness (`scripts/eval.py`, `src/eval_harness.py`)
+- **Inference**: ONNX Runtime (CPU), C99 engine (`inference/arthur.c`)
 
 ## Key Commands
 ```bash
-python src/train_v2.py --dataset data/balanced_dataset.jsonl --epochs 100
-python scripts/export_onnx.py --checkpoint models/v2_final.pt --quantize int8
+# Train
+python scripts/train.py --size 65M --steps 100000
+# Resume from checkpoint
+python scripts/train.py --size 65M --steps 100000 --resume
+
+# Eval
+python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M
+
+# Inference
 python scripts/web_ui.py          # Flask UI on :5001
 python scripts/cli.py             # Terminal chat
-pytest -q                         # Run tests
+
+# ONNX export
+python scripts/export_onnx.py
+
+# Tests
+pytest -q
 ```
 
 ## Next Steps
-1. Export to ONNX + quantize (int8, 4-bit)
-2. Register as `agentId: "arthur"` in OpenClaw
-3. Fine-tune on custom codebase patterns
+1. Continue WikiText-103 training (300K+ steps)
+2. Instruction tuning (identity prompts, Q&A pairs)
+3. Export to ONNX + quantize (int8, 4-bit)
 4. Deploy as local HTTP inference server
+
+## Quick Commands
+- `./scripts/simplify.sh`
+- `./scripts/monetize.sh . --write`
+- `./scripts/audit.sh .`
+- `./scripts/ship.sh .`

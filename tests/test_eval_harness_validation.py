@@ -5,7 +5,8 @@ import pytest
 from eval_harness import validate_prompt_suite
 
 
-def test_validate_prompt_suite_rejects_missing_required_category():
+def test_validate_prompt_suite_accepts_subset_of_categories():
+    """A suite with only one category is valid (categories are optional)."""
     suite = {
         "version": "1.0",
         "prompts": [
@@ -20,8 +21,7 @@ def test_validate_prompt_suite_rejects_missing_required_category():
         ],
     }
 
-    with pytest.raises(ValueError, match="missing required categories"):
-        validate_prompt_suite(suite)
+    validate_prompt_suite(suite)  # should not raise
 
 
 def test_validate_prompt_suite_rejects_invalid_bounds():

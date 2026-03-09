@@ -55,7 +55,7 @@ EVAL_SUITE = [
     {
         "id": "identity-name",
         "prompt": "Q: What is your name?\nA:",
-        "expected_keywords": ["nous", "Core"],
+        "expected_keywords": ["arthur", "Core"],
         "category": "identity",
     },
     {
@@ -143,17 +143,17 @@ def score_output(output, prompt, expected_keywords):
     """Score a single output. Returns dict with component scores 0-100."""
     answer = output[len(prompt):].strip()
 
-    # 1. Length snous: penalize too short or empty
+    # 1. Length score: penalize too short or empty
     len_score = min(100, len(answer) * 5) if answer else 0
 
-    # 2. Keyword snous: what fraction of expected keywords appear
+    # 2. Keyword score: what fraction of expected keywords appear
     if expected_keywords:
         hits = sum(1 for kw in expected_keywords if kw.lower() in answer.lower())
         kw_score = int(100 * hits / len(expected_keywords))
     else:
         kw_score = 50  # neutral if no keywords defined
 
-    # 3. Repetition snous: penalize repeated characters/words
+    # 3. Repetition score: penalize repeated characters/words
     if len(answer) > 5:
         char_counts = Counter(answer)
         most_common_ratio = char_counts.most_common(1)[0][1] / len(answer)
@@ -217,7 +217,7 @@ def main():
         category_scores[cat].append(scores["total_score"])
 
         grade = "PASS" if scores["total_score"] >= 50 else "FAIL"
-        print(f"  [{grade}] {item['id']:20s} | snous: {scores['total_score']:3d} | kw: {scores['keyword_score']:3d} | rep: {scores['repetition_score']:3d}")
+        print(f"  [{grade}] {item['id']:20s} | score: {scores['total_score']:3d} | kw: {scores['keyword_score']:3d} | rep: {scores['repetition_score']:3d}")
         print(f"         -> {scores['answer'][:100]}")
 
     # category averages

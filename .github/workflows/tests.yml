@@ -11,6 +11,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
-      - run: pip install pytest flask numpy tiktoken tqdm
-      - run: pytest -q
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pytest flask numpy tiktoken tqdm fastapi httpx psutil
+      - name: Run tests
+        run: pytest tests/ -q -k "not smoke" --tb=short

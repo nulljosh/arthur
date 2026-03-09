@@ -18,13 +18,20 @@ RESET = "\033[0m"
 
 def print_banner(runtime) -> None:
     params = sum(p.numel() for p in runtime.model.parameters())
-    embed_dim = runtime.config.get("embed_dim", getattr(runtime.model, "embed_dim", "?"))
+    version = runtime.config.get("version", "v2")
     vocab_size = getattr(runtime.tokenizer, "vocab_size", runtime.config.get("vocab_size", "?"))
 
     print("Arthur CLI")
-    print(f"Model: {runtime.model_path}")
+    print(f"Model: {runtime.model_path} ({version})")
     print(f"Params: {params:,}")
-    print(f"Embed dim: {embed_dim}")
+    if version == "v3":
+        size = runtime.config.get("size", "?")
+        ctx = runtime.config.get("ctx", "?")
+        n_experts = runtime.config.get("n_experts", "?")
+        print(f"Size: {size} | Context: {ctx} | Experts: {n_experts}")
+    else:
+        embed_dim = runtime.config.get("embed_dim", getattr(runtime.model, "embed_dim", "?"))
+        print(f"Embed dim: {embed_dim}")
     print(f"Vocab size: {vocab_size}")
     print("Commands: /quit, /clear, /model <path>")
 
@@ -102,19 +109,34 @@ def handle_command(line: str, runtime, data_path: Path):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Arthur terminal chat")
-    parser.add_argument("--model", default="models/overnight_best.pt")
+    parser.add_argument("--model", default="models/arthur_v3_65M_best.pt")
+    parser.add_argument("--tokenizer", default="models/bpe_tokenizer_v1.json")
     parser.add_argument("--temp", type=float, default=0.3)
+    parser.add_argument("--prompt", type=str, help="Single-shot prompt (non-interactive)")
     parser.add_argument("--data", default="data/ultra_minimal.txt")
     args = parser.parse_args()
 
     model_path = Path(args.model)
     data_path = Path(args.data)
+    tokenizer_path = Path(args.tokenizer)
 
     try:
-        runtime = load_runtime(model_path, data_path)
+        runtime = load_runtime(model_path, data_path, tokenizer_path)
     except Exception as exc:
         print(f"Failed to load runtime: {exc}")
         return 1
+
+    prompt = args.prompt
+    if not prompt and not sys.stdin.isatty():
+        prompt = sys.stdin.read().strip()
+
+    if prompt:
+        try:
+            stream_generate(runtime, prompt, args.temp)
+        except Exception as exc:
+            print(f"Generation error: {exc}", file=sys.stderr)
+            return 1
+        return 0
 
     print_banner(runtime)
 
