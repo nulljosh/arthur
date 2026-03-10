@@ -83,8 +83,8 @@ class ResourceMonitor:
         if mode == "pause":
             return 0
         if mode == "low":
-            return 1
-        return 2
+            return 2
+        return 4
 
 class Daemon:
     MAX_TRAINING_SECONDS = 86400  # 24 hours
