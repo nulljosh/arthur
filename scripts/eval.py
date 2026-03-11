@@ -14,7 +14,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-sys.path.insert(0, ".")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
 import torch
 from src.bpe_tokenizer import BPETokenizer
