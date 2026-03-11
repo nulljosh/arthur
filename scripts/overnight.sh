@@ -17,12 +17,15 @@ ls -lh models/*.pt 2>/dev/null | tee -a "$LOG"
 
 # --- Phase 1: 65M full run ---
 log ""
-log "=== PHASE 1: 65M (1000 steps) ==="
+log "=== PHASE 1: 65M safe run (250 new steps) ==="
 python3 scripts/train.py \
   --size 65M \
   --steps 1000 \
-  --batch_size 4 \
-  --seq_len 256 \
+  --batch_size 1 \
+  --seq_len 128 \
+  --grad_accum 4 \
+  --run_steps 250 \
+  --resume \
   2>&1 | tee -a "$LOG"
 
 log "65M done. Checkpoint:"
@@ -36,26 +39,8 @@ python3 scripts/eval.py \
   --size 65M \
   2>&1 | tee -a "$LOG"
 
-# --- Phase 3: 125M run ---
 log ""
-log "=== PHASE 3: 125M (500 steps) ==="
-python3 scripts/train.py \
-  --size 125M \
-  --steps 500 \
-  --batch_size 2 \
-  --seq_len 256 \
-  2>&1 | tee -a "$LOG"
-
-log "125M done. Checkpoint:"
-ls -lh models/arthur_v3_125M_best.pt 2>/dev/null | tee -a "$LOG"
-
-# --- Phase 4: Eval 125M ---
-log ""
-log "=== EVAL 125M ==="
-python3 scripts/eval.py \
-  --checkpoint models/arthur_v3_125M_best.pt \
-  --size 125M \
-  2>&1 | tee -a "$LOG"
+log "Skipping 125M overnight phase on 16GB-safe setup."
 
 # --- Done: commit + push ---
 log ""

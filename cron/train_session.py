@@ -43,8 +43,8 @@ MODEL_DROPOUT = 0.1
 
 # --- training config ---
 TRAIN_CFG = dict(
-    batch_size=16,
-    seq_len=128,
+    batch_size=1,
+    seq_len=64,
     initial_lr=3e-4,
     min_lr=1e-5,
     total_epochs=800,

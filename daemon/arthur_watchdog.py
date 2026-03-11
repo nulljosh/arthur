@@ -10,6 +10,10 @@ from pathlib import Path
 from datetime import datetime
 
 ARTHUR_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(ARTHUR_ROOT / "src"))
+
+from config import SAFE_16GB_TRAINING_PROFILE
+
 LOG_DIR = ARTHUR_ROOT / "logs"
 STATE_FILE = ARTHUR_ROOT / "daemon_state.json"
 
@@ -25,8 +29,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Hard RAM ceiling: 10GB (62% of 16GB). Leaves 6GB for system.
-RAM_HARD_CEILING_GB = 10.0
+# Hard RAM ceiling: 7.5GB. Keeps Arthur below roughly half of a 16GB machine.
+RAM_HARD_CEILING_GB = 7.5
 # Grace period (seconds) after training starts before RAM checks kick in.
 # WikiText-103 dataset loading temporarily spikes RSS above steady-state.
 RAM_CHECK_GRACE_PERIOD = 120
@@ -35,8 +39,8 @@ SWAP_GROWTH_THRESHOLD_MB = 500
 
 # v3 training config per model size
 SIZE_CONFIG = {
-    '65M':  {'steps': 100000, 'seq_len': 128, 'grad_accum': 8},
-    '125M': {'steps': 50000,  'seq_len': 128, 'grad_accum': 8},
+    '65M':  {'steps': 100000, 'seq_len': 128, 'grad_accum': 4, 'run_steps': SAFE_16GB_TRAINING_PROFILE['run_steps']},
+    '125M': {'steps': 50000,  'seq_len': 128, 'grad_accum': 4, 'run_steps': 125},
 }
 
 class ResourceMonitor:
@@ -44,7 +48,13 @@ class ResourceMonitor:
         self.disk_min_gb = 5
         self.cpu_limit = 70
         self.ram_low_gb = 2
-        self._last_swap_used = psutil.swap_memory().used
+        self._last_swap_used = self._read_swap_used()
+
+    def _read_swap_used(self):
+        try:
+            return psutil.swap_memory().used
+        except Exception:
+            return 0
 
     def get_disk_free_gb(self):
         stat = os.statvfs('/')
@@ -58,7 +68,7 @@ class ResourceMonitor:
 
     def check_swap_growth(self):
         """Return swap growth in MB since last check."""
-        current = psutil.swap_memory().used
+        current = self._read_swap_used()
         delta_mb = (current - self._last_swap_used) / 1024 / 1024
         self._last_swap_used = current
         return delta_mb
@@ -83,8 +93,8 @@ class ResourceMonitor:
         if mode == "pause":
             return 0
         if mode == "low":
-            return 2
-        return 4
+            return 1
+        return 1
 
 class Daemon:
     MAX_TRAINING_SECONDS = 86400  # 24 hours
@@ -146,6 +156,7 @@ class Daemon:
             f"--steps={cfg['steps']}",
             f"--seq_len={cfg['seq_len']}",
             f"--grad_accum={cfg.get('grad_accum', 1)}",
+            f"--run_steps={cfg.get('run_steps', SAFE_16GB_TRAINING_PROFILE['run_steps'])}",
         ]
 
         # Always pass --resume; train.py handles missing checkpoint gracefully

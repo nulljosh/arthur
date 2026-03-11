@@ -109,11 +109,11 @@ class TestBatchSize(unittest.TestCase):
         with _psutil_mock():
             return wd.ResourceMonitor()
 
-    def test_full_returns_8(self):
-        self.assertEqual(self._make_monitor().get_batch_size("full"), 4)
+    def test_full_returns_1(self):
+        self.assertEqual(self._make_monitor().get_batch_size("full"), 1)
 
-    def test_low_returns_4(self):
-        self.assertEqual(self._make_monitor().get_batch_size("low"), 2)
+    def test_low_returns_1(self):
+        self.assertEqual(self._make_monitor().get_batch_size("low"), 1)
 
     def test_pause_returns_0(self):
         self.assertEqual(self._make_monitor().get_batch_size("pause"), 0)
@@ -201,7 +201,8 @@ class TestCommand(unittest.TestCase):
         cmd_str = " ".join(cmd)
         self.assertIn("train.py", cmd_str)
         self.assertIn("--size=65M", cmd_str)
-        self.assertIn("--batch_size=4", cmd_str)
+        self.assertIn("--batch_size=1", cmd_str)
+        self.assertIn("--run_steps=250", cmd_str)
         self.assertNotIn("nice", cmd_str)
 
     @patch("subprocess.Popen")
@@ -220,7 +221,8 @@ class TestCommand(unittest.TestCase):
         self.assertEqual(cmd[1], "-n")
         self.assertEqual(cmd[2], "15")
         cmd_str = " ".join(cmd)
-        self.assertIn("--batch_size=2", cmd_str)
+        self.assertIn("--batch_size=1", cmd_str)
+        self.assertIn("--run_steps=250", cmd_str)
 
     @patch("subprocess.Popen")
     def test_pause_mode_does_not_start(self, mock_popen):
@@ -964,11 +966,13 @@ class TestSizeConfig(unittest.TestCase):
     def test_65m_config(self):
         cfg = wd.SIZE_CONFIG["65M"]
         self.assertEqual(cfg["steps"], 100000)
+        self.assertEqual(cfg["run_steps"], 250)
         self.assertIn("seq_len", cfg)
 
     def test_125m_config(self):
         cfg = wd.SIZE_CONFIG["125M"]
         self.assertEqual(cfg["steps"], 50000)
+        self.assertEqual(cfg["run_steps"], 125)
         self.assertIn("seq_len", cfg)
 
 
@@ -1023,8 +1027,8 @@ class TestCheckMilestones(unittest.TestCase):
         d._parse_latest_training_progress = MagicMock(return_value=(500, 2.8))
         d.check_milestones()
         calls = [c[0][0] for c in d.send_imessage.call_args_list]
-        self.assertTrue(any("loss dropped below 3.0" in c for c in calls))
-        self.assertTrue(any("loss dropped below 4.0" in c for c in calls))
+        self.assertTrue(any("loss is now under 3.0" in c for c in calls))
+        self.assertTrue(any("loss is now under 4.0" in c for c in calls))
 
     def test_milestone_not_re_sent(self):
         d = self._daemon()

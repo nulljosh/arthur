@@ -17,6 +17,7 @@ Treat this repo like baby's first serious model lab:
 2. One default model path
 - Default active training target is 65M unless hardware clearly supports more.
 - Do not bounce between model sizes during debugging.
+- On 16GB-class machines, stay on the 16GB-safe profile: batch `1`, seq len `128`, grad accum `4`, short resumable runs.
 
 3. One truth source for progress
 - Trust these artifacts first:
@@ -56,6 +57,10 @@ Treat this repo like baby's first serious model lab:
 - Before changing the training path, run a short smoke test.
 - If a 20-100 step run fails, do not launch an overnight run.
 
+8. Short runs beat hero runs
+- Prefer `--run_steps 250` over a single giant uninterrupted session.
+- Resume from checkpoints often and keep eval cheap enough to run regularly.
+
 8. No giant frameworks
 - Reuse existing scripts before adding new orchestration.
 - Add thin wrappers only when they reduce confusion.
@@ -76,7 +81,7 @@ Do not spam updates for tiny fluctuations.
 ## Key Commands
 ```bash
 # Train
-python scripts/train.py --size 65M --steps 100000 --resume
+python scripts/train.py --size 65M --steps 100000 --run_steps 250 --resume
 
 # Eval
 python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M

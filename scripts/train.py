@@ -1,8 +1,10 @@
 """
-Arthur v3 - Real training on WikiText-103
+Arthur v3 - Real training on WikiText-103.
 Downloads WikiText-103 from HuggingFace (cached locally).
-Usage: python scripts/train.py --size 125M --steps 1000
-       python scripts/train.py --size 65M --steps 5000 --resume
+
+Usage:
+    python scripts/train.py --size 65M --steps 5000 --resume
+    python scripts/train.py --size 125M --steps 1000 --allow-unsafe
 """
 
 import argparse
@@ -17,6 +19,7 @@ import time, sys
 sys.path.insert(0, ".")
 from src.transformer import ArthurV3
 from src.bpe_tokenizer import BPETokenizer
+from src.config import apply_safe_16gb_guardrails
 
 def get_batch(data, tokenizer, seq_len, batch_size, device):
     """Grab a random batch from cached dataset"""
@@ -52,10 +55,39 @@ def get_batch(data, tokenizer, seq_len, batch_size, device):
     print(f"[batch] ERROR: Failed to build batch after {max_retries} retries", flush=True)
     return None, None
 
-def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=False, grad_accum=8):
+def train(
+    size="65M",
+    steps=500,
+    lr=3e-4,
+    batch_size=1,
+    seq_len=256,
+    resume=False,
+    grad_accum=8,
+    run_steps=None,
+    allow_unsafe=False,
+):
+    guardrails = apply_safe_16gb_guardrails(
+        size=size,
+        batch_size=batch_size,
+        seq_len=seq_len,
+        grad_accum=grad_accum,
+        run_steps=run_steps,
+        allow_unsafe=allow_unsafe,
+    )
+    size = guardrails["size"]
+    batch_size = guardrails["batch_size"]
+    seq_len = guardrails["seq_len"]
+    grad_accum = guardrails["grad_accum"]
+    run_steps = guardrails["run_steps"]
+
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     print(f"[train] ArthurV3-{size} on {device}", flush=True)
     print(f"   Steps: {steps} | Batch: {batch_size} | SeqLen: {seq_len} | GradAccum: {grad_accum}", flush=True)
+    if guardrails["safe_mode"]:
+        total_ram = guardrails["total_ram_gb"]
+        print(f"   Safe profile: 16GB-safe ({total_ram:.1f}GB RAM detected)", flush=True)
+    for warning in guardrails["warnings"]:
+        print(f"[guardrail] {warning}", flush=True)
 
     # Load model
     model = ArthurV3(size).to(device)
@@ -97,12 +129,15 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
             else:
                 print(f"[resume] All checkpoints corrupted, starting fresh", flush=True)
 
-    remaining_steps = steps - start_step
+    target_step = steps
+    if run_steps is not None:
+        target_step = min(steps, start_step + run_steps)
+    remaining_steps = target_step - start_step
     if remaining_steps <= 0:
-        print(f"[train] Already completed {start_step}/{steps} steps, nothing to do", flush=True)
+        print(f"[train] Already completed {start_step}/{target_step} steps, nothing to do", flush=True)
         return
 
-    sched = CosineAnnealingLR(opt, T_max=steps)
+    sched = CosineAnnealingLR(opt, T_max=max(target_step, 1))
     if sched_state is not None:
         sched.load_state_dict(sched_state)
 
@@ -138,7 +173,9 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
     consecutive_nones = 0
     first_step_done = False
 
-    for step in range(start_step + 1, steps + 1):
+    print(f"   Target step this run: {target_step}", flush=True)
+
+    for step in range(start_step + 1, target_step + 1):
         t0 = time.time()
         accum_loss = 0.0
         step_had_data = False
@@ -200,6 +237,7 @@ def train(size="125M", steps=500, lr=3e-4, batch_size=1, seq_len=256, resume=Fal
             save_resume_checkpoint(step, accum_loss)
 
     print(f"\n[done] Best loss: {best_loss:.4f}", flush=True)
+    print(f"[done] Reached step {min(target_step, step if 'step' in locals() else start_step)}", flush=True)
     print(f"[saved] models/arthur_v3_{size}_best.pt", flush=True)
 
 if __name__ == "__main__":
@@ -210,6 +248,18 @@ if __name__ == "__main__":
     p.add_argument("--batch_size", type=int,   default=1)
     p.add_argument("--seq_len",    type=int,   default=256)
     p.add_argument("--grad_accum", type=int,   default=8)
+    p.add_argument("--run_steps",  type=int,   default=None, help="Maximum new steps to execute this run")
     p.add_argument("--resume",     action="store_true", help="Resume from best checkpoint")
+    p.add_argument("--allow-unsafe", action="store_true", help="Disable 16GB safety clamps")
     args = p.parse_args()
-    train(args.size, args.steps, args.lr, args.batch_size, args.seq_len, args.resume, args.grad_accum)
+    train(
+        args.size,
+        args.steps,
+        args.lr,
+        args.batch_size,
+        args.seq_len,
+        args.resume,
+        args.grad_accum,
+        args.run_steps,
+        args.allow_unsafe,
+    )

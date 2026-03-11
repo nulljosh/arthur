@@ -11,21 +11,21 @@
 **Last Loss:** 0.0180
 **Updated:** 2026-03-11 12:48
 
-Status: Daemon auto-training when idle. Respects resources (disk <5GB, CPU <70%, RAM >4GB).
+Status: Daemon auto-training when idle in a 16GB-safe mode. It stays on 65M, uses short resumable runs, and avoids long 125M sessions on this machine class.
 
 
 ## Status
 
 | Metric | Value |
 |--------|-------|
-| Params | 166M total / 90M active |
+| Params | 65M default active training target on 16GB-class machines |
 | Architecture | MoE, RoPE, GQA, RMSNorm |
 | Training Data | WikiText-103 |
-| Steps | ~1K / 300K needed |
+| Training Mode | Resumable 250-step chunks with aggressive checkpoints |
 | Loss | 0.0029 |
 | Eval Pass Rate | 16.7% |
 
-Auto-trains in background via launchd daemon. Resource-gated (disk, CPU, RAM).
+Auto-trains in background via launchd daemon. Resource-gated (disk, CPU, RAM) and now hard-clamped for 16GB machines.
 
 ## Architecture
 
@@ -46,8 +46,8 @@ git clone https://github.com/nulljosh/arthur.git
 cd arthur
 pip install -r requirements.txt
 
-# Train on WikiText-103
-python scripts/train.py --size 65M --steps 100000
+# Train on WikiText-103 with 16GB-safe defaults
+python scripts/train.py --size 65M --steps 100000 --resume
 
 # Evaluate
 python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M
@@ -85,9 +85,9 @@ public/        Web UI (chat.html)
 
 ## Next Steps
 
-1. Train to 100K steps (~28h), eval, checkpoint
-2. Build instruction-tuning dataset (identity, Q&A)
-3. Train to 300K steps (~84h) for coherent output
+1. Keep the base trainer boring: 65M only, 128-token context, 250-step resumable runs
+2. Build a tiny eval set that runs fast enough to gate every checkpoint
+3. Improve sample quality before considering any larger model phase
 4. Export to ONNX when eval pass rate >50%
 5. Quantize for deployment (int8, 4-bit)
 
