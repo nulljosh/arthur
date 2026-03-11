@@ -4,7 +4,7 @@
 
 CODE_DIR="$HOME/Documents/Code"
 LOG_FILE="$CODE_DIR/arthur/logs/simplify.log"
-SKIP_REPOS="node_modules .git applescripts journal nulljosh.github.io"
+SKIP_REPOS="node_modules .git _external applescripts journal nulljosh.github.io"
 
 echo "[$(date)] === Auto-simplify started ===" >> "$LOG_FILE"
 
