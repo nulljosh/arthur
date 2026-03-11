@@ -8,8 +8,8 @@
 
 **Progress:** Epoch 0/3 (0% complete)
 **Latest Checkpoint:** None
-**Last Loss:** 0.0272
-**Updated:** 2026-03-10 18:48
+**Last Loss:** 0.0198
+**Updated:** 2026-03-10 20:48
 
 Status: Daemon auto-training when idle. Respects resources (disk <5GB, CPU <70%, RAM >4GB).
 
