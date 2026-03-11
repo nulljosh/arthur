@@ -1,49 +1,94 @@
 # Arthur -- Custom LLM Project
 
-166M total parameter (90M active per token) transformer trained from scratch. Local inference, no API keys.
+Arthur is Josh's from-scratch LLM project.
 
-## Status
-- **Params**: 166M total / 90M active (MoE top-2/4 routing, RoPE/GQA, WikiText-103)
-- **Training**: ~12K steps of 100K target
-- **Loss**: 0.0029 (step 947)
-- **Eval pass rate**: 16.7% (model produces output but lacks coherent language structure)
+Treat this repo like baby's first serious model lab:
+- prefer reliability over cleverness
+- prefer one good path over many half-working paths
+- prefer eval truth over training vibes
 
-## Architecture
-- **Tokenizer**: BPE, 10K-50K vocab (`src/bpe_tokenizer.py`, `src/tokenizer.py`)
-- **Model**: MoE transformer, 32K context, RoPE, GQA, RMSNorm (`src/transformer.py`)
-- **Training**: WikiText-103 streaming, PyTorch, bfloat16 (`scripts/train.py`)
-- **Eval**: Prompt suite eval harness (`scripts/eval.py`, `src/eval_harness.py`)
-- **Inference**: ONNX Runtime (CPU), C99 engine (`inference/arthur.c`)
+## Current Operating Rules
+
+1. One training path
+- The watchdog + `scripts/train.py` path is the source of truth.
+- Do not add parallel trainers, duplicate daemons, or overlapping overnight runs.
+- Avoid Ralph loops created by two automations fighting each other.
+
+2. One default model path
+- Default active training target is 65M unless hardware clearly supports more.
+- Do not bounce between model sizes during debugging.
+
+3. One truth source for progress
+- Trust these artifacts first:
+  - `logs/training.log`
+  - `logs/eval_suite_results.json`
+  - `logs/overnight-metrics-*.json`
+  - `daemon_state.json`
+- If a status claim is not backed by one of these, treat it as unverified.
+
+4. Loss is not enough
+- Lower loss is good, but not sufficient.
+- Every meaningful training claim should be checked against:
+  - training loss
+  - eval results
+  - sample decode quality
+- A lower-loss checkpoint can still be worse at inference.
+
+5. Keep runs boring and comparable
+- Change as few variables as possible per run.
+- Always record:
+  - model size
+  - steps
+  - batch size
+  - seq len
+  - grad accumulation
+  - checkpoint path
+  - train loss
+  - eval summary
+  - timestamp
+
+6. Fail safely
+- Stop or downgrade on OOM, NaNs, repeated empty batches, or corrupted checkpoints.
+- Never overwrite the only known-good checkpoint path without a newer fallback.
+- Prefer resumeable checkpoints over fragile one-shot runs.
+
+7. Tiny tests before big runs
+- Before changing the training path, run a short smoke test.
+- If a 20-100 step run fails, do not launch an overnight run.
+
+8. No giant frameworks
+- Reuse existing scripts before adding new orchestration.
+- Add thin wrappers only when they reduce confusion.
+- The goal is a boring, legible training lab.
+
+## Milestones That Matter
+
+Notify on milestones like:
+- step reached: 10K, 25K, 50K, 100K
+- new best loss crossing thresholds
+- eval pass-rate improvement
+- checkpoint decode quality improvement
+- training instability fixed
+- successful resume after interruption
+
+Do not spam updates for tiny fluctuations.
 
 ## Key Commands
 ```bash
 # Train
-python scripts/train.py --size 65M --steps 100000
-# Resume from checkpoint
 python scripts/train.py --size 65M --steps 100000 --resume
 
 # Eval
 python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M
 
-# Inference
-python scripts/web_ui.py          # Flask UI on :5001
-python scripts/cli.py             # Terminal chat
-
-# ONNX export
-python scripts/export_onnx.py
+# Status
+python daemon/status.py
 
 # Tests
 pytest -q
 ```
 
-## Next Steps
-1. Continue WikiText-103 training (300K+ steps)
-2. Instruction tuning (identity prompts, Q&A pairs)
-3. Export to ONNX + quantize (int8, 4-bit)
-4. Deploy as local HTTP inference server
+## Default Mindset
+If you cannot tell in 30 seconds whether a run helped, the setup is too messy.
 
-## Quick Commands
-- `./scripts/simplify.sh`
-- `./scripts/monetize.sh . --write`
-- `./scripts/audit.sh .`
-- `./scripts/ship.sh .`
+Make Arthur boring. Then make it better.

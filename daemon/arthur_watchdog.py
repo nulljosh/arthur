@@ -91,7 +91,7 @@ class Daemon:
     MAX_CONSECUTIVE_FAILURES = 3
     FAILURE_COOLDOWN = 600  # 10 minutes
     STEP_MILESTONES = [1000, 5000, 10000, 25000, 50000, 100000, 200000, 300000]
-    LOSS_MILESTONES = [4.0, 3.0, 2.0, 1.5, 1.0]
+    LOSS_MILESTONES = [4.0, 3.0, 2.0, 1.5, 1.0, 0.5, 0.1, 0.05, 0.03, 0.02, 0.015, 0.01]
 
     def __init__(self):
         self.monitor = ResourceMonitor()
@@ -277,13 +277,13 @@ class Daemon:
         for ms in self.STEP_MILESTONES:
             key = f"step_{ms}"
             if key not in self._notified_milestones and step >= ms:
-                self.send_imessage(f"Arthur training: reached {ms} steps (loss: {loss:.3f})")
+                self.send_imessage(f"Arthur milestone: reached {ms} steps. Current loss {loss:.4f}.")
                 self._notified_milestones.add(key)
 
         for ms in self.LOSS_MILESTONES:
             key = f"loss_{ms}"
             if key not in self._notified_milestones and loss <= ms:
-                self.send_imessage(f"Arthur training: loss dropped below {ms} (now {loss:.3f} at step {step})")
+                self.send_imessage(f"Arthur milestone: loss is now under {ms} (current {loss:.4f}, step {step}).")
                 self._notified_milestones.add(key)
 
         self.state['notified_milestones'] = list(self._notified_milestones)
