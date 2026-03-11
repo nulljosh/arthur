@@ -15,7 +15,10 @@ from collections import defaultdict
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT))
+SRC_DIR = REPO_ROOT / "src"
+for path in (REPO_ROOT, SRC_DIR):
+    if str(path) not in sys.path:
+        sys.path.insert(0, str(path))
 
 import torch
 from src.bpe_tokenizer import BPETokenizer
