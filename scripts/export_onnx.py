@@ -92,7 +92,7 @@ def export_v3(checkpoint: dict[str, object], checkpoint_path: Path) -> None:
             "input_ids": {0: "batch", 1: "sequence"},
             "logits": {0: "batch", 1: "sequence"},
         },
-        opset_version=17,
+        opset_version=18,
     )
 
     print(f"[6/6] Exporting BPE tokenizer vocab JSON -> {VOCAB_JSON_PATH}")

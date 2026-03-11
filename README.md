@@ -4,28 +4,23 @@
 
 ![version](https://img.shields.io/badge/version-v3.0.0-blue)
 
-## Training Status
+## Operating Mode
 
-**Progress:** Epoch 1/3 (33% complete)
-**Latest Checkpoint:** None
-**Last Loss:** 0.0141
-**Updated:** 2026-03-11 14:25
-
-Status: Daemon auto-training when idle. Respects resources (disk <5GB, CPU <70%, RAM >4GB).
+Status: Demo / eval mode. Background training is parked on this 16 GB machine.
 
 
 ## Status
 
 | Metric | Value |
 |--------|-------|
-| Params | 65M default active training target on 16GB-class machines |
+| Params | 65M demo checkpoint |
 | Architecture | MoE, RoPE, GQA, RMSNorm |
 | Training Data | WikiText-103 |
-| Training Mode | Resumable 250-step chunks with aggressive checkpoints |
+| Training Mode | Manual only; no background training |
 | Loss | 0.0029 |
 | Eval Pass Rate | 16.7% |
 
-Auto-trains in background via launchd daemon. Resource-gated (disk, CPU, RAM) and now hard-clamped for 16GB machines.
+Arthur is currently run as a stable local demo app with smoke tests and optional evals. Heavy jobs are manual-only and guarded by RAM/swap checks.
 
 ## Architecture
 
@@ -46,9 +41,6 @@ git clone https://github.com/nulljosh/arthur.git
 cd arthur
 pip install -r requirements.txt
 
-# Train on WikiText-103 with 16GB-safe defaults
-python scripts/train.py --size 65M --steps 100000 --resume
-
 # Evaluate
 python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M
 
@@ -57,6 +49,14 @@ python scripts/web_ui.py  # Flask on :5001
 
 # CLI chat
 python scripts/cli.py
+
+# Demo smoke test
+python scripts/demo_smoke.py
+
+# Manual local LLM
+./scripts/local_llm_on.sh qwen2.5:3b
+./scripts/local_llm_prompt.sh qwen2.5:3b "Say hello briefly."
+./scripts/local_llm_off.sh
 ```
 
 ## Project Structure
@@ -64,8 +64,8 @@ python scripts/cli.py
 ```
 src/           Tokenizer, transformer, eval harness
 scripts/       Training, eval, CLI, web UI, ONNX export
-daemon/        Watchdog training daemon (launchd)
-cron/          Scheduled tasks (dispatch.sh)
+daemon/        Parked training daemon files
+cron/          Lightweight smoke/eval scheduler
 tests/         Pytest suite
 data/          Training corpora
 models/        Checkpoints (.pt, gitignored)
@@ -85,9 +85,9 @@ public/        Web UI (chat.html)
 
 ## Next Steps
 
-1. Keep the base trainer boring: 65M only, 128-token context, 250-step resumable runs
-2. Build a tiny eval set that runs fast enough to gate every checkpoint
-3. Improve sample quality before considering any larger model phase
+1. Keep the demo/web flow stable across 2-3 turns
+2. Tighten smoke tests so regressions fail fast
+3. Improve sample quality before revisiting training
 4. Export to ONNX when eval pass rate >50%
 5. Quantize for deployment (int8, 4-bit)
 
@@ -97,6 +97,9 @@ MIT 2026, Joshua Trommel
 
 ## Quick Commands
 - `./scripts/simplify.sh` - normalize project structure
+- `./scripts/local_llm_on.sh` - start guarded manual Ollama mode
+- `./scripts/local_llm_prompt.sh` - run one guarded local-model prompt
+- `./scripts/local_llm_off.sh` - stop local-model processes
 - `./scripts/monetize.sh . --write` - generate monetization plan (if available)
 - `./scripts/audit.sh .` - run fast project audit (if available)
 - `./scripts/ship.sh .` - run checks and ship (if available)

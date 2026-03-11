@@ -4,34 +4,28 @@
 ARTHUR_ROOT="/Users/joshua/Documents/Code/arthur"
 
 echo ""
-echo "=== ARTHUR TRAINING STATUS ==="
+echo "=== ARTHUR DEMO STATUS ==="
 echo ""
 
 # Daemon state
-if [ -f "$ARTHUR_ROOT/daemon_state.json" ]; then
-  read -r EPOCH TOTAL SIZE < <(python3 - <<'PY2'
-import json
-from pathlib import Path
-state=json.loads(Path("/Users/joshua/Documents/Code/arthur/daemon_state.json").read_text())
-print(state.get("epoch", "?"), state.get("total", "?"), state.get("size", "?"))
-PY2
-)
-  echo "Progress: Epoch $EPOCH/$TOTAL ($SIZE)"
-else
-  echo "Status: Not initialized"
-fi
+echo "Mode: Demo / eval only"
 
-# Process status
 if pgrep -f "scripts/train.py" > /dev/null; then
-  echo "Training: ACTIVE"
+  echo "Training: ACTIVE (unexpected)"
 else
-  echo "Training: IDLE"
+  echo "Training: OFF"
 fi
 
 if pgrep -f "arthur_watchdog.py" > /dev/null; then
-  echo "Daemon: RUNNING"
+  echo "Watchdog: RUNNING (unexpected)"
 else
-  echo "Daemon: STOPPED"
+  echo "Watchdog: OFF"
+fi
+
+if pgrep -f "ollama serve" > /dev/null || pgrep -f "ollama runner" > /dev/null; then
+  echo "Local LLM: ACTIVE"
+else
+  echo "Local LLM: OFF"
 fi
 
 # Storage
@@ -39,11 +33,21 @@ DISK_FREE=$(df / | tail -1 | awk '{print $4}')
 DISK_FREE_GB=$((DISK_FREE / 1024 / 1024))
 echo "Storage: ${DISK_FREE_GB}GB free"
 
-# Recent checkpoint
 LATEST=$(ls -t "$ARTHUR_ROOT/models"/arthur_v3_*_latest.pt "$ARTHUR_ROOT/models"/arthur_v3_*_best.pt 2>/dev/null | head -1)
 if [ -n "$LATEST" ]; then
   SIZE=$(ls -lh "$LATEST" | awk '{print $5}')
   echo "Latest checkpoint: $(basename "$LATEST") ($SIZE)"
+fi
+
+if [ -f "$ARTHUR_ROOT/logs/demo_smoke_latest.json" ]; then
+  echo "Latest smoke: $(python3 - <<'PY2'
+import json
+from pathlib import Path
+report = json.loads(Path("/Users/joshua/Documents/Code/arthur/logs/demo_smoke_latest.json").read_text())
+status = "OK" if report.get("all_ok") else "FAIL"
+print(f"{status} @ {report.get('timestamp', '?')}")
+PY2
+)"
 fi
 
 echo ""

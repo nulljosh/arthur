@@ -1,6 +1,8 @@
 #!/bin/bash
-# Arthur Overnight Training Daemon
-# Runs v3 training sessions sequentially, logs everything, auto-pushes on completion
+# Arthur overnight training is parked.
+
+echo "Arthur overnight training is disabled. Demo/eval mode only."
+exit 0
 
 cd ~/Documents/Code/arthur
 source venv/bin/activate

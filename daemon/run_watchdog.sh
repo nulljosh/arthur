@@ -1,6 +1,6 @@
 #!/bin/bash
-# Wrapper to ensure venv python is used by launchd
+# Parked. Arthur is demo-only on this machine.
 set -euo pipefail
 
-cd /Users/joshua/Documents/Code/arthur
-exec /Users/joshua/Documents/Code/arthur/venv/bin/python daemon/arthur_watchdog.py
+echo "Arthur watchdog is disabled. Demo/eval mode only."
+exit 0

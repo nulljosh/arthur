@@ -1,11 +1,11 @@
 #!/bin/bash
-# Main cron entrypoint: train -> evaluate -> log
-# Called by crontab every 4 hours.
+# Main cron entrypoint: smoke test -> evaluate -> log
+# Called by the safe hourly dispatcher.
 #
 # Usage:
-#   ./cron/run.sh              # full pipeline (train 50 epochs + eval)
-#   ./cron/run.sh --epochs 100 # train 100 epochs + eval
-#   ./cron/run.sh --eval-only  # skip training, just evaluate
+#   ./cron/run.sh               # smoke test + optional eval
+#   ./cron/run.sh --smoke-only  # skip eval, only run smoke test
+#   ./cron/run.sh --eval-only   # skip smoke, only run eval
 
 CORE_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$CORE_ROOT"
@@ -26,36 +26,35 @@ elif [ -d "venv" ]; then
     source venv/bin/activate
 fi
 
-EPOCHS=50
+SMOKE_ONLY=false
 EVAL_ONLY=false
 
 for arg in "$@"; do
     case $arg in
-        --epochs=*) EPOCHS="${arg#*=}" ;;
-        --epochs) shift; EPOCHS="$1" ;;
+        --smoke-only) SMOKE_ONLY=true ;;
         --eval-only) EVAL_ONLY=true ;;
     esac
 done
 
-# train
+# smoke test
 if [ "$EVAL_ONLY" = false ]; then
     echo ""
-    echo "--- Training ($EPOCHS epochs) ---"
-    python3 cron/train_session.py --epochs "$EPOCHS"
-    TRAIN_EXIT=$?
+    echo "--- Demo smoke test ---"
+    python3 scripts/demo_smoke.py
+    SMOKE_EXIT=$?
 
-    if [ $TRAIN_EXIT -ne 0 ]; then
-        echo "Training failed with exit code $TRAIN_EXIT"
+    if [ $SMOKE_EXIT -ne 0 ]; then
+        echo "Smoke test failed with exit code $SMOKE_EXIT"
         echo "Will still attempt evaluation..."
     fi
 fi
 
 # evaluate
-if [ -f "models/cron_best.pt" ]; then
+if [ "$SMOKE_ONLY" = false ] && [ -f "models/cron_best.pt" ]; then
     echo ""
     echo "--- Evaluating ---"
     python3 cron/evaluate.py
-else
+elif [ "$SMOKE_ONLY" = false ]; then
     echo "No checkpoint to evaluate yet."
 fi
 

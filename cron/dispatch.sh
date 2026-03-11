@@ -1,8 +1,8 @@
 #!/bin/bash
-# Arthur cron dispatcher - replaces 7 separate launchd agents
-# Runs hourly, dispatches tasks based on current hour
-# Tasks: training (4h), autopush (2h), health (6h), backup (2am),
-#         report (8am), simplify (7am/11pm), shutdown (11:59pm)
+# Arthur cron dispatcher - safe background maintenance only
+# Runs hourly, dispatches lightweight tasks based on current hour.
+# Tasks: smoke test (4h), autopush (2h), health (6h), backup (2am),
+#        report (8am), simplify (7am/11pm), shutdown (11pm)
 
 set -euo pipefail
 ARTHUR_ROOT="/Users/joshua/Documents/Code/arthur"
@@ -19,9 +19,9 @@ if (( HOUR % 2 == 0 )); then
     bash "$ARTHUR_ROOT/daemon/auto_push.sh" >> "$LOG" 2>&1 || true
 fi
 
-# Every 4 hours: training
+# Every 4 hours: demo smoke test
 if (( HOUR % 4 == 0 )); then
-    log "Running: training"
+    log "Running: demo smoke"
     bash "$ARTHUR_ROOT/cron/run.sh" >> "$LOG" 2>&1 || true
 fi
 

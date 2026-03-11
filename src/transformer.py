@@ -38,17 +38,23 @@ class RMSNorm(nn.Module):
 
 # ── RoPE Embeddings (better long-range position encoding) ───────────────────
 def precompute_rope(dim: int, max_seq: int, theta: float = 10000.0):
-    freqs = 1.0 / (theta ** (torch.arange(0, dim, 2).float() / dim))
+    inv_freq = 1.0 / (theta ** (torch.arange(0, dim, 2).float() / dim))
     pos = torch.arange(max_seq).float()
-    freqs = torch.outer(pos, freqs)
-    return torch.polar(torch.ones_like(freqs), freqs)  # complex
+    angles = torch.outer(pos, inv_freq)
+    cos = torch.repeat_interleave(torch.cos(angles), 2, dim=-1)
+    sin = torch.repeat_interleave(torch.sin(angles), 2, dim=-1)
+    return torch.stack((cos, sin), dim=0)
+
+
+def rotate_half(x: torch.Tensor) -> torch.Tensor:
+    x_even = x[..., ::2]
+    x_odd = x[..., 1::2]
+    return torch.stack((-x_odd, x_even), dim=-1).reshape_as(x)
 
 def apply_rope(q, k, freqs):
-    def rotate(x, freqs):
-        x_ = torch.view_as_complex(x.float().reshape(*x.shape[:-1], -1, 2))
-        x_ = x_ * freqs[:x.shape[1]].unsqueeze(0).unsqueeze(2)
-        return torch.view_as_real(x_).reshape(*x.shape).type_as(q)
-    return rotate(q, freqs), rotate(k, freqs)
+    cos = freqs[0, : q.shape[1]].unsqueeze(0).unsqueeze(2).type_as(q)
+    sin = freqs[1, : q.shape[1]].unsqueeze(0).unsqueeze(2).type_as(q)
+    return (q * cos) + (rotate_half(q) * sin), (k * cos) + (rotate_half(k) * sin)
 
 # ── Grouped Query Attention (faster inference) ───────────────────────────────
 class GQAttention(nn.Module):
@@ -113,21 +119,24 @@ class MoEFFN(nn.Module):
 
     def forward(self, x: torch.Tensor):
         B, T, C = x.shape
-        flat = x.view(-1, C)                             # (B*T, C)
+        flat = x.view(-1, C)                              # (B*T, C)
 
         logits = self.router(flat)                        # (B*T, E)
         weights, ids = torch.topk(logits, self.top_k, dim=-1)
         weights = F.softmax(weights, dim=-1)              # normalize top-k
 
-        out = torch.zeros_like(flat)
-        for i in range(self.top_k):
-            expert_ids = ids[:, i]
-            w = weights[:, i].unsqueeze(-1)
-            for e in range(self.n_experts):
-                mask = expert_ids == e
-                if mask.any():
-                    out[mask] += w[mask] * self.experts[e](flat[mask])
+        # Dense routing avoids Python data-dependent control flow, which keeps
+        # ONNX export stable for the browser deployment path.
+        router_weights = torch.zeros(
+            flat.size(0),
+            self.n_experts,
+            device=flat.device,
+            dtype=flat.dtype,
+        )
+        router_weights.scatter_add_(1, ids, weights)
 
+        expert_outputs = torch.stack([expert(flat) for expert in self.experts], dim=1)
+        out = (expert_outputs * router_weights.unsqueeze(-1)).sum(dim=1)
         return out.view(B, T, C)
 
 # ── Transformer Block ────────────────────────────────────────────────────────

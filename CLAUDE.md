@@ -2,60 +2,50 @@
 
 Arthur is Josh's from-scratch LLM project.
 
-Treat this repo like baby's first serious model lab:
+Treat this repo like a stabilized local demo:
 - prefer reliability over cleverness
 - prefer one good path over many half-working paths
-- prefer eval truth over training vibes
+- prefer demo truth over training vibes
 
 ## Current Operating Rules
 
-1. One training path
-- The watchdog + `scripts/train.py` path is the source of truth.
-- Do not add parallel trainers, duplicate daemons, or overlapping overnight runs.
-- Avoid Ralph loops created by two automations fighting each other.
+1. Demo-only mode
+- Arthur is parked as a demo/eval project on this machine.
+- Do not restart the watchdog, launch overnight training, or add background training loops.
+- If training is ever resumed, it must be deliberate and manual.
 
-2. One default model path
-- Default active training target is 65M unless hardware clearly supports more.
-- Do not bounce between model sizes during debugging.
-- On 16GB-class machines, stay on the 16GB-safe profile: batch `1`, seq len `128`, grad accum `4`, short resumable runs.
+2. One default product path
+- The source of truth is the usable demo path:
+  - `scripts/web_ui.py`
+  - `scripts/cli.py`
+  - `scripts/demo_smoke.py`
+  - `scripts/export_onnx.py`
+- Do not bounce between training experiments during debugging.
 
 3. One truth source for progress
 - Trust these artifacts first:
-  - `logs/training.log`
+  - `logs/demo_smoke_latest.json`
   - `logs/eval_suite_results.json`
-  - `logs/overnight-metrics-*.json`
-  - `daemon_state.json`
+  - `public/model/`
 - If a status claim is not backed by one of these, treat it as unverified.
 
-4. Loss is not enough
-- Lower loss is good, but not sufficient.
-- Every meaningful training claim should be checked against:
-  - training loss
-  - eval results
-  - sample decode quality
-- A lower-loss checkpoint can still be worse at inference.
+4. Demo quality beats training vibes
+- The real checks are:
+  - does the web app load
+  - can it survive 2-3 prompts
+  - do evals still pass
+  - does export move forward cleanly
 
-5. Keep runs boring and comparable
+5. Keep changes boring and comparable
 - Change as few variables as possible per run.
-- Always record:
-  - model size
-  - steps
-  - batch size
-  - seq len
-  - grad accumulation
-  - checkpoint path
-  - train loss
-  - eval summary
-  - timestamp
+- Prefer demo/eval/export fixes over model experimentation.
 
 6. Fail safely
-- Stop or downgrade on OOM, NaNs, repeated empty batches, or corrupted checkpoints.
-- Never overwrite the only known-good checkpoint path without a newer fallback.
-- Prefer resumeable checkpoints over fragile one-shot runs.
+- Stop or downgrade on OOM, timeouts, broken export, or regressions in the demo path.
+- Never let background jobs silently restart.
 
-7. Tiny tests before big runs
-- Before changing the training path, run a short smoke test.
-- If a 20-100 step run fails, do not launch an overnight run.
+7. Tiny tests before bigger changes
+- Run `scripts/demo_smoke.py` and the focused pytest slice before claiming progress.
 
 8. Short runs beat hero runs
 - Prefer `--run_steps 250` over a single giant uninterrupted session.
@@ -64,36 +54,34 @@ Treat this repo like baby's first serious model lab:
 8. No giant frameworks
 - Reuse existing scripts before adding new orchestration.
 - Add thin wrappers only when they reduce confusion.
-- The goal is a boring, legible training lab.
+- The goal is a boring, legible demo project.
 
 ## Milestones That Matter
 
 Notify on milestones like:
-- step reached: 10K, 25K, 50K, 100K
-- new best loss crossing thresholds
+- demo smoke passing again
+- export blocker removed
 - eval pass-rate improvement
-- checkpoint decode quality improvement
-- training instability fixed
-- successful resume after interruption
+- browser/runtime stability improvement
 
 Do not spam updates for tiny fluctuations.
 
 ## Key Commands
 ```bash
-# Train
-python scripts/train.py --size 65M --steps 100000 --run_steps 250 --resume
+# Demo smoke
+python scripts/demo_smoke.py
 
 # Eval
 python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M
 
-# Status
-python daemon/status.py
+# Web UI
+python scripts/web_ui.py
 
 # Tests
 pytest -q
 ```
 
 ## Default Mindset
-If you cannot tell in 30 seconds whether a run helped, the setup is too messy.
+If you cannot tell in 30 seconds whether the demo got better, the setup is too messy.
 
-Make Arthur boring. Then make it better.
+Make Arthur boring. Keep it usable.

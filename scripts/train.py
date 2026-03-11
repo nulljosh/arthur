@@ -66,6 +66,12 @@ def train(
     run_steps=None,
     allow_unsafe=False,
 ):
+    if os.getenv("ARTHUR_ALLOW_TRAINING") != "1":
+        raise SystemExit(
+            "Arthur training is parked on this machine. "
+            "Use demo/eval workflows only, or set ARTHUR_ALLOW_TRAINING=1 if you truly mean it."
+        )
+
     guardrails = apply_safe_16gb_guardrails(
         size=size,
         batch_size=batch_size,
