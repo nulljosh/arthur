@@ -70,7 +70,7 @@ tests/         Pytest suite
 data/          Training corpora
 models/        Checkpoints (.pt, gitignored)
 inference/     C99 inference engine
-public/        Web UI (chat.html)
+public/        Web UI (index.html)
 ```
 
 ## Roadmap
@@ -82,14 +82,6 @@ public/        Web UI (chat.html)
 | Phase 2 | 300K | ~300M | ~84h | Coherent sentences |
 | Phase 3 | 500K | ~500M | ~140h | Conversational ability |
 | Phase 4 | 1M+ | ~1B | ~280h+ | Knowledge recall |
-
-## Next Steps
-
-1. Keep the demo/web flow stable across 2-3 turns
-2. Tighten smoke tests so regressions fail fast
-3. Improve sample quality before revisiting training
-4. Export to ONNX when eval pass rate >50%
-5. Quantize for deployment (int8, 4-bit)
 
 ## License
 

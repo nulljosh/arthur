@@ -85,3 +85,6 @@ pytest -q
 If you cannot tell in 30 seconds whether the demo got better, the setup is too messy.
 
 Make Arthur boring. Keep it usable.
+
+## Archive Status
+Arthur is archived as an educational showcase. No further iteration unless manually resumed.

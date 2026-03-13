@@ -151,133 +151,64 @@
       letter-spacing: -0.01em;
     }
 
-    .chat {
-      height: min(54vh, 560px);
-      overflow-y: auto;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .section {
+      border-bottom: 1px solid var(--border);
     }
 
-    .message {
-      max-width: 92%;
-      padding: 10px 12px;
+    .section:last-of-type {
+      border-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px 0;
+      padding: 16px 16px 0;
+    }
+
+    .section-content {
+      padding: 0 16px 16px;
+    }
+
+    .section-subtext {
+      margin: 0 0 16px;
+      color: var(--text-secondary);
       font-size: 0.9rem;
       line-height: 1.5;
-      white-space: pre-wrap;
-      word-break: break-word;
-      border-radius: 14px;
     }
 
-    .message.user {
-      align-self: flex-end;
-      background: var(--accent);
-      color: #ffffff;
-      border: 1px solid color-mix(in srgb, var(--accent) 72%, #000000 28%);
+    pre {
+      margin: 0;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      font-family: monospace;
     }
 
-    .message.assistant {
-      align-self: flex-start;
-      background: var(--bg-secondary);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
+    code {
+      font-family: monospace;
     }
 
-    .typing {
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--bg-secondary);
+    .footer-link {
+      margin: 0;
+      padding: 20px 16px 24px;
+      text-align: center;
     }
 
-    .typing-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--text-secondary);
-      animation: bounce 0.8s infinite ease-in-out;
+    .footer-link a {
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .typing-dot:nth-child(2) {
-      animation-delay: 0.1s;
-    }
-
-    .typing-dot:nth-child(3) {
-      animation-delay: 0.2s;
-    }
-
-    @keyframes bounce {
-      0%,
-      80%,
-      100% {
-        transform: translateY(0);
-        opacity: 0.6;
-      }
-      40% {
-        transform: translateY(-4px);
-        opacity: 1;
-      }
-    }
-
-    .composer {
-      border-top: 1px solid var(--border);
-      padding: 12px;
-      display: flex;
-      gap: 10px;
-      align-items: flex-end;
-    }
-
-    #prompt {
-      flex: 1;
-      min-height: 46px;
-      max-height: 128px;
-      resize: vertical;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      padding: 12px 13px;
-      font: inherit;
-      font-size: 0.9rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    #prompt::placeholder {
-      color: var(--text-secondary);
-      transition: opacity 0.3s ease;
-    }
-
-    #prompt:focus {
-      outline: 0;
-      border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
-      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
-    }
-
-    .send-btn {
-      border: 0;
-      min-height: 46px;
-      border-radius: 28px;
-      padding: 0 17px;
-      background: var(--accent);
-      color: #ffffff;
-      font: inherit;
-      font-weight: 500;
-      cursor: pointer;
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
-    }
-
-    .send-btn:hover {
+    .footer-link a:hover {
       transform: translateY(-2px);
-      filter: brightness(1.05);
-    }
-
-    .send-btn:active {
-      transform: translateY(0);
     }
 
     @media (max-width: 640px) {
@@ -290,55 +221,90 @@
       }
 
       .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .chat {
-        flex: 1;
-        height: auto;
-        min-height: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
   </style>
 </head>
 <body>
-  <main class="app" data-aos="fade-up">
+  <main class="app">
     <header class="header animate__animated animate__fadeIn">
       <div class="title-wrap">
         <h1 class="title">Arthur</h1>
-        <p class="subtitle">Interactive demo chat interface</p>
+        <p class="subtitle">From-scratch transformer LLM</p>
       </div>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
     </header>
 
-    <section class="stats" aria-label="Model statistics">
+    <section class="stats" aria-label="Model statistics" data-aos="fade-up">
       <div class="stat">
         <div class="stat-label">Parameters</div>
         <div class="stat-value">65M</div>
       </div>
       <div class="stat">
-        <div class="stat-label">Context</div>
-        <div class="stat-value">8K tokens</div>
+        <div class="stat-label">Architecture</div>
+        <div class="stat-value">MoE</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Training Data</div>
+        <div class="stat-value">WikiText-103</div>
       </div>
       <div class="stat">
         <div class="stat-label">Loss</div>
-        <div class="stat-value">0.0115</div>
+        <div class="stat-value">0.0029</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Vocab</div>
+        <div class="stat-value">10K BPE</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Context</div>
+        <div class="stat-value">32K tokens</div>
       </div>
     </section>
 
-    <section id="chat" class="chat" aria-live="polite"></section>
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Architecture</h2>
+      <div class="section-content">
+        <p class="section-subtext">Mixture of Experts with RoPE, GQA, and RMSNorm</p>
+        <img src="../architecture.svg" alt="Arthur Architecture" style="width:100%;border-radius:8px;" />
+      </div>
+    </section>
 
-    <form id="composer" class="composer">
-      <textarea id="prompt" name="prompt" placeholder="Ask Arthur anything"></textarea>
-      <button class="send-btn" type="submit">Send</button>
-    </form>
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Transformer Forward Pass</h2>
+      <div class="section-content">
+        <pre><code>def forward(self, x, mask=None):
+    for layer in self.layers:
+        # RMSNorm + Multi-Head Attention (GQA)
+        h = layer.norm1(x)
+        h = layer.attention(h, mask=mask)
+        x = x + h
+        # RMSNorm + MoE Feed-Forward
+        h = layer.norm2(x)
+        h = layer.moe(h)  # top-2/4 expert routing
+        x = x + h
+    return self.head(self.norm_f(x))</code></pre>
+      </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Try Locally</h2>
+      <div class="section-content">
+        <pre><code>git clone https://github.com/nulljosh/arthur.git
+cd arthur
+pip install -r requirements.txt
+python scripts/eval.py --checkpoint models/arthur_v3_65M_best.pt --size 65M</code></pre>
+      </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+      <p class="footer-link"><a href="https://github.com/nulljosh/arthur">View on GitHub</a></p>
+    </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    const chatEl = document.getElementById('chat');
-    const formEl = document.getElementById('composer');
-    const promptEl = document.getElementById('prompt');
     const rootEl = document.documentElement;
     const themeToggleEl = document.getElementById('themeToggle');
     const themeMetaEl = document.querySelector('meta[name="theme-color"]');
@@ -361,102 +327,6 @@
     themeToggleEl.addEventListener('click', () => {
       const nextTheme = rootEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       applyTheme(nextTheme);
-    });
-
-    const history = [];
-
-    const placeholders = [
-      '17 * (8 - 3)',
-      'write a debounce function',
-      "explain Arthur's architecture",
-      'write a fibonacci in python',
-      'what is Arthur trained on?',
-      '(256 / 4) + 12',
-    ];
-    let placeholderIdx = 0;
-    setInterval(() => {
-      placeholderIdx = (placeholderIdx + 1) % placeholders.length;
-      promptEl.placeholder = placeholders[placeholderIdx];
-    }, 3000);
-
-    function addMessage(role, text) {
-      history.push({ role, text });
-      const el = document.createElement('article');
-      el.className = `message ${role}`;
-      el.textContent = text;
-      chatEl.appendChild(el);
-      chatEl.scrollTop = chatEl.scrollHeight;
-    }
-
-    function computeArithmetic(input) {
-      const normalized = input.replace(/x/gi, '*').replace(/÷/g, '/').trim();
-      if (!/^[\d\s+\-*/().%]+$/.test(normalized)) {
-        return null;
-      }
-
-      try {
-        const value = Function(`"use strict"; return (${normalized});`)();
-        if (typeof value !== 'number' || !Number.isFinite(value)) {
-          return null;
-        }
-        return value;
-      } catch {
-        return null;
-      }
-    }
-
-    function makeCodeReply(prompt) {
-      const lower = prompt.toLowerCase();
-      if (lower.includes('python')) {
-        return '```python\ndef fibonacci(n):\n    a, b = 0, 1\n    out = []\n    for _ in range(n):\n        out.append(a)\n        a, b = b, a + b\n    return out\n```';
-      }
-      return '```javascript\nfunction debounce(fn, wait = 200) {\n  let t;\n  return (...args) => {\n    clearTimeout(t);\n    t = setTimeout(() => fn(...args), wait);\n  };\n}\n```';
-    }
-
-    function localResponder(prompt) {
-      const lower = prompt.toLowerCase();
-      const arithmeticMatch = prompt.match(/([-+*/().%\d\sxX÷]{3,})/);
-      const arithmeticValue = arithmeticMatch ? computeArithmetic(arithmeticMatch[1]) : null;
-
-      if (arithmeticValue !== null) {
-        return `Computed result: ${arithmeticValue}`;
-      }
-
-      if (/(code|snippet|function|javascript|js|python|api)/i.test(lower)) {
-        return makeCodeReply(prompt);
-      }
-
-      if (/(model|arthur|train|loss|context|parameter)/i.test(lower)) {
-        return 'Arthur is a compact 65M-parameter transformer tuned for concise reasoning. The 8K context window helps it sustain longer exchanges, and the 0.0115 training loss indicates stable convergence for a small model class.';
-      }
-
-      return 'Arthur can handle lightweight arithmetic, generate short implementation snippets, and discuss model design tradeoffs. Ask for a quick example and I will respond in the same format you need.';
-    }
-
-    function showTypingIndicator() {
-      const indicator = document.createElement('div');
-      indicator.className = 'typing';
-      indicator.setAttribute('aria-label', 'Assistant is typing');
-      indicator.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-      chatEl.appendChild(indicator);
-      chatEl.scrollTop = chatEl.scrollHeight;
-      return indicator;
-    }
-
-    addMessage('assistant', 'Arthur demo is online. Try: "17 * (8 - 3)", "write a debounce function", or "explain Arthur\'s architecture".');
-
-    formEl.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const prompt = promptEl.value.trim() || promptEl.placeholder;
-
-      addMessage('user', prompt);
-      promptEl.value = '';
-
-      const typingEl = showTypingIndicator();
-      await new Promise((resolve) => setTimeout(resolve, 520));
-      const reply = localResponder(prompt);
-      typingEl.remove();
-      addMessage('assistant', reply);
     });
 
     AOS.init({ duration: 600, once: true });
