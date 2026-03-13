@@ -15,7 +15,7 @@ except ImportError:
     print("Install: pip3 install torch")
     sys.exit(1)
 
-from transformer import ArthurV3
+from transformer import ArthurV3, migrate_state_dict
 from bpe_tokenizer import BPETokenizer
 
 
@@ -26,7 +26,8 @@ def load_model(model_path, tokenizer_path):
 
     model = ArthurV3(size="65M")
 
-    model.load_state_dict(torch.load(model_path, map_location='cpu'))
+    state = torch.load(model_path, map_location="cpu")
+    model.load_state_dict(migrate_state_dict(state))
     model.eval()
 
     return model, tokenizer

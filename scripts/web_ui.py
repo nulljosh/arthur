@@ -17,7 +17,7 @@ if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from tokenizer import CharTokenizer
-from transformer import ArthurV3, CONFIGS as V3_CONFIGS
+from transformer import ArthurV3, CONFIGS as V3_CONFIGS, migrate_state_dict
 from bpe_tokenizer import BPETokenizer
 
 
@@ -145,7 +145,7 @@ def _load_v3_runtime(
     cfg = V3_CONFIGS[size]
 
     model = ArthurV3(size=size, dropout=0.0)
-    model.load_state_dict(state_dict)
+    model.load_state_dict(migrate_state_dict(state_dict))
     model.eval()
 
     # Load BPE tokenizer from file
@@ -216,7 +216,7 @@ def load_runtime(
         config["vocab_size"] = int(checkpoint.get("vocab_size", tokenizer.vocab_size))
 
     raise ValueError("v1/v2 checkpoints are no longer supported -- only v3 models are available")
-    model.load_state_dict(state_dict)
+    model.load_state_dict(migrate_state_dict(state_dict))
     model.eval()
 
     return LoadedRuntime(

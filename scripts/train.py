@@ -17,7 +17,9 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 from datasets import load_dataset
 import time, sys
 sys.path.insert(0, ".")
+sys.path.insert(0, "src")
 from src.transformer import ArthurV3
+from transformer import migrate_state_dict
 from src.bpe_tokenizer import BPETokenizer
 from src.config import apply_safe_16gb_guardrails
 
@@ -121,7 +123,7 @@ def train(
                     print(f"[resume] Removing corrupted checkpoint", flush=True)
                     os.remove(ckpt_path)
             if ckpt is not None:
-                model.load_state_dict(ckpt["model"])
+                model.load_state_dict(migrate_state_dict(ckpt["model"]))
                 if "opt" in ckpt:
                     opt.load_state_dict(ckpt["opt"])
                 else:

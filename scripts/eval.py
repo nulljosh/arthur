@@ -22,7 +22,7 @@ for path in (REPO_ROOT, SRC_DIR):
 
 import torch
 from src.bpe_tokenizer import BPETokenizer
-from src.transformer import ArthurV3
+from src.transformer import ArthurV3, migrate_state_dict
 from src.eval_harness import (
     load_prompt_suite,
     score_prompt_output,
@@ -45,7 +45,7 @@ def load_checkpoint(model: ArthurV3, path: str, device: str) -> dict:
         meta["loss"] = state.get("loss")
         state = state["model"]
 
-    model.load_state_dict(state)
+    model.load_state_dict(migrate_state_dict(state))
     model.eval()
     return meta
 

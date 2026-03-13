@@ -11,6 +11,7 @@ ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 from transformer import ArthurV3
 from bpe_tokenizer import BPETokenizer
+from transformer import migrate_state_dict
 
 MODEL_PATH = ROOT / "models" / "arthur_v3_65M_best.pt"
 TOKENIZER_PATH = ROOT / "models" / "bpe_tokenizer_v1.json"
@@ -25,7 +26,7 @@ def test_smoke():
     except RuntimeError:
         pytest.skip("checkpoint file is corrupted or incompatible")
     state = checkpoint["model"] if "model" in checkpoint else checkpoint
-    model.load_state_dict(state)
+    model.load_state_dict(migrate_state_dict(state))
     model.eval()
 
     tokenizer = BPETokenizer()

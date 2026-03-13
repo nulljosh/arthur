@@ -31,7 +31,7 @@ sys.path.insert(0, "src")
 try:
     import torch
     from bpe_tokenizer import BPETokenizer
-    from transformer import ArthurV3
+    from transformer import ArthurV3, migrate_state_dict
     from eval_harness import (
         load_prompt_suite,
         score_prompt_output,
@@ -92,7 +92,7 @@ def load_model(checkpoint_path: str, device: str, size: str = "65M") -> tuple:
             meta["loss"] = state.get("loss")
             state = state["model"]
         
-        model.load_state_dict(state)
+        model.load_state_dict(migrate_state_dict(state))
         model.eval()
         return model, meta
     except Exception as e:

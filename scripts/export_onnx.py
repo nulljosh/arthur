@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = REPO_ROOT / "src"
 
 sys.path.insert(0, str(SRC_DIR))
-from transformer import ArthurV3, CONFIGS as V3_CONFIGS  # noqa: E402
+from transformer import ArthurV3, CONFIGS as V3_CONFIGS, migrate_state_dict  # noqa: E402
 from bpe_tokenizer import BPETokenizer  # noqa: E402
 
 CHECKPOINT_CANDIDATES = [
@@ -69,7 +69,7 @@ def export_v3(checkpoint: dict[str, object], checkpoint_path: Path) -> None:
 
     print(f"[3/6] Rebuilding ArthurV3-{size} model")
     model = ArthurV3(size=size, dropout=0.0)
-    model.load_state_dict(state_dict)
+    model.load_state_dict(migrate_state_dict(state_dict))
     model.eval()
 
     print(f"[4/6] Ensuring output directory exists: {OUTPUT_DIR}")

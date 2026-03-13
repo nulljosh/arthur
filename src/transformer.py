@@ -56,6 +56,16 @@ def apply_rope(q, k, freqs):
     sin = freqs[1, : q.shape[1]].unsqueeze(0).unsqueeze(2).type_as(q)
     return (q * cos) + (rotate_half(q) * sin), (k * cos) + (rotate_half(k) * sin)
 
+
+def migrate_state_dict(state):
+    """Migrate old complex64 RoPE freqs to the new [2, seq, dim] real format."""
+    if "freqs" in state and state["freqs"].is_complex():
+        old = state["freqs"]
+        cos_part = torch.repeat_interleave(old.real, 2, dim=-1)
+        sin_part = torch.repeat_interleave(old.imag, 2, dim=-1)
+        state["freqs"] = torch.stack((cos_part, sin_part), dim=0)
+    return state
+
 # ── Grouped Query Attention (faster inference) ───────────────────────────────
 class GQAttention(nn.Module):
     def __init__(self, d_model: int, n_heads: int, n_kv_heads: int, dropout: float = 0.1):
